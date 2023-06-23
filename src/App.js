@@ -1,10 +1,10 @@
-import RunningString from 'components/header/RunningString';
+import Marquee from 'components/header/Marquee';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <RunningString text="Jukrassic pork --- Listen. Watch. Enjoy" />
+      <Marquee text="Jukrassic pork --- Listen. Watch. Enjoy" />
     </div>
   );
 }

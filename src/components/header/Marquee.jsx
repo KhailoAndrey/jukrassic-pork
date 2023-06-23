@@ -1,7 +1,7 @@
 import React from 'react';
-import './RunningString.css';
+import './Marquee.css';
 
-const RunningString = ({ text }) => {
+const Marquee = ({ text }) => {
   return (
     <div className="marquee-container">
       <div className="marquee-text">{text}</div>
@@ -9,4 +9,4 @@ const RunningString = ({ text }) => {
   );
 };
 
-export default RunningString;
+export default Marquee;
