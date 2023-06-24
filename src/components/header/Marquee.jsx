@@ -11,24 +11,28 @@ const Marquee = () => {
     { text: 'jukrassic pork' },
     { text: 'listen. watch. enjoy.' },
     { text: 'jukrassic pork' },
-    { text: 'listen. watch. enjoy.' },
+    // { text: 'listen. watch. enjoy.' },
+    // { text: 'jukrassic pork' },
+    // { text: 'listen. watch. enjoy.' },
   ];
 
   return (
-    <div className={styles.marqueeContainer}>
-      <div className={styles.marqueeTextContainer}>
-        <span className={styles.marqueeText}>
-          {textItems.map((item, index) => (
-            <React.Fragment key={index}>
-              {index > 0 && (
-                <img src={icon} alt="Icon" className={styles.icon} />
-              )}
-              <span>{item.text}</span>
-            </React.Fragment>
-          ))}
-        </span>
+    <>
+      <div className={styles.marqueeContainer}>
+        <div className={styles.marqueeTextContainer}>
+          <span className={styles.marqueeText}>
+            {textItems.map((item, index) => (
+              <React.Fragment key={index}>
+                {index >= 0 && (
+                  <img src={icon} alt="Icon" className={styles.icon} />
+                )}
+                <span>{item.text}</span>
+              </React.Fragment>
+            ))}
+          </span>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
