@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('../../fonts/Oswald-SemiBold.ttf');
+}
+
+.marqueeContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 284px;
+  overflow: hidden;
+  background-color: #131313;
+}
+
+.marqueeTextContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 84px;
+  background-color: #00fe00;
+}
+
+.marqueeTextContainer span {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.marqueeText {
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  color: #131313;
+  font-family: 'Oswald';
+  font-weight: 600;
+  font-size: 44px;
+  letter-spacing: 0%;
+  line-height: 52px;
+  text-transform: uppercase;
+  animation: marqueeAnimation 5s linear infinite;
+}
+
+.marqueeText .icon {
+  max-width: 52px;
+  max-height: 52px;
+  margin: 0 24px;
+  padding: 4px;
+}
+
+  @keyframes marqueeAnimation {
+    0% {
+      transform: translateX(0%);
+    }
+  
+    100% {
+      transform: translateX(-62%);
+    }
+  }
