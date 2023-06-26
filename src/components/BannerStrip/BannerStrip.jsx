@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './Marquee.module.css';
+import styles from './BannerStrip.module.css';
 import icon from '../../images/Vector.svg';
 
-const Marquee = () => {
+const BannerStrip = () => {
   const textItems = [
     { text: 'jukrassic pork' },
     { text: 'listen. watch. enjoy.' },
@@ -18,9 +18,9 @@ const Marquee = () => {
 
   return (
     <>
-      <div className={styles.marqueeContainer}>
-        <div className={styles.marqueeTextContainer}>
-          <span className={styles.marqueeText}>
+      <div className={styles.bannerContainer}>
+        <div className={styles.bannerTextContainer}>
+          <span className={styles.bannerText}>
             {textItems.map((item, index) => (
               <React.Fragment key={index}>
                 {index >= 0 && (
@@ -36,4 +36,4 @@ const Marquee = () => {
   );
 };
 
-export default Marquee;
+export default BannerStrip;
