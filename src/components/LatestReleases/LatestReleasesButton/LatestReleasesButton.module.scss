@@ -1,0 +1,26 @@
+.lrbutton {
+  padding: 12px 24px;
+  width: auto;
+
+  font-size: 22px;
+  font-family: 'Mulish';
+  font-weight: 600;
+  line-height: 1.27;
+
+  border: none;
+  outline: none;
+
+  background-color: var(--light-text-clr);
+
+  @media screen and (max-width: 374.9px) {
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767.9px) {
+    margin-bottom: 52px;
+  }
+
+  @media screen and (max-width: 1439.9px) {
+    margin-bottom: 76px;
+  }
+}
