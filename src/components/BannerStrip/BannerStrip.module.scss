@@ -1,6 +1,7 @@
 .bannerContainer {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: 284px;
     overflow: hidden;
@@ -10,7 +11,7 @@
 .bannerTextContainer {
     display: flex;
     align-items: center;
-    width: 100%;
+    max-width: 1440px;
     height: 84px;
     background-color: var(--main-accent-text-clr);
 }
@@ -22,6 +23,7 @@
 }
 
 .bannerText {
+    align-items: center;
     display: inline-block;
     width: 100%;
     white-space: nowrap;
@@ -29,9 +31,7 @@
     font-weight: 600;
     font-size: 44px;
     letter-spacing: 0%;
-    line-height: 52px;
     text-transform: uppercase;
-    animation: bannerAnimation 5s linear infinite;
 }
 
 .bannerText .icon {
