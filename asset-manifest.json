@@ -1,18 +1,24 @@
 {
   "files": {
-    "main.css": "/jukrassic-pork/static/css/main.e529c7a3.css",
-    "main.js": "/jukrassic-pork/static/js/main.ee64b6e5.js",
+    "main.css": "/jukrassic-pork/static/css/main.edf5bddb.css",
+    "main.js": "/jukrassic-pork/static/js/main.94e7da3d.js",
+    "static/css/991.24c6ff2b.chunk.css": "/jukrassic-pork/static/css/991.24c6ff2b.chunk.css",
+    "static/js/991.697d5709.chunk.js": "/jukrassic-pork/static/js/991.697d5709.chunk.js",
+    "static/js/943.1a6f2205.chunk.js": "/jukrassic-pork/static/js/943.1a6f2205.chunk.js",
     "static/media/Mulish-Bold.ttf": "/jukrassic-pork/static/media/Mulish-Bold.84c15758a512288dca5b.ttf",
     "static/media/Mulish-Regular.ttf": "/jukrassic-pork/static/media/Mulish-Regular.e497fc540939821b16a0.ttf",
     "static/media/Mulish-SemiBold.ttf": "/jukrassic-pork/static/media/Mulish-SemiBold.4f754a16985bfa495977.ttf",
     "static/media/Oswald-SemiBold.ttf": "/jukrassic-pork/static/media/Oswald-SemiBold.7ea6b749e7a829164007.ttf",
     "index.html": "/jukrassic-pork/index.html",
     "static/media/Vector.svg": "/jukrassic-pork/static/media/Vector.2ed1dc823902372db99363e12d406918.svg",
-    "main.e529c7a3.css.map": "/jukrassic-pork/static/css/main.e529c7a3.css.map",
-    "main.ee64b6e5.js.map": "/jukrassic-pork/static/js/main.ee64b6e5.js.map"
+    "main.edf5bddb.css.map": "/jukrassic-pork/static/css/main.edf5bddb.css.map",
+    "main.94e7da3d.js.map": "/jukrassic-pork/static/js/main.94e7da3d.js.map",
+    "991.24c6ff2b.chunk.css.map": "/jukrassic-pork/static/css/991.24c6ff2b.chunk.css.map",
+    "991.697d5709.chunk.js.map": "/jukrassic-pork/static/js/991.697d5709.chunk.js.map",
+    "943.1a6f2205.chunk.js.map": "/jukrassic-pork/static/js/943.1a6f2205.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e529c7a3.css",
-    "static/js/main.ee64b6e5.js"
+    "static/css/main.edf5bddb.css",
+    "static/js/main.94e7da3d.js"
   ]
 }
