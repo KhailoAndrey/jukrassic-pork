@@ -14,7 +14,7 @@
 .band{
   @media screen and (min-width:1440px) {
     display: flex;
-    gap:24px;
+    gap:72px;
   }
 }
 .title{
@@ -30,6 +30,7 @@
   @media screen and (min-width:1440px) {
     font-size: 56px;
     line-height: 1.1428;
+  white-space: nowrap;
   }
 }
 .info{
@@ -48,6 +49,7 @@
     font-weight: 600;
     line-height: 1.3333;
     color: var(--neutral-dark-text-clr);
+    margin-bottom: 52px;
     @media screen and (min-width:768px) {
       font-size: 20px;
       line-height: 1.2;
@@ -56,6 +58,7 @@
     @media screen and (min-width:1440px) {
       font-size: 22px;
       line-height: 1.2727;
+      margin-bottom: 76px;
     }
   }
 }
@@ -65,23 +68,23 @@
     display: flex;
   }
 
-  &_photo{
-    margin-top: 52px;
+  // &_photo{
+  //   margin-top: 52px;
 
-    @media screen and (min-width:1440px) {
-        margin-top: 76px;
-      }
-  }
+  //   @media screen and (min-width:1440px) {
+  //       margin-top: 76px;
+  //     }
+  // }
   &_info{
     padding: 24px;
     background-color: var(--neutral-dark-bckg-clr-3);
 
     @media screen and (min-width:768px) {
-      margin-top: 52px;
+      // margin-top: 52px;
       padding: 32px 32px 0 32px;
     }
     @media screen and (min-width:1440px) {
-      margin-top: 76px;
+      // margin-top: 76px;
       padding: 40px 40px 0 40px;
     }
   }
