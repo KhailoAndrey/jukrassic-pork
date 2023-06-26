@@ -1,11 +1,11 @@
-import Main from 'components/header/Main';
-import Marquee from 'components/header/Marquee';
+import HomePage from 'pages/HomePage';
+import MusicPage from 'pages/MusicPage';
 
 function App() {
   return (
     <div>
-      <Main />
-      <Marquee />
+      <HomePage />
+      <MusicPage />
     </div>
   );
 }
