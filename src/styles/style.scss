@@ -16,6 +16,9 @@
   --neutral-dark-text-clr: #878787;
   --white-text-clr: #dadada;
   --light-text-clr: #c1c1c1;
+
+  --add-light-text-clr-1: #ffffff;
+  --add-light-text-clr-2: #fefefe;
 }
 
 *,
@@ -27,6 +30,7 @@
 
 body {
   font-family: 'Oswald';
+  box-sizing: border-box;
 }
 
 img {
@@ -58,14 +62,14 @@ ol {
   /* tablet screen */
   @media screen and (max-width: 1440px) {
     width: 768px;
-    padding-right: 31px;
-    padding-left: 31px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
   /* desktop screen */
   @media screen and (min-width: 1440px) {
     width: 1440px;
-    padding-right: 65px;
-    padding-left: 65px;
+    padding-right: 84px;
+    padding-left: 84px;
   }
 }
