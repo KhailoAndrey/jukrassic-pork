@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkjukrassic_pork=self.webpackChunkjukrassic_pork||[]).push([[943],{2943:function(s,r,u){u.r(r);var e=u(184);r.default=function(){return(0,e.jsx)("div",{children:"Hi world! It's the MusicPage!"})}}}]);
+//# sourceMappingURL=943.b3a87c48.chunk.js.map
