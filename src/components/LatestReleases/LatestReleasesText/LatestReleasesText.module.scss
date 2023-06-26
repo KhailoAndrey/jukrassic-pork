@@ -1,4 +1,6 @@
 .lrtext {
+  width: auto;
+
   font-size: 18px;
   font-family: 'Mulish';
   font-weight: 600;
@@ -7,7 +9,12 @@
   color: var(--neutral-dark-text-clr);
 
   @media screen and (max-width: 767.9px) {
+    margin-bottom: 52px;
     font-size: 20px;
+  }
+
+  @media screen and (max-width: 1439.9px) {
+    margin-bottom: 76px;
   }
 
   @media screen and (min-width: 1439.9px) {
