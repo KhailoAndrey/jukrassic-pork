@@ -9,8 +9,10 @@ function Video() {
   };
   return (
     <div className={scss.video}>
-      <VideoChapter VChapter={lenguage ? lenguage.uk : lenguage.ua} />
-      <VideoContainer />
+      <div className={scss.container}>
+        <VideoChapter VChapter={lenguage ? lenguage.uk : lenguage.ua} />
+        <VideoContainer />
+      </div>
     </div>
   );
 }
