@@ -3,6 +3,21 @@
   src: url('../fonts/Oswald-SemiBold.ttf');
 }
 
+@font-face {
+  font-family: 'Mulish';
+  src: url('../fonts/Mulish-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('../fonts/Mulish-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Mulish';
+  src: url('../fonts/Mulish-SemiBold.ttf');
+}
+
 :root {
   --main-text-clr: #dadada;
   --main-bckg-clr: #23291c;
