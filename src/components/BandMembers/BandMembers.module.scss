@@ -1,8 +1,4 @@
 .bandMembers {
-  // height: 100vh;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   padding-top: 16px;
   padding-bottom: 16px;
   background-color: var(--neutral-dark-bckg-clr-1);
@@ -27,7 +23,7 @@
   font-weight: 600;
   line-height: 52px;
   text-transform: uppercase;
-  color:#FEFEFE;
+  color:var(--add-light-text-clr-2);
   @media  screen and (min-width:768px) {
     font-size: 44px;
   }
@@ -53,14 +49,14 @@
     line-height: 1.3333;
     color: var(--neutral-dark-text-clr);
     @media screen and (min-width:768px) {
-        font-size: 20px;
-        line-height: 1.2;
-      }
+      font-size: 20px;
+      line-height: 1.2;
+    }
     
-      @media screen and (min-width:1440px) {
-        font-size: 22px;
-        line-height: 1.2727;
-      }
+    @media screen and (min-width:1440px) {
+      font-size: 22px;
+      line-height: 1.2727;
+    }
   }
 }
 .member{
@@ -95,11 +91,9 @@
     font-weight: 700;
     line-height: 1.16667;
     text-transform: uppercase;
-    color:#FEFEFE;
+    color:var(--add-light-text-clr-2);
 
-    @media screen and (min-width:768px) {
-      
-    }
+    @media screen and (min-width:768px) {}
     
     @media screen and (min-width:1440px) {
       font-size: 28px;
@@ -165,8 +159,8 @@
   background-color: transparent;
   color:var(--neutral-dark-text-clr);
   &:not(:last-child) {
-      margin-right: 8px;
-    }
+    margin-right: 8px;
+  }
   &:hover{
     color: var(--main-accent-text-clr);
     border: 1px solid var(--main-accent-text-clr);
