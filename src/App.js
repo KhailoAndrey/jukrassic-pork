@@ -1,5 +1,3 @@
-// import HomePage from 'pages/HomePage';
-// import MusicPage from 'pages/MusicPage';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router';
 
