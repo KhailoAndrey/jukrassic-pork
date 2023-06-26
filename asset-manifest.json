@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/jukrassic-pork/static/css/main.f922bf04.css",
-    "main.js": "/jukrassic-pork/static/js/main.44312947.js",
+    "main.css": "/jukrassic-pork/static/css/main.d69a6412.css",
+    "main.js": "/jukrassic-pork/static/js/main.aa9da47d.js",
+    "static/media/Mulish-Bold.ttf": "/jukrassic-pork/static/media/Mulish-Bold.84c15758a512288dca5b.ttf",
+    "static/media/Mulish-Regular.ttf": "/jukrassic-pork/static/media/Mulish-Regular.e497fc540939821b16a0.ttf",
+    "static/media/Mulish-SemiBold.ttf": "/jukrassic-pork/static/media/Mulish-SemiBold.4f754a16985bfa495977.ttf",
     "static/media/Oswald-SemiBold.ttf": "/jukrassic-pork/static/media/Oswald-SemiBold.7ea6b749e7a829164007.ttf",
     "index.html": "/jukrassic-pork/index.html",
     "static/media/Vector.svg": "/jukrassic-pork/static/media/Vector.2ed1dc823902372db99363e12d406918.svg",
-    "main.f922bf04.css.map": "/jukrassic-pork/static/css/main.f922bf04.css.map",
-    "main.44312947.js.map": "/jukrassic-pork/static/js/main.44312947.js.map"
+    "main.d69a6412.css.map": "/jukrassic-pork/static/css/main.d69a6412.css.map",
+    "main.aa9da47d.js.map": "/jukrassic-pork/static/js/main.aa9da47d.js.map"
   },
   "entrypoints": [
-    "static/css/main.f922bf04.css",
-    "static/js/main.44312947.js"
+    "static/css/main.d69a6412.css",
+    "static/js/main.aa9da47d.js"
   ]
 }
