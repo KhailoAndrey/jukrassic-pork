@@ -1,11 +1,18 @@
-import HomePage from 'pages/HomePage';
-import MusicPage from 'pages/MusicPage';
+// import HomePage from 'pages/HomePage';
+// import MusicPage from 'pages/MusicPage';
+import { lazy } from 'react';
+import { Route, Routes } from 'react-router';
+
+const HomePage = lazy(()=> import('./pages/HomePage'))
+const MusicPage = lazy(()=> import('./pages/MusicPage'))
 
 function App() {
   return (
     <div>
-      <HomePage />
-      <MusicPage />
+      <Routes>
+        <Route path='/' element={<HomePage/>} />
+        <Route path='/music' element={<MusicPage/>} />
+      </Routes>
     </div>
   );
 }
