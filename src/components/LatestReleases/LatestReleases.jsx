@@ -3,6 +3,7 @@
 import LatestReleasesChapter from './LatestReleasesChapter/LatestReleasesChapter';
 import LatestReleasesText from './LatestReleasesText/LatestReleasesText';
 import LatestReleasesButton from './LatestReleasesButton/LatestReleasesButton';
+import LatestReleasesPlayers from './LatestReleasesPlayers/LatestReleasesPlayers';
 
 import scss from './LatestReleases.module.scss';
 
@@ -13,9 +14,14 @@ function LatestReleases() {
   return (
     <section className={scss.latestReleases}>
       <div className="container">
-        <LatestReleasesChapter LRChapter="latest releases" />
-        <LatestReleasesText LRText={LRText} />
-        <LatestReleasesButton LRButtonValue={LRButtonValue} />
+        <div className={scss.boxChapterText}>
+          <LatestReleasesChapter LRChapter="latest releases" />
+          <LatestReleasesText LRText={LRText} />
+        </div>
+        <div className={scss.boxButtonPlayers}>
+          <LatestReleasesButton LRButtonValue={LRButtonValue} />
+          <LatestReleasesPlayers />
+        </div>
       </div>
     </section>
   );
