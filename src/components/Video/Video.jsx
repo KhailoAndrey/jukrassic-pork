@@ -1,7 +1,7 @@
-import css from './Video.module.css';
+import scss from './Video.module.scss';
 
 function Video() {
-  return <div className={css.video}>Video</div>;
+  return <div className={scss.video}>Video</div>;
 }
 
 export default Video;

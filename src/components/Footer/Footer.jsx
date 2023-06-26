@@ -1,10 +1,10 @@
 // import { Formik, Form, Field, ErrorMessage } from 'formik';
 // import * as yup from 'yup';
 
-import css from './Footer.module.css';
+import scss from './Footer.module.scss';
 
 function Footer() {
-  return <div className={css.footer}>Footer</div>;
+  return <div className={scss.footer}>Footer</div>;
 }
 
 export default Footer;

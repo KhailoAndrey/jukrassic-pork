@@ -1,7 +1,7 @@
-import css from './MusicComponent.module.css';
+import scss from './MusicComponent.module.scss';
 
 function MusicComponent() {
-  return <div className={css.musicComponent}>Music</div>;
+  return <div className={scss.musicComponent}>Music</div>;
 }
 
 export default MusicComponent;

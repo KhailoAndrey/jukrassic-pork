@@ -1,9 +1,9 @@
 // import ReactPlayer from 'react-player';
 
-import css from './LatestReleases.module.css';
+import scss from './LatestReleases.module.scss';
 
 function LatestReleases() {
-  return <div className={css.latestReleases}>Latest Releases</div>;
+  return <div className={scss.latestReleases}>Latest Releases</div>;
 }
 
 export default LatestReleases;

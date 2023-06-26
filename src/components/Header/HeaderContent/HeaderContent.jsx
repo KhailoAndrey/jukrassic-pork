@@ -1,7 +1,7 @@
-import css from './HeaderContent.module.css';
+import scss from './HeaderContent.module.scss';
 
 function HeaderContent() {
-  return <header className={css.header}>Header Content</header>;
+  return <header className={scss.header}>Header Content</header>;
 }
 
 export default HeaderContent;

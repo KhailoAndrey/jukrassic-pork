@@ -1,7 +1,7 @@
-import css from './BandMembers.module.css';
+import scss from './BandMembers.module.scss';
 
 function BandMembers() {
-  return <div className={css.bandMembers}>Band Members</div>;
+  return <div className={scss.bandMembers}>Band Members</div>;
 }
 
 export default BandMembers;
