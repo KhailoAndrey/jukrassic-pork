@@ -1,0 +1,71 @@
+@font-face {
+  font-family: 'Oswald';
+  src: url('../fonts/Oswald-SemiBold.ttf');
+}
+
+:root {
+  --main-text-clr: #dadada;
+  --main-bckg-clr: #23291c;
+  --main-accent-text-clr: #00fe00;
+  --main-error-text-clr: #ba1a1a;
+
+  --neutral-dark-bckg-clr-1: #131313;
+  --neutral-dark-bckg-clr-2: #232323;
+  --neutral-dark-bckg-clr-3: #363636;
+
+  --neutral-dark-text-clr: #878787;
+  --white-text-clr: #dadada;
+  --light-text-clr: #c1c1c1;
+}
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Oswald';
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  /* mobile screen */
+  @media screen and (max-width: 375px) {
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 768px) {
+    max-width: 375px;
+  }
+
+  /* tablet screen */
+  @media screen and (max-width: 1440px) {
+    width: 768px;
+    padding-right: 31px;
+    padding-left: 31px;
+  }
+
+  /* desktop screen */
+  @media screen and (min-width: 1440px) {
+    width: 1440px;
+    padding-right: 65px;
+    padding-left: 65px;
+  }
+}
