@@ -16,29 +16,29 @@
       margin-top: 32px;
     }
   }
+}
 
-  iframe {
-    width: 840px;
-    height: 472px;
+.videoBlock_track {
+  width: 840px;
+  height: 472px;
 
-    @media screen and (max-width: 1440px) {
-      width: 701px;
-      height: 392px;
-    }
+  @media screen and (max-width: 1440px) {
+    width: 701px;
+    height: 392px;
+  }
 
-    @media screen and (max-width: 768px) {
-      width: 343px;
-      height: 200px;
-    }
+  @media screen and (max-width: 768px) {
+    width: 343px;
+    height: 200px;
+  }
 
-    @media screen and (max-width: 375px) {
-      width: 80vw;
-      aspect-ratio: 16 / 9;
-    }
+  @media screen and (max-width: 375px) {
+    width: 80vw;
+    aspect-ratio: 16 / 9;
   }
 }
 
-h3 {
+.videoBlock_track_title {
   font-size: 28px;
   font-family: Mulish;
   font-weight: 700;
