@@ -1,0 +1,22 @@
+.textNotFound {
+  margin-bottom: 52px;
+
+  font-size: 18px;
+  font-family: 'Mulish';
+  font-weight: 600;
+  line-height: 1.3;
+
+  color: var(--neutral-dark-text-clr);
+
+  @media screen and (min-width: 767.9px) {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    margin-bottom: 76px;
+
+    font-size: 22px;
+    line-height: 1.27;
+  }
+}

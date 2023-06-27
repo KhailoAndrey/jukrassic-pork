@@ -1,4 +1,4 @@
-.latestReleasesButton {
+.buttonNotFound {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,36 +30,37 @@
   }
 
   @media screen and (min-width: 1439.9px) {
-    margin-bottom: 76px;
     padding: 16px 32px;
   }
 }
 
-.latestReleasesButton:hover,
-.latestReleasesButton:focus {
+.buttonNotFound:hover,
+.buttonNotFound:focus {
   border: 2px solid var(--main-accent-text-clr);
 
   color: var(--light-text-clr);
   background-color: var(--neutral-dark-bckg-clr-1);
 }
 
-.iconVector {
+.commonIcon {
   display: block;
   margin-left: 8px;
 
   width: 24px;
   height: 24px;
 
+  transform: rotate(180deg);
+  margin-right: 8px;
   fill: var(--neutral-dark-bckg-clr-1);
 
   transition: fill var(--default-animation);
 
   @media screen and (min-width: 767.9px) {
-    margin-left: 12px;
+    margin-right: 12px;
   }
 }
 
-.latestReleasesButton:hover .iconVector,
-.latestReleasesButton:focus .iconVector {
+.buttonNotFound:hover .commonIcon,
+.buttonNotFound:focus .commonIcon {
   fill: var(--main-accent-text-clr);
 }
