@@ -1,5 +1,4 @@
 import VideoBlock from '../VideoBlock/VideoBlock';
-import scss from './VideoContainer.module.scss';
 
 function VideoContainer() {
   const track = [
@@ -13,7 +12,7 @@ function VideoContainer() {
     },
   ];
   return (
-    <div className={scss.videoContainer}>
+    <div>
       {track.map(el => (
         <VideoBlock key={el.src} src={el.src} title={el.title} />
       ))}

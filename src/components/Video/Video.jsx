@@ -7,13 +7,14 @@ function Video() {
     ua: 'відео',
     uk: 'video',
   };
+
   return (
-    <div className={scss.video}>
+    <section className={scss.video}>
       <div className={scss.container}>
         <VideoChapter VChapter={language ? language.uk : language.ua} />
         <VideoContainer />
       </div>
-    </div>
+    </section>
   );
 }
 
