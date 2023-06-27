@@ -12,7 +12,7 @@
   font-weight: 600;
   line-height: 1.27;
 
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   outline: none;
   cursor: pointer;
 
@@ -37,7 +37,7 @@
 
 .latestReleasesButton:hover,
 .latestReleasesButton:focus {
-  border: 3px solid var(--main-accent-text-clr);
+  border: 2px solid var(--main-accent-text-clr);
 
   color: var(--light-text-clr);
   background-color: var(--neutral-dark-bckg-clr-1);
