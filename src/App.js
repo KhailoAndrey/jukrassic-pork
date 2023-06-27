@@ -1,3 +1,4 @@
+import NotFoundComponent from 'components/NotFound/NotFoundComponent';
 import { lazy } from 'react';
 import { Route, Routes } from 'react-router';
 
@@ -9,7 +10,8 @@ function App() {
     <div>
       <Routes>
         <Route path='/' element={<HomePage/>} />
-        <Route path='/music' element={<MusicPage/>} />
+        <Route path='/music' element={<MusicPage />} />
+        <Route path='*' element={<NotFoundComponent/>} />
       </Routes>
     </div>
   );
