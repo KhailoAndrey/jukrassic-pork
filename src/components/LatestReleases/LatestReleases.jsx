@@ -9,8 +9,6 @@ function LatestReleases() {
   const LRText =
     'The war, like a black muse, inspired many people to create works of various genres. Our music project Jukrassic Pork invited Maria Ivchenko, a very talented child, whose bright vocals combined with an amazing arrangement in the genres of «OST» and «Tanzmetal» by Dmitry Khizhnyak and allowed us to create the song «Стежка».If you want to listen to the full versions of the tracks, download lyrics, you can press the button below and go to the music page.';
   const LRButtonValue = 'Go to all releases';
-  const LRVectorIconUrl =
-    '../../images/Latest-Releases/svg/symbol-defs.svg#icon-Right-Icon';
   return (
     <section className={scss.latestReleases}>
       <div className="container">
@@ -19,10 +17,7 @@ function LatestReleases() {
           <LatestReleasesText LRText={LRText} />
         </div>
         <div className={scss.boxButtonPlayers}>
-          <LatestReleasesButton
-            LRButtonValue={LRButtonValue}
-            LRVectorIconUrl={LRVectorIconUrl}
-          />
+          <LatestReleasesButton LRButtonValue={LRButtonValue} />
           <LatestReleasesPlayers />
         </div>
       </div>

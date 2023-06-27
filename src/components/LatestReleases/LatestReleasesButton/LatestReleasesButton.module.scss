@@ -1,4 +1,8 @@
 .latestReleasesButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   margin-bottom: 52px;
   padding: 12px 24px;
   width: 100%;
@@ -8,11 +12,14 @@
   font-weight: 600;
   line-height: 1.27;
 
-  border: none;
+  border: 3px solid transparent;
   outline: none;
+  cursor: pointer;
 
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
+
+  transition: border var(--default-animation);
 
   @media screen and (min-width: 374.9px) {
     width: auto;
@@ -28,11 +35,28 @@
   }
 }
 
+.latestReleasesButton:hover,
+.latestReleasesButton:focus {
+  border: 3px solid var(--main-accent-text-clr);
+}
+
 .iconVector {
   display: block;
+  margin-left: 8px;
 
   width: 24px;
   height: 24px;
 
   fill: var(--neutral-dark-bckg-clr-1);
+
+  transition: fill var(--default-animation);
+
+  @media screen and (min-width: 767.9px) {
+    margin-left: 12px;
+  }
+}
+
+.latestReleasesButton:hover .iconVector,
+.latestReleasesButton:focus .iconVector {
+  fill: var(--main-accent-text-clr);
 }
