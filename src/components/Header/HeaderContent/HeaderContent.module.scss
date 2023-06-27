@@ -1,9 +1,6 @@
 .header {
-//   display: flex;
-//   font-size: 40px;
   background-color: var(--neutral-dark-bckg-clr-1);
-  position: relative;
-//   width: 375px;
+padding-bottom: 16px;
 }
 
 .header_title_container {
@@ -12,7 +9,7 @@
 
 .header_burger_btn {
   margin-top: 8px;
-  margin-left: 8px;
+  margin-left: -8px;
   width: 48px;
   height: 48px;
   align-items: center;
@@ -23,8 +20,7 @@
 
 .header_title {
   height: 52px;
-  margin: 24px 16px 0 16px;
-  //   border: 1px solid var(--main-accent-text-clr);
+  margin-top: 24px;
   align-items: center;
 }
 
@@ -38,7 +34,7 @@
 }
 
 .header_subTitle {
-  margin: 0 16px;
+//   margin: 0 16px;
   height: 36px;
 }
 
@@ -52,7 +48,7 @@
 }
 
 .header_body {
-  margin: 16px 16px 0;
+  margin-top: 16px;
 }
 
 .header_textbody {
@@ -65,9 +61,9 @@
 
 .header_btn_text {
     height: 48px;
-    width: 343px;
-    margin: 32px 16px;
-    padding: 12px 24px;
+    width: 100%;
+    margin: 32px 0;
+    padding: 10px auto;
     border: none;
   background: var(--light-text-clr);
   color: var(--neutral-dark-bckg-clr-1);
