@@ -1,0 +1,14 @@
+.containerNotFound {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+
+  background-color: var(--neutral-dark-bckg-clr-1);
+}
+
+.envelopeContent {
+  @media screen and (min-width: 1439.9px) {
+    margin-left: auto;
+    width: 840px;
+  }
+}
