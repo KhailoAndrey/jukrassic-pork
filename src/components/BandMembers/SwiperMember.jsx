@@ -19,7 +19,7 @@ const SwiperMember = ({ bandMembers }) => {
       grabCursor={true}
     >
       {bandMembers?.map((member, i) => (
-        <SwiperSlide className={s.member} key={member.id}>
+        <SwiperSlide key={member.id}>
           {/* <img
               src={photo}
               alt="VYacheslav"
@@ -28,29 +28,30 @@ const SwiperMember = ({ bandMembers }) => {
               height={440}
               className={s.member_photo}
             /> */}
-          <picture className={s.member_photo}>
-            <source
-              srcSet={photoD}
-              media="(min-width: 1440px)"
-              type="image/png"
-            />
-            <source
-              srcSet={photoT}
-              media="(min-width: 768px)"
-              type="image/png"
-            />
-            <source
-              srcSet={photo}
-              media="(max-width: 767px)"
-              type="image/png"
-            />
-            <img src={photo} alt="VYacheslav" />
-          </picture>
-
-          <div className={s.member_info}>
-            <h3 className={s.member_name}> VYacheslav /ZMEARK/ Lozowy</h3>
-            <p className={s.member_position}>{member.position}</p>
-            <p className={s.member_description}>{member.about}</p>
+          <div className={s.member}>
+            <picture className={s.member_photo}>
+              <source
+                srcSet={photoD}
+                media="(min-width: 1440px)"
+                type="image/png"
+              />
+              <source
+                srcSet={photoT}
+                media="(min-width: 768px)"
+                type="image/png"
+              />
+              <source
+                srcSet={photo}
+                media="(max-width: 767px)"
+                type="image/png"
+              />
+              <img src={photo} alt="VYacheslav" />
+            </picture>
+            <div className={s.member_info}>
+              <h3 className={s.member_name}> VYacheslav /ZMEARK/ Lozowy</h3>
+              <p className={s.member_position}>{member.position}</p>
+              <p className={s.member_description}>{member.about}</p>
+            </div>
           </div>
         </SwiperSlide>
       ))}
