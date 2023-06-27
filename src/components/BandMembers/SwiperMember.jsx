@@ -12,7 +12,7 @@ import photoD from '../../images/photoD.png';
 const SwiperMember = ({ bandMembers }) => {
   return (
     <Swiper
-      className={`mySwiper ${s.list}`}
+      // className={`mySwiper ${s.list}`}
       modules={[Navigation, Scrollbar]}
       navigation
       scrollbar={{ draggable: true }}
