@@ -19,7 +19,7 @@
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
 
-  transition: border var(--default-animation);
+  transition: border, color, background-color var(--default-animation);
 
   @media screen and (min-width: 374.9px) {
     width: auto;
@@ -38,6 +38,9 @@
 .latestReleasesButton:hover,
 .latestReleasesButton:focus {
   border: 3px solid var(--main-accent-text-clr);
+
+  color: var(--light-text-clr);
+  background-color: var(--neutral-dark-bckg-clr-1);
 }
 
 .iconVector {
