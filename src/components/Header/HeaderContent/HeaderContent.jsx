@@ -6,7 +6,7 @@ import { MdArrowForward } from 'react-icons/md';
 function HeaderContent() {
   return (
     <section className={scss.header}>
-      <div className='container'>
+      <div className="container">
         <button type="button" className={scss.header_burger_btn}>
           <Icon />
         </button>
@@ -33,9 +33,9 @@ function HeaderContent() {
         </button>
         <div
           style={{
-            width: '359px',
+            width: '100%',
             height: '264px',
-            margin: '80px 0 16px 16px',
+            // paddingBottom: '16px',
             backgroundColor: '#c3ffa3',
             textAlign: 'center',
           }}
