@@ -1,9 +1,33 @@
-import s from './BandMembers.module.scss';
-import photo from '../../images/IMG.png';
-import photoT from '../../images/photoT.png';
-import photoD from '../../images/photoD.png';
+import { useEffect, useState } from 'react';
+import { memberApi } from './service';
 
-function BandMembers() {
+import s from './BandMembers.module.scss';
+import SwiperMember from './SwiperMember';
+// import photo from '../../images/IMG.png';
+// import photoT from '../../images/photoT.png';
+// import photoD from '../../images/photoD.png';
+
+const BandMembers = () => {
+  const [bandMembers, setBandMembers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const getBandMembers = async () => {
+    setIsLoading(true);
+    try {
+      const { data } = await memberApi.get('');
+      setBandMembers(data);
+      console.log('members', data);
+    } catch (e) {
+      console.error(e.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getBandMembers();
+  }, []);
+
   return (
     <section className={s.bandMembers}>
       <div className={`container ${s.band}`}>
@@ -14,53 +38,11 @@ function BandMembers() {
             is just the creation of good music, a bit heavy but spiced by some
             substantial portion of electronic.
           </p>
-          <div className={s.member}>
-            {/* <img
-              src={photo}
-              alt="VYacheslav"
-              srcSet={photo}
-              width={358}
-              height={440}
-              className={s.member_photo}
-            /> */}
-            <picture className={s.member_photo}>
-              <source
-                srcSet={photoD}
-                media="(min-width: 1440px)"
-                type="image/png"
-              />
-              <source
-                srcSet={photoT}
-                media="(min-width: 768px)"
-                type="image/png"
-              />
-              <source
-                srcSet={photo}
-                media="(max-width: 767px)"
-                type="image/png"
-              />
-              <img src={photo} alt="VYacheslav" />
-            </picture>
-
-            <div className={s.member_info}>
-              <h3 className={s.member_name}> VYacheslav /ZMEARK/ Lozowy</h3>
-              <p className={s.member_position}>
-                Founder, Producer, Founder, Manager, Composer, Lyricist,
-                Keyboards
-              </p>
-              <p className={s.member_description}>
-                Founded «Jukrassic Pork» project in 2000.
-              </p>
-            </div>
-          </div>
-          <div className={s.wrap_btn}>
-            <button className={s.btn}>left</button>
-            <button className={s.btn}>right</button>
-          </div>
+          {isLoading ? 'Loading' : <SwiperMember bandMembers={bandMembers} />}
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default BandMembers;
