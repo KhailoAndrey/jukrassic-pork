@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/jukrassic-pork/static/css/main.835747db.css",
-    "main.js": "/jukrassic-pork/static/js/main.a54ef99a.js",
-    "static/css/700.f2fde61c.chunk.css": "/jukrassic-pork/static/css/700.f2fde61c.chunk.css",
-    "static/js/700.7e016f31.chunk.js": "/jukrassic-pork/static/js/700.7e016f31.chunk.js",
+    "main.css": "/jukrassic-pork/static/css/main.ec52d032.css",
+    "main.js": "/jukrassic-pork/static/js/main.d11d1d1a.js",
+    "static/css/296.a6fe41c0.chunk.css": "/jukrassic-pork/static/css/296.a6fe41c0.chunk.css",
+    "static/js/296.9d504b64.chunk.js": "/jukrassic-pork/static/js/296.9d504b64.chunk.js",
     "static/css/943.e0b48c83.chunk.css": "/jukrassic-pork/static/css/943.e0b48c83.chunk.css",
     "static/js/943.3d001449.chunk.js": "/jukrassic-pork/static/js/943.3d001449.chunk.js",
     "static/js/518.8b1936e2.chunk.js": "/jukrassic-pork/static/js/518.8b1936e2.chunk.js",
@@ -16,16 +16,17 @@
     "static/media/Oswald-SemiBold.ttf": "/jukrassic-pork/static/media/Oswald-SemiBold.7ea6b749e7a829164007.ttf",
     "index.html": "/jukrassic-pork/index.html",
     "static/media/Vector.svg": "/jukrassic-pork/static/media/Vector.2ed1dc823902372db99363e12d406918.svg",
-    "main.835747db.css.map": "/jukrassic-pork/static/css/main.835747db.css.map",
-    "main.a54ef99a.js.map": "/jukrassic-pork/static/js/main.a54ef99a.js.map",
-    "700.f2fde61c.chunk.css.map": "/jukrassic-pork/static/css/700.f2fde61c.chunk.css.map",
-    "700.7e016f31.chunk.js.map": "/jukrassic-pork/static/js/700.7e016f31.chunk.js.map",
+    "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
+    "main.ec52d032.css.map": "/jukrassic-pork/static/css/main.ec52d032.css.map",
+    "main.d11d1d1a.js.map": "/jukrassic-pork/static/js/main.d11d1d1a.js.map",
+    "296.a6fe41c0.chunk.css.map": "/jukrassic-pork/static/css/296.a6fe41c0.chunk.css.map",
+    "296.9d504b64.chunk.js.map": "/jukrassic-pork/static/js/296.9d504b64.chunk.js.map",
     "943.e0b48c83.chunk.css.map": "/jukrassic-pork/static/css/943.e0b48c83.chunk.css.map",
     "943.3d001449.chunk.js.map": "/jukrassic-pork/static/js/943.3d001449.chunk.js.map",
     "518.8b1936e2.chunk.js.map": "/jukrassic-pork/static/js/518.8b1936e2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.835747db.css",
-    "static/js/main.a54ef99a.js"
+    "static/css/main.ec52d032.css",
+    "static/js/main.d11d1d1a.js"
   ]
 }
