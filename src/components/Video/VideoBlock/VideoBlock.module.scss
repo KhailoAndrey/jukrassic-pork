@@ -1,47 +1,66 @@
 .videoBlock {
   text-align: center;
+  margin-top: 76px;
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @media screen and (max-width: 1440px) {
+    &:nth-child(n + 1) {
+      margin-top: 52px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &:nth-child(n + 1) {
+      margin-top: 32px;
+    }
+  }
+
   iframe {
     width: 840px;
     height: 472px;
 
     @media screen and (max-width: 1440px) {
-      margin-top: 52px;
       width: 701px;
       height: 392px;
     }
 
     @media screen and (max-width: 768px) {
-      margin-top: 32px;
       width: 343px;
       height: 200px;
     }
+
     @media screen and (max-width: 375px) {
       width: 80vw;
       aspect-ratio: 16 / 9;
     }
   }
+}
 
-  h3 {
-    font-size: 28px;
-    font-family: Mulish;
-    font-weight: 700;
-    line-height: 1.29;
-    text-transform: uppercase;
-    text-align: center;
-    color: var(--main-text-clr, #dadada);
+h3 {
+  font-size: 28px;
+  font-family: Mulish;
+  font-weight: 700;
+  line-height: 1.29;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 16px;
+  color: var(--main-text-clr, #dadada);
 
-    @media screen and (max-width: 1440px) {
-      font-size: 24px;
-      line-height: 1.17;
-    }
+  @media screen and (max-width: 1440px) {
+    margin-top: 12px;
+    font-size: 24px;
+    line-height: 1.17;
+  }
 
-    @media screen and (max-width: 768px) {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.2;
-    }
-    @media screen and (max-width: 375px) {
-      font-size: 5vw;
-    }
+  @media screen and (max-width: 768px) {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 5vw;
   }
 }
