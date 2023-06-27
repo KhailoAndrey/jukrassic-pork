@@ -1,21 +1,16 @@
-.lrtext {
-  width: auto;
-
+.latestReleasesText {
   font-family: 'Mulish';
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
 
   color: var(--neutral-dark-text-clr);
 
-  @media screen and (min-width: 374.9px) {
-    margin-bottom: 0px;
-  }
-
   @media screen and (min-width: 767.9px) {
     font-size: 20px;
   }
 
-  @media screen and (max-width: 1439.9px) {
+  @media screen and (min-width: 1439.9px) {
     width: 840px;
 
     font-size: 22px;
