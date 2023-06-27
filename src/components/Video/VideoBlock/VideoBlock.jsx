@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import scss from './VideoBlock.module.scss';
 
 function VideoBlock({ src, title }) {
@@ -16,3 +17,8 @@ function VideoBlock({ src, title }) {
 }
 
 export default VideoBlock;
+
+VideoBlock.propTypes = {
+  src: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
