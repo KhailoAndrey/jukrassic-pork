@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/jukrassic-pork/static/css/main.ec52d032.css",
-    "main.js": "/jukrassic-pork/static/js/main.d11d1d1a.js",
-    "static/css/296.a6fe41c0.chunk.css": "/jukrassic-pork/static/css/296.a6fe41c0.chunk.css",
-    "static/js/296.9d504b64.chunk.js": "/jukrassic-pork/static/js/296.9d504b64.chunk.js",
+    "main.js": "/jukrassic-pork/static/js/main.fc43fdfc.js",
+    "static/css/296.a246719b.chunk.css": "/jukrassic-pork/static/css/296.a246719b.chunk.css",
+    "static/js/296.207b50c8.chunk.js": "/jukrassic-pork/static/js/296.207b50c8.chunk.js",
     "static/css/943.e0b48c83.chunk.css": "/jukrassic-pork/static/css/943.e0b48c83.chunk.css",
     "static/js/943.3d001449.chunk.js": "/jukrassic-pork/static/js/943.3d001449.chunk.js",
     "static/js/518.8b1936e2.chunk.js": "/jukrassic-pork/static/js/518.8b1936e2.chunk.js",
@@ -18,15 +18,15 @@
     "static/media/Vector.svg": "/jukrassic-pork/static/media/Vector.2ed1dc823902372db99363e12d406918.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
     "main.ec52d032.css.map": "/jukrassic-pork/static/css/main.ec52d032.css.map",
-    "main.d11d1d1a.js.map": "/jukrassic-pork/static/js/main.d11d1d1a.js.map",
-    "296.a6fe41c0.chunk.css.map": "/jukrassic-pork/static/css/296.a6fe41c0.chunk.css.map",
-    "296.9d504b64.chunk.js.map": "/jukrassic-pork/static/js/296.9d504b64.chunk.js.map",
+    "main.fc43fdfc.js.map": "/jukrassic-pork/static/js/main.fc43fdfc.js.map",
+    "296.a246719b.chunk.css.map": "/jukrassic-pork/static/css/296.a246719b.chunk.css.map",
+    "296.207b50c8.chunk.js.map": "/jukrassic-pork/static/js/296.207b50c8.chunk.js.map",
     "943.e0b48c83.chunk.css.map": "/jukrassic-pork/static/css/943.e0b48c83.chunk.css.map",
     "943.3d001449.chunk.js.map": "/jukrassic-pork/static/js/943.3d001449.chunk.js.map",
     "518.8b1936e2.chunk.js.map": "/jukrassic-pork/static/js/518.8b1936e2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ec52d032.css",
-    "static/js/main.d11d1d1a.js"
+    "static/js/main.fc43fdfc.js"
   ]
 }
