@@ -3,14 +3,14 @@ import VideoChapter from './VideoChapter/VideoChapter';
 import VideoContainer from './VideoContainer/VideoContainer';
 
 function Video() {
-  const lenguage = {
+  const language = {
     ua: 'відео',
     uk: 'video',
   };
   return (
     <div className={scss.video}>
       <div className={scss.container}>
-        <VideoChapter VChapter={lenguage ? lenguage.uk : lenguage.ua} />
+        <VideoChapter VChapter={language ? language.uk : language.ua} />
         <VideoContainer />
       </div>
     </div>

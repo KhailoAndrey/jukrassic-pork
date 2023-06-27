@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import scss from './VideoChapter.module.scss';
 
 function VideoChapter({ VChapter }) {
@@ -5,3 +6,7 @@ function VideoChapter({ VChapter }) {
 }
 
 export default VideoChapter;
+
+VideoChapter.propTypes = {
+  VChapter: PropTypes.string.isRequired,
+};

@@ -1,19 +1,20 @@
-.lrchapter {
-  text-transform: uppercase;
+.latestReleasesChapter {
   font-family: 'Oswald';
   font-size: 40px;
   font-weight: 600;
   line-height: 1.3;
+  text-transform: uppercase;
 
-  @media screen and (min-width: 374.9px) {
-    margin-bottom: 16px;
-  }
+  margin-bottom: 16px;
 
   @media screen and (min-width: 767.9px) {
+    margin-bottom: 24px;
     font-size: 44px;
   }
 
-  @media screen and (max-width: 1439.9px) {
-    margin-bottom: 24px;
+  @media screen and (min-width: 1439.9px) {
+    margin-bottom: 0;
+    font-size: 56px;
+    line-height: 1.14;
   }
 }
