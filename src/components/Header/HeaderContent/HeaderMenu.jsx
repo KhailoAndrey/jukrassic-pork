@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../images/Logo.svg';
 import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
 
-
 const handleScrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -14,23 +13,19 @@ const handleScrollToTop = () => {
 
 function HeaderMenu() {
   return (
-  <div className={scss.header_menu}>
-    <button className={scss.logo} onClick={handleScrollToTop}>
-      <Logo />
-    </button>
-    <NavLink
-      to="/music"
-      // activeClassName={scss.link}
-      className={scss.link}
-    >
-      <p>Listen to music</p>
-      <MdArrowForward style={{ verticalAlign: 'middle', fontSize: '24px' }} />
-    </NavLink>
-    <button className={scss.burger_btn}>
-      <Burger />
-    </button>
-        </div>
-  )
+    <div className={scss.header_menu}>
+      <button className={scss.logo} onClick={handleScrollToTop}>
+        <Logo />
+      </button>
+      <NavLink to="/music" className={scss.link}>
+        <p>Listen to music</p>
+        <MdArrowForward style={{ verticalAlign: 'middle', fontSize: '24px' }} />
+      </NavLink>
+      <button className={scss.burger_btn}>
+        <Burger />
+      </button>
+    </div>
+  );
 }
 
 export default HeaderMenu;
