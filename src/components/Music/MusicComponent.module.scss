@@ -1,8 +1,6 @@
 .musicComponent {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: var(--neutral-dark-bckg-clr-1);
+  padding: 50px 0px;
+
+  color: var(--main-text-clr);
+  background-color: var(--neutral-dark-bckg-clr-1);
 }
