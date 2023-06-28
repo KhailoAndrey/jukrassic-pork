@@ -13,6 +13,7 @@
   }
 }
 .band{
+   position: relative;
   @media screen and (min-width:1440px) {
     display: flex;
     gap:72px;
@@ -26,6 +27,7 @@
   text-transform: uppercase;
   color:var(--add-light-text-clr-2);
   
+  
   @media  screen and (min-width:768px) {
     font-size: 44px;
   }
@@ -38,7 +40,7 @@
 
 .info{
   margin-top: 16px;
-  position: relative;
+ 
 
   @media screen and (min-width:768px) {
       margin-top: 24px;
@@ -219,12 +221,18 @@
   }
 
   &.defaultBandPosition {
-    top: 953px;
+    top: 984px;
   padding: 8px;
   border: 1px solid var(--neutral-dark-text-clr);
   background-color: transparent;
   color:var(--neutral-dark-text-clr);
   
+  @media screen and (min-width:768px) {
+    top:712px;
+  }
+  @media screen and (min-width:1440px) {
+    top:776px;
+  }
   &:hover{
     color: var(--main-accent-text-clr);
     border: 1px solid var(--main-accent-text-clr);
@@ -242,11 +250,21 @@
 .arrowNavigationLeft {
   @extend .arrowNavigation;
   left: 16px;
+  @media screen and (min-width:768px) {
+    left:282px;
+  }
+  @media screen and (min-width:1440px) {
+    left:832px;
+  }
 }
 
 .arrowNavigationRight {
   @extend .arrowNavigation;
   left: 64px;
-
-  
+  @media screen and (min-width:768px) {
+    left:331px;
+  }
+  @media screen and (min-width:1440px) {
+    left:881px;
+  }
 }
