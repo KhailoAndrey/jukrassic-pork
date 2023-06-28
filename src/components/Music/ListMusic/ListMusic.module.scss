@@ -1,0 +1,20 @@
+.listMusic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 0px 0px 24px 0px;
+
+  @media screen and (min-width: 767.9px) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    padding: 0px 0px 40px 0px;
+    max-width: 840px;
+    margin-left: auto;
+  }
+}
