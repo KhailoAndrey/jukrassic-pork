@@ -217,7 +217,7 @@
 .header_menu {
   @media screen and (min-width: 1439.9px) {
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     position: fixed;
     top: 720px;
     z-index: 100;
