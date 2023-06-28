@@ -1,6 +1,7 @@
 import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
-import { MdArrowForward } from 'react-icons/md';
+import HeaderMenu from './HeaderMenu';
+
 // import SwiperBox from 'components/Swiper/Swiper';
 
 function HeaderContent() {
@@ -11,11 +12,13 @@ function HeaderContent() {
           <Icon />
         </button>
         <div className={scss.header_title_container}>
-          <div className={scss.header_title}>
-            <p className={scss.header_title_text}>jukrassic pork</p>
-          </div>
-          <div className={scss.header_subTitle}>
-            <p className={scss.header_subtitle_text}>jukrassic pork</p>
+          <div>
+            <div className={scss.header_title}>
+              <p className={scss.header_title_text}>jukrassic pork</p>
+            </div>
+            <div className={scss.header_subTitle}>
+              <p className={scss.header_subtitle_text}>official website</p>
+            </div>
           </div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
@@ -25,23 +28,8 @@ function HeaderContent() {
             </p>
           </div>
         </div>
-        <button className={scss.header_btn_text}>
-          <p>Listen to music</p>
-          <MdArrowForward
-            style={{ verticalAlign: 'middle', fontSize: '24px' }}
-          />
-        </button>
-        <div
-          style={{
-            width: '100%',
-            height: '264px',
-            // paddingBottom: '16px',
-            backgroundColor: '#c3ffa3',
-            textAlign: 'center',
-          }}
-        >
-          swiper box
-        </div>
+        <HeaderMenu />
+        <div className={scss.swiper_box}>swiper box</div>
       </div>
     </section>
   );
