@@ -1,0 +1,22 @@
+.iconPlay {
+  display: block;
+  width: 64px;
+  height: 64px;
+  fill: var(--main-text-clr);
+
+  transition: fill var(--default-animation);
+
+  @media screen and (max-width: 767.9px) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.iconContainer {
+  display: inline-block;
+}
+
+.iconContainer:hover .iconPlay,
+.iconContainer:focus .iconPlay {
+  fill: var(--main-accent-text-clr);
+}

@@ -1,61 +1,82 @@
+import React, { useState } from 'react';
+import sunImage from '../../../images/Latest-Releases/jpg/sun.jpg';
+import pathImage from '../../../images/Latest-Releases/jpg/path.jpg';
+import LatestReleaesIconPlay from './LatestReleaesIconPlay/LatestReleaesIconPlay';
+import scss from './LatestReleasesPlayers.module.scss';
 import ReactPlayer from 'react-player';
 
-import scss from './LatestReleasesPlayers.module.scss';
-
 function LatestReleasesPlayers() {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
+
+  const handleVideoPlay = index => {
+    setCurrentVideoIndex(index);
+  };
+
+  const handleVideoPause = () => {
+    setCurrentVideoIndex(null);
+  };
+
   return (
     <ul className={scss.listPlayers}>
       <li className={scss.playerBox}>
         <ReactPlayer
           className={scss.reactPlayer}
-          //   light={
-          // <img src="../../../images/Latest-Releases/jpg/sun.jpg" alt="Sun" />
-          //   }
-          url="https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata"
+          light={sunImage}
+          url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="343px"
           height="252px"
+          playIcon={
+            <LatestReleaesIconPlay
+              style={{
+                zIndex: 999,
+              }}
+            />
+          }
+          playing={currentVideoIndex === 0}
+          onPlay={() => handleVideoPlay(0)}
+          onPause={handleVideoPause}
+          style={{
+            filter: currentVideoIndex !== 1 ? 'brightness(50%)' : 'none',
+          }}
         />
+        <p
+          className={`${scss.textPlayer} ${
+            currentVideoIndex === 0 ? scss.hiddenText : ''
+          }`}
+        >
+          сонце/sun
+        </p>
       </li>
       <li className={scss.playerBox}>
         <ReactPlayer
           className={scss.reactPlayer}
-          //   light={
-          // <img src="../../../images/Latest-Releases/jpg/sun.jpg" alt="Sun" />
-          //   }
-          url="https://soundcloud.com/glennmorrison/beethoven-moonlight-sonata"
+          light={pathImage}
+          url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="343px"
           height="252px"
+          playIcon={
+            <LatestReleaesIconPlay
+              style={{
+                zIndex: 999,
+              }}
+            />
+          }
+          playing={currentVideoIndex === 1}
+          onPlay={() => handleVideoPlay(1)}
+          onPause={handleVideoPause}
+          style={{
+            filter: currentVideoIndex !== 1 ? 'brightness(50%)' : 'none',
+          }}
         />
+        <p
+          className={`${scss.textPlayer} ${
+            currentVideoIndex === 1 ? scss.hiddenText : ''
+          }`}
+        >
+          стежка/path
+        </p>
       </li>
     </ul>
-    //     <picture>
-    //   <source
-    //     srcset="
-    //               /src/images/hotel/hotel_room/hotel_room_desk_1_460_1x.jpg 1x,
-    //               /src/images/hotel/hotel_room/hotel_room_desk_1_460_2x.jpg 2x
-    //             "
-    //     media="(min-width: 1280px)"
-    //   />
-    //   <source
-    //     srcset="
-    //               /src/images/hotel/hotel_room/hotel_room_tab_1_400_1x.jpg 1x,
-    //               /src/images/hotel/hotel_room/hotel_room_tab_1_400_2x.jpg 2x
-    //             "
-    //     media="(min-width: 1024px)"
-    //   />
-    //   <source
-    //     srcset="
-    //               /src/images/hotel/hotel_room/hotel_room_mob_1_244_1x.jpg 1x,
-    //               /src/images/hotel/hotel_room/hotel_room_mob_1_244_2x.jpg 2x
-    //             "
-    //     media="(max-width: 1023.98px)"
-    //   />
-    //   <img
-    //     src="/src/images/hotel/hotel_room/hotel_room_mob_1_244_1x.jpg"
-    //     alt="Double room lux"
-    //     class="hotel-room-image hotel-room-img three-adult"
-    //   />
-    // </picture>
   );
 }
 

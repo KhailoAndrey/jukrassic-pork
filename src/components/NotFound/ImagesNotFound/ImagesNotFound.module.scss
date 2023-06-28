@@ -1,0 +1,25 @@
+.boxImageNotFound {
+  margin-bottom: 52px;
+  width: 320px;
+  height: 135px;
+
+  background-image: url('../../../images/Not-Found/404-page-phone.png');
+  background-size: 320px 135px;
+
+  @media screen and (min-width: 768px) {
+    width: 704px;
+    height: 282px;
+
+    background-image: url('../../../images/Not-Found/404-page-tablet.png');
+    background-size: 768px 282px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    margin-bottom: 76px;
+    width: 840px;
+    height: 336px;
+
+    background-image: url('../../../images/Not-Found/404-page-desktop.png');
+    background-size: 840px 336px;
+  }
+}

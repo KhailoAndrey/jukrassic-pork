@@ -1,52 +1,87 @@
 .bannerContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 156px;
+  padding: 52px 0;
+  overflow: hidden;
+  background-color: var(--neutral-dark-bckg-clr-1);
+
+  @media screen and (min-width: 767.9px) {
+    height: 212px;
+    padding: 72px 0;
+  }
+
+  @media screen and (min-width: 1439.9px) {
     height: 284px;
-    overflow: hidden;
-    background-color: var(--neutral-dark-bckg-clr-1);
+    padding: 100px 0;
+  }
 }
 
 .bannerTextContainer {
-    display: flex;
-    align-items: center;
-    max-width: 1440px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 52px;
+  padding: 8px 0;
+  background-color: var(--main-accent-text-clr);
+
+  @media screen and (min-width: 767.9px) {
+    height: 68px;
+    padding: 12px 0;
+  }
+
+  @media screen and (min-width: 1439.9px) {
     height: 84px;
-    background-color: var(--main-accent-text-clr);
+    padding: 16px 0;
+  }
 }
 
 .bannerTextContainer span {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-family: Oswald;
 }
 
 .bannerText {
-    align-items: center;
-    display: inline-block;
-    width: 100%;
-    white-space: nowrap;
-    color: var(--neutral-dark-bckg-clr-1);
-    font-weight: 600;
+  align-items: center;
+  display: inline-block;
+  width: 100%;
+  white-space: nowrap;
+  color: var(--neutral-dark-bckg-clr-1);
+  font-weight: 600;
+  font-size: 28px;
+  // line-height: 36px;
+  letter-spacing: 0%;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 767.9px) {
+    font-size: 36px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
     font-size: 44px;
-    letter-spacing: 0%;
-    text-transform: uppercase;
+  }
 }
 
 .bannerText .icon {
+  max-width: 36px;
+  max-height: 36px;
+  margin: 0 24px;
+  padding: 3px;
+
+  @media screen and (min-width: 767.9px) {
+    max-width: 44px;
+  max-height: 44px;
+padding: 3.67px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
     max-width: 52px;
-    max-height: 52px;
-    margin: 0 24px;
-    padding: 4px;
-}
+  max-height: 52px;
+  padding: 4.33px;
 
-@keyframes bannerAnimation {
-    0% {
-        transform: translateX(0%);
-    }
-
-    100% {
-        transform: translateX(-62%);
-    }
+  }
 }
