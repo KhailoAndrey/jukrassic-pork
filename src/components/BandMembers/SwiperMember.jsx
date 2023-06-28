@@ -6,49 +6,29 @@ import 'swiper/scss/navigation';
 import 'swiper/scss/scrollbar';
 
 import s from './BandMembers.module.scss';
-import photo from '../../images/IMG.png';
-import photoT from '../../images/photoT.png';
-import photoD from '../../images/photoD.png';
+
 const SwiperMember = ({ bandMembers }) => {
   return (
     <Swiper
       // className={`mySwiper ${s.list}`}
       modules={[Navigation, Scrollbar]}
       navigation
+      spaceBetween={5}
       scrollbar={{ draggable: true }}
       grabCursor={true}
     >
       {bandMembers?.map((member, i) => (
         <SwiperSlide key={member.id}>
-          {/* <img
-              src={photo}
-              alt="VYacheslav"
-              srcSet={photo}
-              width={358}
-              height={440}
-              className={s.member_photo}
-            /> */}
           <div className={s.member}>
-            <picture className={s.member_photo}>
-              <source
-                srcSet={photoD}
-                media="(min-width: 1440px)"
-                type="image/png"
-              />
-              <source
-                srcSet={photoT}
-                media="(min-width: 768px)"
-                type="image/png"
-              />
-              <source
-                srcSet={photo}
-                media="(max-width: 767px)"
-                type="image/png"
-              />
-              <img src={photo} alt="VYacheslav" />
-            </picture>
+            <img
+              src={member.photo}
+              alt={member.fullName}
+              srcSet={member.photo}
+              // sizes="(min-width: 1440px) 408px, (min-width: 768px) 340px, (min-width: 343px) 340px"
+              className={s.member_photo}
+            />
             <div className={s.member_info}>
-              <h3 className={s.member_name}> VYacheslav /ZMEARK/ Lozowy</h3>
+              <h3 className={s.member_name}> {member.fullName}</h3>
               <p className={s.member_position}>{member.position}</p>
               <p className={s.member_description}>{member.about}</p>
             </div>
