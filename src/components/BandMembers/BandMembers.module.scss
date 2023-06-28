@@ -1,6 +1,7 @@
 .bandMembers {
   padding-top: 16px;
-  padding-bottom: 16px;
+  padding-bottom: 148px;
+  // position: relative;
   background-color: var(--neutral-dark-bckg-clr-1);
   @media screen and (min-width:768px) {
     padding-top: 24px;
@@ -31,12 +32,13 @@
   @media screen and (min-width:1440px) {
     font-size: 56px;
     line-height: 1.1428;
-  white-space: nowrap;
+    white-space: nowrap;
   }
 }
 
 .info{
   margin-top: 16px;
+  position: relative;
 
   @media screen and (min-width:768px) {
       margin-top: 24px;
@@ -75,7 +77,9 @@
 //   width: 100%;
 //   overflow: hidden;
 // }
-
+// .list{
+  // position: relative;
+// }
 .member {
   width: auto;
     flex-shrink: 0;
@@ -91,7 +95,6 @@
   height:422px;
   object-fit: cover;
   width: 100%;
-  // height: 100%;
 
   @media screen and (min-width:768px) {
     width:340px;
@@ -107,7 +110,6 @@
     background-color: var(--neutral-dark-bckg-clr-3);
 
     @media screen and (min-width:768px) {
-      // margin-top: 52px;
       padding: 32px 32px 0 32px;
     }
     @media screen and (min-width:1440px) {
@@ -173,25 +175,56 @@
     }
   }
 }
-.wrap_btn{
-  padding-top: 44px;
-  padding-bottom: 19px;
-  @media screen and (min-width:768px) {
-    padding-top: 12px;
-    padding-bottom: 0;
+// .wrap_btn{
+//   padding-top: 44px;
+//   padding-bottom: 19px;
+//   @media screen and (min-width:768px) {
+//     padding-top: 12px;
+//     padding-bottom: 0;
+//   }
+//   @media screen and (min-width:768px) {
+//     padding-top: 16px;
+//   }
+// }
+// .btn{
+//   padding: 8px;
+//   border: 1px solid var(--neutral-dark-text-clr);
+//   background-color: transparent;
+//   color:var(--neutral-dark-text-clr);
+//   &:not(:last-child) {
+//     margin-right: 8px;
+//   }
+//   &:hover{
+//     color: var(--main-accent-text-clr);
+//     border: 1px solid var(--main-accent-text-clr);
+//     cursor: pointer;
+//   }
+//   &:focus{
+//     color: var(--main-accent-text-clr);
+//     border: 1px solid var(--main-accent-text-clr);
+//     cursor: pointer;
+//   }
+// }
+
+.arrowNavigation {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  cursor: pointer;
+
+  &:global(.swiper-button-disabled) {
+    opacity: 0.5;
+    cursor: auto;
+    pointer-events: none;
   }
-  @media screen and (min-width:768px) {
-    padding-top: 16px;
-  }
-}
-.btn{
+
+  &.defaultBandPosition {
+    top: 953px;
   padding: 8px;
   border: 1px solid var(--neutral-dark-text-clr);
   background-color: transparent;
   color:var(--neutral-dark-text-clr);
-  &:not(:last-child) {
-    margin-right: 8px;
-  }
+  
   &:hover{
     color: var(--main-accent-text-clr);
     border: 1px solid var(--main-accent-text-clr);
@@ -202,5 +235,18 @@
     border: 1px solid var(--main-accent-text-clr);
     cursor: pointer;
   }
+  
+  }
 }
 
+.arrowNavigationLeft {
+  @extend .arrowNavigation;
+  left: 16px;
+}
+
+.arrowNavigationRight {
+  @extend .arrowNavigation;
+  left: 64px;
+
+  
+}

@@ -3,9 +3,6 @@ import { memberApi } from './service';
 
 import s from './BandMembers.module.scss';
 import SwiperMember from './SwiperMember';
-// import photo from '../../images/IMG.png';
-// import photoT from '../../images/photoT.png';
-// import photoD from '../../images/photoD.png';
 
 const BandMembers = () => {
   const [bandMembers, setBandMembers] = useState([]);
@@ -38,7 +35,11 @@ const BandMembers = () => {
             is just the creation of good music, a bit heavy but spiced by some
             substantial portion of electronic.
           </p>
-          {isLoading ? 'Loading' : <SwiperMember bandMembers={bandMembers} />}
+          {isLoading ? (
+            'Loading...'
+          ) : (
+            <SwiperMember bandMembers={bandMembers} />
+          )}
         </div>
       </div>
     </section>
