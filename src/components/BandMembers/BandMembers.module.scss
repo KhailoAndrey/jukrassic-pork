@@ -41,6 +41,7 @@
   }
     @media screen and (min-width:1440px) {
       margin-top: 0;
+      overflow: hidden;
     }
 
   &_text{
@@ -112,6 +113,7 @@
     @media screen and (min-width:1440px) {
       // margin-top: 76px;
       padding: 40px 40px 0 40px;
+      
     }
   }
   &_name{
