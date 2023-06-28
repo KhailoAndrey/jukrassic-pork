@@ -4,7 +4,7 @@
 import scss from './Footer.module.scss';
 
 function Footer() {
-  return <div className={scss.footer}>Footer</div>;
+  return <section className={scss.footer}>Footer</section>;
 }
 
 export default Footer;
