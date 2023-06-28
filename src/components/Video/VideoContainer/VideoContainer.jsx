@@ -5,7 +5,6 @@ function VideoContainer() {
   const track = [
     {
       src: 'CB9-SAhlUCY',
-      image: '',
       title: 'Стежка/Path (Official video 2023)',
     },
     {

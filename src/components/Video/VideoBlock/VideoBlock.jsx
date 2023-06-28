@@ -5,10 +5,10 @@ import { ReactComponent as BtnYoutube } from '../../../images/btn_youtube.svg';
 import { useState } from 'react';
 
 function VideoBlock({ src, title }) {
-  const [isPlay, setisPlay] = useState(true);
+  const [isPlay, setIsPlay] = useState(true);
 
   function handleClick() {
-    setisPlay(!isPlay);
+    setIsPlay(!isPlay);
   }
 
   return (
@@ -16,14 +16,13 @@ function VideoBlock({ src, title }) {
       <div className={scss.videoBlock_cover}>
         <ReactPlayer
           className={scss.videoBlock_track}
-          playIcon={<BtnYoutube className={scss.videoBlock_youtube} />}
+          playIcon={<BtnYoutube />}
           light={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
           url={`https://www.youtube.com/embed/${src}`}
-          width={840}
-          height={472}
           playing={isPlay}
           onPlay={handleClick}
           onPause={handleClick}
+          onReady={handleClick}
           controls={false}
         />
       </div>

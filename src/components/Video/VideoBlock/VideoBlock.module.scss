@@ -19,37 +19,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  // width: 840px;
-  height: 472px;
-  overflow: hidden;
-  background-size: cover;
-}
+  height: 100px;
 
-.videoBlock_youtube {
-  position: absolute;
-  size: 120px;
-  z-index: 71;
-}
+  @media screen and (min-width: 375px) {
+    height: 200px;
+  }
 
-.videoBlock_image {
-  // background: linear-gradient(
-  //     180deg,
-  //     rgba(19, 19, 19, 0.24) 0%,
-  //     rgba(19, 19, 19, 0.8) 100%
-  //   )
-  // center center no-repeat;
-  position: absolute;
+  @media screen and (min-width: 768px) {
+    height: 392px;
+  }
 
-  z-index: 71;
-  // background-size: cover;
+  @media screen and (min-width: 1440px) {
+    height: 472px;
+  }
 }
 
 .videoBlock_track {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: 16/9;
-  position: absolute;
+  width: 172px !important;
+  height: 100px !important;
+
+  @media screen and (min-width: 375px) {
+    width: 343px !important;
+    height: 200px !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 704px !important;
+    height: 392px !important;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 840px !important;
+    height: 472px !important;
+  }
 }
 
 .videoBlock_track_title {
