@@ -19,25 +19,19 @@ function LatestReleasesPlayers() {
   return (
     <ul className={scss.listPlayers}>
       <li className={scss.playerBox}>
+        <div className={scss.dimmedOverlay}></div>
         <ReactPlayer
-          className={scss.reactPlayer}
+          className={`${scss.reactPlayer} ${
+            currentVideoIndex === 0 ? scss.activePlayer : ''
+          }`}
           light={sunImage}
           url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="343px"
           height="252px"
-          playIcon={
-            <LatestReleaesIconPlay
-              style={{
-                zIndex: 999,
-              }}
-            />
-          }
+          playIcon={<LatestReleaesIconPlay className={scss.icon} />}
           playing={currentVideoIndex === 0}
           onPlay={() => handleVideoPlay(0)}
           onPause={handleVideoPause}
-          style={{
-            filter: currentVideoIndex !== 1 ? 'brightness(50%)' : 'none',
-          }}
         />
         <p
           className={`${scss.textPlayer} ${
@@ -48,25 +42,19 @@ function LatestReleasesPlayers() {
         </p>
       </li>
       <li className={scss.playerBox}>
+        <div className={scss.dimmedOverlay}></div>
         <ReactPlayer
-          className={scss.reactPlayer}
+          className={`${scss.reactPlayer} ${
+            currentVideoIndex === 0 ? scss.activePlayer : ''
+          }`}
           light={pathImage}
           url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="343px"
           height="252px"
-          playIcon={
-            <LatestReleaesIconPlay
-              style={{
-                zIndex: 999,
-              }}
-            />
-          }
+          playIcon={<LatestReleaesIconPlay className={scss.icon} />}
           playing={currentVideoIndex === 1}
           onPlay={() => handleVideoPlay(1)}
           onPause={handleVideoPause}
-          style={{
-            filter: currentVideoIndex !== 1 ? 'brightness(50%)' : 'none',
-          }}
         />
         <p
           className={`${scss.textPlayer} ${

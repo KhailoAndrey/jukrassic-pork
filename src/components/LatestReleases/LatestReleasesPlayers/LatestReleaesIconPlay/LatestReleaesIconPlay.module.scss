@@ -1,5 +1,10 @@
+.iconContainer {
+  display: inline-block;
+}
+
 .iconPlay {
   display: block;
+
   width: 64px;
   height: 64px;
   fill: var(--main-text-clr);
@@ -10,10 +15,6 @@
     width: 52px;
     height: 52px;
   }
-}
-
-.iconContainer {
-  display: inline-block;
 }
 
 .iconContainer:hover .iconPlay,
