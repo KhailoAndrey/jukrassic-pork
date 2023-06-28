@@ -3,22 +3,28 @@
   background-color: var(--neutral-dark-bckg-clr-1);
 }
 
-.container {
-  width: 1440px;
+.video_container {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 24px 84px 160px;
+  flex-direction: column;
+  margin-inline: auto;
+  padding: 16px 16px 80px;
 
-  @media screen and (max-width: 1439.9px) {
+  @media screen and (min-width: 375px) {
+    width: 375px;
+  }
+
+  @media screen and (min-width: 768px) {
     width: 768px;
-    flex-direction: column;
-    align-items: flex-start;
     padding: 24px 32px 112px;
   }
 
-  @media screen and (max-width: 767.9px) {
-    width: 375px;
-    padding: 16px 16px 80px;
+  @media screen and (min-width: 1440px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 1440px;
+    padding: 24px 84px 160px;
   }
 }

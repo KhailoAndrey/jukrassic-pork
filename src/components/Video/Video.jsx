@@ -10,7 +10,7 @@ function Video() {
 
   return (
     <section className={scss.video}>
-      <div className={scss.container}>
+      <div className={scss.video_container}>
         <VideoChapter VChapter={language ? language.uk : language.ua} />
         <VideoContainer />
       </div>
