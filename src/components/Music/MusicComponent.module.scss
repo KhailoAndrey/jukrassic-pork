@@ -3,3 +3,18 @@
 
   background-color: var(--neutral-dark-bckg-clr-1);
 }
+
+.boxChapterText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 52px;
+
+  @media screen and (min-width: 1439.9px) {
+    flex-direction: initial;
+    justify-content: space-between;
+
+    margin-bottom: 76px;
+  }
+}

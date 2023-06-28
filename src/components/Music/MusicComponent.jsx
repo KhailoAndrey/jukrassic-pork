@@ -12,8 +12,10 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
-        <ChapterMusic chapterMusic="music" />
-        <TextMusic textMusic={textMusic} />
+        <div className={scss.boxChapterText}>
+          <ChapterMusic chapterMusic="music" />
+          <TextMusic textMusic={textMusic} />
+        </div>
         <ListMusic listArrayMusic={listArrayMusic} />
         <ButtonShowMoreMusic valueShowMoreMusic="Show more" />
       </div>

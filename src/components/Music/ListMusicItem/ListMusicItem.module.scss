@@ -1,6 +1,14 @@
+.listMusicItem {
+  width: 310px;
+
+  @media screen and (min-width: 767.9px) {
+    width: 340px;
+  }
+}
+
 .listButtonsMusic {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
 }

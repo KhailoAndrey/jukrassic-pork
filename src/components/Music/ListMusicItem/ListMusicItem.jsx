@@ -11,19 +11,60 @@ import imageMusic from '../../../images/Music/jpg/IMG.jpg';
 
 function ListMusicItem() {
   return (
-    <li className={scss.listMusicItem}>
-      <ImageMusic imageMusic={imageMusic} />
-      <LabelMusic labelMusic="сонце/sun" />
-      <DateReleaseText dateReleaseText="Release date: June 2023" />
-      <ul className={scss.listButtonsMusic}>
-        <li>
-          <ButtonDownloadMusic valueButton="Download" />
-        </li>
-        <li>
-          <ButtonLyricsMusic valueButton="Lyrics" />
-        </li>
-      </ul>
-    </li>
+    <>
+      <li className={scss.listMusicItem}>
+        <ImageMusic imageMusic={imageMusic} />
+        <LabelMusic labelMusic="сонце/sun" />
+        <DateReleaseText dateReleaseText="Release date: June 2023" />
+        <ul className={scss.listButtonsMusic}>
+          <li>
+            <ButtonDownloadMusic valueButton="Download" />
+          </li>
+          <li>
+            <ButtonLyricsMusic valueButton="Lyrics" />
+          </li>
+        </ul>
+      </li>
+      <li className={scss.listMusicItem}>
+        <ImageMusic imageMusic={imageMusic} />
+        <LabelMusic labelMusic="сонце/sun" />
+        <DateReleaseText dateReleaseText="Release date: June 2023" />
+        <ul className={scss.listButtonsMusic}>
+          <li>
+            <ButtonDownloadMusic valueButton="Download" />
+          </li>
+          <li>
+            <ButtonLyricsMusic valueButton="Lyrics" />
+          </li>
+        </ul>
+      </li>
+      <li className={scss.listMusicItem}>
+        <ImageMusic imageMusic={imageMusic} />
+        <LabelMusic labelMusic="сонце/sun" />
+        <DateReleaseText dateReleaseText="Release date: June 2023" />
+        <ul className={scss.listButtonsMusic}>
+          <li>
+            <ButtonDownloadMusic valueButton="Download" />
+          </li>
+          <li>
+            <ButtonLyricsMusic valueButton="Lyrics" />
+          </li>
+        </ul>
+      </li>
+      <li className={scss.listMusicItem}>
+        <ImageMusic imageMusic={imageMusic} />
+        <LabelMusic labelMusic="сонце/sun" />
+        <DateReleaseText dateReleaseText="Release date: June 2023" />
+        <ul className={scss.listButtonsMusic}>
+          <li>
+            <ButtonDownloadMusic valueButton="Download" />
+          </li>
+          <li>
+            <ButtonLyricsMusic valueButton="Lyrics" />
+          </li>
+        </ul>
+      </li>
+    </>
   );
 }
 
