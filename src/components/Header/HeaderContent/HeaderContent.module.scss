@@ -1,10 +1,26 @@
 .header {
   background-color: var(--neutral-dark-bckg-clr-1);
-padding-bottom: 16px;
+  padding-bottom: 16px;
+//   padding-top: 0;
+  @media screen and (min-width: 767.9px) {
+    padding-bottom: 32px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    padding-bottom: 24px;
+  }
 }
 
 .header_title_container {
   width: 100%;
+  @media screen and (min-width: 767.9px) {
+    // margin-top: 32px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    // margin-top: 24px;
+    display: flex;
+  }
 }
 
 .header_burger_btn {
@@ -16,12 +32,30 @@ padding-bottom: 16px;
   justify-content: center;
   background-color: var(--neutral-dark-bckg-clr-1);
   border: none;
+
+  @media screen and (min-width: 767.9px) {
+    margin-top: 24px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    display: none;
+  }
 }
 
 .header_title {
   height: 52px;
   margin-top: 24px;
   align-items: center;
+  @media screen and (min-width: 767.9px) {
+    margin-bottom: 4px;
+    margin-top: 32px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 408px;
+    height: 64px;
+    margin-top: 24px;
+  }
 }
 
 .header_title_text {
@@ -31,11 +65,30 @@ padding-bottom: 16px;
   font-weight: 600;
   font-size: 40px;
   line-height: 52px;
+
+  @media screen and (min-width: 767.9px) {
+    font-size: 44px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    font-size: 56px;
+    line-height: 64px;
+  }
 }
 
 .header_subTitle {
-//   margin: 0 16px;
+  //   margin: 0 16px;
   height: 36px;
+
+  @media screen and (min-width: 767.9px) {
+    height: 40px;
+    margin-top: 4px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    height: 44px;
+    margin-top: 8px;
+  }
 }
 
 .header_subtitle_text {
@@ -45,10 +98,27 @@ padding-bottom: 16px;
   font-size: 28px;
   font-weight: 600;
   line-height: 36px;
+
+  @media screen and (min-width: 767.9px) {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .header_body {
   margin-top: 16px;
+  @media screen and (min-width: 767.9px) {
+    margin-top: 24px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    margin-left: 24px;
+  }
 }
 
 .header_textbody {
@@ -57,14 +127,37 @@ padding-bottom: 16px;
   font-family: Mulish;
   font-weight: 600;
   line-height: 24px;
+  @media screen and (min-width: 767.9px) {
+    font-size: 20px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    font-size: 22px;
+    line-height: 28px;
+  }
 }
 
-.header_btn_text {
-    height: 48px;
-    width: 100%;
-    margin: 32px 0;
-    padding: 10px auto;
+.logo {
+  display: none;
+  @media screen and (min-width: 1439.9px) {
+    width: 60px;
+    height: 60px;
+    background-color: var(--neutral-dark-bckg-clr-3);
+    align-items: center;
+    justify-content: center;
+    display: flex;
     border: none;
+    cursor: pointer;
+  }
+}
+
+
+.link {
+  height: 48px;
+  width: 100%;
+  margin: 32px 0;
+  padding: 10px auto;
+  border: none;
   background: var(--light-text-clr);
   color: var(--neutral-dark-bckg-clr-1);
   font-size: 22px;
@@ -75,4 +168,63 @@ padding-bottom: 16px;
   align-items: center;
   display: flex;
   gap: 8px;
+  cursor: pointer;
+  text-decoration: none;
+
+  @media screen and (min-width: 767.9px) {
+    margin-top: 52px;
+    padding: 16px 32px;
+    height: 60px;
+    width: 268px;
+    font-size: 24px;
+    gap: 12px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 288px;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+.burger_btn {
+  display: none;
+  @media screen and (min-width: 1439.9px) {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border: none;
+    width: 60px;
+    height: 60px;
+    background-color: var(--neutral-dark-bckg-clr-3);
+    cursor: pointer;
+  }
+}
+
+.swiper_box {
+  width: 100%;
+  height: 264px;
+  background-color: #c3ffa3;
+  text-align: center;
+
+  @media screen and (min-width: 767.9px) {
+    height: 412px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    height: 516px;
+    width: 924px;
+    margin-right: -84px;
+    margin-left: auto;
+    margin-top: 100px; // при добавлении кнопок свайпера исправить на 44px
+  }
+}
+
+.header_menu {
+  @media screen and (min-width: 1439.9px) {
+    display: flex;
+    align-items: flex-end;
+    position: fixed;
+    top: 696px;
+    z-index: 100;
+  }
 }
