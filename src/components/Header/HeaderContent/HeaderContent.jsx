@@ -4,6 +4,8 @@ import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
 import { ReactComponent as Logo } from '../../../images/Logo.svg';
 
 import { MdArrowForward } from 'react-icons/md';
+import {  NavLink } from 'react-router-dom';
+// import { unstable_HistoryRouter } from 'react-router-dom';
 // import SwiperBox from 'components/Swiper/Swiper';
 
 const handleScrollToTop = () => {
@@ -13,7 +15,14 @@ const handleScrollToTop = () => {
   });
 };
 
+
 function HeaderContent() {
+  // const history = unstable_HistoryRouter();
+  
+  // const handleClick = () => {
+  //   history.push('/music');
+  // };
+  
   return (
     <section className={scss.header}>
       <div className="container">
@@ -41,12 +50,22 @@ function HeaderContent() {
           <button className={scss.logo} onClick={handleScrollToTop}>
             <Logo />
           </button>
-          <button className={scss.header_btn_text}>
+          <NavLink
+            to="/music"
+            // activeClassName={scss.link}
+            className={scss.link}
+          >
             <p>Listen to music</p>
             <MdArrowForward
               style={{ verticalAlign: 'middle', fontSize: '24px' }}
             />
-          </button>
+          </NavLink>
+          {/* <button className={scss.header_btn_text}>
+            <p>Listen to music</p>
+            <MdArrowForward
+              style={{ verticalAlign: 'middle', fontSize: '24px' }}
+            />
+          </button> */}
           <button className={scss.burger_btn}>
             <Burger />
           </button>

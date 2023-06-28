@@ -151,7 +151,8 @@
   }
 }
 
-.header_btn_text {
+
+.link {
   height: 48px;
   width: 100%;
   margin: 32px 0;
@@ -168,6 +169,7 @@
   display: flex;
   gap: 8px;
   cursor: pointer;
+  text-decoration: none;
 
   @media screen and (min-width: 767.9px) {
     margin-top: 52px;
