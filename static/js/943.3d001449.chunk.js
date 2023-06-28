@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkjukrassic_pork=self.webpackChunkjukrassic_pork||[]).push([[943],{8383:function(r,e,n){n.d(e,{Z:function(){return u}});var s="Footer_footer__PxxIj",t=n(184);var u=function(){return(0,t.jsx)("div",{className:s,children:"Footer"})}},2943:function(r,e,n){n.r(e);var s=n(8383),t=n(184);e.default=function(){return(0,t.jsxs)("div",{children:["Hi world! It's the MusicPage!",(0,t.jsx)(s.Z,{})]})}}}]);
-//# sourceMappingURL=943.3d001449.chunk.js.map
