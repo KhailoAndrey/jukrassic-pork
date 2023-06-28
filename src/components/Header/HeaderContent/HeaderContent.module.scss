@@ -1,6 +1,7 @@
 .header {
   background-color: var(--neutral-dark-bckg-clr-1);
   padding-bottom: 16px;
+//   padding-top: 0;
   @media screen and (min-width: 767.9px) {
     padding-bottom: 32px;
   }
@@ -13,11 +14,11 @@
 .header_title_container {
   width: 100%;
   @media screen and (min-width: 767.9px) {
-    margin-top: 32px;
+    // margin-top: 32px;
   }
 
   @media screen and (min-width: 1439.9px) {
-    margin-top: 24px;
+    // margin-top: 24px;
     display: flex;
   }
 }
@@ -47,11 +48,13 @@
   align-items: center;
   @media screen and (min-width: 767.9px) {
     margin-bottom: 4px;
+    margin-top: 32px;
   }
 
   @media screen and (min-width: 1439.9px) {
     width: 408px;
     height: 64px;
+    margin-top: 24px;
   }
 }
 
@@ -219,7 +222,7 @@
     display: flex;
     align-items: flex-end;
     position: fixed;
-    top: 720px;
+    top: 696px;
     z-index: 100;
   }
 }
