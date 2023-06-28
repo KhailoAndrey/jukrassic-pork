@@ -3,6 +3,7 @@ import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 
 import scss from './MusicComponent.module.scss';
+import HeaderMenu from 'components/Header/HeaderContent/HeaderMenu';
 
 function MusicComponent() {
   const textMusic =
@@ -11,6 +12,7 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
+        <HeaderMenu/>
         <LabelMusic labelMusic="music" />
         <TextMusic textMusic={textMusic} />
         <ListMusic listArrayMusic={listArrayMusic} />
