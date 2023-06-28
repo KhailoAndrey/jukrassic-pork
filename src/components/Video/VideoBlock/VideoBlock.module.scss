@@ -16,21 +16,40 @@
 }
 
 .videoBlock_cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  // width: 840px;
   height: 472px;
+  overflow: hidden;
+  background-size: cover;
 }
 
 .videoBlock_youtube {
+  position: absolute;
   size: 120px;
+  z-index: 71;
 }
 
 .videoBlock_image {
-  background-size: cover;
+  // background: linear-gradient(
+  //     180deg,
+  //     rgba(19, 19, 19, 0.24) 0%,
+  //     rgba(19, 19, 19, 0.8) 100%
+  //   )
+  // center center no-repeat;
+  position: absolute;
+
+  z-index: 71;
+  // background-size: cover;
 }
 
 .videoBlock_track {
   width: 100%;
   height: 100%;
   aspect-ratio: 16/9;
+  position: absolute;
 }
 
 .videoBlock_track_title {
