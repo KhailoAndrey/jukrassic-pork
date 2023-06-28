@@ -7,6 +7,7 @@
   }
 
   @media screen and (min-width: 1440px) {
+    width: 100%;
     margin-top: 76px;
     &:first-child {
       margin: 0;
@@ -14,14 +15,22 @@
   }
 }
 
-.videoBlock_track {
-  width: 100%;
-  aspect-ratio: 16/9;
+.videoBlock_cover {
+  height: 472px;
 }
 
-.ytp-large-play-button {
-  width: 100px;
-  height: 70px;
+.videoBlock_youtube {
+  size: 120px;
+}
+
+.videoBlock_image {
+  background-size: cover;
+}
+
+.videoBlock_track {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
 }
 
 .videoBlock_track_title {

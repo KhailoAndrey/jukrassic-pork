@@ -1,27 +1,24 @@
 import PropTypes from 'prop-types';
 import scss from './VideoBlock.module.scss';
-import ReactPlayer from 'react-player';
+import { ReactComponent as BtnYoutube } from '../../../images/btn_youtube.svg';
 
 function VideoBlock({ src, title }) {
   return (
     <div className={scss.videoBlock}>
-      <ReactPlayer
+      <iframe
         className={scss.videoBlock_track}
-        url={src}
-        showinfo="0"
-        modestbranding="1"
-        rel="0"
-        autohide="1"
-        color="green"
-        iv_load_policy="3"
-        // color="#00fe00"
-        // title={title}
-        // frameBorder="0"
-        enablejsapi="1"
-        // controls
-        // allow="accelerometer; autoplay; clipboard-write; ; gyroscope; picture-in-picture; web-share"
-        // allowfullscreen
+        src={`https://www.youtube.com/embed/${src}`}
+        frameBorder="0"
       />
+      <div className={scss.videoBlock_cover}>
+        <BtnYoutube className={scss.videoBlock_youtube} />
+        <img
+          className={scss.videoBlock_image}
+          src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
+          alt={title}
+        />
+      </div>
+
       <h3 className={scss.videoBlock_track_title}>{title}</h3>
     </div>
   );
