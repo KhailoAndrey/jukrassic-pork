@@ -1,9 +1,9 @@
-import LabelMusic from './LabelMusic/LabelMusic';
+import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
+import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
 
 import scss from './MusicComponent.module.scss';
-import HeaderMenu from 'components/Header/HeaderContent/HeaderMenu';
 
 function MusicComponent() {
   const textMusic =
@@ -12,10 +12,12 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
-        <HeaderMenu/>
-        <LabelMusic labelMusic="music" />
-        <TextMusic textMusic={textMusic} />
+        <div className={scss.boxChapterText}>
+          <ChapterMusic chapterMusic="music" />
+          <TextMusic textMusic={textMusic} />
+        </div>
         <ListMusic listArrayMusic={listArrayMusic} />
+        <ButtonShowMoreMusic valueShowMoreMusic="Show more" />
       </div>
     </section>
   );

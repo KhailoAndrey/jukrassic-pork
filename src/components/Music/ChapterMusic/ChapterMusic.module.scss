@@ -1,0 +1,27 @@
+.chapterMusic {
+  margin-top: 28px;
+  margin-bottom: 16px;
+
+  font-family: 'Oswald';
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  text-transform: uppercase;
+
+  color: var(--add-light-text-clr-2);
+
+  @media screen and (min-width: 767.9px) {
+    margin-top: 36px;
+    margin-bottom: 24px;
+
+    font-size: 44px;
+    line-height: 1.18;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    margin: 0;
+
+    font-size: 56px;
+    line-height: 1.14;
+  }
+}
