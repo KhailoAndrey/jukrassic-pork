@@ -8,7 +8,9 @@ import ButtonDownloadMusic from './ButtonsMusic/Download/ButtonDownloadMusic';
 import ButtonLyricsMusic from './ButtonsMusic/Lyrics/ButtonLyricsMusic';
 
 import ModalMusic from '../ModalMusic/ModalMusic';
-import ButtonModalCopy from './ButtonsMusic/ButtonModalCopy/ButtonModalCopy';
+import ModalLabelMusic from '../ModalMusic/ModalLabelMusic/ModalLabelMusic';
+import ModalTextMusic from '../ModalMusic/ModalTextMusic/ModalTextMusic';
+import ButtonModalCopy from '../ModalMusic/ButtonModalCopy/ButtonModalCopy';
 
 import scss from './ListMusicItem.module.scss';
 import imageMusic from '../../../images/Music/jpg/IMG.jpg';
@@ -19,6 +21,9 @@ function ListMusicItem() {
   const toggleModalMusic = () => {
     setShowModal(prevState => !prevState);
   };
+
+  const textModalMusic =
+    ' Багато кроків ти пройшов З надією І втілив у життя усе Омріяне Я долі буду Дякувать завжди Що вдачу мала я Тебе знайти. Завжди тримав За муром Думки і надії Ти не ховай від сонця Квіти польовії Багато кроків ти пройшов З надією І втілив у життя усе Омріяне Я долі буду Дякувать завжди Що вдачу мала я Тебе знайти. Завжди тримав За муром Думки і надії Ти не ховай від сонця Квіти польовії';
 
   return (
     <>
@@ -43,12 +48,9 @@ function ListMusicItem() {
           onCloseModal={toggleModalMusic}
           modalContent={
             <>
-              <h2>КВІТИ ПОЛЬОВІЇ</h2>
-              <p>
-                Навіщо стільки спроб Завоювати світ? Мов птаха гнати сонце З
-                заходу на схід Всі твої зусилля
-              </p>
-              <ButtonModalCopy valueButton="Copy" />
+              <ModalLabelMusic labelModalMusic="КВІТИ ПОЛЬОВІЇ" />
+              <ModalTextMusic textModalMusic={textModalMusic} />
+              <ButtonModalCopy valueButton="Copy" textToCopy={textModalMusic} />
             </>
           }
         ></ModalMusic>
