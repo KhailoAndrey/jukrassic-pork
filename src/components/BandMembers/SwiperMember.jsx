@@ -18,37 +18,37 @@ const SwiperMember = ({ bandMembers }) => {
 
   const carouselSettings = {
     spaceBetween: 5,
-
-    initialSlide: 1,
+    initialSlide: 0,
+    slidesPerView: 1,
     navigation: {
-      nextEl: `.swiper-next-arrow-gallery`,
-      prevEl: `.swiper-prev-arrow-gallery`,
+      nextEl: `.swiper-next-button`,
+      prevEl: `.swiper-prev-button`,
     },
-    modules: [Navigation, Scrollbar],
-    scrollbar: { draggable: true },
+    modules: [Scrollbar],
+    scrollbar: {
+      el: `.swiper-scrollbar-band`,
+      draggable: true,
+      // hide: true,
+      // Snaps slider position to slides when you release Scrollbar
+      // snapOnRelease: true,
+      // Size (Length) of Scrollbar Draggable Element in px
+      // dragSize: 'auto',
+    },
+
     grabCursor: true,
+    speed: 1000,
   };
 
   return (
     <>
-      <Swiper
-        // className={`mySwiper ${s.list}`}
-        // modules={[Navigation, Scrollbar]}
-        // navigation
-        // spaceBetween={5}
-        // scrollbar={{ draggable: true }}
-        // grabCursor={true}
-        {...carouselSettings}
-        className={s.list}
-      >
-        {bandMembers?.map((member, i) => (
+      <Swiper {...carouselSettings} className={s.list}>
+        {bandMembers?.map(member => (
           <SwiperSlide key={member.id}>
             <div className={s.member}>
               <img
                 src={member.photo}
                 alt={member.fullName}
                 srcSet={member.photo}
-                // sizes="(min-width: 1440px) 408px, (min-width: 768px) 340px, (min-width: 343px) 340px"
                 className={s.member_photo}
               />
               <div className={s.member_info}>
@@ -60,16 +60,21 @@ const SwiperMember = ({ bandMembers }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+      {/* Add Navigation */}
       <div
-        className={`swiper-prev-arrow-gallery ${s.arrowNavigationLeft} ${s.defaultBandPosition}`}
+        className={`swiper-prev-button ${s.arrowNavigationLeft} ${s.defaultBandPosition}`}
       >
-        <ArrowPrev />
+        <ArrowPrev className={s.arrow} />
       </div>
       <div
-        className={`swiper-next-arrow-gallery ${s.arrowNavigationRight} ${s.defaultBandPosition}`}
+        className={`swiper-next-button ${s.arrowNavigationRight} ${s.defaultBandPosition}`}
       >
-        <ArrowNext />
+        <ArrowNext className={s.arrow} />
       </div>
+      {/* Add ScrollBar */}
+      <div
+        className={`swiper-scrollbar-band ${s.swiperScrollbarBandDrag}`}
+      ></div>
     </>
   );
 };
