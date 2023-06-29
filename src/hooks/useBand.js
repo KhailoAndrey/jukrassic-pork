@@ -1,34 +1,56 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import { client, urlFor } from '../../client';
+import { client, urlFor } from '../client';
 import useLoader from './useLoader';
 
 const useBand = () => {
-  const [historyList, setHistoryList] = useState([]);
+  const [bandData, setBandData] = useState(null);
   const { isLoading, setLoading } = useLoader();
 
   useEffect(() => {
-    const query = '*[_type == band]';
+    const query = '*[_type == "band"]';
 
     setLoading(true);
 
     client
       .fetch(query)
       .then(data => {
-        const listHistory = data[2].map(el => {
-          const { name, specialization, description, bandImage } = el;
+        const formattedData = data.map(
+          ({ title, description, bandList, _id }) => {
+            return {
+              id: _id,
+              title: { en: title.en, ua: title.ua },
+              description: { en: description.en, ua: description.ua },
+              bandList: bandList.map(
+                ({ name, specialization, bandImage, descriptionList }) => {
+                  return {
+                    name: { en: name.en, ua: name.ua },
+                    specialization: {
+                      en: specialization.en,
+                      ua: specialization.ua,
+                    },
+                    bandImage: urlFor(bandImage?.asset),
+                    descriptionList: descriptionList.map(
+                      ({ description, _key }) => {
+                        return {
+                          id: _key,
+                          description: {
+                            en: description.en,
+                            ua: description.ua,
+                          },
+                        };
+                      }
+                    ),
+                  };
+                }
+              ),
+            };
+          }
+        );
 
-          return {
-            name,
-            specialization,
-            description,
-            bandImage: urlFor(bandImage?.asset),
-          };
-        });
-
-        setHistoryList(listHistory);
+        setBandData(formattedData[0]);
       })
-      .catch((error) => {
+      .catch(error => {
         setLoading(false);
       })
       .finally(() => {
@@ -36,7 +58,7 @@ const useBand = () => {
       });
   }, []);
 
-  return { isLoading, historyList };
+  return { isLoading, bandData };
 };
 
 export default useBand;
