@@ -1,19 +1,19 @@
 import React from 'react';
 import SwiperCore, { Navigation, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
-import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
-
+//swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/scrollbar';
-
+//icons
+import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
+import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
+//styles
 import s from './BandMembers.module.scss';
 
 SwiperCore.use([Navigation]);
 
-const SwiperMember = ({ bandMembers }) => {
+const SwiperMember = ({ data }) => {
   const carouselSettings = {
     spaceBetween: 5,
     initialSlide: 0,
@@ -27,33 +27,41 @@ const SwiperMember = ({ bandMembers }) => {
       el: `.swiper-scrollbar-band`,
       draggable: true,
       // hide: true,
-
-      // snapOnRelease: true,
     },
     grabCursor: true,
     speed: 1000,
   };
-
   return (
     <>
       <Swiper {...carouselSettings} className={s.list}>
-        {bandMembers?.map(member => (
-          <SwiperSlide key={member.id}>
-            <div className={s.member}>
-              <img
-                src={member.photo}
-                alt={member.fullName}
-                srcSet={member.photo}
-                className={s.member_photo}
-              />
-              <div className={s.member_info}>
-                <h3 className={s.member_name}> {member.fullName}</h3>
-                <p className={s.member_position}>{member.position}</p>
-                <p className={s.member_description}>{member.about}</p>
+        {data &&
+          data.bandList.map(member => (
+            <SwiperSlide key={member.name.en}>
+              <div className={s.member}>
+                <img
+                  src={member.bandImage}
+                  alt={member.name.en}
+                  srcSet={member.bandImage}
+                  className={s.member_photo}
+                />
+                <div className={s.member_info}>
+                  <h3 className={s.member_name}> {member.name.en}</h3>
+                  <p className={s.member_position}>
+                    {member.specialization.en}
+                  </p>
+                  <ul className={s.member_description}>
+                    {member.descriptionList.map(item => {
+                      return (
+                        <li key={item.id} className={s.member_description_item}>
+                          {item.description.en}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          ))}
       </Swiper>
       {/* Add Navigation */}
       <div
