@@ -30,7 +30,11 @@ const ModalComponent = ({ onClose }) => {
         <ModalLogo />
       </div>
       <div className={styles.navi}>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink
+          to="/#header"
+          onClick={closeModal}
+          className={styles.links}
+        >
           jukrassic pork
         </NavLink>
         <NavLink onClick={closeModal} className={styles.links}>
