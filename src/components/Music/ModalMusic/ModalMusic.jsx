@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
+import ButtonModalClose from './ButtonModalClose/ButtonModalClose';
 import scss from './ModalMusic.module.scss';
 
 const modalWindow = document.querySelector('#modal-music');
@@ -27,7 +28,13 @@ function ModalMusic({ onCloseModal, modalContent }) {
 
   return createPortal(
     <div className={scss.modalBackdrop} onClick={handleBackdropClick}>
-      <div className={scss.modalContent}>{modalContent}</div>
+      <div className={scss.modalContent}>
+        {modalContent}
+        <ButtonModalClose
+          onCloseModal={onCloseModal}
+          className={scss.buttonModalClose}
+        />
+      </div>
     </div>,
     modalWindow
   );
