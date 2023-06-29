@@ -30,7 +30,6 @@ const useFetch = (type = 'history') => {
       .fetch(query)
       .then(data => {
         const formattedData = data.map(fnsForFormat);
-        console.log(formattedData);
         setData(formattedData[0]);
       })
       .catch(error => {
@@ -41,9 +40,9 @@ const useFetch = (type = 'history') => {
       });
   }, []);
 
-  if (!arrOfProps.some(el => el === type)) {
+  if (!arrOfProps.some(el => el === type) && typeof type !== 'string') {
     return new Error(
-      `Invalid prop ${type} passed to useFetch. Expected a valid email. You can pass only ['history', 'band', 'contacts']`
+      `Invalid prop ${type} passed to useFetch. Expected a valid type and name of param. You can pass only ['history', 'band', 'contacts']`
     );
   }
 
