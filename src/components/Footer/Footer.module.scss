@@ -1,9 +1,73 @@
 .footer {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
+  font-size: 18px;
+  font-family: Mulish;
+  line-height: 24px;
+
   background-color: var(--secondary-bg-clr);
   color: var(--add-light-text-clr-2);
+
+  @media screen and (min-width: 374.9px) {
+    max-width: 100%;
+  }
+}
+
+.footer-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 52px;
+  padding-top: 16px;
+  padding-bottom: 80px;
+}
+
+.appealWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.appealTitle {
+}
+
+.addressWrap {
+  display: flex;
+  gap: 52px;
+  flex-direction: column;
+
+  font-style: normal;
+}
+
+.contactsWrap {
+  display: flex;
+  gap: 52px;
+
+  @media screen and (max-width: 374.99px) {
+    flex-direction: column;
+  }
+}
+
+.envelopIcon {
+  height: 20px;
+  width: 20px;
+
+  @media screen and (min-width: 767.9px) {
+    height: 24px;
+    width: 24px;
+  }
+}
+
+.footerLogo {
+  @media screen and (max-width: 767.9px) {
+    display: none;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 116px;
+    height: 158px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 140px;
+    height: 192px;
+  }
 }
