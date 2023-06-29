@@ -1,34 +1,36 @@
 import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
-import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
-import { ReactComponent as Logo } from '../../../images/Logo.svg';
+import HeaderMenu from './HeaderMenu';
+import { useState } from 'react';
+import ModalComponent from '../../Modal/Modal';
 
-import { MdArrowForward } from 'react-icons/md';
-import {  NavLink } from 'react-router-dom';
-// import { unstable_HistoryRouter } from 'react-router-dom';
 // import SwiperBox from 'components/Swiper/Swiper';
 
-const handleScrollToTop = () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth',
-  });
-};
-
-
 function HeaderContent() {
-  // const history = unstable_HistoryRouter();
-  
-  // const handleClick = () => {
-  //   history.push('/music');
-  // };
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.classList.add(scss.modalOpen);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.classList.remove(scss.modalOpen);
+  };
+
   return (
-    <section className={scss.header}>
+    <section id="header" className={scss.header}>
       <div className="container">
-        <button type="button" className={scss.header_burger_btn}>
+        <button
+          type="button"
+          className={scss.header_burger_btn}
+          onClick={openModal}
+        >
           <Icon />
         </button>
+        {isModalOpen && <ModalComponent onClose={closeModal} />}
+
         <div className={scss.header_title_container}>
           <div>
             <div className={scss.header_title}>
@@ -46,30 +48,7 @@ function HeaderContent() {
             </p>
           </div>
         </div>
-        <div className={scss.header_menu}>
-          <button className={scss.logo} onClick={handleScrollToTop}>
-            <Logo />
-          </button>
-          <NavLink
-            to="/music"
-            // activeClassName={scss.link}
-            className={scss.link}
-          >
-            <p>Listen to music</p>
-            <MdArrowForward
-              style={{ verticalAlign: 'middle', fontSize: '24px' }}
-            />
-          </NavLink>
-          {/* <button className={scss.header_btn_text}>
-            <p>Listen to music</p>
-            <MdArrowForward
-              style={{ verticalAlign: 'middle', fontSize: '24px' }}
-            />
-          </button> */}
-          <button className={scss.burger_btn}>
-            <Burger />
-          </button>
-        </div>
+        <HeaderMenu />
         <div className={scss.swiper_box}>swiper box</div>
       </div>
     </section>

@@ -1,8 +1,20 @@
 .musicComponent {
-  height: 100vh;
+  padding: 12px 0px 80px 0px;
+
+  background-color: var(--neutral-dark-bckg-clr-1);
+}
+
+.boxChapterText {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 40px;
-  color: var(--neutral-dark-bckg-clr-1);
+  flex-direction: column;
+  align-items: flex-start;
+
+  margin-bottom: 52px;
+
+  @media screen and (min-width: 1439.9px) {
+    flex-direction: initial;
+    justify-content: space-between;
+
+    margin-bottom: 76px;
+  }
 }

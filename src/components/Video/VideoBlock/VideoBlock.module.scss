@@ -7,6 +7,7 @@
   }
 
   @media screen and (min-width: 1440px) {
+    width: 100%;
     margin-top: 76px;
     &:first-child {
       margin: 0;
@@ -14,9 +15,43 @@
   }
 }
 
+.videoBlock_cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+
+  @media screen and (min-width: 375px) {
+    height: 200px;
+  }
+
+  @media screen and (min-width: 768px) {
+    height: 392px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 472px;
+  }
+}
+
 .videoBlock_track {
-  width: 100%;
-  aspect-ratio: 16/9;
+  width: 172px !important;
+  height: 100px !important;
+
+  @media screen and (min-width: 375px) {
+    width: 343px !important;
+    height: 200px !important;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 704px !important;
+    height: 392px !important;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 840px !important;
+    height: 472px !important;
+  }
 }
 
 .videoBlock_track_title {

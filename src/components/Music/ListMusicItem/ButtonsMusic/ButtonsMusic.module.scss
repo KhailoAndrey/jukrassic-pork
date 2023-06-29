@@ -1,0 +1,58 @@
+.buttonMusic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 8px 16px;
+  width: 100%;
+
+  font-size: 20px;
+  font-family: 'Mulish';
+  font-weight: 600;
+  line-height: 1.2;
+
+  border: 2px solid var(--add-light-text-clr-2);
+  outline: none;
+  cursor: pointer;
+
+  color: var(--add-light-text-clr-2);
+  background-color: var(--neutral-dark-bckg-clr-1);
+
+  transition: color, border var(--default-animation);
+
+  @media screen and (min-width: 374.9px) {
+    width: auto;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    padding: 8px 24px;
+  }
+}
+
+.buttonMusic:hover {
+  border: 2px solid var(--main-accent-text-clr);
+  color: var(--main-accent-text-clr);
+}
+
+.buttonMusic:focus {
+  border: 2px solid var(--main-accent-text-clr);
+}
+
+.buttonIcon {
+  display: block;
+
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+
+  fill: var(--add-light-text-clr-2);
+  transition: fill var(--default-animation);
+
+  @media screen and (min-width: 767.9px) {
+    margin-right: 12px;
+  }
+}
+
+.buttonMusic:hover .buttonIcon {
+  fill: var(--main-accent-text-clr);
+}
