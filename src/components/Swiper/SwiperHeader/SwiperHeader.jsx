@@ -13,7 +13,7 @@ import scss from './SwiperHeader.module.scss';
 
 SwiperCore.use([Navigation]);
 
-const SwiperHeader = ({ bandPhotos }) => {
+const SwiperHeader = ({ data }) => {
   const carouselSettings = {
     spaceBetween: 16,
     breakpoints: {
@@ -48,18 +48,19 @@ const SwiperHeader = ({ bandPhotos }) => {
         </div>
       </div>
       <Swiper {...carouselSettings}>
-        {bandPhotos?.map(member => (
-          <SwiperSlide key={member.id}>
-            <div className={scss.member}>
-              <img
-                src={member.photo}
-                alt={member.fullName}
-                srcSet={member.photo}
-                className={scss.member_photo}
-              />
-            </div>
-          </SwiperSlide>
-        ))}
+        {data &&
+          data.historyImgList.map(photo => (
+            <SwiperSlide key={photo.srcJpg}>
+              <div className={scss.member}>
+                <img
+                  src={photo.srcJpg}
+                  alt={'Jukrassic_Pork_photo'}
+                  srcSet={photo.srcJpg}
+                  className={scss.member_photo}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
       </Swiper>
     </>
   );
