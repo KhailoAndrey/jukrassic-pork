@@ -1,8 +1,12 @@
 .listMusicItem {
-  width: 310px;
+  width: 100%;
 
   @media screen and (min-width: 767.9px) {
     width: 340px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 408px;
   }
 }
 
@@ -10,5 +14,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
+
   gap: 12px;
 }
