@@ -1,14 +1,16 @@
 import { ReactComponent as Envelop } from '../../../images/Footer/envelop.svg';
 import scss from '../Footer.module.scss';
 
-const Item = ({ title, text, link, button }) => {
+const Item = ({ title, name, link }) => {
+  console.log('name:', name);
+  console.log('link:', link);
   return (
     <li>
       {title && <h4>{title}</h4>}
 
-      {link && text && (
+      {link && name && (
         <a href={link} target="_blank" rel="noopener noreferrer">
-          {text}
+          {name}
         </a>
       )}
 
@@ -24,6 +26,3 @@ const Item = ({ title, text, link, button }) => {
 };
 
 export default Item;
-
-// socials: {link, text}
-// contacts: {title, link, text}

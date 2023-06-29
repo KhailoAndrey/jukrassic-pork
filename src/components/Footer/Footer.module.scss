@@ -11,7 +11,7 @@
   }
 }
 
-.footer-wrap {
+.footer__wrap {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -20,21 +20,36 @@
   padding-bottom: 80px;
 }
 
-.appealWrap {
+.appeal__wrap {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-.appealTitle {
+.appeal__title {
+  font-size: 40px;
+  font-family: Oswald;
+  line-height: 52px;
+  text-transform: uppercase;
 }
 
-.addressWrap {
+.appeal__desc {
+  color: var(--light-text-clr);
+}
+
+.address__wrap {
   display: flex;
   gap: 52px;
   flex-direction: column;
-
   font-style: normal;
+}
+
+.address__title {
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+
+  color: var(--light-text-clr);
 }
 
 .contactsWrap {
