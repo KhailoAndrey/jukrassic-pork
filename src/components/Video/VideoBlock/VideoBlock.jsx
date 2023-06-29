@@ -1,8 +1,8 @@
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
 import scss from './VideoBlock.module.scss';
-import { ReactComponent as BtnYoutube } from '../../../images/btn_youtube.svg';
-import { useState } from 'react';
+import btnYoutube from 'images/sprite.svg';
 
 function VideoBlock({ src, title }) {
   const [isPlay, setIsPlay] = useState(true);
@@ -16,7 +16,11 @@ function VideoBlock({ src, title }) {
       <div className={scss.videoBlock_cover}>
         <ReactPlayer
           className={scss.videoBlock_track}
-          playIcon={<BtnYoutube />}
+          playIcon={
+            <svg className={scss.videoBlock_btnPlay}>
+              <use href={btnYoutube + '#icon-btn-youtube'} />
+            </svg>
+          }
           light={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
           url={`https://www.youtube.com/embed/${src}`}
           playing={isPlay}
