@@ -191,7 +191,6 @@
   }
 
   &.defaultBandPosition {
-    // display: inline-block;
     top: 984px;
     padding: 8px;
     border: 1px solid var(--neutral-dark-text-clr);
@@ -283,35 +282,11 @@
     }
   
 }
-.swiperScrollbarBandDrag::after{
-  // content: "";
-  //     width: 40px;
-  //     height: 40px;
-  //     border-radius: 50%;
-  //     background: blue;
-  //     position: absolute;
-  //     top: 0;
-  //     left: 50%;
-  //     margin: 0 0 0 -20px;
-    }
 
-// .swiper-scrollbar-band.swiper-scrollbar-band-horizontal {
-//   bottom: 5px;
-//   height: 40px;
-// }
-
-// .wiperScrollbarBandDrag {
-//   background: none;
-// }
-
-// .wiperScrollbarBandDrag:after {
-//   content: "";
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: blue;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   margin: 0 0 0 -20px;
-// }
+.swiper-scrollbar-drag{
+  background: red;
+}
+.swiper-scrollbar-band-drag {
+  background: yellow;
+  box-shadow: 0px 1px 1px #000;
+} 

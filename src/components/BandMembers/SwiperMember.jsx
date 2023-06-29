@@ -14,8 +14,6 @@ import s from './BandMembers.module.scss';
 SwiperCore.use([Navigation]);
 
 const SwiperMember = ({ bandMembers }) => {
-  // const { next, prev } = navigationClasses;
-
   const carouselSettings = {
     spaceBetween: 5,
     initialSlide: 0,
@@ -26,15 +24,12 @@ const SwiperMember = ({ bandMembers }) => {
     },
     modules: [Scrollbar],
     scrollbar: {
-      el: `.swiper-scrollbar-band`,
+      el: `.swiper-scrollbar`,
       draggable: true,
       // hide: true,
-      // Snaps slider position to slides when you release Scrollbar
-      // snapOnRelease: true,
-      // Size (Length) of Scrollbar Draggable Element in px
       // dragSize: 'auto',
+      snapOnRelease: true,
     },
-
     grabCursor: true,
     speed: 1000,
   };
@@ -72,9 +67,7 @@ const SwiperMember = ({ bandMembers }) => {
         <ArrowNext className={s.arrow} />
       </div>
       {/* Add ScrollBar */}
-      <div
-        className={`swiper-scrollbar-band ${s.swiperScrollbarBandDrag}`}
-      ></div>
+      <div className={`swiper-scrollbar ${s.swiperScrollbarBandDrag}`}></div>
     </>
   );
 };
