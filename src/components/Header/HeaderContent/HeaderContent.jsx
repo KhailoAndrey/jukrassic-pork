@@ -1,10 +1,10 @@
 import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModalComponent from '../../Modal/Modal';
-
-// import SwiperBox from 'components/Swiper/Swiper';
+import { memberApi } from '../../Swiper/SwiperHeader/service';
+import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 
 function HeaderContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,6 +18,25 @@ function HeaderContent() {
     setIsModalOpen(false);
     document.body.classList.remove(scss.modalOpen);
   };
+
+  const [bandPhotos, setBandPhotos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const getBandPhotos = async () => {
+    setIsLoading(true);
+    try {
+      const { data } = await memberApi.get('');
+      setBandPhotos(data);
+    } catch (e) {
+      console.error(e.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getBandPhotos();
+  }, []);
 
   return (
     <section id="header" className={scss.header}>
@@ -49,7 +68,9 @@ function HeaderContent() {
           </div>
         </div>
         <HeaderMenu />
-        <div className={scss.swiper_box}>swiper box</div>
+        <div className={scss.swiper_box}>
+          {isLoading ? ('Loading') : (<SwiperHeader bandPhotos={bandPhotos} />)}
+        </div>
       </div>
     </section>
   );
