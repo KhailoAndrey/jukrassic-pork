@@ -54,6 +54,26 @@
   }
 }
 
+.videoBlock_btnPlay {
+  width: 7vw;
+  height: 7vh;
+
+  @media screen and (min-width: 375px) {
+    width: 26px;
+    height: 18px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 53px;
+    height: 37px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    width: 100px;
+    height: 70px;
+  }
+}
+
 .videoBlock_track_title {
   margin-top: 8px;
   font-size: 5vw;
