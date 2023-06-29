@@ -1,13 +1,15 @@
 {
   "files": {
     "main.css": "/jukrassic-pork/static/css/main.ded39078.css",
-    "main.js": "/jukrassic-pork/static/js/main.5af9e36b.js",
-    "static/css/901.e333fd49.chunk.css": "/jukrassic-pork/static/css/901.e333fd49.chunk.css",
-    "static/js/901.a067f896.chunk.js": "/jukrassic-pork/static/js/901.a067f896.chunk.js",
-    "static/css/325.e0d0df18.chunk.css": "/jukrassic-pork/static/css/325.e0d0df18.chunk.css",
-    "static/js/325.b8b52777.chunk.js": "/jukrassic-pork/static/js/325.b8b52777.chunk.js",
+    "main.js": "/jukrassic-pork/static/js/main.d6d2be8f.js",
+    "static/css/107.9c0ebeb7.chunk.css": "/jukrassic-pork/static/css/107.9c0ebeb7.chunk.css",
+    "static/js/107.10d52341.chunk.js": "/jukrassic-pork/static/js/107.10d52341.chunk.js",
+    "static/css/6.1a140fc8.chunk.css": "/jukrassic-pork/static/css/6.1a140fc8.chunk.css",
+    "static/js/6.47a722a0.chunk.js": "/jukrassic-pork/static/js/6.47a722a0.chunk.js",
     "static/js/322.9d7c3f9e.chunk.js": "/jukrassic-pork/static/js/322.9d7c3f9e.chunk.js",
     "static/js/899.cb85c6af.chunk.js": "/jukrassic-pork/static/js/899.cb85c6af.chunk.js",
+    "static/js/347.8dcc8f67.chunk.js": "/jukrassic-pork/static/js/347.8dcc8f67.chunk.js",
+    "static/media/Logotype.svg": "/jukrassic-pork/static/media/Logotype.f03d4239c32127f5f94ccf818d2b8267.svg",
     "static/media/IMG.jpg": "/jukrassic-pork/static/media/IMG.fe9aaf0fb0d6cb436375.jpg",
     "static/media/path.jpg": "/jukrassic-pork/static/media/path.b5957c39213b08244d2b.jpg",
     "static/media/sun.jpg": "/jukrassic-pork/static/media/sun.b1153277e734ef8d2f37.jpg",
@@ -22,6 +24,8 @@
     "static/media/btn_youtube.svg": "/jukrassic-pork/static/media/btn_youtube.11f34c8062e96e543f68fe372d1da8d6.svg",
     "static/media/Logo.svg": "/jukrassic-pork/static/media/Logo.1db9b8121f3fac4fe56c12edf7c2be8a.svg",
     "static/media/Icon-lyrics.svg": "/jukrassic-pork/static/media/Icon-lyrics.0ba06f39bbb46c2e049d1dadb2d6f20b.svg",
+    "static/media/modal_close_green.svg": "/jukrassic-pork/static/media/modal_close_green.e4262dd71ac0e953eca1a499dbb5caed.svg",
+    "static/media/close_modal.svg": "/jukrassic-pork/static/media/close_modal.c5dbe5294d6bdf6bd90265867084bafd.svg",
     "static/media/play.svg": "/jukrassic-pork/static/media/play.b17ae8735baae627b74ae1aea040a4dc.svg",
     "static/media/menu.svg": "/jukrassic-pork/static/media/menu.f85fd70d6dc6789c16a958bb74786e69.svg",
     "static/media/Vector.svg": "/jukrassic-pork/static/media/Vector.2ed1dc823902372db99363e12d406918.svg",
@@ -29,16 +33,17 @@
     "static/media/Icon-download.svg": "/jukrassic-pork/static/media/Icon-download.5e76cc14c06f4e55ecdfccc12893e3c8.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
     "main.ded39078.css.map": "/jukrassic-pork/static/css/main.ded39078.css.map",
-    "main.5af9e36b.js.map": "/jukrassic-pork/static/js/main.5af9e36b.js.map",
-    "901.e333fd49.chunk.css.map": "/jukrassic-pork/static/css/901.e333fd49.chunk.css.map",
-    "901.a067f896.chunk.js.map": "/jukrassic-pork/static/js/901.a067f896.chunk.js.map",
-    "325.e0d0df18.chunk.css.map": "/jukrassic-pork/static/css/325.e0d0df18.chunk.css.map",
-    "325.b8b52777.chunk.js.map": "/jukrassic-pork/static/js/325.b8b52777.chunk.js.map",
+    "main.d6d2be8f.js.map": "/jukrassic-pork/static/js/main.d6d2be8f.js.map",
+    "107.9c0ebeb7.chunk.css.map": "/jukrassic-pork/static/css/107.9c0ebeb7.chunk.css.map",
+    "107.10d52341.chunk.js.map": "/jukrassic-pork/static/js/107.10d52341.chunk.js.map",
+    "6.1a140fc8.chunk.css.map": "/jukrassic-pork/static/css/6.1a140fc8.chunk.css.map",
+    "6.47a722a0.chunk.js.map": "/jukrassic-pork/static/js/6.47a722a0.chunk.js.map",
     "322.9d7c3f9e.chunk.js.map": "/jukrassic-pork/static/js/322.9d7c3f9e.chunk.js.map",
-    "899.cb85c6af.chunk.js.map": "/jukrassic-pork/static/js/899.cb85c6af.chunk.js.map"
+    "899.cb85c6af.chunk.js.map": "/jukrassic-pork/static/js/899.cb85c6af.chunk.js.map",
+    "347.8dcc8f67.chunk.js.map": "/jukrassic-pork/static/js/347.8dcc8f67.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ded39078.css",
-    "static/js/main.5af9e36b.js"
+    "static/js/main.d6d2be8f.js"
   ]
 }
