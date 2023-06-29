@@ -11,13 +11,13 @@ function App() {
   return (
     <div>
       <Suspense fallback={<div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Audio
-    height = "80"
-    width = "80"
-    radius = "9"
-    color = 'green'
-    ariaLabel = 'three-dots-loading'     
-    wrapperStyle
-    wrapperClass
+    height="100"
+  width="100"
+  color="#00fe00"
+  ariaLabel="audio-loading"
+  wrapperStyle={{}}
+  wrapperClass="wrapper-class"
+  visible={true}
   /></div>}>
       <Routes>
         <Route path='/' element={<HomePage/>} />
