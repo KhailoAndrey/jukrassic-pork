@@ -3,4 +3,12 @@
 
   width: 100%;
   height: auto;
+
+  filter: brightness(100%);
+
+  transition: filter var(--default-animation);
+}
+
+.imageMusic:hover {
+  filter: brightness(50%);
 }

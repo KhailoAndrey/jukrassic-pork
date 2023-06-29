@@ -18,7 +18,7 @@
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-1);
 
-  transition: border, color, background-color var(--default-animation);
+  transition: color, border var(--default-animation);
 
   @media screen and (min-width: 374.9px) {
     width: auto;
@@ -30,8 +30,8 @@
 }
 
 .buttonMusic:hover {
-  color: var(--light-text-clr);
-  background-color: var(--neutral-dark-bckg-clr-1);
+  border: 2px solid var(--main-accent-text-clr);
+  color: var(--main-accent-text-clr);
 }
 
 .buttonMusic:focus {

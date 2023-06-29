@@ -1,3 +1,5 @@
+import HeaderMenu from '../../components/Header/HeaderContent/HeaderMenu';
+
 import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
@@ -12,6 +14,7 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
+        <HeaderMenu />
         <div className={scss.boxChapterText}>
           <ChapterMusic chapterMusic="music" />
           <TextMusic textMusic={textMusic} />
