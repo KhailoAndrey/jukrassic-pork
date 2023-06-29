@@ -3,8 +3,10 @@ import { memberApi } from './service';
 
 import s from './BandMembers.module.scss';
 import SwiperMember from './SwiperMember';
+// import useFetch from 'hooks/useFetch';
 
 const BandMembers = () => {
+  // const { isLoading, data } = useFetch('band');
   const [bandMembers, setBandMembers] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -13,7 +15,6 @@ const BandMembers = () => {
     try {
       const { data } = await memberApi.get('');
       setBandMembers(data);
-      console.log('members', data);
     } catch (e) {
       console.error(e.message);
     } finally {

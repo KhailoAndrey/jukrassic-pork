@@ -1,15 +1,15 @@
 .bandMembers {
   padding-top: 16px;
-  padding-bottom: 148px;
+  padding-bottom: 228px;
   // position: relative;
   background-color: var(--neutral-dark-bckg-clr-1);
   @media screen and (min-width:768px) {
     padding-top: 24px;
-    padding-bottom: 112px;
+    padding-bottom: 164px;
   }
   @media screen and (min-width:1440px) {
     padding-top: 24px;
-    padding-bottom: 160px;
+    padding-bottom: 216px;
   }
 }
 .band{
@@ -191,12 +191,15 @@
   }
 
   &.defaultBandPosition {
-    top: 984px;
+    top: 1050px;
     padding: 8px;
     border: 1px solid var(--neutral-dark-text-clr);
     background-color: transparent;
     color:var(--neutral-dark-text-clr);
-  
+  @media screen and (min-width:375px){
+    top:984px;
+  }
+
   @media screen and (min-width:768px) {
     top:712px;
   }
@@ -245,30 +248,35 @@
   fill: var(--main-accent-text-clr);
 }
 
-// .swiper-scrollbar-drag:after {
-//   content: "";
-//   width: 40px;
-//   height: 40px;
-//   border-radius: 50%;
-//   background: red;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   margin: 0 0 0 -20px;
-// }
-
-
-
-
 .swiperScrollbarBandDrag{
   background: var(--neutral-dark-bckg-clr-3);
   position: relative;
-  top:118px;
-  right: 16px;
+  top:100px;
+  right: 0;
   border-radius: 2px;
-  height: 2px;
-  width: 343px;
+  height: 1px;
+  width: 268px;
   z-index: 10;
+  @media screen and (min-width:303px){
+    top:140px;
+    right: 0;
+    width: 268px;
+  }
+  @media screen and (min-width:309px){
+    top:170px;
+    right: 0;
+    width: 300px;
+  }
+  @media screen and (min-width:339px){
+    top:200px;
+    right: 0;
+    width: 300px;
+  }
+  @media screen and (min-width:375px){
+    top:140px;
+    right: 0;
+    width: 343px;
+  }
     @media screen and (min-width:768px){
       top: 32px;
       right:-373px;
@@ -282,11 +290,3 @@
     }
   
 }
-
-.swiper-scrollbar-drag{
-  background: red;
-}
-.swiper-scrollbar-band-drag {
-  background: yellow;
-  box-shadow: 0px 1px 1px #000;
-} 

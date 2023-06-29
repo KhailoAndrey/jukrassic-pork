@@ -24,11 +24,11 @@ const SwiperMember = ({ bandMembers }) => {
     },
     modules: [Scrollbar],
     scrollbar: {
-      el: `.swiper-scrollbar`,
+      el: `.swiper-scrollbar-band`,
       draggable: true,
       // hide: true,
-      // dragSize: 'auto',
-      snapOnRelease: true,
+
+      // snapOnRelease: true,
     },
     grabCursor: true,
     speed: 1000,
@@ -67,7 +67,9 @@ const SwiperMember = ({ bandMembers }) => {
         <ArrowNext className={s.arrow} />
       </div>
       {/* Add ScrollBar */}
-      <div className={`swiper-scrollbar ${s.swiperScrollbarBandDrag}`}></div>
+      <div
+        className={`swiper-scrollbar-band ${s.swiperScrollbarBandDrag}`}
+      ></div>
     </>
   );
 };
