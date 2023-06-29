@@ -29,6 +29,13 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  @media screen and (min-width: 1439.9px) {
+    width: auto;
+    margin: 0;
+    margin-left: auto;
+    margin-right: 20%;
+  }
 }
 
 .showMore:hover,
