@@ -50,7 +50,7 @@ function ListMusicItem() {
             <>
               <ModalLabelMusic labelModalMusic="КВІТИ ПОЛЬОВІЇ" />
               <ModalTextMusic textModalMusic={textModalMusic} />
-              <ButtonModalCopy valueButton="Copy" />
+              <ButtonModalCopy valueButton="Copy" textToCopy={textModalMusic} />
             </>
           }
         ></ModalMusic>
