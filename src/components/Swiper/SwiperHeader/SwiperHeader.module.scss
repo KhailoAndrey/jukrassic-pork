@@ -1,0 +1,87 @@
+.arrows_container {
+  margin-bottom: 8px;
+  width: 88px;
+  height: 40px;
+  margin-right: 0;
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  @media screen and (min-width: 768px) {
+    margin-bottom: 12px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 84px;
+    margin-bottom: 16px;
+  }
+}
+
+.member {
+  width: auto;
+  flex-shrink: 0;
+  display: flex;
+  height: 100%;
+  max-height: 100%;
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+  &_photo {
+    width: 343px;
+    height: 264px;
+    object-fit: cover;
+    width: 100%;
+
+    @media screen and (min-width: 768px) {
+      width: 522px;
+      height: 412px;
+    }
+    @media screen and (min-width: 1440px) {
+      width: 732px;
+      height: 516px;
+    }
+  }
+}
+
+.arrowNavigation {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  &:global(.swiper-button-disabled) {
+    opacity: 0.5;
+    cursor: auto;
+    pointer-events: none;
+  }
+
+  &.defaultBandPosition {
+    padding: 8px;
+    border: 1px solid var(--neutral-dark-text-clr);
+    background-color: transparent;
+    color: var(--neutral-dark-text-clr);
+
+    &:hover {
+      border: 1px solid var(--main-accent-text-clr);
+      cursor: pointer;
+    }
+    &:focus {
+      border: 1px solid var(--main-accent-text-clr);
+      cursor: pointer;
+    }
+  }
+}
+
+.arrowNavigationLeft {
+  @extend .arrowNavigation;
+}
+
+.arrowNavigationRight {
+  @extend .arrowNavigation;
+}
+.arrow {
+  //   display: block;
+  fill: var(--neutral-dark-text-clr);
+}
+.defaultBandPosition:hover .arrow,
+.defaultBandPosition:focus .arrow {
+  fill: var(--main-accent-text-clr);
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as PlayIcon } from '../../../../images/Latest-Releases/svg/play.svg';
+import { ReactComponent as PlayIcon } from '../../../../images/Common/svg/play.svg';
 
 import scss from './LatestReleaesIconPlay.module.scss';
 
