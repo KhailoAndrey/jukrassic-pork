@@ -1,0 +1,16 @@
+.labelMusic {
+  margin-bottom: 8px;
+
+  font-family: 'Mulish';
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.16;
+  text-transform: uppercase;
+
+  color: var(--add-light-text-clr-2);
+
+  @media screen and (min-width: 1439.9px) {
+    font-size: 28px;
+    line-height: 1.3;
+  }
+}

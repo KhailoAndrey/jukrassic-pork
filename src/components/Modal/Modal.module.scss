@@ -1,0 +1,150 @@
+.modal {
+  position: absolute;
+  background-color: var(--main-bckg-clr);
+  height: 744px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  z-index: 9999;
+
+  @media screen and (min-width: 767.9px) {
+    height: 100vh;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 408px;
+    height: 456px;
+    position: absolute;
+    top: -456px; 
+  }
+}
+
+.closeButton {
+  margin-top: 8px;
+  margin-left: 8px;
+  background-color: var(--main-bckg-clr);
+  border: none;
+  cursor: pointer;
+
+  @media screen and (min-width: 767.9px) {
+    margin-top: 24px;
+    margin-left: 24px;
+  }
+  @media screen and (min-width: 1439.9px) {
+    display: none;
+  }
+}
+
+.modal_logo {
+  margin-top: 82px;
+  padding-left: 16px;
+  margin-bottom: 52px;
+
+  @media screen and (min-width: 767.9px) {
+    margin-top: 178px;
+    padding-left: 32px;
+  }
+  @media screen and (min-width: 1439.9px) {
+    display: none;
+  }
+}
+
+.navi {
+  display: flex;
+  width: 375px;
+  padding: 0px 16px;
+  flex-direction: column;
+  align-items: flex-start;
+  :hover {
+    color: var(--main-accent-text-clr);
+  }
+
+  @media screen and (min-width: 767.9px) {
+    width: 768px;
+    padding: 0 32px;
+    gap: 4px;
+  }
+  @media screen and (min-width: 1439.9px) {
+    height: 260px;
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
+.links {
+  list-style: none;
+  font-family: Oswald;
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--main-text-clr);
+  padding: 8px 0;
+  text-decoration: none;
+  text-transform: uppercase;
+  height: 52px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  align-self: stretch;
+
+  @media screen and (min-width: 767.9px) {
+    height: 60px;
+    font-size: 36px;
+  }
+  @media screen and (min-width: 1439.9px) {
+   height: 52px;
+   font-size: 28px;
+  }
+}
+
+.languageButtons {
+  margin-top: 52px;
+  width: 375px;
+  height: 60px;
+  padding: 8px 16px;
+  gap: 12px;
+  display: flex;
+
+  :hover {
+    color: var(--main-accent-text-clr);
+  }
+  button {
+    padding: 4px 0;
+    background-color: var(--main-bckg-clr);
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 44px;
+    gap: 8px;
+    font-family: Oswald;
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--main-text-clr);
+
+    @media screen and (min-width: 767.9px) {
+      width: 40px;
+      height: 52px;
+      font-size: 36px;
+    }
+    @media screen and (min-width: 1439.9px) {
+   width: 32px;
+   height: 44px;
+   font-size: 28px;
+  }
+  }
+
+  @media screen and (min-width: 767.9px) {
+    height: 68px;
+    padding: 8px 32px;
+    gap: 24px;
+  }
+  @media screen and (min-width: 1439.9px) {
+   height: 60px;
+   margin-top: 88px;
+   padding: 8px 24px;
+  }
+}
