@@ -9,6 +9,7 @@
   transition: filter var(--default-animation);
 }
 
-.imageMusic:hover {
+.imageMusic:hover,
+.imageMusic:focus {
   filter: brightness(50%);
 }
