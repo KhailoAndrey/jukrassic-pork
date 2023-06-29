@@ -2,7 +2,7 @@ import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
 import { useState } from 'react';
-import ModalComponent from 'components/Modal/Modal';
+import ModalComponent from '../../Modal/Modal';
 
 // import SwiperBox from 'components/Swiper/Swiper';
 

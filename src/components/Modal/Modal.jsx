@@ -11,10 +11,11 @@ const ModalComponent = ({ onClose }) => {
     // Логика для изменения языка сайта
   };
 
-  const handleNavigate = () => {
-    // Логика для перехода на другую страницу
-  };
-
+//   const handleNavigate = () => {
+//     // Логика для перехода на другую страницу
+//   };
+    if (isModalOpen) { document.body.classList.add(styles.modalOpen) }
+    
   const closeModal = () => {
     setIsModalOpen(false);
     document.body.classList.remove(styles.modalOpen);

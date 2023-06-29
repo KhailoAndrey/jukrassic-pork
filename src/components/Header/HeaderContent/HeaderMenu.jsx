@@ -3,7 +3,8 @@ import { MdArrowForward } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../images/Logo.svg';
 import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
-import ModalComponent from 'components/Modal/Modal';
+import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
+import ModalComponent from '../../Modal/Modal';
 import { useState } from 'react';
 
 const handleScrollToTop = () => {
@@ -34,10 +35,15 @@ function HeaderMenu() {
         <p>Listen to music</p>
         <MdArrowForward style={{ verticalAlign: 'middle', fontSize: '24px' }} />
       </NavLink>
-      <button className={scss.burger_btn} onClick={openModal}>
-        <Burger />
-      {isModalOpen && <ModalComponent onClose={closeModal} />}
-      </button>
+      {isModalOpen ?
+        <button className={scss.burger_btn} onClick={closeModal}>
+          {isModalOpen && <ModalComponent onClose={closeModal} />}
+          <CloseBtn />
+        </button> :
+        <button className={scss.burger_btn} onClick={openModal}>
+          <Burger />
+          {isModalOpen && <ModalComponent onClose={closeModal} />}
+        </button>}
     </div>
   );
 }
