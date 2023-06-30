@@ -1,5 +1,8 @@
 .iconContainer {
-  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .iconPlay {
@@ -20,4 +23,8 @@
 .iconContainer:hover .iconPlay,
 .iconContainer:focus .iconPlay {
   fill: var(--main-accent-text-clr);
+}
+
+.hidden {
+  display: none;
 }

@@ -24,7 +24,13 @@ function LatestReleaesItem({
           url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="100%"
           height="100%"
-          playIcon={<LatestReleaesIconPlay className={scss.icon} />}
+          playIcon={
+            <LatestReleaesIconPlay
+              className={scss.icon}
+              currentVideoIndex={currentVideoIndex}
+              index={0}
+            />
+          }
           playing={currentVideoIndex === 0}
           onPlay={() => handleVideoPlay(0)}
           onPause={handleVideoPause}
@@ -46,7 +52,13 @@ function LatestReleaesItem({
           url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
           width="100%"
           height="100%"
-          playIcon={<LatestReleaesIconPlay className={scss.icon} />}
+          playIcon={
+            <LatestReleaesIconPlay
+              className={scss.icon}
+              currentVideoIndex={currentVideoIndex}
+              index={1}
+            />
+          }
           playing={currentVideoIndex === 1}
           onPlay={() => handleVideoPlay(1)}
           onPause={handleVideoPause}

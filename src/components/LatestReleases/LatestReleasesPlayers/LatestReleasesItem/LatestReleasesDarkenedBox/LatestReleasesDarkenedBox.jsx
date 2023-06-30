@@ -1,19 +1,19 @@
 import PropTypes from 'prop-types';
 import scss from '../LatestReleasesItem.module.scss';
 
-function LatestReleasesVideoSlider({ currentVideoIndex, index }) {
+function LatestReleasesDarkenedBox({ currentVideoIndex, index }) {
   return (
     <div
-      className={`${scss.videoSlider} ${
+      className={`${scss.darknedBox} ${
         currentVideoIndex === index ? scss.hidden : ''
       }`}
     ></div>
   );
 }
 
-LatestReleasesVideoSlider.propTypes = {
+LatestReleasesDarkenedBox.propTypes = {
   currentVideoIndex: PropTypes.number,
   index: PropTypes.number.isRequired,
 };
 
-export default LatestReleasesVideoSlider;
+export default LatestReleasesDarkenedBox;
