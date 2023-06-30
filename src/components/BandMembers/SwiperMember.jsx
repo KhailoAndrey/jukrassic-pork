@@ -16,7 +16,8 @@ SwiperCore.use([Navigation]);
 const SwiperMember = ({ data }) => {
   const carouselSettings = {
     spaceBetween: 5,
-    initialSlide: 0,
+    // initialSlide: 0,
+    coverflowEffect: { slideShadows: false },
     slidesPerView: 1,
     navigation: {
       nextEl: `.swiper-next-button`,
@@ -27,6 +28,7 @@ const SwiperMember = ({ data }) => {
       el: `.swiper-scrollbar-band`,
       draggable: true,
       // hide: true,
+      // multipleActiveThumbs: true,
     },
     grabCursor: true,
     speed: 1000,
