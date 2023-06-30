@@ -1,18 +1,24 @@
 import React from 'react';
-import SwiperCore, { Navigation, Pagination, EffectFade } from 'swiper';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectFade,
+  Autoplay,
+} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 //swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/effect-fade';
+import 'swiper/scss/autoplay';
 //icons
 import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
 
-SwiperCore.use([Navigation, EffectFade, Pagination]);
+SwiperCore.use([Navigation, EffectFade, Pagination, Autoplay]);
 
 const SwiperMember = ({ data }) => {
   const carouselSettings = {
@@ -23,9 +29,10 @@ const SwiperMember = ({ data }) => {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
     },
-    // modules: [Pagination],
     autoplay: {
-      delay: 1000,
+      delay: 2000,
+      pauseOnMouseEnter: true,
+      stopOnLastSlide: true,
     },
     effect: 'fade',
     fadeEffect: {

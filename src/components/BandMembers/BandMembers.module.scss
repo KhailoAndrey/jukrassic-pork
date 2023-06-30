@@ -178,18 +178,21 @@
   z-index: 2;
   cursor: pointer;
 
-  &:global(.swiper-button-disabled) {
-    opacity: 0.5;
-    cursor: auto;
-    pointer-events: none;
-  }
+  // &:global(.swiper-button-disabled) {
+  //   opacity: 0.5;
+  //   cursor: auto;
+  //   pointer-events: none;
+  //   border: 1px solid var(--neutral-dark-text-clr);
+  //   background-color: transparent;
+  //   color: var(--neutral-dark-text-clr);
+  // }
 
   &.defaultBandPosition {
     top: 1050px;
     padding: 8px;
-    border: 1px solid var(--neutral-dark-text-clr);
+    border: 1px solid var(--main-accent-text-clr);
     background-color: transparent;
-    color:var(--neutral-dark-text-clr);
+    color:var(--main-accent-text-clr);
     @media screen and (min-width:375px){
       top:984px;
     }
@@ -203,9 +206,20 @@
     &:hover,
     &:focus{
       border: 1px solid var(--main-accent-text-clr);
+      background-color: var(--main-accent-text-clr);
       cursor: pointer;
     }
   }
+    &:global(.swiper-button-disabled) {
+      opacity: 0.5;
+      cursor: auto;
+      pointer-events: none;
+      border: 1px solid var(--neutral-dark-text-clr);
+      background-color: transparent;
+      & > .arrow{
+        fill: var(--neutral-dark-text-clr);
+      }
+    }
 }
 
 .arrowNavigationLeft {
@@ -232,12 +246,13 @@
 
 .arrow{
   display: block;
-  fill: var(--neutral-dark-text-clr);
+  fill: var(--main-accent-text-clr);
+  
 }
 
 .defaultBandPosition:hover .arrow,
 .defaultBandPosition:focus .arrow {
-  fill: var(--main-accent-text-clr);
+  fill: var(--neutral-dark-bckg-clr-1);
 }
 
 .swiperProgressbarBand{
@@ -282,4 +297,23 @@
   //   right: 123px;
   //   width: 352px;
   // }
+// }
+
+
+
+
+// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+//   background: #f5f5f5
+// }
+// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .portfolio_slider-controls .swiper-button-next:hover:after,
+// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .portfolio_slider-controls .swiper-button-prev:hover:after {
+//   background-color: #f5f5f5
+// }
+
+// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .swiper-pagination-progressbar {
+//   position: relative;
+//   padding-right: calc((100% - 1360px) / 2);
+//   background: #f5f5f520;
+//   height: 1px;
+//   max-width: calc(100% - 116px)
 // }
