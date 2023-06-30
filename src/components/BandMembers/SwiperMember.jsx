@@ -1,17 +1,18 @@
 import React from 'react';
-import SwiperCore, { Navigation, Pagination } from 'swiper';
+import SwiperCore, { Navigation, Pagination, EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 //swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
+import 'swiper/scss/effect-fade';
 //icons
 import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
 
-SwiperCore.use([Navigation, Pagination]);
+SwiperCore.use([Navigation, EffectFade, Pagination]);
 
 const SwiperMember = ({ data }) => {
   const carouselSettings = {
@@ -22,21 +23,20 @@ const SwiperMember = ({ data }) => {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
     },
-    modules: [Pagination],
+    // modules: [Pagination],
     autoplay: {
-      delay: 2000,
-      stopOnLastSlide: true,
-      pauseOnMouseEnter: true,
+      delay: 1000,
+    },
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
     },
     pagination: {
       type: 'progressbar',
       el: `.swiper-progressbar-band`,
-      // renderProgressbar: function (progressbarFillClass) {
-      //   return '<span class="' + progressbarFillClass + '"></span>';
-      // },
     },
 
-    // speed: 2000,
+    speed: 1000,
   };
   return (
     <>

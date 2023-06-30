@@ -243,11 +243,12 @@
 .swiperProgressbarBand{
   background-color: var(--neutral-dark-bckg-clr-3);
   position: relative;
-  top:10px;
-  right: 0;
+}
+  // top:1101px;
+  // right: 0;
   // border-radius: 2px;
-  height: 2px;
-  width: 268px;
+  // height: 2px;
+  // width: 268px;
   // z-index: 10;
   // @media screen and (min-width:303px){
   //   top:140px;
@@ -265,8 +266,8 @@
   //   width: 300px;
   // }
   // @media screen and (min-width:375px){
-  //   top:140px;
-  //   right: 0;
+  //   bottom:1100px;
+  //   right: 15px;
   //   width: 343px;
   // }
   // @media screen and (min-width:768px) {
@@ -281,4 +282,4 @@
   //   right: 123px;
   //   width: 352px;
   // }
-}
+// }
