@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import SwiperCore, { Navigation, Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -14,16 +14,26 @@ import scss from './SwiperHeader.module.scss';
 SwiperCore.use([Navigation]);
 
 const SwiperHeader = ({ data }) => {
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const handleSlideChange = swiper => {
+    setCurrentSlide(swiper.activeIndex);
+  };
   const carouselSettings = {
     spaceBetween: 16,
+    slidesPerView: 'auto',
     breakpoints: {
       768: {
         spaceBetween: 24,
+        slidesPerView: 1.33,
+      },
+      1440: {
+        slidesPerView: 1.25,
       },
     },
     loop: 'true',
     initialSlide: 0,
-    slidesPerView: 'auto',
     navigation: {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
@@ -32,6 +42,9 @@ const SwiperHeader = ({ data }) => {
 
     grabCursor: true,
     speed: 1000,
+    on: {
+      slideChange: handleSlideChange,
+    },
   };
 
   return (
@@ -50,7 +63,7 @@ const SwiperHeader = ({ data }) => {
       </div>
       <Swiper {...carouselSettings}>
         {data &&
-          data.historyImgList.map(photo => (
+          data.historyImgList.map((photo, index) => (
             <SwiperSlide key={photo.srcJpg}>
               <div className={scss.member}>
                 <img
@@ -59,6 +72,12 @@ const SwiperHeader = ({ data }) => {
                   srcSet={photo.srcJpg}
                   className={scss.member_photo}
                 />
+                {index === 1 && (
+                  <div
+                    className={scss.overlay}
+                    style={{ opacity: currentSlide === 0 ? 0 : 0.6 }}
+                  ></div>
+                )}
               </div>
             </SwiperSlide>
           ))}
