@@ -22,7 +22,7 @@ const SwiperHeader = ({ data }) => {
       },
     },
     initialSlide: 0,
-    slidesPerView: 1,
+    slidesPerView: 'auto',
     navigation: {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,

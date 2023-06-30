@@ -10,9 +10,9 @@ const MusicPage = lazy(()=> import('./pages/MusicPage'))
 function App() {
   return (
     <div>
-      <Suspense fallback={<div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Audio
+      <Suspense fallback={<div style={{width: '100vw', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: "#131313"}}><Audio
     height="100"
-  width="100"
+        width="100"
   color="#00fe00"
   ariaLabel="audio-loading"
   wrapperStyle={{}}

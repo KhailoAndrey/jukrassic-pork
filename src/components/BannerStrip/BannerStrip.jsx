@@ -13,7 +13,7 @@ const BannerStrip = () => {
     <>
       <div className={scss.bannerContainer}>
         <div className={scss.bannerTextContainer}>
-          <Marquee autoFill={true} pauseOnHover={true} speed={150}>
+          <Marquee autoFill={true} speed={150}>
             <span className={scss.bannerText}>
               {textItems.map((item, index) => (
                 <React.Fragment key={index}>
