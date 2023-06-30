@@ -23,15 +23,20 @@ const SwiperMember = ({ data }) => {
       prevEl: `.swiper-prev-button`,
     },
     modules: [Pagination],
+    autoplay: {
+      delay: 2000,
+      stopOnLastSlide: true,
+      pauseOnMouseEnter: true,
+    },
     pagination: {
       type: 'progressbar',
       el: `.swiper-progressbar-band`,
-      renderProgressbar: function (progressbarFillClass) {
-        return '<span class="' + progressbarFillClass + '"></span>';
-      },
+      // renderProgressbar: function (progressbarFillClass) {
+      //   return '<span class="' + progressbarFillClass + '"></span>';
+      // },
     },
 
-    speed: 2000,
+    // speed: 2000,
   };
   return (
     <>
