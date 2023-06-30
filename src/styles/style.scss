@@ -40,6 +40,9 @@
   --default-animation: 400ms ease-in-out;
   --fast-animation: 250ms ease-in-out;
   --slow-animation: 600ms ease-in-out;
+  
+  --swiper--progressbar-bg-color:var(--main-accent-text-clr);
+  --swiper-pagination-progressbar-size: 2px;
 }
 
 *,

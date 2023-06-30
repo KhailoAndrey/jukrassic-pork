@@ -3,8 +3,8 @@ import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
 import { useState } from 'react';
 import ModalComponent from '../../Modal/Modal';
-
-// import SwiperBox from 'components/Swiper/Swiper';
+import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
+import useFetch from 'hooks/useFetch';
 
 function HeaderContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -19,6 +19,9 @@ function HeaderContent() {
     document.body.classList.remove(scss.modalOpen);
   };
 
+    const { data } = useFetch('history');
+// console.log(data)
+  
   return (
     <section id="header" className={scss.header}>
       <div className="container">
@@ -42,6 +45,7 @@ function HeaderContent() {
           </div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
+              {/* {data.description.en} */}
               Jukrassic Pork is a pop-rock music band from Ukraine. The project
               was founded in 2000 by Vyacheslav /Zmeark/ Lozowy. Since then,
               several members have changed in the band.
@@ -49,7 +53,9 @@ function HeaderContent() {
           </div>
         </div>
         <HeaderMenu />
-        <div className={scss.swiper_box}>swiper box</div>
+        <div className={scss.swiper_box}>
+          {data && <SwiperHeader data={data} />}
+        </div>
       </div>
     </section>
   );

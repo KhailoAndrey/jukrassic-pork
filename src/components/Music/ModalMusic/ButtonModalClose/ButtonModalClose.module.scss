@@ -1,0 +1,26 @@
+.buttonModalClose {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  background-color: var(--neutral-dark-bckg-clr-2);
+}
+
+.buttonIcon {
+  fill: var(--add-light-text-clr-2);
+  background-color: var(--neutral-dark-bckg-clr-2);
+  transition: fill var(--default-animation);
+}
+
+.buttonModalClose:hover .buttonIcon,
+.buttonModalClose:focus .buttonIcon {
+  fill: var(--main-accent-text-clr);
+}

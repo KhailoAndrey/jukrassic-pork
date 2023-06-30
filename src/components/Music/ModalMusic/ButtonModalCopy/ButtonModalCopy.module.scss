@@ -1,0 +1,60 @@
+.buttonModalCopy {
+  position: absolute;
+  bottom: 16px;
+  right: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px 24px;
+  width: auto;
+
+  font-size: 22px;
+  font-family: 'Mulish';
+  font-weight: 600;
+  line-height: 1.27;
+
+  border: 2px solid transparent;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  color: var(--neutral-dark-bckg-clr-1);
+  background-color: var(--light-text-clr);
+
+  transition: border, color, background-color var(--default-animation);
+
+  @media screen and (min-width: 767.9px) {
+    padding: 16px 32px;
+  }
+}
+
+.buttonModalCopy:hover,
+.buttonModalCopy:focus {
+  border: 2px solid var(--main-accent-text-clr);
+
+  color: var(--light-text-clr);
+  background-color: var(--neutral-dark-bckg-clr-1);
+}
+
+.buttonIcon {
+  display: block;
+  margin-right: 8px;
+
+  width: 24px;
+  height: 24px;
+
+  fill: var(--neutral-dark-bckg-clr-1);
+
+  transition: fill var(--default-animation);
+
+  @media screen and (min-width: 767.9px) {
+    margin-right: 12px;
+  }
+}
+
+.buttonModalCopy:hover .buttonIcon,
+.buttonModalCopy:focus .buttonIcon {
+  fill: var(--main-accent-text-clr);
+}

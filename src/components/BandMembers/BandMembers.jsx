@@ -1,44 +1,18 @@
-import { useEffect, useState } from 'react';
-import { memberApi } from './service';
-
-import s from './BandMembers.module.scss';
 import SwiperMember from './SwiperMember';
-// import photo from '../../images/IMG.png';
-// import photoT from '../../images/photoT.png';
-// import photoD from '../../images/photoD.png';
+import useFetch from 'hooks/useFetch';
+//styles
+import s from './BandMembers.module.scss';
 
 const BandMembers = () => {
-  const [bandMembers, setBandMembers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const getBandMembers = async () => {
-    setIsLoading(true);
-    try {
-      const { data } = await memberApi.get('');
-      setBandMembers(data);
-      console.log('members', data);
-    } catch (e) {
-      console.error(e.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getBandMembers();
-  }, []);
+  const { data } = useFetch('band');
 
   return (
-    <section className={s.bandMembers}>
+    <section className={s.bandMembers} id="members">
       <div className={`container ${s.band}`}>
-        <h2 className={s.title}>band members</h2>
+        <h2 className={s.title}>{data && data.title.en}</h2>
         <div className={s.info}>
-          <p className={s.info_text}>
-            We are a pop-rock trio from Nizhyn, Chernighiv Rg., Ukraine. Our aim
-            is just the creation of good music, a bit heavy but spiced by some
-            substantial portion of electronic.
-          </p>
-          {isLoading ? 'Loading' : <SwiperMember bandMembers={bandMembers} />}
+          <p className={s.info_text}>{data && data.description.en}</p>
+          {data && <SwiperMember data={data} />}
         </div>
       </div>
     </section>

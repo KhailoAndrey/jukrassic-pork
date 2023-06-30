@@ -30,19 +30,23 @@ const ModalComponent = ({ onClose }) => {
         <ModalLogo />
       </div>
       <div className={styles.navi}>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink to="/#header" onClick={closeModal} className={styles.links}>
           jukrassic pork
         </NavLink>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink to="/#members" onClick={closeModal} className={styles.links}>
           Band members
         </NavLink>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink
+          to="/#latest-releases"
+          onClick={closeModal}
+          className={styles.links}
+        >
           music
         </NavLink>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink to="/#videos" onClick={closeModal} className={styles.links}>
           Videos
         </NavLink>
-        <NavLink onClick={closeModal} className={styles.links}>
+        <NavLink dto="/#contacts" onClick={closeModal} className={styles.links}>
           Contacts
         </NavLink>
       </div>
