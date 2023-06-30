@@ -1,6 +1,19 @@
 .playerBox {
   position: relative;
+
   z-index: 1;
+  width: 100%;
+  height: 200px;
+
+  @media screen and (min-width: 374.9px) {
+    width: 343px;
+    height: 252px;
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    width: 408px;
+    height: 300px;
+  }
 }
 
 .icon {
@@ -12,11 +25,15 @@
 }
 
 .reactPlayer {
-  position: relative;
-  width: 343px;
-  height: 252px;
-  transition: filter 0.3s ease;
+  max-width: 100%;
   z-index: 1;
+
+  transition: filter 0.3s ease;
+}
+
+.reactPlayer:hover,
+.reactPlayer:focus {
+  filter: brightness(50%);
 }
 
 .videoSlider {
@@ -38,4 +55,19 @@
 .playerBox:hover .videoSlider,
 .playerBox:focus .videoSlider {
   transform: scaleX(1);
+}
+
+.hidden {
+  display: none;
+}
+
+.darknedBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--neutral-dark-bckg-clr-2);
 }
