@@ -20,7 +20,7 @@ function HeaderContent() {
   };
 
     const { data } = useFetch('history');
-console.log(data)
+// console.log(data)
   
   return (
     <section id="header" className={scss.header}>

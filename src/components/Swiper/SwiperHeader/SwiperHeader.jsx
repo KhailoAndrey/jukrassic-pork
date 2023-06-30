@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+// import React, { useState } from 'react';
+import SwiperCore, { Navigation, Scrollbar, Pagination, EffectFade, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { ReactComponent as ArrowPrev } from '../../../images/arrow_back.svg';
@@ -8,18 +8,22 @@ import { ReactComponent as ArrowNext } from '../../../images/arrow_forward.svg';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/scrollbar';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
+import 'swiper/css/autoplay';
+
 
 import scss from './SwiperHeader.module.scss';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar]);
 
 const SwiperHeader = ({ data }) => {
 
-  const [currentSlide, setCurrentSlide] = useState(0);
+  // const [currentSlide, setCurrentSlide] = useState(0);
 
-  const handleSlideChange = swiper => {
-    setCurrentSlide(swiper.activeIndex);
-  };
+  // const handleSlideChange = swiper => {
+  //   setCurrentSlide(swiper.activeIndex);
+  // };
   const carouselSettings = {
     spaceBetween: 16,
     slidesPerView: 'auto',
@@ -33,19 +37,43 @@ const SwiperHeader = ({ data }) => {
       },
     },
     loop: 'true',
+    // pagination: {
+    //   clickable: true,
+    // },
     initialSlide: 0,
     navigation: {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
     },
-    modules: [Scrollbar],
-
-    grabCursor: true,
-    speed: 1000,
-    on: {
-      slideChange: handleSlideChange,
+    // modules: [Pagination, Scrollbar],
+    autoplay: {
+      delay: 3000
     },
+    fadeEffect: {
+      crossFade: true
+    },
+
+    // grabCursor: true,
+    speed: 1000,
+    // on: {
+    //   slideChange: handleSlideChange,
+    // },
   };
+  const swiperSlides = data.historyImgList.map(({ srcWebp, srcJpg }, index) => (
+    <SwiperSlide key={index}>
+      <div className={scss.member}>
+        <picture>
+          <source srcSet={srcWebp} type="image/webp" />
+          <source srcSet={srcJpg} type="image/jpeg" />
+          <img
+            src={srcJpg}
+            alt="Jukrassic_Pork_photo"
+            className={scss.member_photo}
+          />
+        </picture>
+      </div>
+    </SwiperSlide>
+  ));
 
   return (
     <>
@@ -61,27 +89,8 @@ const SwiperHeader = ({ data }) => {
           <ArrowNext className={scss.arrow} />
         </div>
       </div>
-      <Swiper {...carouselSettings}>
-        {data &&
-          data.historyImgList.map((photo, index) => (
-            <SwiperSlide key={photo.srcJpg}>
-              <div className={scss.member}>
-                <img
-                  src={photo.srcJpg}
-                  alt={'Jukrassic_Pork_photo'}
-                  srcSet={photo.srcJpg}
-                  className={scss.member_photo}
-                />
-                {index === 1 && (
-                  <div
-                    className={scss.overlay}
-                    style={{ opacity: currentSlide === 0 ? 0 : 0.6 }}
-                  ></div>
-                )}
-              </div>
-            </SwiperSlide>
-          ))}
-      </Swiper>
+
+      <Swiper {...carouselSettings}>{swiperSlides}</Swiper>
     </>
   );
 };
