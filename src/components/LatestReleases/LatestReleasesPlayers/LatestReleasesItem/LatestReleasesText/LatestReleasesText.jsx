@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-
 import scss from './LatestReleasesText.module.scss';
 
 function LatestReleaesText({ currentVideoIndex, valueText, index }) {
