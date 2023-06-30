@@ -9,7 +9,7 @@ function Video() {
   };
 
   return (
-    <section className={scss.video}>
+    <section id="video" className={scss.video}>
       <div className={scss.video_container}>
         <VideoChapter VChapter={language ? language.uk : language.ua} />
         <VideoContainer />
