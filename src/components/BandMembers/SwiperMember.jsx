@@ -1,17 +1,24 @@
 import React from 'react';
-import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  EffectFade,
+  Autoplay,
+} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 //swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/scrollbar';
+import 'swiper/scss/pagination';
+import 'swiper/scss/effect-fade';
+import 'swiper/scss/autoplay';
 //icons
 import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, EffectFade, Pagination, Autoplay]);
 
 const SwiperMember = ({ data }) => {
   const carouselSettings = {
@@ -22,13 +29,20 @@ const SwiperMember = ({ data }) => {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
     },
-    modules: [Scrollbar],
-    scrollbar: {
-      el: `.swiper-scrollbar-band`,
-      draggable: true,
-      // hide: true,
+    autoplay: {
+      delay: 2000,
+      pauseOnMouseEnter: true,
+      stopOnLastSlide: true,
     },
-    grabCursor: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true,
+    },
+    pagination: {
+      type: 'progressbar',
+      el: `.swiper-progressbar-band`,
+    },
+
     speed: 1000,
   };
   return (
@@ -74,9 +88,9 @@ const SwiperMember = ({ data }) => {
       >
         <ArrowNext className={s.arrow} />
       </div>
-      {/* Add ScrollBar */}
+      {/* Add ProgressBar */}
       <div
-        className={`swiper-scrollbar-band ${s.swiperScrollbarBandDrag}`}
+        className={`swiper-progressbar-band  ${s.swiperProgressbarBand}`}
       ></div>
     </>
   );
