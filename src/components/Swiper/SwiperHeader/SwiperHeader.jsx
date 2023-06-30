@@ -21,6 +21,7 @@ const SwiperHeader = ({ data }) => {
         spaceBetween: 24,
       },
     },
+    loop: 'true',
     initialSlide: 0,
     slidesPerView: 'auto',
     navigation: {
