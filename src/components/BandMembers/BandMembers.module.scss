@@ -66,7 +66,7 @@
   }
 }
 .member {
-  width: auto;
+    width: auto;
     flex-shrink: 0;
     display: block;
     height: 100%;
@@ -93,6 +93,13 @@
   &_info{
     padding: 24px;
     background-color: var(--neutral-dark-bckg-clr-3);
+
+    @media screen and (max-width:340px) {
+      height:310px;
+     }
+     @media screen and (min-width:341px) and (max-width:767.5px) {
+      height:272px;
+     }
     @media screen and (min-width:768px) {
       padding: 32px 32px 0 32px;
     }
@@ -233,46 +240,45 @@
   fill: var(--main-accent-text-clr);
 }
 
-.swiperScrollbarBandDrag{
-  background-color: rgba(0, 254, 0, 0.8);
-  // background-color: var(--neutral-dark-bckg-clr-3);
+.swiperProgressbarBand{
+  background-color: var(--neutral-dark-bckg-clr-3);
   position: relative;
-  top:100px;
+  top:10px;
   right: 0;
-  border-radius: 2px;
-  height: 1px;
+  // border-radius: 2px;
+  height: 2px;
   width: 268px;
-  z-index: 10;
-  @media screen and (min-width:303px){
-    top:140px;
-    right: 0;
-    width: 268px;
-  }
-  @media screen and (min-width:309px){
-    top:170px;
-    right: 0;
-    width: 281px;
-  }
-  @media screen and (min-width:339px){
-    top:200px;
-    right: 0;
-    width: 300px;
-  }
-  @media screen and (min-width:375px){
-    top:140px;
-    right: 0;
-    width: 343px;
-  }
-  @media screen and (min-width:768px) {
-    top: 32px;
-    right: -373px;
-    width: 300px;
-  }
+  // z-index: 10;
+  // @media screen and (min-width:303px){
+  //   top:140px;
+  //   right: 0;
+  //   width: 268px;
+  // }
+  // @media screen and (min-width:309px){
+  //   top:170px;
+  //   right: 0;
+  //   width: 281px;
+  // }
+  // @media screen and (min-width:339px){
+  //   top:200px;
+  //   right: 0;
+  //   width: 300px;
+  // }
+  // @media screen and (min-width:375px){
+  //   top:140px;
+  //   right: 0;
+  //   width: 343px;
+  // }
+  // @media screen and (min-width:768px) {
+  //   top: 32px;
+  //   right: -373px;
+  //   width: 300px;
+  // }
 
-  @media screen and (min-width:1440px) {
-    position: absolute;
-    top: 796px;
-    right: 123px;
-    width: 352px;
-  }
+  // @media screen and (min-width:1440px) {
+  //   position: absolute;
+  //   top: 796px;
+  //   right: 123px;
+  //   width: 352px;
+  // }
 }

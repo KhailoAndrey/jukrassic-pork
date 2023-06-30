@@ -1,37 +1,37 @@
 import React from 'react';
-import SwiperCore, { Navigation, Scrollbar } from 'swiper';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 //swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/scrollbar';
+import 'swiper/scss/pagination';
 //icons
 import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Pagination]);
 
 const SwiperMember = ({ data }) => {
   const carouselSettings = {
     spaceBetween: 5,
-    // initialSlide: 0,
-    coverflowEffect: { slideShadows: false },
+    initialSlide: 0,
     slidesPerView: 1,
     navigation: {
       nextEl: `.swiper-next-button`,
       prevEl: `.swiper-prev-button`,
     },
-    modules: [Scrollbar],
-    scrollbar: {
-      el: `.swiper-scrollbar-band`,
-      draggable: true,
-      // hide: true,
-      // multipleActiveThumbs: true,
+    modules: [Pagination],
+    pagination: {
+      type: 'progressbar',
+      el: `.swiper-progressbar-band`,
+      renderProgressbar: function (progressbarFillClass) {
+        return '<span class="' + progressbarFillClass + '"></span>';
+      },
     },
-    grabCursor: true,
-    speed: 1000,
+
+    speed: 2000,
   };
   return (
     <>
@@ -76,9 +76,9 @@ const SwiperMember = ({ data }) => {
       >
         <ArrowNext className={s.arrow} />
       </div>
-      {/* Add ScrollBar */}
+      {/* Add ProgressBar */}
       <div
-        className={`swiper-scrollbar-band ${s.swiperScrollbarBandDrag}`}
+        className={`swiper-progressbar-band  ${s.swiperProgressbarBand}`}
       ></div>
     </>
   );

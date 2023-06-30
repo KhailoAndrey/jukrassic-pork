@@ -5,10 +5,9 @@ import s from './BandMembers.module.scss';
 
 const BandMembers = () => {
   const { data } = useFetch('band');
-  // console.log('isLoading', isLoading);
 
   return (
-    <section className={s.bandMembers}>
+    <section className={s.bandMembers} id="members">
       <div className={`container ${s.band}`}>
         <h2 className={s.title}>{data && data.title.en}</h2>
         <div className={s.info}>
