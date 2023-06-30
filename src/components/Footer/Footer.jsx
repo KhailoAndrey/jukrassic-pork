@@ -15,7 +15,7 @@ function Footer() {
 
   return (
     !isLoading && (
-      <footer className={scss.footer}>
+      <footer className={scss.footer} id="contacts">
         <div className={`container ${scss.footer__wrap}`}>
           <div className={scss.appeal__wrap}>
             <h2 className={scss.appeal__title}>{data && data.title.en}</h2>
