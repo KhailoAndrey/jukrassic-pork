@@ -85,3 +85,12 @@
 .defaultBandPosition:focus .arrow {
   fill: var(--main-accent-text-clr);
 }
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // background: linear-gradient(0deg, rgba(19, 19, 19, 0.60) 0%, rgba(19, 19, 19, 0.60) 100%); /* здесь можно настроить желаемый градиент */
+}
