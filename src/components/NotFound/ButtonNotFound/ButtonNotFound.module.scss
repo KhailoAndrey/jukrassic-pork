@@ -11,6 +11,7 @@
   font-family: 'Mulish';
   font-weight: 600;
   line-height: 1.27;
+  text-decoration: none;
 
   border: 2px solid transparent;
   outline: none;
@@ -27,6 +28,8 @@
 
   @media screen and (min-width: 767.9px) {
     padding: 16px 32px;
+    max-width: 360px;
+    margin-right: auto;
   }
 
   @media screen and (min-width: 1439.9px) {
