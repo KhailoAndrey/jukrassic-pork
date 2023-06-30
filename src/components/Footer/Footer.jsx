@@ -25,9 +25,9 @@ function Footer() {
 
           <address className={scss.address__wrap}>
             {/* socials */}
-            <div>
+            <div className={scss.address__wrap_secondary}>
               <h3 className={scss.address__title}>Follow us</h3>
-              <ul>
+              <ul className={scss.address__social_list}>
                 {data &&
                   data.socialMediaList.map(({ link, name, id }) => (
                     <Item key={id} link={link} name={name} />
@@ -36,10 +36,16 @@ function Footer() {
             </div>
 
             {/* contacts */}
-            <ul className={scss.contactsWrap}>
+            <ul
+              className={[scss.contactsWrap, scss.address__wrap_secondary].join(
+                ' '
+              )}
+            >
               <li>
+                {/* email */}
                 <h3 className={scss.address__title}>Email</h3>
                 <a
+                  className={scss.address__social_list_link}
                   href={data && `mailto:${data.email}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -47,16 +53,18 @@ function Footer() {
                   {data && data.email}
                 </a>
 
-                <button>
+                <button className={scss.mail_btn}>
                   <Envelop className={scss.envelopIcon} />
 
-                  <span>Mail us</span>
+                  <span className={scss.mail_btn__text}>Mail us</span>
                 </button>
               </li>
 
+              {/* phone */}
               <li>
                 <h3 className={scss.address__title}>Call</h3>
                 <a
+                  className={scss.address__social_list_link}
                   href={data && `tel:${data.phone}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -64,17 +72,13 @@ function Footer() {
                   {data && data.phone}
                 </a>
               </li>
-
-              {/* {data &&
-                data.map(({ title, link, name, id }, index) => (
-                  <Item key={index} title={title} link={link} text={name} />
-                ))} */}
             </ul>
-
-            <Logo className={scss.footerLogo} />
           </address>
+          <Logo className={scss.footerLogo} />
 
-          <p>{`Copyright © 2016-${getCurrentYear} Jukrassic Pork ®. All Rights Reserved.`}</p>
+          <p
+            className={scss.copyright}
+          >{`Copyright © 2016-${getCurrentYear} Jukrassic Pork ®. All Rights Reserved.`}</p>
         </div>
       </footer>
     )

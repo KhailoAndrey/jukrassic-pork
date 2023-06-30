@@ -18,6 +18,10 @@
   gap: 52px;
   padding-top: 16px;
   padding-bottom: 80px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 108px;
+  }
 }
 
 .appeal__wrap {
@@ -35,37 +39,113 @@
 
 .appeal__desc {
   color: var(--light-text-clr);
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
 }
 
 .address__wrap {
   display: flex;
-  gap: 52px;
-  flex-direction: column;
+  width: 100%;
   font-style: normal;
+
+  @media screen and (max-width: 767.9px) {
+    flex-direction: column;
+    gap: 52px;
+  }
+
+  @media screen and (min-width: 768px) {
+    gap: 25px;
+  }
+}
+
+.address__wrap_secondary {
+  display: flex;
+  flex-direction: column;
+  // gap: 52px;
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 25px) / 2);
+  }
 }
 
 .address__title {
+  margin-bottom: 20px;
+
   font-size: 24px;
   line-height: 28px;
   text-transform: uppercase;
 
   color: var(--light-text-clr);
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 24px;
+  }
+}
+
+.address__social_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.address__social_list_link {
+  text-decoration: none;
+  color: var(--add-light-text-clr-2);
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.mail_btn {
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  align-self: stretch;
+  border: 1px solid var(--add-light-text-clr-2);
+
+  background: transparent;
+  color: var(--add-light-text-clr-2);
+
+  @media screen and (min-width: 374.9px) {
+    width: 343px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 339px;
+    margin-top: 24px;
+    padding: 8px 24px;
+    gap: 12px;
+  }
+}
+
+.mail_btn__text {
+  font-size: 20px;
+  font-family: Mulish;
+  line-height: 24px;
 }
 
 .contactsWrap {
   display: flex;
   gap: 52px;
 
-  @media screen and (max-width: 374.99px) {
+  @media screen and (max-width: 1439.9px) {
     flex-direction: column;
   }
 }
 
 .envelopIcon {
+  fill: var(--white-text-clr);
   height: 20px;
   width: 20px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 24px;
     width: 24px;
   }
@@ -77,12 +157,28 @@
   }
 
   @media screen and (min-width: 768px) {
+    display: block;
     width: 116px;
     height: 158px;
+    margin-top: -32px;
   }
 
   @media screen and (min-width: 1439.9px) {
     width: 140px;
     height: 192px;
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  line-height: 20px;
+
+  color: var(--neutral-dark-text-clr);
+
+  @media screen and (min-width: 768px) {
+    width: 100%;
+
+    font-size: 20px;
+    line-height: 24px;
   }
 }

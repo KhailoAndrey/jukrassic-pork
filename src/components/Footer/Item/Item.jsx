@@ -1,4 +1,3 @@
-import { ReactComponent as Envelop } from '../../../images/Footer/envelop.svg';
 import scss from '../Footer.module.scss';
 
 const Item = ({ title, name, link }) => {
@@ -9,17 +8,14 @@ const Item = ({ title, name, link }) => {
       {title && <h4>{title}</h4>}
 
       {link && name && (
-        <a href={link} target="_blank" rel="noopener noreferrer">
+        <a
+          className={scss.address__social_list_link}
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {name}
         </a>
-      )}
-
-      {title === 'Email' && (
-        <button>
-          <Envelop className={scss.envelopIcon} />
-
-          <span>Mail us</span>
-        </button>
       )}
     </li>
   );
