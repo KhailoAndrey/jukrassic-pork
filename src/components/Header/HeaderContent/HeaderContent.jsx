@@ -25,13 +25,15 @@ function HeaderContent() {
   return (
     <section id="header" className={scss.header}>
       <div className="container">
+        <div className={scss.header_burger_container}>
         <button
           type="button"
           className={scss.header_burger_btn}
           onClick={openModal}
-        >
+          >
           <Icon />
         </button>
+          </div>
         {isModalOpen && <ModalComponent onClose={closeModal} />}
 
         <div className={scss.header_title_container}>
