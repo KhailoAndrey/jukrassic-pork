@@ -22,19 +22,17 @@
 .bannerTextContainer {
   display: flex;
   align-items: center;
-  width: 375px;
+  width: 100%;
   height: 52px;
   padding: 8px 0;
   background-color: var(--main-accent-text-clr);
 
   @media screen and (min-width: 767.9px) {
-    width: 768px;
     height: 68px;
     padding: 12px 0;
   }
 
   @media screen and (min-width: 1439.9px) {
-    width: 1440px;
     height: 84px;
     padding: 16px 0;
   }
