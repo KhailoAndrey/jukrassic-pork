@@ -23,9 +23,11 @@ const ModalComponent = ({ onClose }) => {
 
   return (
     <div className={styles.modal}>
+      <div className={styles.container_closeButton}>
       <button className={styles.closeButton} onClick={onClose}>
         <ModalCloseBtn />
       </button>
+      </div>
       <div className={styles.modal_logo}>
         <ModalLogo />
       </div>

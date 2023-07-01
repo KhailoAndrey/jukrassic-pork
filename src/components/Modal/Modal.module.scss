@@ -1,7 +1,8 @@
 .modal {
   position: absolute;
   background-color: var(--main-bckg-clr);
-  height: 744px;
+  min-height: 744px;
+  height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -18,22 +19,30 @@
 
   @media screen and (min-width: 1439.9px) {
     width: 408px;
+    min-height: 456px;
     height: 456px;
     position: absolute;
-    top: -456px; 
+    top: -456px;
   }
 }
 
+.container_closeButton {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .closeButton {
-  margin-top: 8px;
-  margin-left: 8px;
+  margin-top: 16px;
+  margin-right: 16px;
+  margin-left: auto;
   background-color: var(--main-bckg-clr);
   border: none;
   cursor: pointer;
 
   @media screen and (min-width: 767.9px) {
-    margin-top: 24px;
-    margin-left: 24px;
+    margin-top: 32px;
+    margin-right: 32px;
   }
   @media screen and (min-width: 1439.9px) {
     display: none;
@@ -41,12 +50,12 @@
 }
 
 .modal_logo {
-  margin-top: 82px;
+  margin-top: 74px;
   padding-left: 16px;
   margin-bottom: 52px;
 
   @media screen and (min-width: 767.9px) {
-    margin-top: 178px;
+    margin-top: 170px;
     padding-left: 32px;
   }
   @media screen and (min-width: 1439.9px) {
@@ -96,8 +105,8 @@
     font-size: 36px;
   }
   @media screen and (min-width: 1439.9px) {
-   height: 52px;
-   font-size: 28px;
+    height: 52px;
+    font-size: 28px;
   }
 }
 
@@ -131,10 +140,10 @@
       font-size: 36px;
     }
     @media screen and (min-width: 1439.9px) {
-   width: 32px;
-   height: 44px;
-   font-size: 28px;
-  }
+      width: 32px;
+      height: 44px;
+      font-size: 28px;
+    }
   }
 
   @media screen and (min-width: 767.9px) {
@@ -143,8 +152,8 @@
     gap: 24px;
   }
   @media screen and (min-width: 1439.9px) {
-   height: 60px;
-   margin-top: 88px;
-   padding: 8px 24px;
+    height: 60px;
+    margin-top: 88px;
+    padding: 8px 24px;
   }
 }
