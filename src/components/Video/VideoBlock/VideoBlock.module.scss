@@ -19,7 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  height: 100%;
 
   @media screen and (min-width: 375px) {
     height: 200px;
@@ -35,10 +35,12 @@
 }
 
 .videoBlock_track {
-  width: 172px !important;
-  height: 100px !important;
+  max-width: 91.46vw !important;
+  max-height: 53.34vw !important;
 
   @media screen and (min-width: 375px) {
+    max-width: none !important;
+    max-height: none !important;
     width: 343px !important;
     height: 200px !important;
   }
@@ -55,17 +57,17 @@
 }
 
 .videoBlock_btnPlay {
-  width: 7vw;
-  height: 7vh;
+  width: 10vw;
+  height: 7vw;
 
   @media screen and (min-width: 375px) {
-    width: 26px;
-    height: 18px;
+    width: 40px;
+    height: 28px;
   }
 
   @media screen and (min-width: 768px) {
-    width: 53px;
-    height: 37px;
+    width: 80px;
+    height: 56px;
   }
 
   @media screen and (min-width: 1440px) {
