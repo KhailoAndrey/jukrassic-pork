@@ -3,7 +3,7 @@
 
 import useFetch from 'hooks/useFetch';
 import Item from './Item/Item';
-import { ReactComponent as Logo } from '../../images/Footer/footer-logo.svg';
+import { ReactComponent as Logo } from '../../images/Logotype.svg';
 import { ReactComponent as Envelop } from '../../images/Footer/envelop.svg';
 import scss from './Footer.module.scss';
 
