@@ -52,7 +52,7 @@ function Footer() {
                   {data && data.email}
                 </a>
 
-                <button className={scss.mail_btn}>
+                <button className={scss.mail_btn} type="button">
                   <Envelop className={scss.envelopIcon} />
 
                   <span className={scss.mail_btn__text}>Mail us</span>

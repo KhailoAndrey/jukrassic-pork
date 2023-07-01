@@ -195,6 +195,8 @@
   }
 
   &:hover {
+    cursor: pointer;
+
     color: var(--main-accent-text-clr);
     fill: var(--main-accent-text-clr);
   }
@@ -202,6 +204,12 @@
   &:hover,
   &:focus {
     border-color: var(--main-accent-text-clr);
+  }
+
+  &:active {
+    border-color: var(--main-accent-text-clr);
+    color: var(--main-accent-text-clr);
+    fill: var(--main-accent-text-clr);
   }
 
   @media screen and (min-width: 374.9px) {
