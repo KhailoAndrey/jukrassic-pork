@@ -1,4 +1,5 @@
 .boxTextModal {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,7 +8,7 @@
 
 .textModal {
   width: 200px;
-  max-height: 460px;
+  max-height: 420px;
 
   font-family: 'Mulish';
   font-size: 14px;
@@ -31,7 +32,7 @@
 
   ::-webkit-scrollbar {
     width: 4px;
-    background-color: transparent;
+    background-color: var(--neutral-dark-text-clr);
   }
 
   ::-webkit-scrollbar-thumb {

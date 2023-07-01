@@ -26,6 +26,10 @@
 
   transform: translate(-50%, -50%);
 
+  @media screen and (min-width: 374.9px) {
+    width: 300px;
+  }
+
   @media screen and (min-width: 767.9px) {
     width: 340px;
   }
