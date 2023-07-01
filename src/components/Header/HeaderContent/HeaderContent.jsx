@@ -1,7 +1,7 @@
 import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 import useFetch from 'hooks/useFetch';
@@ -22,18 +22,37 @@ function HeaderContent() {
     const { data } = useFetch('history');
 // console.log(data)
   
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      clearTimeout(scrollTimeout);
+
+      setIsHeaderVisible(false);
+      setScrollTimeout(setTimeout(() => setIsHeaderVisible(true), 300));
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [scrollTimeout]);
+  
   return (
     <section id="header" className={scss.header}>
       <div className="container">
-        <div className={scss.header_burger_container}>
-        <button
-          type="button"
-          className={scss.header_burger_btn}
-          onClick={openModal}
+        <div
+          className={`${scss.header_burger_container} ${
+            isHeaderVisible ? '' : scss.hidden
+          }`}
+        >
+          <button
+            type="button"
+            className={scss.header_burger_btn}
+            onClick={openModal}
           >
-          <Icon />
-        </button>
-          </div>
+            <Icon />
+          </button>
+        </div>
         {isModalOpen && <ModalComponent onClose={closeModal} />}
 
         <div className={scss.header_title_container}>

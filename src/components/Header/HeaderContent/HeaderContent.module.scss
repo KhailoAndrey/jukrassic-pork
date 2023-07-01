@@ -33,6 +33,7 @@
   position: fixed;
   top: 0;
   z-index: 100;
+  transition: top 0.3s;
   height: 64px;
   width: 358px;
   padding-top: 16px;
@@ -45,6 +46,10 @@
   @media screen and (min-width: 1439.9px) {
     display: none;
   }
+}
+
+.header_burger_container.hidden {
+  top: -60px;
 }
 
 .header_burger_btn {
