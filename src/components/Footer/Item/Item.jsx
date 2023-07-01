@@ -1,8 +1,6 @@
 import scss from '../Footer.module.scss';
 
 const Item = ({ title, name, link }) => {
-  console.log('name:', name);
-  console.log('link:', link);
   return (
     <li>
       {title && <h4>{title}</h4>}

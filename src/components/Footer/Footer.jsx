@@ -10,8 +10,6 @@ import scss from './Footer.module.scss';
 function Footer() {
   const getCurrentYear = new Date().getFullYear();
   const { isLoading, data } = useFetch('contacts');
-  console.log('data:', data);
-  console.log('isLoading:', isLoading);
 
   return (
     !isLoading && (
