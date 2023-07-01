@@ -37,9 +37,10 @@ function Footer() {
 
             {/* contacts */}
             <ul
-              className={[scss.contactsWrap, scss.address__wrap_secondary].join(
-                ' '
-              )}
+              className={[
+                scss.contacts_wrap,
+                scss.address__wrap_secondary,
+              ].join(' ')}
             >
               <li>
                 {/* email */}
@@ -74,7 +75,7 @@ function Footer() {
               </li>
             </ul>
           </address>
-          <Logo className={scss.footerLogo} />
+          <Logo className={scss.logo} />
 
           <p
             className={scss.copyright}
