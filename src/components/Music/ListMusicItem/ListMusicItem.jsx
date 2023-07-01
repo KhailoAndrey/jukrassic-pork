@@ -53,7 +53,7 @@ function ListMusicItem() {
               <ButtonModalCopy valueButton="Copy" textToCopy={textModalMusic} />
             </>
           }
-        ></ModalMusic>
+        />
       )}
     </>
   );
