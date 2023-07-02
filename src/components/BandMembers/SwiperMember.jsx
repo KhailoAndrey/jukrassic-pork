@@ -78,23 +78,8 @@ const SwiperMember = ({ data }) => {
           ))}
       </Swiper>
       {/* Add Navigation */}
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'wrap',
-          alignItems: 'center',
-          position: 'absolute',
-          width: '55%',
-          right: '24px',
-          marginTop: '20px',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            gap: '10px',
-          }}
-        >
+      <div className={s.swiperNav}>
+        <div className={s.swiperBtns}>
           <div
             className={`swiper-prev-button ${s.arrowNavigationLeft} ${s.defaultBandPosition}`}
           >
@@ -109,7 +94,6 @@ const SwiperMember = ({ data }) => {
 
         {/* Add ProgressBar */}
         <div
-          style={{ marginLeft: '25px' }}
           className={`swiper-progressbar-band  ${s.swiperProgressbarBand}`}
         />
       </div>

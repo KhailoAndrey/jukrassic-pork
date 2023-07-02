@@ -1,6 +1,6 @@
 .bandMembers {
   padding-top: 16px;
-  padding-bottom: 228px;
+  padding-bottom: 148px;
   background-color: var(--neutral-dark-bckg-clr-1);
   @media screen and (min-width: 768px) {
     padding-top: 24px;
@@ -169,26 +169,14 @@
 }
 
 .arrowNavigation {
-  // position: absolute;
-  // top: 0;
-  // z-index: 2;
   cursor: pointer;
 
   &.defaultBandPosition {
-    // top: 1050px;
     padding: 8px;
     border: 1px solid var(--main-accent-text-clr);
     background-color: transparent;
     color: var(--main-accent-text-clr);
-    // @media screen and (min-width:375px){
-    //   top:984px;
-    // }
-    // @media screen and (min-width:768px) {
-    //   top:712px;
-    // }
-    // @media screen and (min-width:1440px) {
-    //   top:776px;
-    // }
+  
 
     &:hover,
     &:focus {
@@ -211,24 +199,10 @@
 
 .arrowNavigationLeft {
   @extend .arrowNavigation;
-  // left: 16px;
-  // @media screen and (min-width:768px) {
-  //   left:282px;
-  // }
-  // @media screen and (min-width:1440px) {
-  //   left:832px;
-  // }
 }
 
 .arrowNavigationRight {
   @extend .arrowNavigation;
-  // left: 64px;
-  // @media screen and (min-width:768px) {
-  //   left:331px;
-  // }
-  // @media screen and (min-width:1440px) {
-  //   left:881px;
-  // }
 }
 
 .arrow {
@@ -244,22 +218,55 @@
 .swiperProgressbarBand {
   background-color: var(--neutral-dark-bckg-clr-3);
   position: relative !important;
-  // position: relative;
-  // position: absolute;
-  // z-index: 999;
-  // bottom: 0px;
+  margin-left: 16px;
 }
 
 .test {
   position: relative;
 }
+.swiperNav{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+position:absolute;
+width:100%;
+right: 16px;
+margin-top: 68px;
+@media screen and (min-width:375px){
+  width:343px;
+}
+@media screen and (min-width: 768px) {
+  margin-top: 12px;
+  flex-direction: row;
+  width:65%;
+  align-items: center;
+}
+  @media screen and (min-width: 1440px) {
+  position:relative;
+  margin-top: 16px;
+  width:60%;
+  right: -297px;
+  }
+}
 
-// top:1101px;
-// right: 0;
-// border-radius: 2px;
-// height: 2px;
-// width: 268px;
-// z-index: 10;
+
+.swiperBtns{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  position: relative;
+  left: 16px;
+  @media screen and (min-width: 768px) {
+     margin-right: 32px;
+     margin-bottom: 0;
+  }
+   @media screen and (min-width: 1440px) {
+      margin-right: 40px;
+  }
+}
+
+
+
 // @media screen and (min-width:303px){
 //   top:140px;
 //   right: 0;
@@ -274,37 +281,4 @@
 //   top:200px;
 //   right: 0;
 //   width: 300px;
-// }
-// @media screen and (min-width:375px){
-//   bottom:1100px;
-//   right: 15px;
-//   width: 343px;
-// }
-// @media screen and (min-width:768px) {
-//   top: 32px;
-//   right: -373px;
-//   width: 300px;
-// }
-
-// @media screen and (min-width:1440px) {
-//   position: absolute;
-//   top: 796px;
-//   right: 123px;
-//   width: 352px;
-// }
-// }
-
-// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-//   background: #f5f5f5
-// }
-// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .portfolio_slider-controls .swiper-button-prev:hover:after {
-//   background-color: #f5f5f5
-// }
-
-// .c-portfolio-slider .portfolio_slider-content .portfolio_slider .portfolio_slider-extra .swiper-pagination-progressbar {
-//   position: relative;
-//   padding-right: calc((100% - 1360px) / 2);
-//   background: #f5f5f520;
-//   height: 1px;
-//   max-width: calc(100% - 116px)
 // }
