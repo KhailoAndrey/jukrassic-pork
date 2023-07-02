@@ -28,7 +28,9 @@ function MusicComponent() {
           )}
         </div>
         {data && data.musicList && <ListMusic musicList={data.musicList} />}
-        <ButtonShowMoreMusic valueShowMoreMusic="Show more" />
+        {data && data.musicList > 6 && (
+          <ButtonShowMoreMusic valueShowMoreMusic="Show more" />
+        )}
       </div>
     </section>
   );
