@@ -39,9 +39,15 @@ function ListMusicItem({ itemMusic }) {
         {itemMusic && _ref && (
           <ImageMusic imageAudio={audio} imageMusic={_ref} />
         )}
-        {itemMusic && <LabelMusic labelMusic={name[currentLanguage]} />}
-        {itemMusic && itemMusic.description && (
+        {itemMusic[currentLanguage] ? (
+          <LabelMusic labelMusic={name[currentLanguage]} />
+        ) : (
+          <LabelMusic labelMusic="without title" />
+        )}
+        {itemMusic && itemMusic.description ? (
           <DateReleaseText dateReleaseText={description[currentLanguage]} />
+        ) : (
+          <DateReleaseText dateReleaseText="Without release date" />
         )}
         <ul className={scss.listButtonsMusic}>
           <li>
@@ -65,10 +71,19 @@ function ListMusicItem({ itemMusic }) {
                   labelModalMusic={itemMusic.name[currentLanguage]}
                 />
               )}
-              {itemMusic && lyrics && (
+              {itemMusic && lyrics ? (
                 <ModalTextMusic textModalMusic={lyrics} />
+              ) : (
+                <ModalTextMusic textModalMusic="This song hasn't lyrics(" />
               )}
-              <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
+              {itemMusic && lyrics ? (
+                <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
+              ) : (
+                <ButtonModalCopy
+                  valueButton="Copy"
+                  textModalMusic="This song hasn't lyrics("
+                />
+              )}
             </>
           }
         />
