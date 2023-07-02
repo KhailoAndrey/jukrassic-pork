@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import scss from './ModalLabelMusic.module.scss';
 
-function ModalLabelMusic({ labelModalMusic }) {
+function ModalLabelMusic({ modalName }) {
   return (
     <div className={scss.boxLabelModalMusic}>
-      <h2 className={scss.labelModalMusic}>{labelModalMusic}</h2>
+      <h2 className={scss.labelModalMusic}>{modalName}</h2>
     </div>
   );
 }
 
 ModalLabelMusic.propTypes = {
-  labelModalMusic: PropTypes.string.isRequired,
+  modalName: PropTypes.string.isRequired,
 };
 
 export default ModalLabelMusic;
