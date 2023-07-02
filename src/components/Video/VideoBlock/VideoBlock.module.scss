@@ -37,6 +37,7 @@
 .videoBlock_track {
   max-width: 91.46vw !important;
   max-height: 53.34vw !important;
+  transition: filter 0.3s ease;
 
   @media screen and (min-width: 375px) {
     max-width: none !important;
@@ -54,6 +55,15 @@
     width: 840px !important;
     height: 472px !important;
   }
+}
+
+.videoBlock_cover:hover {
+  opacity: 0.8;
+  background-image: linear-gradient(
+    180deg,
+    rgba(19, 19, 19, 0.24) 0%,
+    rgba(19, 19, 19, 0.8) 100%
+  );
 }
 
 .videoBlock_btnPlay {
