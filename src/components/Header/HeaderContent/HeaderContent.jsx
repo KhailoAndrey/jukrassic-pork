@@ -1,13 +1,16 @@
 import scss from './HeaderContent.module.scss';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 import useFetch from 'hooks/useFetch';
+import { LanguageContext } from 'utils/LanguageContext';
 
 function HeaderContent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { currentLanguage } = useContext(LanguageContext);
+  // console.log(currentLanguage)
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -19,9 +22,9 @@ function HeaderContent() {
     document.body.classList.remove(scss.modalOpen);
   };
 
-    const { data } = useFetch('history');
-// console.log(data)
-  
+  const { data } = useFetch('history');
+  // console.log(data)
+
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [scrollTimeout, setScrollTimeout] = useState(null);
 
@@ -36,7 +39,7 @@ function HeaderContent() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollTimeout]);
-  
+
   return (
     <section id="header" className={scss.header}>
       <div className="container">
@@ -58,7 +61,9 @@ function HeaderContent() {
         <div className={scss.header_title_container}>
           <div>
             <div className={scss.header_title}>
-              <p className={scss.header_title_text}>jukrassic pork</p>
+              <p className={scss.header_title_text}>
+                {data ? data.title[currentLanguage] : 'jukrassic pork'}
+              </p>
             </div>
             <div className={scss.header_subTitle}>
               <p className={scss.header_subtitle_text}>official website</p>
@@ -66,10 +71,11 @@ function HeaderContent() {
           </div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
-              {/* {data.description.en} */}
-              Jukrassic Pork is a pop-rock music band from Ukraine. The project
+              {data
+                ? data.description[currentLanguage]
+                : `'Jukrassic Pork is a pop-rock music band from Ukraine. The project
               was founded in 2000 by Vyacheslav /Zmeark/ Lozowy. Since then,
-              several members have changed in the band.
+            several members have changed in the band.'`}
             </p>
           </div>
         </div>
