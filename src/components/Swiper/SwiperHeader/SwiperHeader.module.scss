@@ -42,48 +42,41 @@
   }
 }
 
-.arrowNavigation {
+.arrowNavigationLeft,
+.arrowNavigationRight
+ {
   width: 40px;
   height: 40px;
   cursor: pointer;
 
-  &:global(.swiper-button-disabled) {
-    opacity: 0.5;
-    cursor: auto;
-    pointer-events: none;
-  }
+  // &:global(.swiper-button-disabled) {
+  //   opacity: 0.5;
+  //   cursor: auto;
+    // pointer-events: none;
+  // }
 
   &.defaultBandPosition {
     padding: 8px;
-    border: 1px solid var(--neutral-dark-text-clr);
+    border: 1px solid var(--main-accent-text-clr);
     background-color: transparent;
-    color: var(--neutral-dark-text-clr);
+    color: var(--main-accent-text-clr);
 
-    &:hover {
-      border: 1px solid var(--main-accent-text-clr);
-      cursor: pointer;
-    }
+    &:hover,
     &:focus {
       border: 1px solid var(--main-accent-text-clr);
+      background-color: var(--main-accent-text-clr);
       cursor: pointer;
-    }
+    }    
   }
 }
 
-.arrowNavigationLeft {
-  @extend .arrowNavigation;
-}
-
-.arrowNavigationRight {
-  @extend .arrowNavigation;
-}
 .arrow {
-  //   display: block;
-  fill: var(--neutral-dark-text-clr);
+    display: block;
+  fill: var(--main-accent-text-clr);
 }
 .defaultBandPosition:hover .arrow,
 .defaultBandPosition:focus .arrow {
-  fill: var(--main-accent-text-clr);
+  fill: var(--neutral-dark-bckg-clr-1);
 }
 
 .overlay {
