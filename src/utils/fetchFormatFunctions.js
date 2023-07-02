@@ -1,4 +1,5 @@
 import { urlFor } from 'client';
+import createSanityMusicLink from './createSanityMusicLink';
 
 export const historyFormattedFn = ({
   title,
@@ -65,5 +66,25 @@ export const contactsFormattedFn = ({
     socialMediaList: socialMediaList.map(({ link, name, _key }) => {
       return { link, name, id: _key };
     }),
+  };
+};
+
+export const musicFormattedFn = ({ title, description, _id, musicList }) => {
+  return {
+    id: _id,
+    title: { en: title.en, ua: title.ua },
+    description: { en: description.en, ua: description.ua },
+    musicList: musicList.map(
+      ({ audio, songImage, description, name, lyrics, _key }) => {
+        return {
+          id: _key,
+          name: { en: name.en, ua: name.ua },
+          description: { en: description.en, ua: description.ua },
+          songImage: urlFor(songImage?.asset),
+          audio: createSanityMusicLink(audio),
+          lyrics: lyrics[0]?.children[0]?.text,
+        };
+      }
+    ),
   };
 };
