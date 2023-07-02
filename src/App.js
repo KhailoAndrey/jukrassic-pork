@@ -2,13 +2,15 @@ import NotFoundComponent from 'components/NotFound/NotFoundComponent';
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router';
 import { Bars } from 'react-loader-spinner';
+import { LanguageProvider } from 'utils/LanguageContext';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
 const MusicPage = lazy(() => import('./pages/MusicPage'));
 
 function App() {
   return (
-    <div>
+    <LanguageProvider>
+      <div>        
       <Suspense
         fallback={
           <div
@@ -32,14 +34,16 @@ function App() {
             />
           </div>
         }
-      >
+        >
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/music" element={<MusicPage />} />
           <Route path="*" element={<NotFoundComponent />} />
         </Routes>
       </Suspense>
-    </div>
+      </div>      
+    </LanguageProvider>
+    
   );
 }
 

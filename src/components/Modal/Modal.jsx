@@ -1,21 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './Modal.module.scss';
 import { ReactComponent as ModalCloseBtn } from '../../images/modal_close_green.svg';
 import { ReactComponent as ModalLogo } from '../../images/Logotype.svg';
 import { NavLink } from 'react-router-dom';
+import { LanguageContext } from 'utils/LanguageContext';
 
 const ModalComponent = ({ onClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleLanguageChange = language => {
-    // Логика для изменения языка сайта
-  };
+  const { currentLanguage, changeLanguage } = useContext(LanguageContext);
 
-//   const handleNavigate = () => {
-//     // Логика для перехода на другую страницу
-//   };
-    if (isModalOpen) { document.body.classList.add(styles.modalOpen) }
-    
+  const handleLanguageChange = lang => {
+    changeLanguage(lang);
+  };
+  console.log(currentLanguage);
+
+  if (isModalOpen) {
+    document.body.classList.add(styles.modalOpen);
+  }
+
   const closeModal = () => {
     setIsModalOpen(false);
     document.body.classList.remove(styles.modalOpen);
@@ -24,9 +27,9 @@ const ModalComponent = ({ onClose }) => {
   return (
     <div className={styles.modal}>
       <div className={styles.container_closeButton}>
-      <button className={styles.closeButton} onClick={onClose}>
-        <ModalCloseBtn />
-      </button>
+        <button className={styles.closeButton} onClick={onClose}>
+          <ModalCloseBtn />
+        </button>
       </div>
       <div className={styles.modal_logo}>
         <ModalLogo />
@@ -53,8 +56,18 @@ const ModalComponent = ({ onClose }) => {
         </NavLink>
       </div>
       <div className={styles.languageButtons}>
-        <button onClick={() => handleLanguageChange('en')}>EN</button>
-        <button onClick={() => handleLanguageChange('ru')}>UA</button>
+        <button
+          onClick={() => handleLanguageChange('en')}
+          className={`${currentLanguage === 'en' ? styles.active : ''}`}
+        >
+          EN
+        </button>
+        <button
+          onClick={() => handleLanguageChange('ua')}
+          className={`${currentLanguage === 'ua' ? styles.active : ''}`}
+        >
+          UA
+        </button>
       </div>
     </div>
   );
