@@ -26,7 +26,7 @@ const SwiperHeader = ({ data }) => {
   // };
   const carouselSettings = {
     spaceBetween: 16,
-    slidesPerView: 'auto',
+    slidesPerView: 1,
     breakpoints: {
       768: {
         spaceBetween: 24,
@@ -90,7 +90,10 @@ const SwiperHeader = ({ data }) => {
         </div>
       </div>
 
-      <Swiper {...carouselSettings}>{swiperSlides}</Swiper>
+      <Swiper {...carouselSettings}>
+        {swiperSlides}
+        {swiperSlides}
+      </Swiper>
     </>
   );
 };
