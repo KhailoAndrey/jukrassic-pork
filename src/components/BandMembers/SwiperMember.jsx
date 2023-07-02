@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SwiperCore, {
   Navigation,
   Pagination,
@@ -17,10 +17,13 @@ import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
+import { LanguageContext } from 'utils/LanguageContext';
 
 SwiperCore.use([Navigation, EffectFade, Pagination, Autoplay]);
 
 const SwiperMember = ({ data }) => {
+  const { currentLanguage } = useContext(LanguageContext);
+
   const carouselSettings = {
     spaceBetween: 5,
     initialSlide: 0,
@@ -54,20 +57,22 @@ const SwiperMember = ({ data }) => {
               <div className={s.member}>
                 <img
                   src={member.bandImage}
-                  alt={member.name.en}
+                  alt={member.name[currentLanguage]}
                   srcSet={member.bandImage}
                   className={s.member_photo}
                 />
                 <div className={s.member_info}>
-                  <h3 className={s.member_name}> {member.name.en}</h3>
+                  <h3 className={s.member_name}>
+                    {member.name[currentLanguage]}
+                  </h3>
                   <p className={s.member_position}>
-                    {member.specialization.en}
+                    {member.specialization[currentLanguage]}
                   </p>
                   <ul className={s.member_description}>
                     {member.descriptionList.map(item => {
                       return (
                         <li key={item.id} className={s.member_description_item}>
-                          {item.description.en}
+                          {item.description[currentLanguage]}
                         </li>
                       );
                     })}

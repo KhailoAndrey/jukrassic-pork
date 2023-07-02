@@ -16,6 +16,14 @@
   @media screen and (min-width: 1440px) {
     display: flex;
     gap: 72px;
+    
+  }
+}
+.bandDesktop{
+  position: relative;
+  @media screen and (min-width: 1440px) {
+    display: flex;
+    gap: 178px;
   }
 }
 .title {
@@ -282,3 +290,4 @@ margin-top: 68px;
 //   right: 0;
 //   width: 300px;
 // }
+
