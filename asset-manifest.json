@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/jukrassic-pork/static/css/main.85eeeef4.css",
-    "main.js": "/jukrassic-pork/static/js/main.e4a2aad7.js",
-    "static/css/9.f088fde7.chunk.css": "/jukrassic-pork/static/css/9.f088fde7.chunk.css",
+    "main.css": "/jukrassic-pork/static/css/main.4b544236.css",
+    "main.js": "/jukrassic-pork/static/js/main.c10644f4.js",
+    "static/css/9.99201c2f.chunk.css": "/jukrassic-pork/static/css/9.99201c2f.chunk.css",
     "static/js/9.5fcaa74a.chunk.js": "/jukrassic-pork/static/js/9.5fcaa74a.chunk.js",
     "static/css/974.dfbde054.chunk.css": "/jukrassic-pork/static/css/974.dfbde054.chunk.css",
     "static/js/974.df554d6f.chunk.js": "/jukrassic-pork/static/js/974.df554d6f.chunk.js",
@@ -38,9 +38,9 @@
     "static/media/Icon-download.svg": "/jukrassic-pork/static/media/Icon-download.5e76cc14c06f4e55ecdfccc12893e3c8.svg",
     "static/media/icon-close.svg": "/jukrassic-pork/static/media/icon-close.5ff5bf08c2f34b7dc126544ef3bd8a8a.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
-    "main.85eeeef4.css.map": "/jukrassic-pork/static/css/main.85eeeef4.css.map",
-    "main.e4a2aad7.js.map": "/jukrassic-pork/static/js/main.e4a2aad7.js.map",
-    "9.f088fde7.chunk.css.map": "/jukrassic-pork/static/css/9.f088fde7.chunk.css.map",
+    "main.4b544236.css.map": "/jukrassic-pork/static/css/main.4b544236.css.map",
+    "main.c10644f4.js.map": "/jukrassic-pork/static/js/main.c10644f4.js.map",
+    "9.99201c2f.chunk.css.map": "/jukrassic-pork/static/css/9.99201c2f.chunk.css.map",
     "9.5fcaa74a.chunk.js.map": "/jukrassic-pork/static/js/9.5fcaa74a.chunk.js.map",
     "974.dfbde054.chunk.css.map": "/jukrassic-pork/static/css/974.dfbde054.chunk.css.map",
     "974.df554d6f.chunk.js.map": "/jukrassic-pork/static/js/974.df554d6f.chunk.js.map",
@@ -51,7 +51,7 @@
     "929.d7bdb4e6.chunk.js.map": "/jukrassic-pork/static/js/929.d7bdb4e6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.85eeeef4.css",
-    "static/js/main.e4a2aad7.js"
+    "static/css/main.4b544236.css",
+    "static/js/main.c10644f4.js"
   ]
 }
