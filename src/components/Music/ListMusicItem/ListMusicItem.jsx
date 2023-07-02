@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 import ImageMusic from './ImageMusic/ImageMusic';
 import LabelMusic from './LabelMusic/LabelMusic';
@@ -13,24 +13,31 @@ import ModalTextMusic from '../ModalMusic/ModalTextMusic/ModalTextMusic';
 import ButtonModalCopy from '../ModalMusic/ButtonModalCopy/ButtonModalCopy';
 
 import scss from './ListMusicItem.module.scss';
-import imageMusic from '../../../images/Music/jpg/IMG.jpg';
 
-function ListMusicItem() {
+function ListMusicItem({ itemMusic }) {
   const [showModal, setShowModal] = useState(false);
 
   const toggleModalMusic = () => {
     setShowModal(prevState => !prevState);
   };
 
-  const textModalMusic =
-    ' Багато кроків ти пройшов З надією І втілив у життя усе Омріяне Я долі буду Дякувать завжди Що вдачу мала я Тебе знайти. Завжди тримав За муром Думки і надії Ти не ховай від сонця Квіти польовії Багато кроків ти пройшов З надією І втілив у життя усе Омріяне Я долі буду Дякувать завжди Що вдачу мала я Тебе знайти. Завжди тримав За муром Думки і надії Ти не ховай від сонця Квіти польовії';
+  const { audio, songImage, name, description, lyrics } = itemMusic;
+  const {
+    options: {
+      source: { _ref },
+    },
+  } = songImage;
 
   return (
     <>
       <li className={scss.listMusicItem}>
-        <ImageMusic imageMusic={imageMusic} />
-        <LabelMusic labelMusic="сонце/sun" />
-        <DateReleaseText dateReleaseText="Release date: June 2023" />
+        {itemMusic && _ref && (
+          <ImageMusic imageAudio={audio} imageMusic={_ref} />
+        )}
+        {itemMusic && <LabelMusic labelMusic={name.en} />}
+        {itemMusic && itemMusic.description && (
+          <DateReleaseText dateReleaseText={description.en} />
+        )}
         <ul className={scss.listButtonsMusic}>
           <li>
             <ButtonDownloadMusic valueButton="Download" />
@@ -48,9 +55,13 @@ function ListMusicItem() {
           onCloseModal={toggleModalMusic}
           modalContent={
             <>
-              <ModalLabelMusic labelModalMusic="КВІТИ ПОЛЬОВІЇ" />
-              <ModalTextMusic textModalMusic={textModalMusic} />
-              <ButtonModalCopy valueButton="Copy" textToCopy={textModalMusic} />
+              {itemMusic && itemMusic.name && (
+                <ModalLabelMusic labelModalMusic={itemMusic.name.en} />
+              )}
+              {itemMusic && lyrics && (
+                <ModalTextMusic textModalMusic={lyrics} />
+              )}
+              <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
             </>
           }
         />
@@ -59,8 +70,26 @@ function ListMusicItem() {
   );
 }
 
-// ListMusicItem.propTypes = {
-//   listMusicItem: PropTypes.string.isRequired,
-// };
+ListMusicItem.propTypes = {
+  itemMusic: PropTypes.shape({
+    audio: PropTypes.string.isRequired,
+    name: PropTypes.shape({
+      en: PropTypes.string.isRequired,
+      ua: PropTypes.string.isRequired,
+    }),
+    description: PropTypes.shape({
+      en: PropTypes.string.isRequired,
+      ua: PropTypes.string.isRequired,
+    }),
+    songImage: PropTypes.shape({
+      options: PropTypes.shape({
+        source: PropTypes.shape({
+          _ref: PropTypes.string.isRequired,
+        }),
+      }),
+    }),
+    lyrics: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ListMusicItem;
