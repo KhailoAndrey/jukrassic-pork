@@ -1,21 +1,26 @@
 import VideoBlock from '../VideoBlock/VideoBlock';
 import scss from './VideoContainer.module.scss';
 
-function VideoContainer() {
-  const track = [
+function VideoContainer({ data, language }) {
+  // const { id, videoLinksList: track1 } = data;
+  const track = (data && data.videoLinksList) || [
     {
-      src: 'CB9-SAhlUCY',
-      title: 'Стежка/Path (Official video 2023)',
-    },
-    {
-      src: 'pcGyY7rl2C4',
-      title: 'angel (ремастер відео 2019)',
+      id: '1',
+      name: {
+        en: 'Стежка/Path (Official video 2023)',
+        ua: 'Стежка (офіційне відео 2023)',
+      },
+      videoLink: 'https://youtu.be/CB9-SAhlUCY',
     },
   ];
   return (
     <div className={scss.videoContainer}>
       {track.map(el => (
-        <VideoBlock key={el.src} src={el.src} title={el.title} />
+        <VideoBlock
+          key={el.id}
+          src={el.videoLink.split('/')[3]}
+          title={el.name[language]}
+        />
       ))}
     </div>
   );

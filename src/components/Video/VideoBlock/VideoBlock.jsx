@@ -22,7 +22,7 @@ function VideoBlock({ src, title }) {
             </svg>
           }
           light={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
-          url={`https://www.youtube.com/embed/${src}`}
+          url={`https://youtu.be/${src}`}
           playing={isPlay}
           onPlay={handleClick}
           onPause={handleClick}

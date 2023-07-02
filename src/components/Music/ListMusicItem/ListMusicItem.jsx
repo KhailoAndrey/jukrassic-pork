@@ -22,6 +22,7 @@ function ListMusicItem({ itemMusic }) {
   };
 
   const { audio, songImage, name, description, lyrics } = itemMusic;
+  console.log('songImage', songImage);
   const {
     options: {
       source: { _ref },
