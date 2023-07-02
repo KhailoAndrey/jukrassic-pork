@@ -1,14 +1,32 @@
 .boxTextModal {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 8px;
+  overflow: hidden;
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    background-color: var(--neutral-dark-bckg-clr-1);
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--neutral-dark-text-clr);
+  }
 }
 
 .textModal {
-  width: 200px;
+  padding: 0px 60px;
   max-height: 420px;
+  overflow: auto;
 
   font-family: 'Mulish';
   font-size: 14px;
@@ -28,19 +46,5 @@
 
   @media screen and (min-width: 1439.9px) {
     font-size: 20px;
-  }
-
-  ::-webkit-scrollbar {
-    width: 4px;
-    background-color: var(--neutral-dark-text-clr);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: var(--neutral-dark-bckg-clr-1);
-    border-radius: 3px;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--neutral-dark-text-clr);
   }
 }

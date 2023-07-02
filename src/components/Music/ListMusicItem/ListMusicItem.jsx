@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { LanguageContext } from 'utils/LanguageContext';
 import PropTypes from 'prop-types';
 
 import ImageMusic from './ImageMusic/ImageMusic';
@@ -21,47 +23,61 @@ function ListMusicItem({ itemMusic }) {
     setShowModal(prevState => !prevState);
   };
 
-  const { audio, songImage, name, description, lyrics } = itemMusic;
-  const {
-    options: {
-      source: { _ref },
-    },
-  } = songImage;
+  const { audio, songImage, songLink, name, description, lyrics } = itemMusic;
+
+  const { currentLanguage } = useContext(LanguageContext);
 
   return (
     <>
-      <li className={scss.listMusicItem}>
-        {itemMusic && _ref && (
-          <ImageMusic imageAudio={audio} imageMusic={_ref} />
-        )}
-        {itemMusic && <LabelMusic labelMusic={name.en} />}
-        {itemMusic && itemMusic.description && (
-          <DateReleaseText dateReleaseText={description.en} />
-        )}
-        <ul className={scss.listButtonsMusic}>
-          <li>
-            <ButtonDownloadMusic valueButton="Download" />
-          </li>
-          <li>
-            <ButtonLyricsMusic
-              valueButton="Lyrics"
-              onClick={toggleModalMusic}
-            />
-          </li>
-        </ul>
-      </li>
+      {itemMusic.audio && (
+        <li className={scss.listMusicItem}>
+          {itemMusic && (
+            <ImageMusic songImage={songImage} songLink={songLink} />
+          )}
+          {itemMusic[currentLanguage] ? (
+            <LabelMusic labelMusic={name[currentLanguage]} />
+          ) : (
+            <LabelMusic labelMusic="without title" />
+          )}
+          {itemMusic && itemMusic.description ? (
+            <DateReleaseText dateReleaseText={description[currentLanguage]} />
+          ) : (
+            <DateReleaseText dateReleaseText="Without release date" />
+          )}
+          <ul className={scss.listButtonsMusic}>
+            <li>
+              <ButtonDownloadMusic valueButton="Download" audio={audio} />
+            </li>
+            <li>
+              <ButtonLyricsMusic
+                valueButton="Lyrics"
+                onClick={toggleModalMusic}
+              />
+            </li>
+          </ul>
+        </li>
+      )}
       {showModal && (
         <ModalMusic
           onCloseModal={toggleModalMusic}
           modalContent={
             <>
               {itemMusic && itemMusic.name && (
-                <ModalLabelMusic labelModalMusic={itemMusic.name.en} />
+                <ModalLabelMusic modalName={itemMusic.name[currentLanguage]} />
               )}
-              {itemMusic && lyrics && (
+              {itemMusic && lyrics ? (
                 <ModalTextMusic textModalMusic={lyrics} />
+              ) : (
+                <ModalTextMusic textModalMusic="This song hasn't lyrics(" />
               )}
-              <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
+              {itemMusic && lyrics ? (
+                <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
+              ) : (
+                <ButtonModalCopy
+                  valueButton="Copy"
+                  textModalMusic="This song hasn't lyrics("
+                />
+              )}
             </>
           }
         />
@@ -71,25 +87,7 @@ function ListMusicItem({ itemMusic }) {
 }
 
 ListMusicItem.propTypes = {
-  itemMusic: PropTypes.shape({
-    audio: PropTypes.string.isRequired,
-    name: PropTypes.shape({
-      en: PropTypes.string.isRequired,
-      ua: PropTypes.string.isRequired,
-    }),
-    description: PropTypes.shape({
-      en: PropTypes.string.isRequired,
-      ua: PropTypes.string.isRequired,
-    }),
-    songImage: PropTypes.shape({
-      options: PropTypes.shape({
-        source: PropTypes.shape({
-          _ref: PropTypes.string.isRequired,
-        }),
-      }),
-    }),
-    lyrics: PropTypes.string.isRequired,
-  }).isRequired,
+  itemMusic: PropTypes.object.isRequired,
 };
 
 export default ListMusicItem;
