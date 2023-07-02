@@ -100,12 +100,28 @@ export const releasesFormattedFn = ({
     id: _id,
     title: { en: title.en, ua: title.ua },
     description: { en: description.en, ua: description.ua },
-    latestReleasesList: latestReleasesList.map(({ songImage, songLink, name, _key }) => {
+    latestReleasesList: latestReleasesList.map(
+      ({ songImage, songLink, name, _key }) => {
+        return {
+          id: _key,
+          name: { en: name.en, ua: name.ua },
+          songImage: urlFor(songImage?.asset),
+          songLink,
+        };
+      }
+    ),
+  };
+};
+
+export const videoFormattedFn = ({ title, _id, videoLinksList }) => {
+  return {
+    id: _id,
+    title: { en: title.en, ua: title.ua },
+    videoLinksList: videoLinksList.map(({ videoLink, name, _key }) => {
       return {
         id: _key,
         name: { en: name.en, ua: name.ua },
-        songImage: urlFor(songImage?.asset),
-        songLink,
+        videoLink,
       };
     }),
   };
