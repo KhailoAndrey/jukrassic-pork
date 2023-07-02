@@ -26,8 +26,8 @@ const SwiperMember = ({ data }) => {
     initialSlide: 0,
     slidesPerView: 1,
     navigation: {
-      nextEl: `.swiper-next-button`,
-      prevEl: `.swiper-prev-button`,
+      nextEl: '.swiper-next-button',
+      prevEl: '.swiper-prev-button',
     },
     autoplay: {
       delay: 2000,
@@ -40,13 +40,13 @@ const SwiperMember = ({ data }) => {
     },
     pagination: {
       type: 'progressbar',
-      el: `.swiper-progressbar-band`,
+      el: '.swiper-progressbar-band',
     },
 
     speed: 1000,
   };
   return (
-    <>
+    <div className={s.test}>
       <Swiper {...carouselSettings} className={s.list}>
         {data &&
           data.bandList.map(member => (
@@ -79,20 +79,41 @@ const SwiperMember = ({ data }) => {
       </Swiper>
       {/* Add Navigation */}
       <div
-        className={`swiper-prev-button ${s.arrowNavigationLeft} ${s.defaultBandPosition}`}
+        style={{
+          display: 'flex',
+          flexDirection: 'wrap',
+          alignItems: 'center',
+          position: 'absolute',
+          width: '55%',
+          right: '24px',
+          marginTop: '20px',
+        }}
       >
-        <ArrowPrev className={s.arrow} />
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+          }}
+        >
+          <div
+            className={`swiper-prev-button ${s.arrowNavigationLeft} ${s.defaultBandPosition}`}
+          >
+            <ArrowPrev className={s.arrow} />
+          </div>
+          <div
+            className={`swiper-next-button ${s.arrowNavigationRight} ${s.defaultBandPosition}`}
+          >
+            <ArrowNext className={s.arrow} />
+          </div>
+        </div>
+
+        {/* Add ProgressBar */}
+        <div
+          style={{ marginLeft: '25px' }}
+          className={`swiper-progressbar-band  ${s.swiperProgressbarBand}`}
+        />
       </div>
-      <div
-        className={`swiper-next-button ${s.arrowNavigationRight} ${s.defaultBandPosition}`}
-      >
-        <ArrowNext className={s.arrow} />
-      </div>
-      {/* Add ProgressBar */}
-      <div
-        className={`swiper-progressbar-band  ${s.swiperProgressbarBand}`}
-      ></div>
-    </>
+    </div>
   );
 };
 
