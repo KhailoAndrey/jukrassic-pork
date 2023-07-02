@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useContext } from 'react';
+import { LanguageContext } from 'utils/LanguageContext';
 import PropTypes from 'prop-types';
 
 import ImageMusic from './ImageMusic/ImageMusic';
@@ -22,11 +24,14 @@ function ListMusicItem({ itemMusic }) {
   };
 
   const { audio, songImage, name, description, lyrics } = itemMusic;
+
   const {
     options: {
       source: { _ref },
     },
   } = songImage;
+
+  const { currentLanguage } = useContext(LanguageContext);
 
   return (
     <>
@@ -34,9 +39,9 @@ function ListMusicItem({ itemMusic }) {
         {itemMusic && _ref && (
           <ImageMusic imageAudio={audio} imageMusic={_ref} />
         )}
-        {itemMusic && <LabelMusic labelMusic={name.en} />}
+        {itemMusic && <LabelMusic labelMusic={name[currentLanguage]} />}
         {itemMusic && itemMusic.description && (
-          <DateReleaseText dateReleaseText={description.en} />
+          <DateReleaseText dateReleaseText={description[currentLanguage]} />
         )}
         <ul className={scss.listButtonsMusic}>
           <li>
@@ -56,7 +61,9 @@ function ListMusicItem({ itemMusic }) {
           modalContent={
             <>
               {itemMusic && itemMusic.name && (
-                <ModalLabelMusic labelModalMusic={itemMusic.name.en} />
+                <ModalLabelMusic
+                  labelModalMusic={itemMusic.name[currentLanguage]}
+                />
               )}
               {itemMusic && lyrics && (
                 <ModalTextMusic textModalMusic={lyrics} />
