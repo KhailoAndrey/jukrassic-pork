@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/jukrassic-pork/static/css/main.4b544236.css",
-    "main.js": "/jukrassic-pork/static/js/main.ff4e5139.js",
-    "static/css/296.c0ec26fa.chunk.css": "/jukrassic-pork/static/css/296.c0ec26fa.chunk.css",
+    "main.js": "/jukrassic-pork/static/js/main.fe7069ea.js",
+    "static/css/296.b53ea860.chunk.css": "/jukrassic-pork/static/css/296.b53ea860.chunk.css",
     "static/js/296.78c64a52.chunk.js": "/jukrassic-pork/static/js/296.78c64a52.chunk.js",
-    "static/css/974.c4901716.chunk.css": "/jukrassic-pork/static/css/974.c4901716.chunk.css",
+    "static/css/974.34bd20f9.chunk.css": "/jukrassic-pork/static/css/974.34bd20f9.chunk.css",
     "static/js/974.ab0ebd89.chunk.js": "/jukrassic-pork/static/js/974.ab0ebd89.chunk.js",
     "static/js/726.2573f9d4.chunk.js": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js",
     "static/js/437.ba8f09ab.chunk.js": "/jukrassic-pork/static/js/437.ba8f09ab.chunk.js",
@@ -37,10 +37,10 @@
     "static/media/icon-close.svg": "/jukrassic-pork/static/media/icon-close.5ff5bf08c2f34b7dc126544ef3bd8a8a.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
     "main.4b544236.css.map": "/jukrassic-pork/static/css/main.4b544236.css.map",
-    "main.ff4e5139.js.map": "/jukrassic-pork/static/js/main.ff4e5139.js.map",
-    "296.c0ec26fa.chunk.css.map": "/jukrassic-pork/static/css/296.c0ec26fa.chunk.css.map",
+    "main.fe7069ea.js.map": "/jukrassic-pork/static/js/main.fe7069ea.js.map",
+    "296.b53ea860.chunk.css.map": "/jukrassic-pork/static/css/296.b53ea860.chunk.css.map",
     "296.78c64a52.chunk.js.map": "/jukrassic-pork/static/js/296.78c64a52.chunk.js.map",
-    "974.c4901716.chunk.css.map": "/jukrassic-pork/static/css/974.c4901716.chunk.css.map",
+    "974.34bd20f9.chunk.css.map": "/jukrassic-pork/static/css/974.34bd20f9.chunk.css.map",
     "974.ab0ebd89.chunk.js.map": "/jukrassic-pork/static/js/974.ab0ebd89.chunk.js.map",
     "726.2573f9d4.chunk.js.map": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js.map",
     "437.ba8f09ab.chunk.js.map": "/jukrassic-pork/static/js/437.ba8f09ab.chunk.js.map",
@@ -50,6 +50,6 @@
   },
   "entrypoints": [
     "static/css/main.4b544236.css",
-    "static/js/main.ff4e5139.js"
+    "static/js/main.fe7069ea.js"
   ]
 }
