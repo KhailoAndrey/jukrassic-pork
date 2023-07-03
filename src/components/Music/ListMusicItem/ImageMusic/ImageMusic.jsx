@@ -12,7 +12,7 @@ function ImageMusic({ songImage, songLink }) {
       url={songLink}
       width="100%"
       height="340px"
-      playIcon={<MusicIconPlay className={scss.icon} />}
+      playIcon={<MusicIconPlay className={scss.iconPlayMusic} />}
     />
   );
 }
