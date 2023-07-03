@@ -32,11 +32,6 @@ const SwiperMember = ({ data }) => {
       nextEl: '.swiper-next-button',
       prevEl: '.swiper-prev-button',
     },
-    autoplay: {
-      delay: 2000,
-      pauseOnMouseEnter: true,
-      stopOnLastSlide: true,
-    },
     effect: 'fade',
     fadeEffect: {
       crossFade: true,
