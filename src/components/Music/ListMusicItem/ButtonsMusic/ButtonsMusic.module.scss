@@ -11,7 +11,7 @@
   font-weight: 600;
   line-height: 1.2;
 
-  border: 2px solid var(--add-light-text-clr-2);
+  border: 1px solid var(--add-light-text-clr-2);
   outline: none;
   cursor: pointer;
 
@@ -30,12 +30,12 @@
 }
 
 .buttonMusic:hover {
-  border: 2px solid var(--main-accent-text-clr);
+  border: 1px solid var(--main-accent-text-clr);
   color: var(--main-accent-text-clr);
 }
 
 .buttonMusic:focus {
-  border: 2px solid var(--main-accent-text-clr);
+  border: 1px solid var(--main-accent-text-clr);
 }
 
 .buttonIcon {
