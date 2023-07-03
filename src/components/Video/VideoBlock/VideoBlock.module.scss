@@ -20,6 +20,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  background: rgba(19, 19, 19, 0.4);
 
   @media screen and (min-width: 375px) {
     height: 200px;
@@ -34,9 +35,18 @@
   }
 }
 
+.videoBlock_cover:hover {
+  background-image: linear-gradient(
+    180deg,
+    rgba(19, 19, 19, 0.24) 0%,
+    rgba(19, 19, 19, 0.8) 100%
+  );
+}
+
 .videoBlock_track {
   max-width: 91.46vw !important;
   max-height: 53.34vw !important;
+  opacity: 0.8;
   transition: filter 0.3s ease;
 
   @media screen and (min-width: 375px) {
@@ -57,13 +67,8 @@
   }
 }
 
-.videoBlock_cover:hover {
-  opacity: 0.8;
-  background-image: linear-gradient(
-    180deg,
-    rgba(19, 19, 19, 0.24) 0%,
-    rgba(19, 19, 19, 0.8) 100%
-  );
+.videoBlock_track:hover {
+  opacity: 0.5;
 }
 
 .videoBlock_btnPlay {
