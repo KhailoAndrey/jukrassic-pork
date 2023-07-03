@@ -265,7 +265,7 @@
 }
 
 .logo {
-  fill: #4f5449;
+  fill: var(--main-logo-bckg-clr);
 
   @media screen and (max-width: 767.9px) {
     display: none;
@@ -336,7 +336,7 @@
   position: relative;
 
   display: inline-flex;
-  padding: 32px;
+  padding: 24px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -360,4 +360,13 @@
 
   fill: var(--add-light-text-clr-2);
   cursor: pointer;
+}
+
+.form_field {
+  display: block;
+}
+
+.form_message {
+  overflow-y: auto;
+  resize: none;
 }

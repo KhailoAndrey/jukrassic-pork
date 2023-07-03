@@ -55,13 +55,17 @@ const ModalForm = ({ onClose }) => {
         >
           {({ handleSubmit, isSubmitting, handleReset }) => (
             <Form onSubmit={handleSubmit}>
-              <Field type="text" name="name" />
+              <Field className={scss.form_field} type="text" name="name" />
               <ErrorMessage name="name" component="div" />
 
-              <Field type="email" name="email" />
+              <Field className={scss.form_field} type="email" name="email" />
               <ErrorMessage name="email" component="div" />
 
-              <Field name="message" as="textarea" />
+              <Field
+                className={scss.form_message}
+                name="message"
+                as="textarea"
+              />
               <ErrorMessage name="message" component="div" />
 
               <button type="submit" disabled={isSubmitting}>
