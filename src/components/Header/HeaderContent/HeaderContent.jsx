@@ -79,7 +79,7 @@ function HeaderContent() {
             </p>
           </div>
         </div>
-        <HeaderMenu />
+        <HeaderMenu page="Home" text="Listen to music" />
         <div className={scss.swiper_box}>
           {data && <SwiperHeader data={data} />}
           <div className={scss.swiper_overlay}></div>
