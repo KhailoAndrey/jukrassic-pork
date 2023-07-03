@@ -49,7 +49,7 @@ const ModalComponent = ({ onClose }) => {
           music
         </NavLink>
         <NavLink to="/#videos" onClick={closeModal} className={styles.links}>
-          Videos
+          Video
         </NavLink>
         <NavLink dto="/#contacts" onClick={closeModal} className={styles.links}>
           Contacts
