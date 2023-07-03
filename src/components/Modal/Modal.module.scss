@@ -1,7 +1,7 @@
 .modal {
   // position: absolute;
   background-color: var(--main-bckg-clr);
-  min-height: 744px;
+  min-height: 650px;
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -13,10 +13,12 @@
   justify-content: flex-end;
   flex-direction: column;
   z-index: 9999;
+  overflow-y: scroll;
 
   @media screen and (min-width: 767.9px) {
     height: 100vh;
     padding-bottom: 32px;
+      min-height: 750px;
   }
 
   @media screen and (min-width: 1439.9px) {
