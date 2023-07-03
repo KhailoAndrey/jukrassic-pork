@@ -23,8 +23,8 @@
 }
 
 .textModal {
-  padding: 0px 40px;
-  max-height: 420px;
+  padding: 0px 60px;
+  max-height: 65vh;
 
   font-family: 'Mulish';
   font-size: 14px;
@@ -32,7 +32,7 @@
   text-align: center;
 
   overflow: auto;
-  white-space: line;
+  white-space: pre-line;
 
   color: var(--add-light-text-clr-2);
 
@@ -41,6 +41,7 @@
   }
 
   @media screen and (min-width: 767.9px) {
+    max-height: 70vh;
     font-size: 18px;
   }
 

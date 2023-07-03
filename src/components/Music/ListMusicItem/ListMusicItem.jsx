@@ -73,7 +73,7 @@ function ListMusicItem({ itemMusic }) {
               />
               <ButtonModalCopy
                 valueButton="Copy"
-                textToCopy={itemMusic?.lyrics ? lyrics : ''}
+                textToCopy={itemMusic?.lyrics ? lyrics : 'Copy'}
               />
             </>
           }
