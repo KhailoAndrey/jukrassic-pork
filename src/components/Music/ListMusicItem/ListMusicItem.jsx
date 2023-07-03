@@ -34,16 +34,14 @@ function ListMusicItem({ itemMusic }) {
           {itemMusic && (
             <ImageMusic songImage={songImage} songLink={songLink} />
           )}
-          {itemMusic[currentLanguage] ? (
-            <LabelMusic labelMusic={name[currentLanguage]} />
-          ) : (
-            <LabelMusic labelMusic="without title" />
-          )}
-          {itemMusic && itemMusic.description ? (
-            <DateReleaseText dateReleaseText={description[currentLanguage]} />
-          ) : (
-            <DateReleaseText dateReleaseText="Without release date" />
-          )}
+          {itemMusic && <LabelMusic labelMusic={name[currentLanguage]} />}
+          <DateReleaseText
+            dateReleaseText={
+              itemMusic?.description
+                ? description[currentLanguage]
+                : 'Without release date'
+            }
+          />
           <ul className={scss.listButtonsMusic}>
             <li>
               <ButtonDownloadMusic valueButton="Download" audio={audio} />
@@ -62,22 +60,18 @@ function ListMusicItem({ itemMusic }) {
           onCloseModal={toggleModalMusic}
           modalContent={
             <>
-              {itemMusic && itemMusic.name && (
-                <ModalLabelMusic modalName={itemMusic.name[currentLanguage]} />
-              )}
-              {itemMusic && lyrics ? (
-                <ModalTextMusic textModalMusic={lyrics} />
-              ) : (
-                <ModalTextMusic textModalMusic="This song hasn't lyrics(" />
-              )}
-              {itemMusic && lyrics ? (
-                <ButtonModalCopy valueButton="Copy" textToCopy={lyrics} />
-              ) : (
-                <ButtonModalCopy
-                  valueButton="Copy"
-                  textModalMusic="This song hasn't lyrics("
-                />
-              )}
+              <ModalLabelMusic
+                modalName={itemMusic?.name ? name[currentLanguage] : 'Label'}
+              />
+              <ModalTextMusic
+                textModalMusic={
+                  itemMusic?.lyrics ? lyrics : 'This song hasn`t lyrics('
+                }
+              />
+              <ButtonModalCopy
+                valueButton="Copy"
+                textToCopy={itemMusic?.lyrics ? lyrics : ''}
+              />
             </>
           }
         />

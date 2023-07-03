@@ -24,15 +24,16 @@
 }
 
 .textModal {
-  padding: 0px 60px;
+  padding: 0px 40px;
   max-height: 420px;
-  overflow: auto;
 
   font-family: 'Mulish';
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
+
   overflow: auto;
+  white-space: line;
 
   color: var(--add-light-text-clr-2);
 
