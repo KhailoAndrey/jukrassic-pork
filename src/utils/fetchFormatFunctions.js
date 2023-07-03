@@ -1,4 +1,5 @@
 import { urlFor } from 'client';
+import createSanityMusicLink from './createSanityMusicLink';
 
 export const historyFormattedFn = ({
   title,
@@ -64,6 +65,64 @@ export const contactsFormattedFn = ({
     phone,
     socialMediaList: socialMediaList.map(({ link, name, _key }) => {
       return { link, name, id: _key };
+    }),
+  };
+};
+
+export const musicFormattedFn = ({ title, description, _id, musicList }) => {
+  return {
+    id: _id,
+    title: { en: title.en, ua: title.ua },
+    description: { en: description.en, ua: description.ua },
+    musicList: musicList.map(
+      ({ audio, songImage, description, name, lyrics, _key, songLink }) => {
+        return {
+          id: _key,
+          name: { en: name.en, ua: name.ua },
+          description: { en: description.en, ua: description.ua },
+          songImage: urlFor(songImage?.asset),
+          songLink,
+          audio: createSanityMusicLink(audio),
+          lyrics: lyrics[0]?.children[0]?.text,
+        };
+      }
+    ),
+  };
+};
+
+export const releasesFormattedFn = ({
+  title,
+  description,
+  _id,
+  latestReleasesList,
+}) => {
+  return {
+    id: _id,
+    title: { en: title.en, ua: title.ua },
+    description: { en: description.en, ua: description.ua },
+    latestReleasesList: latestReleasesList.map(
+      ({ songImage, songLink, name, _key }) => {
+        return {
+          id: _key,
+          name: { en: name.en, ua: name.ua },
+          songImage: urlFor(songImage?.asset),
+          songLink,
+        };
+      }
+    ),
+  };
+};
+
+export const videoFormattedFn = ({ title, _id, videoLinksList }) => {
+  return {
+    id: _id,
+    title: { en: title.en, ua: title.ua },
+    videoLinksList: videoLinksList.map(({ videoLink, name, _key }) => {
+      return {
+        id: _key,
+        name: { en: name.en, ua: name.ua },
+        videoLink,
+      };
     }),
   };
 };

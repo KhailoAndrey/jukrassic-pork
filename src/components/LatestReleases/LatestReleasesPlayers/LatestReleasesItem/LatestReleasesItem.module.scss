@@ -34,6 +34,13 @@
 .reactPlayer:hover,
 .reactPlayer:focus {
   filter: brightness(50%);
+
+  // opacity: 0.8;
+  // background-image: linear-gradient(
+  //   180deg,
+  //   rgba(19, 19, 19, 0.24) 0%,
+  //   rgba(19, 19, 19, 0.8) 100%
+  // );
 }
 
 .videoSlider {

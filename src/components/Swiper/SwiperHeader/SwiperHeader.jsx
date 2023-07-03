@@ -46,12 +46,12 @@ const SwiperHeader = ({ data }) => {
       prevEl: `.swiper-prev-button`,
     },
     // modules: [Pagination, Scrollbar],
-    autoplay: {
-      delay: 3000
-    },
-    fadeEffect: {
-      crossFade: true
-    },
+    // autoplay: {
+    //   delay: 3000
+    // },
+    // fadeEffect: {
+    //   crossFade: true
+    // },
 
     // grabCursor: true,
     speed: 1000,

@@ -4,12 +4,12 @@ import scss from './ImageMusic.module.scss';
 import MusicIconPlay from './MusicIconPlay/MusicIconPlay';
 import ReactPlayer from 'react-player';
 
-function ImageMusic({ imageMusic }) {
+function ImageMusic({ songImage, songLink }) {
   return (
     <ReactPlayer
       className={scss.imageMusic}
-      light={imageMusic}
-      url="https://soundcloud.com/kristina-urbyt/rompasso-ignis-bass-boosted-pitch-000-tempo-90"
+      light={songImage}
+      url={songLink}
       width="100%"
       height="340px"
       playIcon={<MusicIconPlay className={scss.icon} />}
@@ -18,7 +18,8 @@ function ImageMusic({ imageMusic }) {
 }
 
 ImageMusic.propTypes = {
-  imageMusic: PropTypes.string.isRequired,
+  songImage: PropTypes.object.isRequired,
+  songLink: PropTypes.string.isRequired,
 };
 
 export default ImageMusic;

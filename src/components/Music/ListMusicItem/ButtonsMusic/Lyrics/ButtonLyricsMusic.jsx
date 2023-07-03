@@ -14,6 +14,7 @@ function ButtonLyricsMusic({ valueButton, onClick }) {
 
 ButtonLyricsMusic.propTypes = {
   valueButton: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 export default ButtonLyricsMusic;
