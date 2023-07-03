@@ -40,8 +40,8 @@
   --default-animation: 400ms ease-in-out;
   --fast-animation: 250ms ease-in-out;
   --slow-animation: 600ms ease-in-out;
-  
-  --swiper-pagination-color:#00fe00;
+
+  --swiper-pagination-color: #00fe00;
   --swiper-pagination-progressbar-size: 2px;
 
   --main-logo-bckg-clr: #4f5449;
@@ -96,4 +96,8 @@ ol {
     padding-left: 84px;
     width: 1440px;
   }
+}
+
+.modal_open {
+  overflow: hidden;
 }

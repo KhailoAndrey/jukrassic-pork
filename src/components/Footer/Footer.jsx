@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import useFetch from 'hooks/useFetch';
 import Item from './Item/Item';
 import ModalForm from './ModalForm/ModalForm';
@@ -8,6 +8,15 @@ import scss from './Footer.module.scss';
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add('modal_open');
+      return;
+    }
+
+    document.body.classList.remove('modal_open');
+  }, [isModalOpen]);
 
   const getCurrentYear = new Date().getFullYear();
   const { isLoading, data } = useFetch('contacts');
@@ -87,15 +96,14 @@ function Footer() {
               className={scss.copyright}
             >{`Copyright © 2016-${getCurrentYear} Jukrassic Pork ®. All Rights Reserved.`}</p>
           </div>
+          {isModalOpen && (
+            <ModalForm
+              onClose={() => {
+                setIsModalOpen(!isModalOpen);
+              }}
+            />
+          )}
         </footer>
-      )}
-
-      {isModalOpen && (
-        <ModalForm
-          onClose={() => {
-            setIsModalOpen(!isModalOpen);
-          }}
-        />
       )}
     </>
   );

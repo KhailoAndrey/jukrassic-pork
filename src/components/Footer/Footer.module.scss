@@ -1,4 +1,5 @@
 .footer {
+  position: relative;
   font-size: 18px;
   font-family: Mulish;
   line-height: 24px;
@@ -47,6 +48,7 @@
 }
 
 .appeal__title {
+  margin-top: -8px;
   font-size: 40px;
   font-family: Oswald;
   line-height: 52px;
@@ -325,48 +327,199 @@
   align-items: center;
   background-color: rgba(0, 0, 0, 0.497);
   z-index: 1200;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
 
 .modal {
-  width: 100vw;
-  height: 100vh;
-  max-height: 660px;
-
-  position: relative;
-
-  display: inline-flex;
-  padding: 24px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 24px;
+  width: 100%;
+  max-width: 343px;
+  height: 688px;
+  padding-top: 24px;
+  padding-bottom: 24px;
 
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-2);
 
-  @media screen and (min-width: 408px) {
-    width: 408px;
+  @media screen and (min-width: 375px) {
+    width: 343px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 664px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding: 32px;
     height: 660px;
   }
 }
-.close_btn {
-  position: absolute;
-  top: 40px;
-  right: 32px;
 
+.contact_form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  width: 100%;
+
+  font-family: Mulish;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.contact_form__input_wrap {
+  position: relative;
+}
+
+.contact_form__head_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close_btn__wrap {
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.close_btn {
   width: 24px;
   height: 24px;
 
-  fill: var(--add-light-text-clr-2);
+  fill: var(--neutral-dark-text-clr);
   cursor: pointer;
+
+  &:hover,
+  &:focus {
+    fill: var(--add-light-text-clr-2);
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    // top: 32px;
+    // right: 32px;
+  }
 }
 
-.form_field {
+.form_title {
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+.contact_form__label {
+  // font-size: 20px;
+  // font-family: Mulish;
+  // font-style: normal;
+  // font-weight: 600;
+  // line-height: 24px;
+}
+
+.contact_form__field,
+.contact_form__message {
   display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+
+  border: 0;
+
+  font-size: 20px;
+  font-family: Mulish;
+
+  color: var(--main-text-clr);
+  background-color: var(--neutral-dark-bckg-clr-3);
+  transition: all var(--fast-animation);
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:active {
+    border: 2px solid var(--add-light-text-clr-2);
+  }
+
+  @media screen and (min-width: 375px) {
+    width: 311px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 360px;
+  }
 }
 
-.form_message {
-  overflow-y: auto;
+.contact_form__field {
+  height: 48px;
+}
+
+.contact_form__message {
+  height: 240px;
+
+  overflow-y: clip;
   resize: none;
+
+  @media screen and (min-width: 768px) {
+    height: 216px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    height: 180px;
+  }
+}
+
+.contact_form__support_text_wrap {
+  display: flex;
+  justify-content: flex-end;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  color: var(--neutral-dark-text-clr);
+}
+
+.contact_form__support_text {
+  position: absolute;
+  left: 0;
+
+  display: inline;
+  // margin-right: auto;
+  font-size: 16px;
+  // font-family: Mulish;
+  // font-style: normal;
+  font-weight: 400;
+  // line-height: 24px;
+
+  color: var(--neutral-dark-text-clr);
+}
+
+.contact_form__symbol_counter {
+  // align-self: flex-end;
+}
+
+.contact_form__button {
+  display: flex;
+  height: 48px;
+  padding: 12px 24px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 22px;
+  font-family: Mulish;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+
+  background-color: var(--light-text-clr);
 }
