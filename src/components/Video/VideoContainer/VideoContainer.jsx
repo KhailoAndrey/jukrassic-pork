@@ -2,7 +2,6 @@ import VideoBlock from '../VideoBlock/VideoBlock';
 import scss from './VideoContainer.module.scss';
 
 function VideoContainer({ data, language }) {
-  // const { id, videoLinksList: track1 } = data;
   const track = (data && data.videoLinksList) || [
     {
       id: '1',

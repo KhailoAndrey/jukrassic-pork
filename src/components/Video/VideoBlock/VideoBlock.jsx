@@ -21,13 +21,17 @@ function VideoBlock({ src, title }) {
               <use href={btnYoutube + '#icon-btn-youtube'} />
             </svg>
           }
-          light={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
+          light={
+            // `https://i.ytimg.com/vi/${src}/maxresdefault.jpg` === 'true' ?
+            `https://i.ytimg.com/vi_webp/${src}/sddefault.webp`
+            // : `https://i.ytimg.com/vi/${src}/sddefault.jpg`
+          }
           url={`https://youtu.be/${src}`}
           playing={isPlay}
           onPlay={handleClick}
           onPause={handleClick}
           onReady={handleClick}
-          controls={false}
+          controls={true}
         />
       </div>
       <h3 className={scss.videoBlock_track_title}>{title}</h3>
