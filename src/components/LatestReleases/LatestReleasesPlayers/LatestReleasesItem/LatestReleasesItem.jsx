@@ -1,7 +1,5 @@
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import sunImage from '../../../../images/Latest-Releases/jpg/sun.jpg';
-import pathImage from '../../../../images/Latest-Releases/jpg/path.jpg';
 import ReactPlayer from 'react-player';
 
 import LatestReleaesIconPlay from './LatestReleaesIconPlay/LatestReleaesIconPlay';
@@ -10,78 +8,53 @@ import LatestReleasesVideoSlider from './LatestReleasesVideoSlider/LatestRelease
 
 import scss from './LatestReleasesItem.module.scss';
 
-function LatestReleaesItem({
-  handleVideoPlay,
-  handleVideoPause,
-  currentVideoIndex,
-}) {
+function LatestReleaesItem({ indexItem, songImage, songLink, videoText }) {
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
+
+  const handleVideoPlay = indexItem => {
+    setCurrentVideoIndex(indexItem);
+  };
+
+  const handleVideoPause = () => {
+    setCurrentVideoIndex(null);
+  };
+
   return (
-    <>
-      <li className={scss.playerBox}>
-        <ReactPlayer
-          className={scss.reactPlayer}
-          light={sunImage}
-          url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
-          width="100%"
-          height="100%"
-          playIcon={
-            <LatestReleaesIconPlay
-              className={scss.icon}
-              currentVideoIndex={currentVideoIndex}
-              index={0}
-            />
-          }
-          playing={currentVideoIndex === 0}
-          onPlay={() => handleVideoPlay(0)}
-          onPause={handleVideoPause}
-        />
-        <LatestReleaesText
-          currentVideoIndex={currentVideoIndex}
-          valueText="текст/text"
-          index={0}
-        />
-        <LatestReleasesVideoSlider
-          currentVideoIndex={currentVideoIndex}
-          index={0}
-        />
-      </li>
-      <li className={scss.playerBox}>
-        <ReactPlayer
-          className={scss.reactPlayer}
-          light={pathImage}
-          url="https://www.youtube.com/watch?v=5FTdGhSGtoU"
-          width="100%"
-          height="100%"
-          playIcon={
-            <LatestReleaesIconPlay
-              className={scss.icon}
-              currentVideoIndex={currentVideoIndex}
-              index={1}
-            />
-          }
-          playing={currentVideoIndex === 1}
-          onPlay={() => handleVideoPlay(1)}
-          onPause={handleVideoPause}
-        />
-        <LatestReleaesText
-          currentVideoIndex={currentVideoIndex}
-          valueText="текст/text"
-          index={1}
-        />
-        <LatestReleasesVideoSlider
-          currentVideoIndex={currentVideoIndex}
-          index={1}
-        />
-      </li>
-    </>
+    <li className={scss.playerBox}>
+      <ReactPlayer
+        className={scss.reactPlayer}
+        light={songImage}
+        url={songLink}
+        width="100%"
+        height="100%"
+        playIcon={
+          <LatestReleaesIconPlay
+            className={scss.icon}
+            currentVideoIndex={currentVideoIndex}
+            indexItem={indexItem && indexItem}
+          />
+        }
+        playing={currentVideoIndex === indexItem}
+        onPlay={() => handleVideoPlay(indexItem)}
+        onPause={handleVideoPause}
+      />
+      <LatestReleaesText
+        currentVideoIndex={currentVideoIndex}
+        videoText={videoText}
+        indexItem={indexItem && indexItem}
+      />
+      <LatestReleasesVideoSlider
+        currentVideoIndex={currentVideoIndex}
+        indexItem={indexItem && indexItem}
+      />
+    </li>
   );
 }
 
 LatestReleaesItem.propTypes = {
-  valueText: PropTypes.string.isRequired,
-  handleVideoPlay: PropTypes.func.isRequired,
-  handleVideoPause: PropTypes.func.isRequired,
-  currentVideoIndex: PropTypes.number,
+  videoText: PropTypes.string.isRequired,
+  songImage: PropTypes.object.isRequired,
+  songLink: PropTypes.string.isRequired,
 };
 
 export default LatestReleaesItem;

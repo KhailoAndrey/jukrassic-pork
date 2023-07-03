@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import scss from '../LatestReleasesItem.module.scss';
 
-function LatestReleasesVideoSlider({ currentVideoIndex, index }) {
+function LatestReleasesVideoSlider({ currentVideoIndex, indexItem }) {
   return (
     <div
       className={`${scss.videoSlider} ${
-        currentVideoIndex === index ? scss.hidden : ''
+        currentVideoIndex === indexItem ? scss.hidden : ''
       }`}
     ></div>
   );
@@ -13,7 +13,7 @@ function LatestReleasesVideoSlider({ currentVideoIndex, index }) {
 
 LatestReleasesVideoSlider.propTypes = {
   currentVideoIndex: PropTypes.number,
-  index: PropTypes.number.isRequired,
+  indexItem: PropTypes.string.isRequired,
 };
 
 export default LatestReleasesVideoSlider;

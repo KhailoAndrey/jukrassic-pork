@@ -2,12 +2,12 @@ import PropTypes from 'prop-types';
 
 import scss from './LatestReleasesChapter.module.scss';
 
-function LatestReleasesChapter({ LRChapter }) {
-  return <h2 className={scss.latestReleasesChapter}>{LRChapter}</h2>;
+function LatestReleasesChapter({ title }) {
+  return <h2 className={scss.latestReleasesChapter}>{title}</h2>;
 }
 
 LatestReleasesChapter.propTypes = {
-  LRChapter: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default LatestReleasesChapter;
