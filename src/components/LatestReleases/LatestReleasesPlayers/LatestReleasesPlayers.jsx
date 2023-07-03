@@ -1,27 +1,24 @@
-import React, { useState } from 'react';
 import LatestReleaesItem from './LatestReleasesItem/LatestReleasesItem';
+import { useContext } from 'react';
+import { LanguageContext } from 'utils/LanguageContext';
 
 import scss from './LatestReleasesPlayers.module.scss';
 
-function LatestReleasesPlayers() {
-  const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
-
-  const handleVideoPlay = index => {
-    setCurrentVideoIndex(index);
-  };
-
-  const handleVideoPause = () => {
-    setCurrentVideoIndex(null);
-  };
+function LatestReleasesPlayers({ latestReleasesList }) {
+  const { currentLanguage } = useContext(LanguageContext);
 
   return (
     <ul className={scss.listPlayers}>
-      <LatestReleaesItem
-        handleVideoPlay={handleVideoPlay}
-        handleVideoPause={handleVideoPause}
-        currentVideoIndex={currentVideoIndex}
-        valueText="текст/text"
-      />
+      {latestReleasesList &&
+        latestReleasesList.map(release => (
+          <LatestReleaesItem
+            key={release.id}
+            indexItem={release.id}
+            songImage={release.songImage}
+            songLink={release.songLink}
+            videoText={release.name[currentLanguage]}
+          />
+        ))}
     </ul>
   );
 }
