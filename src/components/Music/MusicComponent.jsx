@@ -12,7 +12,6 @@ import scss from './MusicComponent.module.scss';
 
 function MusicComponent() {
   const { data } = useFetch('music');
-  console.log(data);
   const { currentLanguage } = useContext(LanguageContext);
 
   return (
