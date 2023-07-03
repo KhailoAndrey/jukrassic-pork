@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from '../../hooks/useFetch';
@@ -14,6 +15,15 @@ function MusicComponent() {
   const { data } = useFetch('music');
   const { currentLanguage } = useContext(LanguageContext);
 
+  const sliceList = 6;
+  const [displayCount, setDisplayCount] = useState(sliceList);
+
+  const handleShowMore = () => {
+    setDisplayCount(prevCount => prevCount + sliceList);
+  };
+
+  const displaySongs = data?.musicList?.slice(0, displayCount) || [];
+
   return (
     <section className={scss.musicComponent}>
       <div className="container">
@@ -26,9 +36,12 @@ function MusicComponent() {
             <TextMusic textMusic={data.description[currentLanguage]} />
           )}
         </div>
-        {data && data.musicList && <ListMusic musicList={data.musicList} />}
-        {data && data.musicList > 6 && (
-          <ButtonShowMoreMusic valueShowMoreMusic="Show more" />
+        {data && data.musicList && <ListMusic musicList={displaySongs} />}
+        {data && data.musicList.length > displayCount && (
+          <ButtonShowMoreMusic
+            valueShowMoreMusic="Show more"
+            onClick={handleShowMore}
+          />
         )}
       </div>
     </section>
