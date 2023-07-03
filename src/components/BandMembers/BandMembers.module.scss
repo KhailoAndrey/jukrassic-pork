@@ -27,6 +27,11 @@
   }
 }
 .title {
+  position: -webkit-sticky; 
+  position:sticky;
+  top:24px;
+  right: 0;
+  align-self: flex-start;
   font-size: 40px;
   font-family: Oswald;
   font-weight: 600;
@@ -229,7 +234,7 @@
   margin-left: 16px;
 }
 
-.test {
+.containerSwiper {
   position: relative;
 }
 .swiperNav{
