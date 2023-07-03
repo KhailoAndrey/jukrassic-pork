@@ -13,3 +13,23 @@
 .imageMusic:focus {
   filter: brightness(50%);
 }
+
+.iconPlayMusic {
+  display: block;
+
+  width: 64px;
+  height: 64px;
+  fill: var(--main-text-clr);
+
+  transition: fill var(--default-animation);
+
+  @media screen and (max-width: 767.9px) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.imageMusic:hover .iconPlayMusic,
+.imageMusic:focus .iconPlayMusic {
+  fill: var(--main-accent-text-clr);
+}
