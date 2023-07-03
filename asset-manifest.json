@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/jukrassic-pork/static/css/main.85eeeef4.css",
-    "main.js": "/jukrassic-pork/static/js/main.681d16b1.js",
+    "main.js": "/jukrassic-pork/static/js/main.f43c8b8d.js",
     "static/css/9.701ff3be.chunk.css": "/jukrassic-pork/static/css/9.701ff3be.chunk.css",
-    "static/js/9.501f3d08.chunk.js": "/jukrassic-pork/static/js/9.501f3d08.chunk.js",
+    "static/js/9.e8460fb3.chunk.js": "/jukrassic-pork/static/js/9.e8460fb3.chunk.js",
     "static/css/974.dd49fd1d.chunk.css": "/jukrassic-pork/static/css/974.dd49fd1d.chunk.css",
     "static/js/974.44e029d7.chunk.js": "/jukrassic-pork/static/js/974.44e029d7.chunk.js",
     "static/js/726.2573f9d4.chunk.js": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js",
@@ -39,9 +39,9 @@
     "static/media/icon-close.svg": "/jukrassic-pork/static/media/icon-close.5ff5bf08c2f34b7dc126544ef3bd8a8a.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
     "main.85eeeef4.css.map": "/jukrassic-pork/static/css/main.85eeeef4.css.map",
-    "main.681d16b1.js.map": "/jukrassic-pork/static/js/main.681d16b1.js.map",
+    "main.f43c8b8d.js.map": "/jukrassic-pork/static/js/main.f43c8b8d.js.map",
     "9.701ff3be.chunk.css.map": "/jukrassic-pork/static/css/9.701ff3be.chunk.css.map",
-    "9.501f3d08.chunk.js.map": "/jukrassic-pork/static/js/9.501f3d08.chunk.js.map",
+    "9.e8460fb3.chunk.js.map": "/jukrassic-pork/static/js/9.e8460fb3.chunk.js.map",
     "974.dd49fd1d.chunk.css.map": "/jukrassic-pork/static/css/974.dd49fd1d.chunk.css.map",
     "974.44e029d7.chunk.js.map": "/jukrassic-pork/static/js/974.44e029d7.chunk.js.map",
     "726.2573f9d4.chunk.js.map": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js.map",
@@ -52,6 +52,6 @@
   },
   "entrypoints": [
     "static/css/main.85eeeef4.css",
-    "static/js/main.681d16b1.js"
+    "static/js/main.f43c8b8d.js"
   ]
 }
