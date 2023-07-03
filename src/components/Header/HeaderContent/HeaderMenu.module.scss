@@ -6,7 +6,7 @@
     top: 696px;
     z-index: 100;
   }
-} 
+}
 
 .logo {
   display: none;
@@ -54,6 +54,14 @@
     width: 288px;
     margin-bottom: 0;
     margin-top: 0;
+  }
+}
+
+.modalComponentDisplay {
+  display: none;
+
+  @media screen and (min-width: 1439.9px) {
+    display: block;
   }
 }
 

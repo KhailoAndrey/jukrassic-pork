@@ -1,32 +1,24 @@
-import scss from './HeaderContent.module.scss';
+import { useContext, useEffect, useState } from 'react';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
-import { useContext, useEffect, useState } from 'react';
 import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 import useFetch from 'hooks/useFetch';
 import { LanguageContext } from 'utils/LanguageContext';
+import useModal from 'hooks/useModal';
+import scss from './HeaderContent.module.scss';
 
 function HeaderContent() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const [scrollTimeout, setScrollTimeout] = useState(null);
+  const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
-  // console.log(currentLanguage)
 
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.classList.add(scss.modalOpen);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    document.body.classList.remove(scss.modalOpen);
   };
 
   const { data } = useFetch('history');
-  // console.log(data)
-
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [scrollTimeout, setScrollTimeout] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +48,9 @@ function HeaderContent() {
             <Icon />
           </button>
         </div>
-        {isModalOpen && <ModalComponent onClose={closeModal} />}
+        {isModalOpen && (
+          <ModalComponent onClose={() => setIsModalOpen(false)} />
+        )}
 
         <div className={scss.header_title_container}>
           <div>
