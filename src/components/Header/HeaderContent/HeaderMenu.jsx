@@ -1,11 +1,11 @@
-import scss from './HeaderMenu.module.scss';
 import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../../images/Logo.svg';
 import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
 import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
 import ModalComponent from '../../Modal/Modal';
-import { useState } from 'react';
+import useModal from 'hooks/useModal';
+import scss from './HeaderMenu.module.scss';
 
 const handleScrollToTop = () => {
   window.scrollTo({
@@ -14,17 +14,15 @@ const handleScrollToTop = () => {
   });
 };
 
-function HeaderMenu({page, text}) {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  
+function HeaderMenu({ page, text }) {
+  const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
+
   const openModal = () => {
     setIsModalOpen(true);
-    document.body.classList.add(scss.modalOpen);
   };
-  
+
   const closeModal = () => {
     setIsModalOpen(false);
-    document.body.classList.remove(scss.modalOpen);
   };
 
   const linkTo = page === 'Home' ? '/music' : '/';
@@ -51,17 +49,18 @@ function HeaderMenu({page, text}) {
           </>
         )}
       </NavLink>
-      {isModalOpen ? (
-        <button className={scss.burger_btn} onClick={closeModal}>
-          {isModalOpen && <ModalComponent onClose={closeModal} />}
-          <CloseBtn />
-        </button>
-      ) : (
-        <button className={scss.burger_btn} onClick={openModal}>
-          <Burger />
-          {isModalOpen && <ModalComponent onClose={closeModal} />}
-        </button>
+      {isModalOpen && (
+        <ModalComponent
+          customClass={scss.modalComponentDisplay}
+          onClose={closeModal}
+        />
       )}
+      <button
+        className={scss.burger_btn}
+        onClick={isModalOpen ? closeModal : openModal}
+      >
+        {isModalOpen ? <CloseBtn /> : <Burger />}
+      </button>
     </div>
   );
 }
