@@ -17,7 +17,7 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
-        <HeaderMenu />
+        <HeaderMenu page="Music" text="Back to Home" />
         <div className={scss.boxChapterText}>
           {data && data.title[currentLanguage] && (
             <ChapterMusic chapterMusic={data.title[currentLanguage]} />
