@@ -27,12 +27,14 @@
   }
 
   @media screen and (min-width: 767.9px) {
+    margin-right: auto;
     padding: 16px 32px;
-    margin-left: auto;
     width: 360px;
   }
 
   @media screen and (min-width: 1439.9px) {
+    margin-right: 0;
+    margin-left: auto;
     padding: 16px 32px;
   }
 }

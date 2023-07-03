@@ -31,10 +31,13 @@ function ListMusicItem({ itemMusic }) {
     <>
       {itemMusic.audio && (
         <li className={scss.listMusicItem}>
-          {itemMusic && (
-            <ImageMusic songImage={songImage} songLink={songLink} />
-          )}
-          {itemMusic && <LabelMusic labelMusic={name[currentLanguage]} />}
+          <ImageMusic
+            songImage={itemMusic?.songImage && songImage}
+            songLink={itemMusic?.songLink && songLink}
+          />
+          <LabelMusic
+            labelMusic={itemMusic?.name ? name[currentLanguage] : 'Label'}
+          />
           <DateReleaseText
             dateReleaseText={
               itemMusic?.description
