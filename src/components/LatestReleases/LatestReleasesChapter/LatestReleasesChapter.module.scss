@@ -13,6 +13,11 @@
   }
 
   @media screen and (min-width: 1439.9px) {
+    position: sticky;
+    top: 24px;
+
+    display: inline-block;
+
     margin-bottom: 0;
     font-size: 56px;
     line-height: 1.14;

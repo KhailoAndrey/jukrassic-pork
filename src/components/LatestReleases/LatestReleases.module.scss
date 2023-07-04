@@ -11,29 +11,6 @@
   }
 }
 
-.boxChapterText {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-
-  @media screen and (max-width: 374.9px) {
-    margin-bottom: 24px;
-  }
-
-  @media screen and (max-width: 767.9px) {
-    margin-bottom: 52px;
-  }
-
-  @media screen and (max-width: 1439.9px) {
-    margin-bottom: 52px;
-  }
-
-  @media screen and (min-width: 1439.9px) {
-    margin-bottom: 52px;
-  }
-}
-
 .boxButtonPlayers {
   @media screen and (min-width: 1439.9px) {
     display: flex;

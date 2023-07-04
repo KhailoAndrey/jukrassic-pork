@@ -17,16 +17,11 @@ function LatestReleases() {
   return (
     <section id="latest-releases" className={scss.latestReleases}>
       <div className="container">
-        <div className={scss.boxChapterText}>
-          {data && (
-            <LatestReleasesChapter title={data.title[currentLanguage]} />
-          )}
-          {data && (
-            <LatestReleasesText
-              description={data.description[currentLanguage]}
-            />
-          )}
-        </div>
+        {data && <LatestReleasesChapter title={data.title[currentLanguage]} />}
+        {data && (
+          <LatestReleasesText description={data.description[currentLanguage]} />
+        )}
+
         <div className={scss.boxButtonPlayers}>
           <LatestReleasesButton valueButton="Go to all releases" />
           {data && (

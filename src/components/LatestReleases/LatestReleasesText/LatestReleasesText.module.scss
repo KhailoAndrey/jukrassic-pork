@@ -7,14 +7,19 @@
   color: var(--neutral-dark-text-clr);
 
   @media screen and (max-width: 374.9px) {
+    margin-bottom: 24px;
     width: 100%;
   }
 
   @media screen and (min-width: 767.9px) {
+    margin-bottom: 52px;
     font-size: 20px;
   }
 
   @media screen and (min-width: 1439.9px) {
+    margin-left: auto;
+    margin-top: -60px;
+    margin-bottom: 52px;
     width: 840px;
 
     font-size: 22px;
