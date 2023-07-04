@@ -3,8 +3,8 @@ import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
 import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
-import useFetch from 'hooks/useFetch';
 import { LanguageContext } from 'utils/LanguageContext';
+import useFetch from 'hooks/useFetch';
 import useModal from 'hooks/useModal';
 import scss from './HeaderContent.module.scss';
 

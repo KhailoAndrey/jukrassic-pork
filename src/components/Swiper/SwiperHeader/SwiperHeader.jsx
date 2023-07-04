@@ -1,5 +1,11 @@
 // import React, { useState } from 'react';
-import SwiperCore, { Navigation, Scrollbar, Pagination, EffectFade, Autoplay } from 'swiper';
+import SwiperCore, {
+  Navigation,
+  Scrollbar,
+  Pagination,
+  EffectFade,
+  Autoplay,
+} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { ReactComponent as ArrowPrev } from '../../../images/arrow_back.svg';
@@ -12,13 +18,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import 'swiper/css/autoplay';
 
-
 import scss from './SwiperHeader.module.scss';
 
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar]);
 
 const SwiperHeader = ({ data }) => {
-
   // const [currentSlide, setCurrentSlide] = useState(0);
 
   // const handleSlideChange = swiper => {
