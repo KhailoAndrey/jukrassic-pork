@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import useFetch from 'hooks/useFetch';
 import { LanguageContext } from 'utils/LanguageContext';
-import scss from './Video.module.scss';
 import VideoChapter from './VideoChapter/VideoChapter';
 import VideoContainer from './VideoContainer/VideoContainer';
+import useFetch from 'hooks/useFetch';
+import scss from './Video.module.scss';
 
 function Video() {
   const { data } = useFetch('video');
