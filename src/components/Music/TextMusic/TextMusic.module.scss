@@ -1,4 +1,6 @@
 .textMusic {
+  margin-bottom: 52px;
+
   font-family: 'Mulish';
   font-size: 18px;
   font-weight: 600;
@@ -6,14 +8,18 @@
 
   color: var(--neutral-dark-text-clr);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     max-width: 840px;
 
     font-size: 20px;
     line-height: 1.2;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
+    margin-top: -50px;
+    margin-left: auto;
+    margin-bottom: 76px;
+
     font-size: 22px;
     line-height: 1.27;
   }

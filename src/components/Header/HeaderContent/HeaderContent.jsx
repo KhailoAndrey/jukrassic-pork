@@ -3,8 +3,8 @@ import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
 import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
-import useFetch from 'hooks/useFetch';
 import { LanguageContext } from 'utils/LanguageContext';
+import useFetch from 'hooks/useFetch';
 import useModal from 'hooks/useModal';
 import scss from './HeaderContent.module.scss';
 
@@ -34,7 +34,7 @@ function HeaderContent() {
 
   return (
     <section id="header" className={scss.header}>
-      <div className="container">
+      <div className={`container ${scss.header_container}`}>
         <div
           className={`${scss.header_burger_container} ${
             isHeaderVisible ? '' : scss.hidden
@@ -63,6 +63,9 @@ function HeaderContent() {
               <p className={scss.header_subtitle_text}>official website</p>
             </div>
           </div>
+        </div>
+        <HeaderMenu page="Home" text="Listen to music" />
+        <div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
               {data
@@ -72,11 +75,10 @@ function HeaderContent() {
             several members have changed in the band.'`}
             </p>
           </div>
-        </div>
-        <HeaderMenu page="Home" text="Listen to music" />
-        <div className={scss.swiper_box}>
-          {data && <SwiperHeader data={data} />}
-          <div className={scss.swiper_overlay}></div>
+          <div className={scss.swiper_box}>
+            {data && <SwiperHeader data={data} />}
+            <div className={scss.swiper_overlay}></div>
+          </div>
         </div>
       </div>
     </section>

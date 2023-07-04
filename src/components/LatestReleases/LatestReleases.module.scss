@@ -5,37 +5,14 @@
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-1);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-top: 24px;
     padding-bottom: 112px;
   }
 }
 
-.boxChapterText {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
-
-  @media screen and (max-width: 374.9px) {
-    margin-bottom: 24px;
-  }
-
-  @media screen and (max-width: 767.9px) {
-    margin-bottom: 52px;
-  }
-
-  @media screen and (max-width: 1439.9px) {
-    margin-bottom: 52px;
-  }
-
-  @media screen and (min-width: 1439.9px) {
-    margin-bottom: 52px;
-  }
-}
-
 .boxButtonPlayers {
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     align-items: flex-end;
     flex-direction: column;

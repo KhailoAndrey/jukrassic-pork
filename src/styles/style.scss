@@ -59,6 +59,7 @@
 body {
   font-family: 'Mulish-SemiBold';
   background-color: var(--neutral-dark-bckg-clr-1);
+  overflow-x: hidden;
 }
 
 img {
@@ -80,19 +81,19 @@ ol {
   max-width: 100%;
 
   /* mobile screen */
-  @media screen and (min-width: 374.9px) {
+  @media screen and (min-width: 375px) {
     width: 375px;
   }
 
   /* tablet screen */
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-right: 32px;
     padding-left: 32px;
     width: 768px;
   }
 
   /* desktop screen */
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     padding-right: 84px;
     padding-left: 84px;
     width: 1440px;

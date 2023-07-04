@@ -8,12 +8,12 @@
 
   color: var(--neutral-dark-text-clr);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     font-size: 20px;
     line-height: 1.2;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     margin-bottom: 76px;
 
     font-size: 22px;

@@ -8,12 +8,12 @@
   overflow: hidden;
   background-color: var(--neutral-dark-bckg-clr-1);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 212px;
     padding: 72px 0;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     height: 284px;
     padding: 100px 0;
   }
@@ -27,12 +27,12 @@
   padding: 8px 0;
   background-color: var(--main-accent-text-clr);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 68px;
     padding: 12px 0;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     height: 84px;
     padding: 16px 0;
   }
@@ -56,12 +56,12 @@
   letter-spacing: 0%;
   text-transform: uppercase;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     font-size: 36px;
     margin: 12px 0;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     height: 52px;
     margin: 16px 0;
     font-size: 44px;
@@ -74,16 +74,15 @@
   margin: 0 24px;
   padding: 3px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     max-width: 44px;
-  max-height: 44px;
-padding: 3.67px;
+    max-height: 44px;
+    padding: 3.67px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     max-width: 52px;
-  max-height: 52px;
-  padding: 4.33px;
-
+    max-height: 52px;
+    padding: 4.33px;
   }
 }

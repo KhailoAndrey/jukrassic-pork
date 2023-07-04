@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import ReactPlayer from 'react-player';
-import scss from './VideoBlock.module.scss';
+import PropTypes from 'prop-types';
 import btnYoutube from 'images/sprite.svg';
+import scss from './VideoBlock.module.scss';
 
 function VideoBlock({ src, title }) {
   const [isPlay, setIsPlay] = useState(true);
@@ -27,7 +27,7 @@ function VideoBlock({ src, title }) {
             // : `https://i.ytimg.com/vi/${src}/sddefault.jpg`
           }
           url={`https://youtu.be/${src}`}
-          playing={isPlay}
+          // playing={isPlay}
           onPlay={handleClick}
           onPause={handleClick}
           onReady={handleClick}
