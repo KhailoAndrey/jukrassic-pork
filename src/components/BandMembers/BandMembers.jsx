@@ -1,9 +1,9 @@
 import SwiperMember from './SwiperMember';
 import useFetch from 'hooks/useFetch';
-//styles
-import s from './BandMembers.module.scss';
 import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
+//styles
+import s from './BandMembers.module.scss';
 
 const BandMembers = () => {
   const { data } = useFetch('band');

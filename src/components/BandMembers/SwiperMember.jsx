@@ -6,6 +6,7 @@ import SwiperCore, {
   Autoplay,
 } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { LanguageContext } from 'utils/LanguageContext';
 //swiper styles
 import 'swiper/scss';
 import 'swiper/scss/navigation';
@@ -17,7 +18,6 @@ import { ReactComponent as ArrowPrev } from '../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../images/arrow_forward.svg';
 //styles
 import s from './BandMembers.module.scss';
-import { LanguageContext } from 'utils/LanguageContext';
 
 SwiperCore.use([Navigation, EffectFade, Pagination, Autoplay]);
 
