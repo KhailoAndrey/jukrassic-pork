@@ -19,6 +19,10 @@
   }
 
   @media screen and (min-width: 1440px) {
+    position: sticky;
+    top: 24px;
+
+    display: inline-block;
     margin: 0;
 
     font-size: 56px;

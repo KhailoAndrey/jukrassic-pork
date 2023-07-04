@@ -28,14 +28,12 @@ function MusicComponent() {
     <section className={scss.musicComponent}>
       <div className="container">
         <HeaderMenu page="Music" text="Back to Home" />
-        <div className={scss.boxChapterText}>
-          {data && data.title[currentLanguage] && (
-            <ChapterMusic chapterMusic={data.title[currentLanguage]} />
-          )}
-          {data && data.description[currentLanguage] && (
-            <TextMusic textMusic={data.description[currentLanguage]} />
-          )}
-        </div>
+        {data && data.title[currentLanguage] && (
+          <ChapterMusic chapterMusic={data.title[currentLanguage]} />
+        )}
+        {data && data.description[currentLanguage] && (
+          <TextMusic textMusic={data.description[currentLanguage]} />
+        )}
         {data && data.musicList && <ListMusic musicList={displaySongs} />}
         {data && data.musicList.length > displayCount && (
           <ButtonShowMoreMusic

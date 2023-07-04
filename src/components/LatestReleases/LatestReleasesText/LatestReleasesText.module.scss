@@ -1,15 +1,12 @@
 .latestReleasesText {
+  margin-bottom: 24px;
+  width: 100%;
   font-family: 'Mulish';
   font-size: 18px;
   font-weight: 600;
   line-height: 1.3;
 
   color: var(--neutral-dark-text-clr);
-
-  @media screen and (max-width: 375px) {
-    margin-bottom: 24px;
-    width: 100%;
-  }
 
   @media screen and (min-width: 768px) {
     margin-bottom: 52px;

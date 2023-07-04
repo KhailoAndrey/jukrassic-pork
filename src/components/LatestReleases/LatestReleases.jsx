@@ -13,7 +13,6 @@ function LatestReleases() {
   const { data } = useFetch('releases');
   const { currentLanguage } = useContext(LanguageContext);
 
-  console.log(data);
   return (
     <section id="latest-releases" className={scss.latestReleases}>
       <div className="container">
