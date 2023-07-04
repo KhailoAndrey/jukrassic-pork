@@ -1,12 +1,19 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import axios from 'axios';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
 import { ReactComponent as CloseBtn } from '../../../images/Music/svg/icon-close.svg';
+import { ReactComponent as SendIcon } from '../../../images/Footer/send.svg';
 import scss from '../Footer.module.scss';
+import MessageField from '../MessageField/MessageField';
+
+axios.defaults.baseURL = 'https://jukrassik-pork.onrender.com/api/contact';
 
 const ModalForm = ({ onClose }) => {
+  const [symbolCount, setSymbolCount] = useState(0);
+
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
@@ -16,6 +23,16 @@ const ModalForm = ({ onClose }) => {
   });
 
   const modal = document.querySelector('#modal-form');
+
+  const submitContactForm = async data => {
+    try {
+      console.log('data:', data);
+      await axios.post('/', data);
+    } catch (error) {
+      console.log('error:', error);
+      console.log('error.message:', error.message);
+    }
+  };
 
   const handleKeyDown = e => {
     if (e.code === 'Escape') {
@@ -42,14 +59,13 @@ const ModalForm = ({ onClose }) => {
               .required('Email is required'),
             message: yup.string().min(4).required('Message is required'),
           })}
-          onSubmit={(values, { setSubmitting, handleReset }) => {
-            setTimeout(() => {
-              console.log(values);
-              setSubmitting(false);
-            }, 400);
+          onSubmit={async (values, { setSubmitting }) => {
+            await submitContactForm(values);
+            setSubmitting(false);
+            onClose();
           }}
         >
-          {({ handleSubmit, isSubmitting, handleReset }) => (
+          {({ handleSubmit, isSubmitting }) => (
             <Form className={scss.contact_form} onSubmit={handleSubmit}>
               <div className={scss.contact_form__head_wrap}>
                 <h3 className={scss.form_title}>Contact Form</h3>
@@ -98,17 +114,11 @@ const ModalForm = ({ onClose }) => {
                 />
               </div>
 
-              {/* TODO: CHECK IF MOBILE MESSAGE INPUT IS OK FOR 200 SYMBOLS   */}
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="message">
                   Message
                 </label>
-                <Field
-                  className={scss.contact_form__message}
-                  id="message"
-                  name="message"
-                  as="textarea"
-                />
+                <MessageField setCounter={setSymbolCount}></MessageField>
 
                 <div className={scss.contact_form__support_text_wrap}>
                   <ErrorMessage
@@ -117,9 +127,8 @@ const ModalForm = ({ onClose }) => {
                     component="div"
                   />
 
-                  {/* TODO: get value from Formik Field to input symbol length */}
                   <span className={scss.contact_form__symbol_counter}>
-                    0/200
+                    {symbolCount}/200
                   </span>
                 </div>
               </div>
@@ -129,8 +138,8 @@ const ModalForm = ({ onClose }) => {
                 type="submit"
                 disabled={isSubmitting}
               >
-                {/* TODO: paperplane icon */}
-                Send Email
+                <SendIcon className={scss.send_icon} />
+                {isSubmitting ? `Sending...` : `Send Email`}
               </button>
             </Form>
           )}

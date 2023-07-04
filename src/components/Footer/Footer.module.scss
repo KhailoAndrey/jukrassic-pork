@@ -493,6 +493,7 @@
   left: 0;
 
   display: inline;
+  width: 248px;
   // margin-right: auto;
   font-size: 16px;
   // font-family: Mulish;
@@ -500,11 +501,13 @@
   font-weight: 400;
   // line-height: 24px;
 
-  color: var(--neutral-dark-text-clr);
+  // color: var(--neutral-dark-text-clr);
+  color: var(--main-error-text-clr);
 }
 
 .contact_form__symbol_counter {
   // align-self: flex-end;
+  color: var(--neutral-dark-text-clr);
 }
 
 .contact_form__button {
@@ -521,5 +524,42 @@
   font-weight: 600;
   line-height: 28px;
 
+  border: 0;
+  outline: 0;
+
+  fill: var(--neutral-dark-bckg-clr-1);
+  color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
+
+  transition: all var(--fast-animation);
+
+  &:hover,
+  *:focus {
+    border: 2px solid var(--main-accent-text-clr);
+    fill: var(--main-accent-text-clr);
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    fill: var(--main-accent-text-clr);
+    background-color: var(--main-accent-text-clr);
+  }
+}
+
+.send_icon {
+  width: 24px;
+  height: 24px;
+
+  fill: var(--neutral-dark-bckg-clr-1);
+
+  transition: all var(--fast-animation);
+
+  // &:hover,
+  // &:focus {
+  //   fill: inherit;
+  //   // fill: var(--main-accent-text-clr);
+  // }
 }
