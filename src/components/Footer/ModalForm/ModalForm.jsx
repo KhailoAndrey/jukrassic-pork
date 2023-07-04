@@ -1,18 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { ErrorMessage, Field, Form, Formik } from 'formik';
+import MessageField from '../MessageField/MessageField';
+import { LanguageContext } from 'utils/LanguageContext';
 import { ReactComponent as CloseBtn } from '../../../images/Music/svg/icon-close.svg';
 import { ReactComponent as SendIcon } from '../../../images/Footer/send.svg';
 import scss from '../Footer.module.scss';
-import MessageField from '../MessageField/MessageField';
 
 axios.defaults.baseURL = 'https://jukrassik-pork.onrender.com/api/contact';
+const EMAIL_REGEX =
+  /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/; // eslint-disable-line
 
 const ModalForm = ({ onClose }) => {
   const [symbolCount, setSymbolCount] = useState(0);
+  const { currentLanguage } = useContext(LanguageContext);
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -52,12 +56,18 @@ const ModalForm = ({ onClose }) => {
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           validationSchema={yup.object().shape({
-            name: yup.string().min(2).max(32),
+            name: yup
+              .string()
+              .min(2, `Minimum characters 2`)
+              .max(32, `Maximum characters 32`),
             email: yup
               .string()
-              .email('Invalid email')
-              .required('Email is required'),
-            message: yup.string().min(4).required('Message is required'),
+              .matches(EMAIL_REGEX, `Must be a valid email`)
+              .required(`Email is required`),
+            message: yup
+              .string()
+              .min(4, `Minimum characters 4`)
+              .required(`Message is required`),
           })}
           onSubmit={async (values, { setSubmitting }) => {
             await submitContactForm(values);
@@ -68,21 +78,25 @@ const ModalForm = ({ onClose }) => {
           {({ handleSubmit, isSubmitting }) => (
             <Form className={scss.contact_form} onSubmit={handleSubmit}>
               <div className={scss.contact_form__head_wrap}>
-                <h3 className={scss.form_title}>Contact Form</h3>
+                <h3 className={scss.form_title}>
+                  {/* FIXME: fix with i18next */}
+                  {currentLanguage === 'en'
+                    ? `Contact Form`
+                    : `Контактна форма`}
+                </h3>
                 <div className={scss.close_btn__wrap}>
                   <CloseBtn
                     className={scss.close_btn}
                     type="button"
                     onClick={onClose}
-                  >
-                    Close
-                  </CloseBtn>
+                  />
                 </div>
               </div>
 
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="name">
-                  Your name
+                  {/* FIXME: fix with i18next */}
+                  {currentLanguage === 'en' ? `Your name` : `Ваше ім'я`}
                 </label>
                 <Field
                   className={scss.contact_form__field}
@@ -99,7 +113,8 @@ const ModalForm = ({ onClose }) => {
 
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="email">
-                  Email
+                  {/* FIXME: fix with i18next */}
+                  {currentLanguage === 'en' ? `Email` : `Ел. пошта`}
                 </label>
                 <Field
                   className={scss.contact_form__field}
@@ -116,10 +131,10 @@ const ModalForm = ({ onClose }) => {
 
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="message">
-                  Message
+                  {/* FIXME: fix with i18next */}
+                  {currentLanguage === 'en' ? `Message` : `Повідомлення`}
                 </label>
-                <MessageField setCounter={setSymbolCount}></MessageField>
-
+                <MessageField setCounter={setSymbolCount} />
                 <div className={scss.contact_form__support_text_wrap}>
                   <ErrorMessage
                     className={scss.contact_form__support_text}
@@ -134,12 +149,20 @@ const ModalForm = ({ onClose }) => {
               </div>
 
               <button
-                className={scss.contact_form__button}
+                className={scss.contact_form__btn}
                 type="submit"
                 disabled={isSubmitting}
               >
                 <SendIcon className={scss.send_icon} />
-                {isSubmitting ? `Sending...` : `Send Email`}
+
+                {/* FIXME: fix with i18next */}
+                {currentLanguage === 'en'
+                  ? isSubmitting
+                    ? `Sending...`
+                    : `Send Email`
+                  : isSubmitting
+                  ? `Відправка...`
+                  : `Відправити`}
               </button>
             </Form>
           )}

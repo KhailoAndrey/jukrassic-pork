@@ -1,25 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import useFetch from 'hooks/useFetch';
 import Item from './Item/Item';
 import ModalForm from './ModalForm/ModalForm';
 import { ReactComponent as Logo } from '../../images/Logotype.svg';
 import { ReactComponent as Envelop } from '../../images/Footer/envelop.svg';
 import scss from './Footer.module.scss';
+import { LanguageContext } from 'utils/LanguageContext';
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { currentLanguage } = useContext(LanguageContext);
+  const { isLoading, data } = useFetch('contacts');
 
   useEffect(() => {
     if (isModalOpen) {
-      document.body.classList.add('modal_open');
+      document.body.classList.add('no_scroll');
       return;
     }
-
-    document.body.classList.remove('modal_open');
+    document.body.classList.remove('no_scroll');
   }, [isModalOpen]);
 
   const getCurrentYear = new Date().getFullYear();
-  const { isLoading, data } = useFetch('contacts');
 
   return (
     <>
@@ -27,15 +28,23 @@ function Footer() {
         <footer className={scss.footer} id="contacts">
           <div className={`container ${scss.footer__wrap}`}>
             <div className={scss.appeal__wrap}>
-              <h2 className={scss.appeal__title}>{data && data.title.en}</h2>
+              <h2 className={scss.appeal__title}>
+                {data && data.title[currentLanguage]}
+              </h2>
 
-              <p className={scss.appeal__desc}>{data && data.description.en}</p>
+              <p className={scss.appeal__desc}>
+                {data && data.description[currentLanguage]}
+              </p>
             </div>
 
             <address className={scss.address__wrap}>
               {/* socials */}
               <div className={scss.address__wrap_secondary}>
-                <h3 className={scss.address__title}>Follow us</h3>
+                <h3 className={scss.address__title}>
+                  {/* FIXME: fix with i18next */}
+                  {currentLanguage === 'en' ? `Follow us` : 'Слідкуйте'}
+                </h3>
+
                 <ul className={scss.address__social_list}>
                   {data &&
                     data.socialMediaList.map(({ link, name, id }) => (
@@ -53,7 +62,10 @@ function Footer() {
               >
                 <li>
                   {/* email */}
-                  <h3 className={scss.address__title}>Email</h3>
+                  <h3 className={scss.address__title}>
+                    {/* FIXME: fix with i18next */}
+                    {currentLanguage === 'en' ? `Email` : 'Пишіть'}
+                  </h3>
                   <a
                     className={scss.address__social_list_link}
                     href={data && `mailto:${data.email}`}
@@ -72,13 +84,19 @@ function Footer() {
                   >
                     <Envelop className={scss.envelopIcon} />
 
-                    <span className={scss.mail_btn__text}>Mail us</span>
+                    <span className={scss.mail_btn__text}>
+                      {/* FIXME: fix with i18next or leave it in EN as in mockup? */}
+                      {currentLanguage === 'en' ? `Mail us` : 'Mail us'}
+                    </span>
                   </button>
                 </li>
 
                 {/* phone */}
                 <li>
-                  <h3 className={scss.address__title}>Call</h3>
+                  <h3 className={scss.address__title}>
+                    {/* FIXME: fix with i18next */}
+                    {currentLanguage === 'en' ? `Call` : 'Дзвоніть'}
+                  </h3>
                   <a
                     className={scss.address__social_list_link}
                     href={data && `tel:${data.phone}`}
