@@ -1,4 +1,4 @@
-.latestReleasesButton {
+.commonButton {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,17 +42,35 @@
   }
 }
 
-.latestReleasesButton:hover,
-.latestReleasesButton:focus {
+.commonButton:hover,
+.commonButton:focus {
   border: 2px solid var(--main-accent-text-clr);
 
   color: var(--light-text-clr);
   background-color: var(--neutral-dark-bckg-clr-1);
 }
 
-.latestReleasesIcon {
+.textTransform {
+  transform: translateX(-10px);
+  transition: transform var(--default-animation);
+}
+
+.commonButton:hover .textTransform,
+.commonButton:focus .textTransform {
+  transform: translateX(10px);
+}
+
+.commonIconVisible {
+  fill: transparent;
+}
+
+.commonButton:hover .commonIconVisible,
+.commonButton:focus .commonIconVisible {
+  fill: var(--main-accent-text-clr);
+}
+
+.commonIcon {
   display: block;
-  margin-left: 8px;
 
   width: 24px;
   height: 24px;
@@ -60,13 +78,4 @@
   fill: var(--neutral-dark-bckg-clr-1);
 
   transition: fill var(--default-animation);
-
-  @media screen and (min-width: 767.9px) {
-    margin-left: 12px;
-  }
-}
-
-.latestReleasesButton:hover .latestReleasesIcon,
-.latestReleasesButton:focus .latestReleasesIcon {
-  fill: var(--main-accent-text-clr);
 }

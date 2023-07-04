@@ -4,7 +4,7 @@ import useFetch from '../../hooks/useFetch';
 
 import LatestReleasesChapter from './LatestReleasesChapter/LatestReleasesChapter';
 import LatestReleasesText from './LatestReleasesText/LatestReleasesText';
-import LatestReleasesButton from './LatestReleasesButton/LatestReleasesButton';
+import CommonButton from 'components/CommonButton/CommonButton';
 import LatestReleasesPlayers from './LatestReleasesPlayers/LatestReleasesPlayers';
 
 import scss from './LatestReleases.module.scss';
@@ -21,9 +21,8 @@ function LatestReleases() {
         {data && (
           <LatestReleasesText description={data.description[currentLanguage]} />
         )}
-
         <div className={scss.boxButtonPlayers}>
-          <LatestReleasesButton valueButton="Go to all releases" />
+          <CommonButton valueButton="Go to all releases" />
           {data && (
             <LatestReleasesPlayers
               latestReleasesList={data.latestReleasesList}
