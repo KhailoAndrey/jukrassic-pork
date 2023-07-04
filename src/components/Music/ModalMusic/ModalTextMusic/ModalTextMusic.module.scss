@@ -36,16 +36,16 @@
 
   color: var(--add-light-text-clr-2);
 
-  @media screen and (min-width: 374.9px) {
+  @media screen and (min-width: 375px) {
     font-size: 16px;
   }
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     max-height: 70vh;
     font-size: 18px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     min-height: 75vh;
     font-size: 20px;
   }

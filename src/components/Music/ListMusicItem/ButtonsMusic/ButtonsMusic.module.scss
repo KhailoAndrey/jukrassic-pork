@@ -20,11 +20,11 @@
 
   transition: color, border var(--default-animation);
 
-  @media screen and (min-width: 374.9px) {
+  @media screen and (min-width: 375px) {
     width: auto;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     padding: 8px 24px;
   }
 }
@@ -48,7 +48,7 @@
   fill: var(--add-light-text-clr-2);
   transition: fill var(--default-animation);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     margin-right: 12px;
   }
 }

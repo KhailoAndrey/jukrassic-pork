@@ -40,8 +40,8 @@
   --default-animation: 400ms ease-in-out;
   --fast-animation: 250ms ease-in-out;
   --slow-animation: 600ms ease-in-out;
-  
-  --swiper-pagination-color:#00fe00;
+
+  --swiper-pagination-color: #00fe00;
   --swiper-pagination-progressbar-size: 2px;
 
   --main-logo-bckg-clr: #4f5449;
@@ -80,19 +80,19 @@ ol {
   max-width: 100%;
 
   /* mobile screen */
-  @media screen and (min-width: 374.9px) {
+  @media screen and (min-width: 375px) {
     width: 375px;
   }
 
   /* tablet screen */
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-right: 32px;
     padding-left: 32px;
     width: 768px;
   }
 
   /* desktop screen */
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     padding-right: 84px;
     padding-left: 84px;
     width: 1440px;

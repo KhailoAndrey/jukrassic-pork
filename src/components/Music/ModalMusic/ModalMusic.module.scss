@@ -27,15 +27,15 @@
 
   transform: translate(-50%, -50%);
 
-  @media screen and (min-width: 374.9px) {
+  @media screen and (min-width: 375px) {
     width: 300px;
   }
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     width: 340px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 408px;
   }
 }
