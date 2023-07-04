@@ -1,25 +1,15 @@
 .modal {
-  // position: absolute;
   background-color: var(--main-bckg-clr);
-  min-height: 650px;
   height: 100vh;
+  max-height: 100%;
   width: 100%;
   position: fixed;
-  // bottom: 0;
   left: 0;
-  // padding-bottom: 24px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
   z-index: 9999;
-  // overflow-y: scroll;
-
-  @media screen and (min-width: 768px) {
-    height: 100vh;
-    // padding-bottom: 32px;
-    min-height: 750px;
-  }
 
   @media screen and (min-width: 1440px) {
     width: 408px;
@@ -75,6 +65,8 @@
   padding: 0px 16px;
   flex-direction: column;
   align-items: flex-start;
+  gap: 16px;
+
   :hover {
     color: var(--main-accent-text-clr);
   }
@@ -82,12 +74,12 @@
   @media screen and (min-width: 768px) {
     width: 768px;
     padding: 0 32px;
-    gap: 4px;
+    gap: 24px;
   }
+
   @media screen and (min-width: 1440px) {
-    height: 260px;
     width: 100%;
-    padding: 0 24px;
+    padding: 24px 24px;
   }
 }
 
@@ -97,22 +89,21 @@
   font-weight: 600;
   font-size: 28px;
   color: var(--main-text-clr);
-  padding: 8px 0;
   text-decoration: none;
   text-transform: uppercase;
-  height: 52px;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
   align-self: stretch;
+  line-height: 36px;
 
   @media screen and (min-width: 768px) {
-    height: 60px;
     font-size: 36px;
+    line-height: 44px;
   }
+
   @media screen and (min-width: 1440px) {
-    height: 52px;
     font-size: 28px;
+    line-height: 36px;
   }
 }
 
@@ -128,6 +119,7 @@
   :hover {
     color: var(--main-accent-text-clr);
   }
+
   button {
     padding: 4px 0;
     background-color: var(--main-bckg-clr);
@@ -163,9 +155,9 @@
     gap: 24px;
     margin-bottom: 32px;
   }
+
   @media screen and (min-width: 1440px) {
     height: 60px;
-    margin-top: 88px;
     padding: 8px 24px;
     margin-bottom: 24px;
   }
