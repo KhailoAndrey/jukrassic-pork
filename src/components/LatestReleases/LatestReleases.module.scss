@@ -5,14 +5,14 @@
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-1);
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-top: 24px;
     padding-bottom: 112px;
   }
 }
 
 .boxButtonPlayers {
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     align-items: flex-end;
     flex-direction: column;

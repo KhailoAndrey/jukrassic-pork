@@ -1,5 +1,5 @@
 .header_menu {
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     align-items: flex-end;
     position: fixed;
@@ -10,7 +10,7 @@
 
 .logo {
   display: none;
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 60px;
     height: 60px;
     background-color: var(--neutral-dark-bckg-clr-3);
@@ -41,7 +41,7 @@
   cursor: pointer;
   text-decoration: none;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     margin-top: 52px;
     padding: 16px 32px;
     height: 60px;
@@ -50,7 +50,7 @@
     gap: 12px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 288px;
     margin-bottom: 0;
     margin-top: 0;
@@ -60,14 +60,14 @@
 .modalComponentDisplay {
   display: none;
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: block;
   }
 }
 
 .burger_btn {
   display: none;
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     align-items: center;
     justify-content: center;
     display: flex;

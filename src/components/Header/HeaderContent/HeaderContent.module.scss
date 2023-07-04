@@ -1,11 +1,11 @@
 .header {
   background-color: var(--neutral-dark-bckg-clr-1);
   padding-bottom: 16px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-bottom: 32px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     padding-bottom: 24px;
   }
 }
@@ -26,20 +26,20 @@
   padding-top: 16px;
   transition: top 0.5s;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 80px;
     padding-top: 32px;
     width: 736px;
     max-width: 768px;
   }
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: none;
   }
 }
 
 .header_burger_container.hidden {
   top: -65px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     top: -80px;
   }
 }
@@ -55,34 +55,32 @@
   border: none;
   cursor: pointer;
 
-  @media screen and (max-width: 357.9px) {
+  @media screen and (max-width: 358px) {
     margin-right: 16px;
   }
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     margin-right: 32px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: none;
   }
 }
-.header_container{
-  @media screen and (min-width: 1439.9px) {
+.header_container {
+  @media screen and (min-width: 1440px) {
     display: flex;
-   
   }
 }
 .header_title_container {
   width: 100%;
   padding-top: 80px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     padding-top: 104px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     display: flex;
     padding-top: 0;
-   
   }
 }
 
@@ -90,18 +88,18 @@
   min-height: 52px;
   margin-top: 24px;
   align-items: center;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     margin-bottom: 4px;
     margin-top: 24px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 408px;
     height: 64px;
     margin-top: 24px;
     position: sticky;
     position: -webkit-sticky;
-    top:24px;
+    top: 24px;
   }
 }
 
@@ -113,11 +111,11 @@
   font-size: 40px;
   line-height: 52px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     font-size: 44px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     font-size: 56px;
     line-height: 64px;
   }
@@ -126,12 +124,12 @@
 .header_subTitle {
   min-height: 36px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 40px;
     margin-top: 4px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     height: 44px;
     margin-top: 8px;
   }
@@ -145,12 +143,12 @@
   font-weight: 600;
   line-height: 36px;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     font-size: 32px;
     line-height: 40px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     font-size: 36px;
     line-height: 44px;
   }
@@ -158,11 +156,11 @@
 
 .header_body {
   margin-top: 16px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     margin-top: 24px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     margin-left: 0;
   }
 }
@@ -173,11 +171,11 @@
   font-family: Mulish;
   font-weight: 600;
   line-height: 24px;
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     font-size: 20px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     font-size: 22px;
     line-height: 28px;
   }
@@ -190,16 +188,16 @@
   background-color: var(--neutral-dark-bckg-clr-1);
   text-align: center;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     height: 464px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     height: 572px;
     width: 924px;
     margin-right: -84px;
     margin-left: auto;
-    margin-top: 76px; 
+    margin-top: 76px;
   }
 }
 
@@ -210,12 +208,12 @@
   right: 0;
   height: 516px;
   z-index: 100;
-@media screen and (min-width: 767.9px) {
-  top: 52px;
-  width: 158px;
+  @media screen and (min-width: 768px) {
+    top: 52px;
+    width: 158px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 172px;
     top: 56px;
   }

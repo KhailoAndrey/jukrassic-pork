@@ -1,11 +1,11 @@
 .listMusicItem {
   width: 100%;
 
-  @media screen and (min-width: 767.9px) {
+  @media screen and (min-width: 768px) {
     width: 340px;
   }
 
-  @media screen and (min-width: 1439.9px) {
+  @media screen and (min-width: 1440px) {
     width: 408px;
   }
 }
