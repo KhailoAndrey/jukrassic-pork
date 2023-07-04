@@ -1,22 +1,24 @@
 .modal {
   // position: absolute;
   background-color: var(--main-bckg-clr);
-  min-height: 744px;
+  min-height: 650px;
   height: 100vh;
   width: 100%;
   position: fixed;
   // bottom: 0;
   left: 0;
-  padding-bottom: 24px;
+  // padding-bottom: 24px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   flex-direction: column;
   z-index: 9999;
+  overflow-y: scroll;
 
   @media screen and (min-width: 767.9px) {
     height: 100vh;
-    padding-bottom: 32px;
+    // padding-bottom: 32px;
+    min-height: 750px;
   }
 
   @media screen and (min-width: 1439.9px) {
@@ -57,7 +59,7 @@
   margin-top: 74px;
   padding-left: 16px;
   margin-bottom: 52px;
- fill: var(--main-logo-bckg-clr);
+  fill: var(--main-logo-bckg-clr);
   @media screen and (min-width: 767.9px) {
     margin-top: 170px;
     padding-left: 32px;
@@ -116,6 +118,7 @@
 
 .languageButtons {
   margin-top: 52px;
+  margin-bottom: 24px;
   width: 375px;
   height: 60px;
   padding: 8px 16px;
@@ -148,21 +151,22 @@
       height: 44px;
       font-size: 28px;
     }
-
   }
 
   .active {
-  color: var(--main-accent-text-clr);
-}
+    color: var(--main-accent-text-clr);
+  }
 
   @media screen and (min-width: 767.9px) {
     height: 68px;
     padding: 8px 32px;
     gap: 24px;
+    margin-bottom: 32px;
   }
   @media screen and (min-width: 1439.9px) {
     height: 60px;
     margin-top: 88px;
     padding: 8px 24px;
+    margin-bottom: 24px;
   }
 }

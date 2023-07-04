@@ -1,12 +1,12 @@
 .listPlayers {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
+
   gap: 16px;
 
-  @media screen and (min-width: 767.9px) {
-    flex-direction: initial;
+  @media screen and (min-width: 1439.9px) {
     gap: 24px;
   }
 }

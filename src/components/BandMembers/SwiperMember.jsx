@@ -44,7 +44,7 @@ const SwiperMember = ({ data }) => {
     speed: 1000,
   };
   return (
-    <div className={s.test}>
+    <div className={s.containerSwiper}>
       <Swiper {...carouselSettings} className={s.list}>
         {data &&
           data.bandList.map(member => (

@@ -4,11 +4,11 @@ import { ReactComponent as PlayIcon } from '../../../../../images/Common/svg/pla
 
 import scss from './LatestReleaesIconPlay.module.scss';
 
-function LatestReleaesIconPlay({ currentVideoIndex, index }) {
+function LatestReleaesIconPlay({ currentVideoIndex, indexItem }) {
   return (
     <div
       className={`${scss.iconContainer} ${
-        currentVideoIndex === index ? scss.hidden : ''
+        currentVideoIndex === indexItem ? scss.hidden : ''
       }`}
     >
       <PlayIcon className={scss.iconPlay} />
@@ -18,7 +18,7 @@ function LatestReleaesIconPlay({ currentVideoIndex, index }) {
 
 LatestReleaesIconPlay.propTypes = {
   currentVideoIndex: PropTypes.number,
-  index: PropTypes.number.isRequired,
+  indexItem: PropTypes.string.isRequired,
 };
 
 export default LatestReleaesIconPlay;
