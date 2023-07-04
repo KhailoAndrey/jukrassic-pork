@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/jukrassic-pork/static/css/main.a4f46704.css",
-    "main.js": "/jukrassic-pork/static/js/main.dfd4057b.js",
-    "static/css/173.b8a6cd20.chunk.css": "/jukrassic-pork/static/css/173.b8a6cd20.chunk.css",
+    "main.css": "/jukrassic-pork/static/css/main.3faaeb2b.css",
+    "main.js": "/jukrassic-pork/static/js/main.0feb28a0.js",
+    "static/css/173.287a3777.chunk.css": "/jukrassic-pork/static/css/173.287a3777.chunk.css",
     "static/js/173.0010d78f.chunk.js": "/jukrassic-pork/static/js/173.0010d78f.chunk.js",
-    "static/css/158.d88dda35.chunk.css": "/jukrassic-pork/static/css/158.d88dda35.chunk.css",
+    "static/css/158.f2c87da8.chunk.css": "/jukrassic-pork/static/css/158.f2c87da8.chunk.css",
     "static/js/158.55019ee2.chunk.js": "/jukrassic-pork/static/js/158.55019ee2.chunk.js",
     "static/js/726.2573f9d4.chunk.js": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js",
     "static/js/437.ba8f09ab.chunk.js": "/jukrassic-pork/static/js/437.ba8f09ab.chunk.js",
@@ -36,11 +36,11 @@
     "static/media/Icon-download.svg": "/jukrassic-pork/static/media/Icon-download.5e76cc14c06f4e55ecdfccc12893e3c8.svg",
     "static/media/icon-close.svg": "/jukrassic-pork/static/media/icon-close.5ff5bf08c2f34b7dc126544ef3bd8a8a.svg",
     "static/media/Right-Icon.svg": "/jukrassic-pork/static/media/Right-Icon.58c266fa9fc72acd72eeffc8febd15dc.svg",
-    "main.a4f46704.css.map": "/jukrassic-pork/static/css/main.a4f46704.css.map",
-    "main.dfd4057b.js.map": "/jukrassic-pork/static/js/main.dfd4057b.js.map",
-    "173.b8a6cd20.chunk.css.map": "/jukrassic-pork/static/css/173.b8a6cd20.chunk.css.map",
+    "main.3faaeb2b.css.map": "/jukrassic-pork/static/css/main.3faaeb2b.css.map",
+    "main.0feb28a0.js.map": "/jukrassic-pork/static/js/main.0feb28a0.js.map",
+    "173.287a3777.chunk.css.map": "/jukrassic-pork/static/css/173.287a3777.chunk.css.map",
     "173.0010d78f.chunk.js.map": "/jukrassic-pork/static/js/173.0010d78f.chunk.js.map",
-    "158.d88dda35.chunk.css.map": "/jukrassic-pork/static/css/158.d88dda35.chunk.css.map",
+    "158.f2c87da8.chunk.css.map": "/jukrassic-pork/static/css/158.f2c87da8.chunk.css.map",
     "158.55019ee2.chunk.js.map": "/jukrassic-pork/static/js/158.55019ee2.chunk.js.map",
     "726.2573f9d4.chunk.js.map": "/jukrassic-pork/static/js/726.2573f9d4.chunk.js.map",
     "437.ba8f09ab.chunk.js.map": "/jukrassic-pork/static/js/437.ba8f09ab.chunk.js.map",
@@ -49,7 +49,7 @@
     "929.38a61d3b.chunk.js.map": "/jukrassic-pork/static/js/929.38a61d3b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a4f46704.css",
-    "static/js/main.dfd4057b.js"
+    "static/css/main.3faaeb2b.css",
+    "static/js/main.0feb28a0.js"
   ]
 }
