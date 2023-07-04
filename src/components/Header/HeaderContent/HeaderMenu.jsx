@@ -1,5 +1,5 @@
-import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
+import { MdArrowBack, MdArrowForward } from 'react-icons/md';
 import { ReactComponent as Logo } from '../../../images/Logo.svg';
 import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
 import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
