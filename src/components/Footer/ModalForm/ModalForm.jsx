@@ -3,11 +3,14 @@ import { createPortal } from 'react-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Form, Formik } from 'formik';
+
 import MessageField from '../MessageField/MessageField';
+import InputField from '../InputField/InputField';
 import { LanguageContext } from 'utils/LanguageContext';
 import { ReactComponent as CloseBtn } from '../../../images/Music/svg/icon-close.svg';
 import { ReactComponent as SendIcon } from '../../../images/Footer/send.svg';
+
 import scss from '../Footer.module.scss';
 
 axios.defaults.baseURL = 'https://jukrassik-pork.onrender.com/api/contact';
@@ -17,6 +20,7 @@ const EMAIL_REGEX =
 const ModalForm = ({ onClose }) => {
   const [symbolCount, setSymbolCount] = useState(0);
   const { currentLanguage } = useContext(LanguageContext);
+  const modal = document.querySelector('#modal-form');
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
@@ -26,10 +30,9 @@ const ModalForm = ({ onClose }) => {
     };
   });
 
-  const modal = document.querySelector('#modal-form');
-
   const submitContactForm = async data => {
     try {
+      // TODO: delete console.log after testing
       console.log('data:', data);
       await axios.post('/', data);
     } catch (error) {
@@ -84,6 +87,8 @@ const ModalForm = ({ onClose }) => {
                     ? `Contact Form`
                     : `Контактна форма`}
                 </h3>
+
+                {/* close button */}
                 <div className={scss.close_btn__wrap}>
                   <CloseBtn
                     className={scss.close_btn}
@@ -93,17 +98,13 @@ const ModalForm = ({ onClose }) => {
                 </div>
               </div>
 
+              {/* name field */}
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="name">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Your name` : `Ваше ім'я`}
                 </label>
-                <Field
-                  className={scss.contact_form__field}
-                  id="name"
-                  type="text"
-                  name="name"
-                />
+                <InputField id="name" type="text" name="name" />
                 <ErrorMessage
                   className={scss.contact_form__support_text}
                   name="name"
@@ -111,17 +112,13 @@ const ModalForm = ({ onClose }) => {
                 />
               </div>
 
+              {/* email field */}
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="email">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Email` : `Ел. пошта`}
                 </label>
-                <Field
-                  className={scss.contact_form__field}
-                  id="email"
-                  type="email"
-                  name="email"
-                />
+                <InputField id="email" type="text" name="email" />
                 <ErrorMessage
                   className={scss.contact_form__support_text}
                   name="email"
@@ -129,12 +126,18 @@ const ModalForm = ({ onClose }) => {
                 />
               </div>
 
+              {/* message field */}
               <div className={scss.contact_form__input_wrap}>
                 <label className={scss.contact_form__label} htmlFor="message">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Message` : `Повідомлення`}
                 </label>
-                <MessageField setCounter={setSymbolCount} />
+                <MessageField
+                  id="message"
+                  type="textarea"
+                  name="message"
+                  setCounter={setSymbolCount}
+                />
                 <div className={scss.contact_form__support_text_wrap}>
                   <ErrorMessage
                     className={scss.contact_form__support_text}
@@ -142,12 +145,14 @@ const ModalForm = ({ onClose }) => {
                     component="div"
                   />
 
+                  {/* counter */}
                   <span className={scss.contact_form__symbol_counter}>
                     {symbolCount}/200
                   </span>
                 </div>
               </div>
 
+              {/* submit button */}
               <button
                 className={scss.contact_form__btn}
                 type="submit"

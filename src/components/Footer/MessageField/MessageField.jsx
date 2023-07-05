@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Field, useFormikContext } from 'formik';
 import scss from '../Footer.module.scss';
 
-const MessageField = ({ setCounter }) => {
-  const { values } = useFormikContext();
+const MessageField = ({ id, type, name, setCounter }) => {
+  const { values, errors, touched } = useFormikContext();
 
   useEffect(() => {
     setCounter(values.message.length);
@@ -12,16 +12,23 @@ const MessageField = ({ setCounter }) => {
 
   return (
     <Field
-      className={scss.contact_form__message}
-      id="message"
-      name="message"
-      as="textarea"
+      className={`${
+        errors[name] && touched[name]
+          ? [scss.input_error, scss.contact_form__message].join(' ')
+          : scss.contact_form__message
+      }`}
+      id={id}
+      as={type}
+      name={name}
       maxLength={200}
     />
   );
 };
 
 MessageField.propTypes = {
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   setCounter: PropTypes.func.isRequired,
 };
 
