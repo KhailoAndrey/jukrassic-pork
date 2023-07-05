@@ -6,40 +6,41 @@ import scss from './VideoBlock.module.scss';
 
 function VideoBlock({ src, title }) {
   const [isPlay, setIsPlay] = useState(true);
-  // const [isPause, setIsPause] = useState(false);
+  const [isPause, setIsPause] = useState(false);
   const [isCover, setIsCover] = useState(true);
 
-  // function handleClick() {
-  //   setIsPlay(!isPlay);
-  // }
+  function handleClick() {
+    setIsPlay(!isPlay);
+    setIsPause(!isPlay);
+  }
   
   function handleCloseCover () {
-    if (!isPlay) {return;} else 
-    {setIsCover(!isCover);}
+    // console.log('isPlay', isPlay, 'isPause', isPause)
+    setIsPause(!isPause);
+
+    if (!isPause) return;  
+    setIsCover(!isCover);
   }
-console.log('isPlay', isPlay, 'isCover', isCover)
+
+  // `https://i.ytimg.com/vi/${src}/maxresdefault.jpg`
+  // `https://i.ytimg.com/vi/${src}/sddefault.jpg`
+
   return (
     <div className={scss.videoBlock}>
       <div className={scss.videoBlock_cover} onClick={handleCloseCover}>      
         <ReactPlayer
           className={scss.videoBlock_track}
-          // light={
-          //   // `https://i.ytimg.com/vi/${src}/maxresdefault.jpg` === 'true' ?
-          //   `https://i.ytimg.com/vi_webp/${src}/sddefault.webp`
-          //   // : `https://i.ytimg.com/vi/${src}/sddefault.jpg`
-          // }
           url={`https://youtu.be/${src}`}
-          // playing={isPlay}
-          onPlay={()=>setIsPlay(!isPlay)}
-          onPause={()=>setIsPlay(!isPlay)}
+          onPlay={handleClick}
+          onPause={handleClick}
           onReady={()=> isCover}
           onEnded={()=>setIsCover(!isCover)}
           controls={true}
         />
 
         <div className={scss.videoInner} style={isCover ? {display: 'flex'} : {display: 'none'}}>
-          {/* , isPause ? {pointerEvents: 'none'} : {pointerEvents: 'none'}}> */}
-          <img src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`} alt="" />
+          <img src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`} alt={title} />
+          
           <span className={scss.videoMask}>
             <div className={scss.videoBG}/>
             <svg className={scss.videoBlock_btnPlay}>
