@@ -38,6 +38,12 @@
   border: 1px solid var(--main-accent-text-clr);
 }
 
+.buttonMusic:active {
+  border: 1px solid var(--main-accent-text-clr);
+  color: var(--neutral-dark-bckg-clr-1);
+  background-color: var(--main-accent-text-clr);
+}
+
 .buttonIcon {
   padding: 2px;
   display: flex;
@@ -58,4 +64,8 @@
 
 .buttonMusic:hover .buttonIcon {
   fill: var(--main-accent-text-clr);
+}
+
+.buttonMusic:active .buttonIcon {
+  fill: var(--neutral-dark-bckg-clr-1);
 }
