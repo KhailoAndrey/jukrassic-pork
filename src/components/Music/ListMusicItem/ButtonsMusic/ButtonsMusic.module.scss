@@ -39,7 +39,10 @@
 }
 
 .buttonIcon {
-  display: block;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   margin-right: 8px;
   width: 24px;
