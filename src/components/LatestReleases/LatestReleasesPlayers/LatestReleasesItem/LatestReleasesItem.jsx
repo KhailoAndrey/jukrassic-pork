@@ -23,7 +23,7 @@ function LatestReleaesItem({ indexItem, songImage, songLink, videoText }) {
     <li className={scss.playerBox}>
       <ReactPlayer
         className={scss.reactPlayer}
-        light={songImage}
+        light={songImage.url()}
         url={songLink}
         width="100%"
         height="100%"

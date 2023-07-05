@@ -1,12 +1,17 @@
 import PropTypes from 'prop-types';
 import scss from './LabelMusic.module.scss';
 
-function LabelMusic({ labelMusic }) {
-  return <h2 className={scss.labelMusic}>{labelMusic}</h2>;
+function LabelMusic({ labelMusicEn, labelMusicUa }) {
+  return (
+    <h2 className={scss.labelMusic}>
+      {labelMusicUa}/{labelMusicEn}
+    </h2>
+  );
 }
 
 LabelMusic.propTypes = {
-  labelMusic: PropTypes.string.isRequired,
+  labelMusicEn: PropTypes.string.isRequired,
+  labelMusicUa: PropTypes.string.isRequired,
 };
 
 export default LabelMusic;

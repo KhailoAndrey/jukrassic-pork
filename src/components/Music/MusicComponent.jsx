@@ -8,6 +8,7 @@ import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
+import Menu from 'components/Menu/Menu';
 
 import scss from './MusicComponent.module.scss';
 
@@ -27,7 +28,10 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
-        <HeaderMenu page="Music" text="Back to Home" />
+        <Menu />
+        <div className={scss.headermenu}>
+          <HeaderMenu page="Music" text="Back to Home" />
+        </div>
         {data && data.title[currentLanguage] && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
         )}

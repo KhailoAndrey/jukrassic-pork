@@ -11,12 +11,28 @@
   flex-direction: column;
   z-index: 9999;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--main-bckg-clr);
+    z-index: -1;
+    height: 100vh;
+  }
+
   @media screen and (min-width: 1440px) {
     width: 408px;
     min-height: 456px;
     height: 456px;
     position: absolute;
     top: -456px;
+
+    &::before {
+      display: none;
+    }
   }
 }
 
