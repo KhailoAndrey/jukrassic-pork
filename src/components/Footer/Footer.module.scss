@@ -430,10 +430,11 @@
 .contact_form__message {
   display: block;
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   margin-top: 8px;
 
-  border: 0;
+  border: 2px solid;
+  border-color: transparent;
 
   font-size: 20px;
   font-family: Mulish;
@@ -445,7 +446,7 @@
 
   &:focus {
     outline: 0;
-    border: 2px solid var(--add-light-text-clr-2);
+    border-color: var(--add-light-text-clr-2);
   }
 }
 
