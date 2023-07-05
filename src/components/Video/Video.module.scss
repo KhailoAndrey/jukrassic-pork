@@ -22,8 +22,9 @@
   @media screen and (min-width: 1440px) {
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: flex-start;
-    justify-content: space-between;
+    // align-items: flex-start;
+    // gap: 24px;
+    // justify-content: space-between;
     width: 1440px;
     padding: 24px 84px 160px;
   }

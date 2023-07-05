@@ -1,4 +1,4 @@
-.videoChapter {    
+.videoChapter {
   font-size: 10.6vw;
   font-family: Oswald;
   font-weight: 600;
@@ -16,8 +16,9 @@
   }
 
   @media screen and (min-width: 1440px) {
-    position: -webkit-sticky; 
-    position:sticky;
+    width: 408px;
+    position: -webkit-sticky;
+    position: sticky;
     top: 0;
     right: 0;
     align-self: flex-start;
