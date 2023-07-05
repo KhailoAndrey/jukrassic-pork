@@ -1,57 +1,21 @@
-import { useContext, useEffect, useState } from 'react';
-import { ReactComponent as Icon } from '../../../images/menu.svg';
+import { useContext } from 'react';
 import HeaderMenu from './HeaderMenu';
-import ModalComponent from '../../Modal/Modal';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from 'hooks/useFetch';
-import useModal from 'hooks/useModal';
+
+import Menu from 'components/Menu/Menu';
 import scss from './HeaderContent.module.scss';
 
 function HeaderContent() {
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  const [scrollTimeout, setScrollTimeout] = useState(null);
-  const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
 
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
   const { data } = useFetch('history');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      clearTimeout(scrollTimeout);
-
-      setIsHeaderVisible(false);
-      setScrollTimeout(setTimeout(() => setIsHeaderVisible(true), 300));
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [scrollTimeout]);
 
   return (
     <section id="header" className={scss.header}>
       <div className={`container ${scss.header_container}`}>
-        <div
-          className={`${scss.header_burger_container} ${
-            isHeaderVisible ? '' : scss.hidden
-          }`}
-        >
-          <button
-            type="button"
-            className={scss.header_burger_btn}
-            onClick={openModal}
-          >
-            <Icon />
-          </button>
-        </div>
-        {isModalOpen && (
-          <ModalComponent onClose={() => setIsModalOpen(false)} />
-        )}
-
+        <Menu />
         <div className={scss.header_title_container}>
           <div>
             <div className={scss.header_title}>

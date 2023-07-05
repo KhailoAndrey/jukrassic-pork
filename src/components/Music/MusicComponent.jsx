@@ -3,6 +3,7 @@ import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from '../../hooks/useFetch';
 
+import Menu from 'components/Menu/Menu';
 import HeaderMenu from '../../components/Header/HeaderContent/HeaderMenu';
 import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
@@ -27,6 +28,7 @@ function MusicComponent() {
   return (
     <section className={scss.musicComponent}>
       <div className="container">
+        <Menu />
         <HeaderMenu page="Music" text="Back to Home" />
         {data && data.title[currentLanguage] && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
