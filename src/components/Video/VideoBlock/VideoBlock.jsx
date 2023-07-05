@@ -1,37 +1,28 @@
 import { useState } from 'react';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/youtube';
 import PropTypes from 'prop-types';
 import btnYoutube from 'images/sprite.svg';
 import scss from './VideoBlock.module.scss';
 
 function VideoBlock({ src, title }) {
   const [isPlay, setIsPlay] = useState(true);
+  // const [isPause, setIsPause] = useState(false);
+  const [isCover, setIsCover] = useState(true);
 
-  function handleClick() {
-    setIsPlay(!isPlay);
+  // function handleClick() {
+  //   setIsPlay(!isPlay);
+  // }
+  
+  function handleCloseCover () {
+    if (!isPlay) {return;} else 
+    {setIsCover(!isCover);}
   }
-
+console.log('isPlay', isPlay, 'isCover', isCover)
   return (
     <div className={scss.videoBlock}>
-      <div className={scss.videoBlock_cover}>
-      
-        <div className={scss.a}>
-          <img src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`} alt="" />
-          <span className={scss.mask}>
-            <div className={scss.mask1}/>
-            <svg className={scss.videoBlock_btnPlay}>
-              <use href={btnYoutube + '#icon-btn-youtube'} />
-            </svg>
-          </span>
-        </div>
-      
+      <div className={scss.videoBlock_cover} onClick={handleCloseCover}>      
         <ReactPlayer
           className={scss.videoBlock_track}
-          // playIcon={
-          //   <svg className={scss.videoBlock_btnPlay}>
-          //     <use href={btnYoutube + '#icon-btn-youtube'} />
-          //   </svg>
-          // }
           // light={
           //   // `https://i.ytimg.com/vi/${src}/maxresdefault.jpg` === 'true' ?
           //   `https://i.ytimg.com/vi_webp/${src}/sddefault.webp`
@@ -39,11 +30,23 @@ function VideoBlock({ src, title }) {
           // }
           url={`https://youtu.be/${src}`}
           // playing={isPlay}
-          onPlay={handleClick}
-          onPause={handleClick}
-          onReady={handleClick}
+          onPlay={()=>setIsPlay(!isPlay)}
+          onPause={()=>setIsPlay(!isPlay)}
+          onReady={()=> isCover}
+          onEnded={()=>setIsCover(!isCover)}
           controls={true}
         />
+
+        <div className={scss.videoInner} style={isCover ? {display: 'flex'} : {display: 'none'}}>
+          {/* , isPause ? {pointerEvents: 'none'} : {pointerEvents: 'none'}}> */}
+          <img src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`} alt="" />
+          <span className={scss.videoMask}>
+            <div className={scss.videoBG}/>
+            <svg className={scss.videoBlock_btnPlay}>
+              <use href={btnYoutube + '#icon-btn-youtube'} />
+            </svg>
+          </span>
+        </div>
       </div>
       <h3 className={scss.videoBlock_track_title}>{title}</h3>
     </div>
