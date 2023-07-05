@@ -8,9 +8,9 @@ import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
+import Menu from 'components/Menu/Menu';
 
 import scss from './MusicComponent.module.scss';
-import Menu from 'components/Menu/Menu';
 
 function MusicComponent() {
   const { data } = useFetch('music');
