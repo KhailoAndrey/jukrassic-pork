@@ -3,3 +3,10 @@
 
   background-color: var(--neutral-dark-bckg-clr-1);
 }
+
+.headermenu {
+  display: none;
+  @media screen and (min-width: 1440px) {
+    display: block;
+  }
+}
