@@ -440,13 +440,11 @@
 
   color: var(--main-text-clr);
   background-color: var(--neutral-dark-bckg-clr-3);
+
   transition: all var(--fast-animation);
 
   &:focus {
     outline: 0;
-  }
-
-  &:active {
     border: 2px solid var(--add-light-text-clr-2);
   }
 }
