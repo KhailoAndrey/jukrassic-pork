@@ -6,6 +6,7 @@ import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
 import ModalComponent from '../../Modal/Modal';
 import useModal from 'hooks/useModal';
 import scss from './HeaderMenu.module.scss';
+import { useEffect, useRef } from 'react';
 
 const handleScrollToTop = () => {
   window.scrollTo({
@@ -16,6 +17,7 @@ const handleScrollToTop = () => {
 
 function HeaderMenu({ page, text }) {
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
+  const modalRef = useRef(null);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -24,6 +26,26 @@ function HeaderMenu({ page, text }) {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('mousedown', handleOutsideClick);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('mousedown', handleOutsideClick);
+    };
+  });
+  function handleKeyDown(event) {
+    if (event.code === 'Escape') {
+      closeModal();
+    }
+  }
+  function handleOutsideClick(event) {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      closeModal();
+    }
+  }
 
   const linkTo = page === 'Home' ? '/music' : '/';
 
@@ -50,10 +72,12 @@ function HeaderMenu({ page, text }) {
         )}
       </NavLink>
       {isModalOpen && (
+        <div ref={modalRef}>
         <ModalComponent
           customClass={scss.modalComponentDisplay}
           onClose={closeModal}
-        />
+          />
+          </div>
       )}
       <button
         className={scss.burger_btn}
