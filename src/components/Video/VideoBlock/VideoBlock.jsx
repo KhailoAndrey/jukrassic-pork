@@ -25,9 +25,6 @@ function VideoBlock({ src, title, isActive, onClick }) {
     setIsCover(!isCover);
   }
 
-  // `https://i.ytimg.com/vi/${src}/maxresdefault.jpg`
-  // `https://i.ytimg.com/vi/${src}/sddefault.jpg`
-
   return (
     <div className={scss.videoBlock}>
       <div className={scss.videoBlock_cover} onClick={handleCloseCover}>
@@ -47,7 +44,9 @@ function VideoBlock({ src, title, isActive, onClick }) {
           style={isCover ? { display: 'flex' } : { display: 'none' }}
         >
           <img
+            // src={`https://i.ytimg.com/vi/${src}/maxresdefault.jpg`}
             src={`https://i.ytimg.com/vi_webp/${src}/sddefault.webp`}
+            // src={`https://i.ytimg.com/vi/${src}/sddefault.jpg`}
             alt={title}
           />
 
