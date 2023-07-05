@@ -23,11 +23,7 @@ import scss from './SwiperHeader.module.scss';
 SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar]);
 
 const SwiperHeader = ({ data }) => {
-  // const [currentSlide, setCurrentSlide] = useState(0);
-
-  // const handleSlideChange = swiper => {
-  //   setCurrentSlide(swiper.activeIndex);
-  // };
+  
   const carouselSettings = {
     spaceBetween: 16,
     slidesPerView: 1,
@@ -40,28 +36,14 @@ const SwiperHeader = ({ data }) => {
         slidesPerView: 1.25,
       },
     },
-    loop: 'true',
-    // pagination: {
-    //   clickable: true,
-    // },
+    loop: 'true',    
     initialSlide: 0,
     navigation: {
-      nextEl: `.swiper-next-button`,
-      prevEl: `.swiper-prev-button`,
+      nextEl: `.swiper-next-btn`,
+      prevEl: `.swiper-prev-btn`,
     },
-    // modules: [Pagination, Scrollbar],
-    // autoplay: {
-    //   delay: 3000
-    // },
-    // fadeEffect: {
-    //   crossFade: true
-    // },
-
-    // grabCursor: true,
-    speed: 1000,
-    // on: {
-    //   slideChange: handleSlideChange,
-    // },
+    // modules: [Pagination, Scrollbar],    
+    speed: 1000,    
   };
   const swiperSlides = data.historyImgList.map(({ srcWebp, srcJpg }, index) => (
     <SwiperSlide key={index}>
@@ -83,12 +65,12 @@ const SwiperHeader = ({ data }) => {
     <>
       <div className={scss.arrows_container}>
         <div
-          className={`swiper-prev-button ${scss.arrowNavigationLeft} ${scss.defaultBandPosition}`}
+          className={`swiper-prev-btn ${scss.arrowNavigationLeft} ${scss.defaultBandPosition}`}
         >
           <ArrowPrev className={scss.arrow} />
         </div>
         <div
-          className={`swiper-next-button ${scss.arrowNavigationRight} ${scss.defaultBandPosition}`}
+          className={`swiper-next-btn ${scss.arrowNavigationRight} ${scss.defaultBandPosition}`}
         >
           <ArrowNext className={scss.arrow} />
         </div>
