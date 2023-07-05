@@ -43,8 +43,7 @@
 }
 
 .arrowNavigationLeft,
-.arrowNavigationRight
- {
+.arrowNavigationRight {
   width: 40px;
   height: 40px;
   cursor: pointer;
@@ -52,7 +51,7 @@
   // &:global(.swiper-button-disabled) {
   //   opacity: 0.5;
   //   cursor: auto;
-    // pointer-events: none;
+  // pointer-events: none;
   // }
 
   &.defaultBandPosition {
@@ -63,20 +62,24 @@
 
     &:hover,
     &:focus {
-      border: 1px solid var(--main-accent-text-clr);
-      background-color: var(--main-accent-text-clr);
       cursor: pointer;
-    }    
+      @media screen and (min-width: 1440px) {
+        border: 1px solid var(--main-accent-text-clr);
+        background-color: var(--main-accent-text-clr);
+      }
+    }
   }
 }
 
 .arrow {
-    display: block;
+  display: block;
   fill: var(--main-accent-text-clr);
 }
 .defaultBandPosition:hover .arrow,
 .defaultBandPosition:focus .arrow {
-  fill: var(--neutral-dark-bckg-clr-1);
+  @media screen and (min-width:1440px) {
+    fill: var(--neutral-dark-bckg-clr-1);
+  }
 }
 
 .overlay {
