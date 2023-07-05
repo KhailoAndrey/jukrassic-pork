@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ReactComponent as Icon } from '../../../images/menu.svg';
 import HeaderMenu from './HeaderMenu';
 import ModalComponent from '../../Modal/Modal';
@@ -13,6 +14,7 @@ function HeaderContent() {
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -60,11 +62,13 @@ function HeaderContent() {
               </p>
             </div>
             <div className={scss.header_subTitle}>
-              <p className={scss.header_subtitle_text}>official website</p>
+              <p className={scss.header_subtitle_text}>
+                {t('official website')}
+              </p>
             </div>
           </div>
         </div>
-        <HeaderMenu page="Home" text="Listen to music" />
+        <HeaderMenu page="Home" text={t("Listen to music")} />
         <div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>

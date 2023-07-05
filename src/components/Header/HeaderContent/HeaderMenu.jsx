@@ -59,7 +59,11 @@ function HeaderMenu({ page, text }) {
         className={scss.burger_btn}
         onClick={isModalOpen ? closeModal : openModal}
       >
-        {isModalOpen ? <CloseBtn /> : <Burger />}
+        {isModalOpen ? (
+          <CloseBtn className="icon fade-in" />
+        ) : (
+          <Burger className="icon fade-out" />
+        )}
       </button>
     </div>
   );
