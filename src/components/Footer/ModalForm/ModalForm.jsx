@@ -100,7 +100,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* name field */}
               <div className={scss.contact_form__input_wrap}>
-                <label className={scss.contact_form__label} htmlFor="name">
+                <label htmlFor="name">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Your name` : `Ваше ім'я`}
                 </label>
@@ -114,7 +114,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* email field */}
               <div className={scss.contact_form__input_wrap}>
-                <label className={scss.contact_form__label} htmlFor="email">
+                <label htmlFor="email">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Email` : `Ел. пошта`}
                 </label>
@@ -128,7 +128,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* message field */}
               <div className={scss.contact_form__input_wrap}>
-                <label className={scss.contact_form__label} htmlFor="message">
+                <label htmlFor="message">
                   {/* FIXME: fix with i18next */}
                   {currentLanguage === 'en' ? `Message` : `Повідомлення`}
                 </label>
