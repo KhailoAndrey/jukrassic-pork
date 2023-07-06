@@ -3,17 +3,20 @@ import { ReactComponent as ModalCloseBtn } from '../../images/modal_close_green.
 import { ReactComponent as ModalLogo } from '../../images/Logotype.svg';
 import { LanguageContext } from 'utils/LanguageContext';
 import styles from './Modal.module.scss';
+import { useTranslation } from 'react-i18next';
 
 const links = [
-  { name: 'Jukrassic pork', link: 'header' },
-  { name: 'Band members', link: 'members' },
-  { name: 'Music', link: 'latest-releases' },
-  { name: 'Video', link: 'videos' },
-  { name: 'Contacts', link: 'contacts' },
+  { name: 'jukrassic_pork', link: 'header' },
+  { name: 'band_members', link: 'members' },
+  { name: 'music', link: 'latest-releases' },
+  { name: 'video', link: 'videos' },
+  { name: 'contacts', link: 'contacts' },
 ];
 
 const ModalComponent = ({ customClass, onClose }) => {
   const { currentLanguage, changeLanguage } = useContext(LanguageContext);
+    const { t } = useTranslation();
+
 
   const handleLanguageChange = lang => {
     changeLanguage(lang);
@@ -38,7 +41,7 @@ const ModalComponent = ({ customClass, onClose }) => {
               className={styles.links}
               href={`#${link}`}
             >
-              {name}
+              {t(`${name}`)}
             </a>
           );
         })}

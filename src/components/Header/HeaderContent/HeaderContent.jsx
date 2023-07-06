@@ -33,12 +33,12 @@ function HeaderContent() {
             </div>
             <div className={scss.header_subTitle}>
               <p className={scss.header_subtitle_text}>
-                {t('official website')}
+                {t('official_website')}
               </p>
             </div>
           </div>
         </div>
-        <HeaderMenu page="Home" text={'Listen to music'} />
+        <HeaderMenu page="Home" text={t('listen_music')} />
         <div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
