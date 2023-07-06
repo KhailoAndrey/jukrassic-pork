@@ -24,8 +24,8 @@
   background-size: cover;
   width: auto;
   height: 100%;
-  max-width: 86.7vw;
-  max-height: 48.7vw;
+  max-width: 90vw;
+  max-height: 50vw;
   overflow: hidden;
 
   @media screen and (min-width: 375px) {
@@ -81,7 +81,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 46vw;
+  height: 50vw;
   min-height: 100px;
 
   @media screen and (min-width: 375px) {
@@ -99,8 +99,8 @@
 
 .videoBlock_track {
   position: absolute;
-  max-width: 91.46vw !important;
-  max-height: 46vw !important;
+  max-width: 90vw !important;
+  max-height: 50vw !important;
   opacity: 0.8;
 
   @media screen and (min-width: 375px) {
