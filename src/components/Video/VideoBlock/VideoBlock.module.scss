@@ -1,7 +1,6 @@
 .videoBlock {
   text-align: center;
   margin-top: 32px;
-  min-height: 150px;
   cursor: pointer;
 
   @media screen and (min-width: 768px) {
@@ -9,7 +8,6 @@
   }
 
   @media screen and (min-width: 1440px) {
-    // width: 100%;
     margin-top: 76px;
     &:first-child {
       margin: 0;
@@ -29,26 +27,22 @@
   max-width: 86.7vw;
   max-height: 48.7vw;
   overflow: hidden;
-  > img {
-    width: 86.7vw;
-    height: 48.7vw;
-  }
 
   @media screen and (min-width: 375px) {
     max-width: none;
     max-height: none;
     width: 343px;
     height: 200px;
-  }
 
-  @media screen and (min-width: 768px) {
-    width: 704px;
-    height: 392px;
-  }
+    @media screen and (min-width: 768px) {
+      width: 704px;
+      height: 392px;
+    }
 
-  @media screen and (min-width: 1440px) {
-    width: 840px;
-    height: 472px;
+    @media screen and (min-width: 1440px) {
+      width: 840px;
+      height: 472px;
+    }
   }
 }
 
@@ -87,8 +81,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  min-height: 150px;
+  height: 46vw;
+  min-height: 100px;
 
   @media screen and (min-width: 375px) {
     height: 200px;
