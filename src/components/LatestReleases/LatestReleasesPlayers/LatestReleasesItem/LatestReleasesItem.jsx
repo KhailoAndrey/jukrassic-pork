@@ -8,7 +8,13 @@ import LatestReleasesVideoSlider from './LatestReleasesVideoSlider/LatestRelease
 
 import scss from './LatestReleasesItem.module.scss';
 
-function LatestReleaesItem({ indexItem, songImage, songLink, videoText }) {
+function LatestReleaesItem({
+  indexItem,
+  songImage,
+  songLink,
+  videoTextEN,
+  videoTextUA,
+}) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
 
   const handleVideoPlay = indexItem => {
@@ -40,7 +46,8 @@ function LatestReleaesItem({ indexItem, songImage, songLink, videoText }) {
       />
       <LatestReleaesText
         currentVideoIndex={currentVideoIndex}
-        videoText={videoText}
+        videoTextEN={videoTextEN}
+        videoTextUA={videoTextUA}
         indexItem={indexItem && indexItem}
       />
       <LatestReleasesVideoSlider
@@ -52,7 +59,8 @@ function LatestReleaesItem({ indexItem, songImage, songLink, videoText }) {
 }
 
 LatestReleaesItem.propTypes = {
-  videoText: PropTypes.string.isRequired,
+  videoTextEN: PropTypes.string.isRequired,
+  videoTextUA: PropTypes.string.isRequired,
   songImage: PropTypes.object.isRequired,
   songLink: PropTypes.string.isRequired,
 };
