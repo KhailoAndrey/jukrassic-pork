@@ -1,6 +1,8 @@
 .videoBlock {
   text-align: center;
   margin-top: 32px;
+  min-height: 150px;
+  cursor: pointer;
 
   @media screen and (min-width: 768px) {
     margin-top: 52px;
@@ -83,6 +85,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
+  min-height: 150px;
 
   @media screen and (min-width: 375px) {
     height: 200px;
@@ -143,7 +146,7 @@
 
 .videoBlock_track_title {
   margin-top: 8px;
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 600;
   font-family: Mulish;
   text-transform: uppercase;
