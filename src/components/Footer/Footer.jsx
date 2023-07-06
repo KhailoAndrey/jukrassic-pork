@@ -1,15 +1,19 @@
 import { useContext, useEffect, useState } from 'react';
 import useFetch from 'hooks/useFetch';
+import { useTranslation } from 'react-i18next';
+
 import Item from './Item/Item';
 import ModalForm from './ModalForm/ModalForm';
 import { ReactComponent as Logo } from '../../images/Logotype.svg';
 import { ReactComponent as Envelop } from '../../images/Footer/envelop.svg';
-import scss from './Footer.module.scss';
 import { LanguageContext } from 'utils/LanguageContext';
+
+import scss from './Footer.module.scss';
 
 function Footer() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const { isLoading, data } = useFetch('contacts');
 
   useEffect(() => {
@@ -41,10 +45,7 @@ function Footer() {
               <address className={scss.address__wrap}>
                 {/* socials */}
                 <div className={scss.address__wrap_secondary}>
-                  <h3 className={scss.address__title}>
-                    {/* FIXME: fix with i18next */}
-                    {currentLanguage === 'en' ? `Follow us` : 'Слідкуйте'}
-                  </h3>
+                  <h3 className={scss.address__title}>{t('follow_us')}</h3>
 
                   <ul className={scss.address__social_list}>
                     {data &&
@@ -64,8 +65,7 @@ function Footer() {
                   <li>
                     {/* email */}
                     <h3 className={scss.address__title}>
-                      {/* FIXME: fix with i18next */}
-                      {currentLanguage === 'en' ? `Email` : 'Пишіть'}
+                      {t('email_footer_title')}
                     </h3>
                     <a
                       className={scss.address__social_list_link}
@@ -85,19 +85,14 @@ function Footer() {
                     >
                       <Envelop className={scss.envelopIcon} />
 
-                      <span className={scss.mail_btn__text}>
-                        {/* FIXME: fix with i18next or leave it in EN as in mockup? */}
-                        {currentLanguage === 'en' ? `Mail us` : 'Mail us'}
-                      </span>
+                      {/* TODO: check if we need a translation in this button */}
+                      <span className={scss.mail_btn__text}>Mail us</span>
                     </button>
                   </li>
 
                   {/* phone */}
                   <li>
-                    <h3 className={scss.address__title}>
-                      {/* FIXME: fix with i18next */}
-                      {currentLanguage === 'en' ? `Call` : 'Дзвоніть'}
-                    </h3>
+                    <h3 className={scss.address__title}>{t('call')}</h3>
                     <a
                       className={scss.address__social_list_link}
                       href={data && `tel:${data.phone}`}

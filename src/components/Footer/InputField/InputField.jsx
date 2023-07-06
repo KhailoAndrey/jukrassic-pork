@@ -9,7 +9,7 @@ const InputField = ({ id, type, name }) => {
     <Field
       className={`${
         errors[name] && touched[name]
-          ? [scss.input_error, scss.contact_form__field].join(' ')
+          ? `${scss.input_error} ${scss.contact_form__field}`
           : scss.contact_form__field
       }`}
       id={id}
