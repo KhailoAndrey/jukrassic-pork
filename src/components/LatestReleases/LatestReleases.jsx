@@ -7,11 +7,14 @@ import LatestReleasesText from './LatestReleasesText/LatestReleasesText';
 import CommonButton from 'components/CommonButton/CommonButton';
 import LatestReleasesPlayers from './LatestReleasesPlayers/LatestReleasesPlayers';
 
+import { useTranslation } from 'react-i18next';
 import scss from './LatestReleases.module.scss';
 
 function LatestReleases() {
   const { data } = useFetch('releases');
+
   const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   return (
     <section id="latest-releases" className={scss.latestReleases}>
@@ -21,7 +24,7 @@ function LatestReleases() {
           <LatestReleasesText description={data.description[currentLanguage]} />
         )}
         <div className={scss.boxButtonPlayers}>
-          <CommonButton valueButton="Go to all releases" />
+          <CommonButton valueButton={t('go-to-all-releases')} />
           {data && (
             <LatestReleasesPlayers
               latestReleasesList={data.latestReleasesList}
