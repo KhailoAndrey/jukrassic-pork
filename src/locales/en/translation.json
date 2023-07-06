@@ -3,7 +3,7 @@
   "listen to music": "Listen to music",
   "band members": "band members",
   "latest releases": "latest releases",
-  "go to all releases": "Go to all releases",
+  "go-to-all-releases": "Go to all releases",
   "video": "video",
   "contacts": "contacts",
   "get in touch": "get in touch",
@@ -15,6 +15,9 @@
   "back to home": "Back to Home",
   "download": "Download",
   "downloading": "Downloading",
-  "lirics": "Lirics",
-  "static-text-releases": "If you want to listen to the full versions of the tracks, download lyrics, you can press the button below and go to the music page."
+  "lyrics": "Lirics",
+  "static-text-releases": "If you want to listen to the full versions of the tracks, download lyrics, you can press the button below and go to the music page.",
+  "copy-button": "Copy",
+  "default-label": "Label",
+  "empty-lyrics": "This song hasn`t lyrics("
 }

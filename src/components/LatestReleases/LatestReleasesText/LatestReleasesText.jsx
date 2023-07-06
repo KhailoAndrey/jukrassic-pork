@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import scss from './LatestReleasesText.module.scss';
 
 function LatestReleasesText({ description }) {
+  const { t } = useTranslation();
+
   return (
     <div className={scss.boxLatestReleasesText}>
       <p className={scss.latestReleasesText}>{description}</p>
       <p className={scss.latestReleasesTextStatic}>
-        If you want to listen to the full versions of the tracks, download
-        lyrics, you can press the button below and go to the music page.
+        {t('static-text-releases')}
       </p>
     </div>
   );

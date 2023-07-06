@@ -14,6 +14,7 @@ import ModalLabelMusic from '../ModalMusic/ModalLabelMusic/ModalLabelMusic';
 import ModalTextMusic from '../ModalMusic/ModalTextMusic/ModalTextMusic';
 import ButtonModalCopy from '../ModalMusic/ButtonModalCopy/ButtonModalCopy';
 
+import { useTranslation } from 'react-i18next';
 import scss from './ListMusicItem.module.scss';
 
 function ListMusicItem({ itemMusic }) {
@@ -26,6 +27,7 @@ function ListMusicItem({ itemMusic }) {
   const { audio, songImage, songLink, name, description, lyrics } = itemMusic;
 
   const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   return (
     <>
@@ -48,11 +50,11 @@ function ListMusicItem({ itemMusic }) {
           />
           <ul className={scss.listButtonsMusic}>
             <li>
-              <ButtonDownloadMusic valueButton="Download" audio={audio} />
+              <ButtonDownloadMusic valueButton={t('download')} audio={audio} />
             </li>
             <li>
               <ButtonLyricsMusic
-                valueButton="Lyrics"
+                valueButton={t('lyrics')}
                 onClick={toggleModalMusic}
               />
             </li>
@@ -65,16 +67,16 @@ function ListMusicItem({ itemMusic }) {
           modalContent={
             <>
               <ModalLabelMusic
-                modalName={itemMusic?.name ? name[currentLanguage] : 'Label'}
+                modalName={
+                  itemMusic?.name ? name[currentLanguage] : t('default-label')
+                }
               />
               <ModalTextMusic
-                textModalMusic={
-                  itemMusic?.lyrics ? lyrics : 'This song hasn`t lyrics('
-                }
+                textModalMusic={itemMusic?.lyrics ? lyrics : t('empty-lyrics')}
               />
               <ButtonModalCopy
                 valueButton="Copy"
-                textToCopy={itemMusic?.lyrics ? lyrics : 'Copy'}
+                textToCopy={itemMusic?.lyrics ? lyrics : t('copy-button')}
               />
             </>
           }
