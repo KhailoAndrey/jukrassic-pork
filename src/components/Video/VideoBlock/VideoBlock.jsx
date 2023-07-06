@@ -28,16 +28,18 @@ function VideoBlock({ src, title, isActive, onClick }) {
   return (
     <div className={scss.videoBlock}>
       <div className={scss.videoBlock_cover} onClick={handleCloseCover}>
-        <ReactPlayer
-          className={scss.videoBlock_track}
-          url={`https://youtu.be/${src}`}
-          playing={isPlaying}
-          onPlay={handlePlay}
-          onPause={handlePause}
-          onReady={handlePlay}
-          onEnded={() => setIsCover(!isCover)}
-          controls={true}
-        />
+        {!isCover && (
+          <ReactPlayer
+            className={scss.videoBlock_track}
+            url={`https://youtu.be/${src}`}
+            playing={isPlaying}
+            onPlay={handlePlay}
+            onPause={handlePause}
+            onReady={handlePlay}
+            onEnded={() => setIsCover(!isCover)}
+            controls={true}
+          />
+        )}
 
         <div
           className={scss.videoInner}
