@@ -60,13 +60,12 @@
     background-color: transparent;
     color: var(--main-accent-text-clr);
 
-    &:hover,
-    &:focus {
+    &:hover {
       cursor: pointer;
-      @media screen and (min-width: 1440px) {
+      // @media screen and (min-width: 1440px) {
         border: 1px solid var(--main-accent-text-clr);
         background-color: var(--main-accent-text-clr);
-      }
+      // }
     }
   }
 }
@@ -75,11 +74,10 @@
   display: block;
   fill: var(--main-accent-text-clr);
 }
-.defaultBandPosition:hover .arrow,
-.defaultBandPosition:focus .arrow {
-  @media screen and (min-width:1440px) {
+.defaultBandPosition:hover .arrow {
+  // @media screen and (min-width:1440px) {
     fill: var(--neutral-dark-bckg-clr-1);
-  }
+  // }
 }
 
 .overlay {
