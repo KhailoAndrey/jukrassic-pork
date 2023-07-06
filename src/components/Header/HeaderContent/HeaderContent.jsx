@@ -15,7 +15,6 @@ function HeaderContent() {
   const { t } = useTranslation();
 
   const { data } = useFetch('history');
-  console.log('data:', data);
 
   return (
     <section id="header" className={scss.header}>
