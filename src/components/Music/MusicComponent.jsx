@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
 import { useTranslation } from 'react-i18next';
@@ -19,14 +19,18 @@ function MusicComponent() {
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
 
-  const sliceList = 6;
-  const [displayCount, setDisplayCount] = useState(sliceList);
+  const [songs, setSongs] = useState([]);
+  const [showMoreCount, setShowMoreCount] = useState(6);
+
+  useEffect(() => {
+    if (data?.musicList) {
+      setSongs(data.musicList);
+    }
+  }, [data]);
 
   const handleShowMore = () => {
-    setDisplayCount(prevCount => prevCount + sliceList);
+    setShowMoreCount(prevCount => prevCount + 6);
   };
-
-  const displaySongs = data?.musicList?.slice(0, displayCount) || [];
 
   return (
     <section className={scss.musicComponent}>
@@ -38,11 +42,19 @@ function MusicComponent() {
         {data?.title && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
         )}
-        {data?.description && (
+        {data?.description?.[currentLanguage] && (
           <TextMusic textMusic={data.description[currentLanguage]} />
         )}
-        {data?.musicList && <ListMusic musicList={displaySongs} />}
-        {data?.musicList && (
+        {/* {data?.musicList && <ListMusic musicList={data.musicList} />}
+        {data && (
+          <ButtonShowMoreMusic valueShowMoreMusic={t('show_more_button')} />
+        )} */}
+        {songs.length > 0 && (
+          <ListMusic
+            musicList={songs.slice(0, Math.min(showMoreCount, songs.length))}
+          />
+        )}
+        {songs.length > showMoreCount && (
           <ButtonShowMoreMusic
             valueShowMoreMusic={t('show_more_button')}
             onClick={handleShowMore}
