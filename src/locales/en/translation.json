@@ -29,5 +29,6 @@
   "email_form_title": "Email",
   "message_form_field": "Message",
   "sending_form_status": "Sending...",
-  "idle_form_status": "Send Email"
+  "idle_form_status": "Send Email",
+  "show_more_button": "Show more"
 }

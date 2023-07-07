@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import useFetch from '../../hooks/useFetch';
 
 import HeaderMenu from '../../components/Header/HeaderContent/HeaderMenu';
@@ -14,7 +15,9 @@ import scss from './MusicComponent.module.scss';
 
 function MusicComponent() {
   const { data } = useFetch('music');
+
   const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
 
   const sliceList = 6;
   const [displayCount, setDisplayCount] = useState(sliceList);
@@ -35,13 +38,13 @@ function MusicComponent() {
         {data && data.title[currentLanguage] && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
         )}
-        {data && data.description[currentLanguage] && (
+        {data?.description && (
           <TextMusic textMusic={data.description[currentLanguage]} />
         )}
-        {data && data.musicList && <ListMusic musicList={displaySongs} />}
-        {data && data.musicList.length > displayCount && (
+        {data?.musicList && <ListMusic musicList={displaySongs} />}
+        {data?.musicList && (
           <ButtonShowMoreMusic
-            valueShowMoreMusic="Show more"
+            valueShowMoreMusic={t('show_more_button')}
             onClick={handleShowMore}
           />
         )}

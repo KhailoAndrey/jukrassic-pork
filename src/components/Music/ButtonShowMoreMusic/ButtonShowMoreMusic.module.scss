@@ -1,3 +1,14 @@
+.boxShowMore {
+  width: 100%;
+
+  @media screen and (min-width: 1440px) {
+    margin-left: 50%;
+    margin-right: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 800px;
+  }
+}
+
 .showMore {
   display: flex;
   justify-content: center;

@@ -29,7 +29,6 @@
   @media screen and (min-width: 768px) {
     margin-right: auto;
     padding: 16px 32px;
-    width: 360px;
   }
 
   @media screen and (min-width: 1440px) {
@@ -50,6 +49,13 @@
   background-color: var(--neutral-dark-bckg-clr-1);
 }
 
+.commonButton:active {
+  border: 2px solid var(--main-accent-text-clr);
+
+  color: var(--neutral-dark-bckg-clr-1);
+  background-color: var(--main-accent-text-clr);
+}
+
 .textTransform {
   transform: translateX(-10px);
   transition: transform var(--default-animation);
@@ -66,6 +72,14 @@
 
 .commonButton:hover .commonIconVisible,
 .commonButton:focus .commonIconVisible {
+  fill: var(--main-accent-text-clr);
+}
+
+.commonButton:active .commonIconVisible {
+  fill: var(--neutral-dark-bckg-clr-1);
+}
+
+.commonButton:active .commonIcon {
   fill: var(--main-accent-text-clr);
 }
 
