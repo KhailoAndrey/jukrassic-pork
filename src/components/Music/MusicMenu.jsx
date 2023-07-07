@@ -1,12 +1,12 @@
+import { ReactComponent as Logo } from '../../images/Logo.svg';
+import { ReactComponent as Burger } from '../../images/burger_menu.svg';
+import { ReactComponent as CloseBtn } from '../../images/close_modal.svg';
+import ModalComponent from '../Modal/Modal';
+import useModal from 'hooks/useModal';
+import scss from './MusicMenu.module.scss';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ReactComponent as Logo } from '../../../images/Logo.svg';
-import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
-import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
-import ModalComponent from '../../Modal/Modal';
-import CommonButton from '../../CommonButton/CommonButton';
-import useModal from 'hooks/useModal';
-import scss from './HeaderMenu.module.scss';
+import BackButton from '../CommonButton/BackButton';
 
 const handleScrollToTop = () => {
   window.scrollTo({
@@ -15,7 +15,7 @@ const handleScrollToTop = () => {
   });
 };
 
-function HeaderMenu({ page, text, isMobile }) {
+function MusicMenu({ page, text, isMobile }) {
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const modalRef = useRef(null);
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ function HeaderMenu({ page, text, isMobile }) {
       <button className={scss.logo} onClick={handleScrollToTop}>
         <Logo />
       </button>
-      <CommonButton valueButton={t('listen_music')} />
+      <BackButton valueButton={t('back_to_home')} />
       {isModalOpen && (
         <div ref={modalRef}>
           <ModalComponent
@@ -78,4 +78,4 @@ function HeaderMenu({ page, text, isMobile }) {
   );
 }
 
-export default HeaderMenu;
+export default MusicMenu;

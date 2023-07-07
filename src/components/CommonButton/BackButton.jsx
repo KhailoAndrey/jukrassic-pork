@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 
 import { ReactComponent as RightIcon } from '../../images/Common/svg/Right-Icon.svg';
 import scss from './BackButton.module.scss';
-
 function BackButton({ valueButton }) {
   return (
     <NavLink to="/" className={scss.commonButton}>
