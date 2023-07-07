@@ -1,25 +1,24 @@
+import { useTranslation } from 'react-i18next';
 import LabelNotFound from './LabelNotFound/LabelNotFound';
 import ImagesNotFound from './ImagesNotFound/ImagesNotFound';
 import TextNotFound from './TextNotFound/TextNotFound';
-import ButtonNotFound from './ButtonNotFound/ButtonNotFound';
-
+import BackButton from 'components/CommonButton/BackButton';
 import scss from './NotFoundComponent.module.scss';
 
 function NotFoundComponent() {
-  const textNotFound =
-    'Sorry, we can`t seem to find the page you`re looking for! It might be an old link or the page may have been removed.';
+  const { t } = useTranslation();
+
   return (
     <section className={scss.containerNotFound}>
       <div className="container">
-        <LabelNotFound labelNotFound="oops!" />
+        <LabelNotFound labelNotFound={t('label_not_found')} />
         <div className={scss.envelopeContent}>
           <ImagesNotFound />
-          <TextNotFound textNotFound={textNotFound} />
-          <ButtonNotFound valueButtonNotFound="Back to Home" />
+          <TextNotFound textNotFound={t('text_not_found')} />
+          <BackButton valueButton={t('back_to_home')} />
         </div>
       </div>
     </section>
   );
 }
-
 export default NotFoundComponent;
