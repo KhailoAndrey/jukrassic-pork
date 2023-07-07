@@ -33,7 +33,7 @@ function MusicComponent() {
       <div className="container">
         <Menu />
         <div className={scss.headermenu}>
-          <HeaderMenu page="Music" text="Back to Home" />
+          <HeaderMenu page="Music" text={t('back_to_home')} />
         </div>
         {data?.title && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
