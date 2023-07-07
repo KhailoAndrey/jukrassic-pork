@@ -1,13 +1,13 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import axios from 'axios';
 import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { ErrorMessage, Form, Formik } from 'formik';
+import { useTranslation } from 'react-i18next';
 
 import MessageField from '../MessageField/MessageField';
 import InputField from '../InputField/InputField';
-import { LanguageContext } from 'utils/LanguageContext';
 import { ReactComponent as CloseBtn } from '../../../images/Music/svg/icon-close.svg';
 import { ReactComponent as SendIcon } from '../../../images/Footer/send.svg';
 
@@ -19,7 +19,7 @@ const EMAIL_REGEX =
 
 const ModalForm = ({ onClose }) => {
   const [symbolCount, setSymbolCount] = useState(0);
-  const { currentLanguage } = useContext(LanguageContext);
+  const { t } = useTranslation();
   const modal = document.querySelector('#modal-form');
 
   useEffect(() => {
@@ -61,16 +61,16 @@ const ModalForm = ({ onClose }) => {
           validationSchema={yup.object().shape({
             name: yup
               .string()
-              .min(2, `Minimum characters 2`)
-              .max(32, `Maximum characters 32`),
+              .min(2, t('min_char_2'))
+              .max(32, t('max_char_32')),
             email: yup
               .string()
-              .matches(EMAIL_REGEX, `Must be a valid email`)
-              .required(`Email is required`),
+              .matches(EMAIL_REGEX, t('must_be_valid_email'))
+              .required(t('email_required')),
             message: yup
               .string()
-              .min(4, `Minimum characters 4`)
-              .required(`Message is required`),
+              .min(4, t('min_char_4'))
+              .required(t('message_required')),
           })}
           onSubmit={async (values, { setSubmitting }) => {
             await submitContactForm(values);
@@ -81,12 +81,7 @@ const ModalForm = ({ onClose }) => {
           {({ handleSubmit, isSubmitting }) => (
             <Form className={scss.contact_form} onSubmit={handleSubmit}>
               <div className={scss.contact_form__head_wrap}>
-                <h3 className={scss.form_title}>
-                  {/* FIXME: fix with i18next */}
-                  {currentLanguage === 'en'
-                    ? `Contact Form`
-                    : `Контактна форма`}
-                </h3>
+                <h3 className={scss.form_title}>{t('contact_form')}</h3>
 
                 {/* close button */}
                 <div className={scss.close_btn__wrap}>
@@ -100,10 +95,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* name field */}
               <div className={scss.contact_form__input_wrap}>
-                <label htmlFor="name">
-                  {/* FIXME: fix with i18next */}
-                  {currentLanguage === 'en' ? `Your name` : `Ваше ім'я`}
-                </label>
+                <label htmlFor="name">{t('your_name')}</label>
                 <InputField id="name" type="text" name="name" />
                 <ErrorMessage
                   className={scss.contact_form__support_text}
@@ -114,10 +106,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* email field */}
               <div className={scss.contact_form__input_wrap}>
-                <label htmlFor="email">
-                  {/* FIXME: fix with i18next */}
-                  {currentLanguage === 'en' ? `Email` : `Ел. пошта`}
-                </label>
+                <label htmlFor="email">{t('email_form_title')}</label>
                 <InputField id="email" type="text" name="email" />
                 <ErrorMessage
                   className={scss.contact_form__support_text}
@@ -128,10 +117,7 @@ const ModalForm = ({ onClose }) => {
 
               {/* message field */}
               <div className={scss.contact_form__input_wrap}>
-                <label htmlFor="message">
-                  {/* FIXME: fix with i18next */}
-                  {currentLanguage === 'en' ? `Message` : `Повідомлення`}
-                </label>
+                <label htmlFor="message">{t('message_form_field')}</label>
                 <MessageField
                   id="message"
                   type="textarea"
@@ -160,14 +146,9 @@ const ModalForm = ({ onClose }) => {
               >
                 <SendIcon className={scss.send_icon} />
 
-                {/* FIXME: fix with i18next */}
-                {currentLanguage === 'en'
-                  ? isSubmitting
-                    ? `Sending...`
-                    : `Send Email`
-                  : isSubmitting
-                  ? `Відправка...`
-                  : `Відправити`}
+                {isSubmitting
+                  ? t('sending_form_status')
+                  : t('idle_form_status')}
               </button>
             </Form>
           )}
