@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
 import PropTypes from 'prop-types';
+import { useTranslation } from 'react-i18next';
 
 import ImageMusic from './ImageMusic/ImageMusic';
 import LabelMusic from './LabelMusic/LabelMusic';
@@ -14,7 +15,6 @@ import ModalLabelMusic from '../ModalMusic/ModalLabelMusic/ModalLabelMusic';
 import ModalTextMusic from '../ModalMusic/ModalTextMusic/ModalTextMusic';
 import ButtonModalCopy from '../ModalMusic/ButtonModalCopy/ButtonModalCopy';
 
-import { useTranslation } from 'react-i18next';
 import scss from './ListMusicItem.module.scss';
 
 function ListMusicItem({ itemMusic }) {

@@ -10,7 +10,7 @@ function LatestReleasesText({ description }) {
     <div className={scss.boxLatestReleasesText}>
       <p className={scss.latestReleasesText}>{description}</p>
       <p className={scss.latestReleasesTextStatic}>
-        {t('static-text-releases')}
+        {t('static_text_releases')}
       </p>
     </div>
   );

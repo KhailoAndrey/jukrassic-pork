@@ -24,7 +24,7 @@ function LatestReleases() {
           <LatestReleasesText description={data.description[currentLanguage]} />
         )}
         <div className={scss.boxButtonPlayers}>
-          <CommonButton valueButton={t('go-to-all-releases')} />
+          <CommonButton valueButton={t('go_to_all_releases')} />
           {data && (
             <LatestReleasesPlayers
               latestReleasesList={data.latestReleasesList}
