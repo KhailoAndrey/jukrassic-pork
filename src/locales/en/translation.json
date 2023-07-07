@@ -31,5 +31,6 @@
   "sending_form_status": "Sending...",
   "idle_form_status": "Send Email",
   "show_more_button": "Show more",
-  "without_release_date": "Without release date"
+  "text_not_found": "Sorry, we can`t seem to find the page you`re looking for! It might be an old link or the page may have been removed.",
+  "label_not_found": "oops!"
 }

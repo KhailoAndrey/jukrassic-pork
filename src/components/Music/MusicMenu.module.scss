@@ -9,8 +9,10 @@
   @media screen and (min-width: 1440px) {
     align-items: flex-end;
     position: fixed;
+    // top: 696px;
     bottom: 24px;
     z-index: 100;
+    // margin-left: -432px;
     &.mobile {
       display: none;
     }
@@ -93,6 +95,10 @@
     cursor: pointer;
   }
 }
+
+// .modalOpen {
+//   overflow: hidden;
+// }
 
 .icon {
   transition: opacity 0.3s ease;

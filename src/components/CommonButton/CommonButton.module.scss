@@ -6,6 +6,7 @@
   width: 100%;
   min-width: 343px;
   max-height: 48px;
+
   font-size: 22px;
   font-family: 'Mulish';
   font-weight: 600;
@@ -22,7 +23,8 @@
   transition: border, color, background-color var(--default-animation);
 
   @media screen and (min-width: 375px) {
-    width: auto;
+    width: 300px;
+    max-height: 48px;
   }
 
   @media screen and (min-width: 768px) {
@@ -36,6 +38,7 @@
     margin-right: 0;
     margin-left: auto;
     padding: 16px 32px;
+
     min-width: 288px;
     font-size: 24px;
     line-height: 1.16;
@@ -58,18 +61,16 @@
 }
 
 .textTransform {
-  transform: translateX(10px);
+  transform: translateX(-10px);
   transition: transform var(--default-animation);
 }
 
 .commonButton:hover .textTransform,
 .commonButton:focus .textTransform {
-  transform: translateX(-10px);
+  transform: translateX(10px);
 }
 
 .commonIconVisible {
-  rotate: 180deg;
-
   fill: transparent;
 }
 
@@ -88,9 +89,11 @@
 
 .commonIcon {
   display: block;
-  rotate: 180deg;
+
   width: 24px;
   height: 24px;
+
   fill: var(--neutral-dark-bckg-clr-1);
+
   transition: fill var(--default-animation);
 }
