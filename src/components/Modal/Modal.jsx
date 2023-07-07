@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { ReactComponent as ModalCloseBtn } from '../../images/modal_close_green.svg';
 import { ReactComponent as ModalLogo } from '../../images/Logotype.svg';
 import { LanguageContext } from 'utils/LanguageContext';
@@ -15,11 +16,16 @@ const links = [
 
 const ModalComponent = ({ customClass, onClose }) => {
   const { currentLanguage, changeLanguage } = useContext(LanguageContext);
-    const { t } = useTranslation();
-
+  const { t } = useTranslation();
+  const { pathname } = useLocation();
+  const navigate = useNavigate();
 
   const handleLanguageChange = lang => {
     changeLanguage(lang);
+  };
+
+  const musicBlockRedirect = link => {
+    navigate(`/#${link}`);
   };
 
   return (
@@ -34,7 +40,17 @@ const ModalComponent = ({ customClass, onClose }) => {
       </div>
       <div className={styles.navi}>
         {links.map(({ name, link }) => {
-          return (
+          return pathname.includes('music') ? (
+            <p
+              onClick={() => {
+                musicBlockRedirect(link);
+              }}
+              key={link}
+              className={styles.links}
+            >
+              {t(`${name}`)}
+            </p>
+          ) : (
             <a
               key={link}
               onClick={onClose}
