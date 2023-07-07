@@ -1,11 +1,24 @@
 .header_menu {
-  @media screen and (min-width: 1440px) {
+  display: flex;
+  &.mobile {
     display: flex;
+  }
+  &.desktop {
+    display: none;
+  }
+  @media screen and (min-width: 1440px) {
     align-items: flex-end;
     position: fixed;
-    top: 696px;
+    // top: 696px;
+    bottom: 24px;
     z-index: 100;
     // margin-left: -432px;
+    &.mobile {
+      display: none;
+    }
+    &.desktop {
+      display: flex;
+    }
   }
 }
 

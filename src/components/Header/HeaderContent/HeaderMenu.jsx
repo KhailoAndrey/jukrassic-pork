@@ -15,7 +15,7 @@ const handleScrollToTop = () => {
   });
 };
 
-function HeaderMenu({ page, text }) {
+function HeaderMenu({ page, text, isMobile }) {
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const modalRef = useRef(null);
 
@@ -50,7 +50,9 @@ function HeaderMenu({ page, text }) {
   const linkTo = page === 'Home' ? '/music' : '/';
 
   return (
-    <div className={scss.header_menu}>
+    <div
+      className={`${scss.header_menu} ${isMobile ? scss.mobile : scss.desktop}`}
+    >
       <button className={scss.logo} onClick={handleScrollToTop}>
         <Logo />
       </button>
@@ -73,11 +75,11 @@ function HeaderMenu({ page, text }) {
       </NavLink>
       {isModalOpen && (
         <div ref={modalRef}>
-        <ModalComponent
-          customClass={scss.modalComponentDisplay}
-          onClose={closeModal}
+          <ModalComponent
+            customClass={scss.modalComponentDisplay}
+            onClose={closeModal}
           />
-          </div>
+        </div>
       )}
       <button
         className={scss.burger_btn}

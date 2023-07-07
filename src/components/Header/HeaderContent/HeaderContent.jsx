@@ -13,12 +13,9 @@ function HeaderContent() {
   // const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
-
-  
+  const isMobile = window.innerWidth <= 1440;
 
   const { data } = useFetch('history');
-
-  
 
   return (
     <section id="header" className={scss.header}>
@@ -38,7 +35,7 @@ function HeaderContent() {
             </div>
           </div>
         </div>
-        <HeaderMenu page="Home" text={t('listen_music')} />
+        <HeaderMenu page="Home" text={t('listen_music')} isMobile={isMobile} />
         <div>
           <div className={scss.header_body}>
             <p className={scss.header_textbody}>
@@ -49,6 +46,11 @@ function HeaderContent() {
             several members have changed in the band.'`}
             </p>
           </div>
+          <HeaderMenu
+            page="Home"
+            text={t('listen_music')}
+            isMobile={!isMobile}
+          />
           <div className={scss.swiper_box}>
             {data && <SwiperHeader data={data} />}
             <div className={scss.swiper_overlay}></div>
