@@ -7,6 +7,8 @@ import ModalComponent from '../../Modal/Modal';
 import useModal from 'hooks/useModal';
 import scss from './HeaderMenu.module.scss';
 import { useEffect, useRef } from 'react';
+import CommonButton from '../../CommonButton/CommonButton';
+import { useTranslation } from 'react-i18next';
 
 const handleScrollToTop = () => {
   window.scrollTo({
@@ -18,6 +20,8 @@ const handleScrollToTop = () => {
 function HeaderMenu({ page, text, isMobile }) {
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const modalRef = useRef(null);
+    const { t } = useTranslation();
+
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -56,7 +60,8 @@ function HeaderMenu({ page, text, isMobile }) {
       <button className={scss.logo} onClick={handleScrollToTop}>
         <Logo />
       </button>
-      <NavLink to={linkTo} className={scss.link}>
+      <CommonButton valueButton={t('listen_music')} />
+      {/* <NavLink to={linkTo} className={scss.link}>
         {page === 'Home' ? (
           <>
             <p>{text}</p>
@@ -72,7 +77,7 @@ function HeaderMenu({ page, text, isMobile }) {
             <p>{text}</p>
           </>
         )}
-      </NavLink>
+      </NavLink> */}
       {isModalOpen && (
         <div ref={modalRef}>
           <ModalComponent
