@@ -1,6 +1,12 @@
 .boxShowMore {
   width: 100%;
 
+  @media screen and (min-width: 735px) {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   @media screen and (min-width: 1440px) {
     display: flex;
     justify-content: center;
