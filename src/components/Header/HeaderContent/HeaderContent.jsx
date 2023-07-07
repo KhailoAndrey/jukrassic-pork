@@ -14,7 +14,7 @@ function HeaderContent() {
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
   const isMobile = false;
-  console.log(isMobile);
+  // console.log(isMobile);
   const { data } = useFetch('history');
 
   return (
