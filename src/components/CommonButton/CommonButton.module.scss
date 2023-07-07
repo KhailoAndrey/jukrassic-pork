@@ -3,27 +3,21 @@
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
-  width: 100%;
   min-width: 343px;
   max-height: 48px;
-
   font-size: 22px;
   font-family: 'Mulish';
   font-weight: 600;
   line-height: 1.27;
-
   border: 2px solid transparent;
   outline: none;
   cursor: pointer;
   text-decoration: none;
-
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
-
   transition: border, color, background-color var(--default-animation);
 
   @media screen and (min-width: 375px) {
-    width: 300px;
     max-height: 48px;
   }
 
@@ -38,7 +32,6 @@
     margin-right: 0;
     margin-left: auto;
     padding: 16px 32px;
-
     min-width: 288px;
     font-size: 24px;
     line-height: 1.16;
