@@ -3,9 +3,11 @@ import scss from './ButtonShowMoreMusic.module.scss';
 
 function ButtonShowMoreMusic({ valueShowMoreMusic, onClick }) {
   return (
-    <button className={scss.showMore} onClick={onClick}>
-      {valueShowMoreMusic}
-    </button>
+    <div className={scss.boxShowMore}>
+      <button className={scss.showMore} onClick={onClick}>
+        {valueShowMoreMusic}
+      </button>
+    </div>
   );
 }
 
