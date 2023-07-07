@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as PlayIcon } from '../../../../../images/Common/svg/play.svg';
 
-import scss from './LatestReleaesIconPlay.module.scss';
+import scss from '../LatestReleasesItem.module.scss';
 
 function LatestReleaesIconPlay({ currentVideoIndex, indexItem }) {
   return (

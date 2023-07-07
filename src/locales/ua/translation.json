@@ -30,5 +30,6 @@
   "message_form_field": "Повідомлення",
   "sending_form_status": "Відправка...",
   "idle_form_status": "Відправити",
-  "show_more_button": "Показати більше"
+  "show_more_button": "Показати більше",
+  "without_release_date": "Без дати релізу"
 }

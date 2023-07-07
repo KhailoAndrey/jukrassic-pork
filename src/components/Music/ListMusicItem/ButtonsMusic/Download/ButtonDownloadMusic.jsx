@@ -18,7 +18,7 @@ function ButtonDownloadMusic({ valueButton, songDownloadLink }) {
 
 ButtonDownloadMusic.propTypes = {
   valueButton: PropTypes.string.isRequired,
-  audio: PropTypes.string.isRequired,
+  songDownloadLink: PropTypes.string.isRequired,
 };
 
 export default ButtonDownloadMusic;
