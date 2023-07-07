@@ -14,7 +14,7 @@ const MessageField = ({ id, type, name, setCounter }) => {
     <Field
       className={`${
         errors[name] && touched[name]
-          ? [scss.input_error, scss.contact_form__message].join(' ')
+          ? `${scss.input_error} ${scss.contact_form__message}`
           : scss.contact_form__message
       }`}
       id={id}
