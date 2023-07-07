@@ -35,7 +35,6 @@ function LatestReleaesItem({
         height="100%"
         playIcon={
           <LatestReleaesIconPlay
-            className={scss.icon}
             currentVideoIndex={currentVideoIndex}
             indexItem={indexItem && indexItem}
           />
