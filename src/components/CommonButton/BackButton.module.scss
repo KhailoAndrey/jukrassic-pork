@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
 
-  // margin-bottom: 52px;
   padding: 12px 24px;
   width: 100%;
 
@@ -24,18 +23,18 @@
 
   @media screen and (min-width: 375px) {
     width: auto;
-    max-height: 48px;
   }
 
   @media screen and (min-width: 768px) {
     margin-right: auto;
     padding: 16px 32px;
     max-height: 60px;
+
+    width: 300px;
   }
 
   @media screen and (min-width: 1440px) {
     margin-right: 0;
-    margin-left: auto;
     padding: 16px 32px;
 
     font-size: 24px;
