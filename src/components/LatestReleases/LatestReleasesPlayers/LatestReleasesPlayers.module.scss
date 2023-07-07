@@ -5,8 +5,10 @@
   flex-wrap: wrap;
 
   gap: 16px;
+  margin-top: 52px;
 
   @media screen and (min-width: 1440px) {
     gap: 24px;
+    margin-top: 76px;
   }
 }

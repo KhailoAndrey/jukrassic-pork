@@ -46,7 +46,7 @@ function ListMusicItem({ itemMusic }) {
             dateReleaseText={
               itemMusic?.description
                 ? description[currentLanguage]
-                : 'Without release date'
+                : t('without_release_date')
             }
           />
           <ul className={scss.listButtonsMusic}>
