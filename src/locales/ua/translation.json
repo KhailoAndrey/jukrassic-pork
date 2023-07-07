@@ -30,5 +30,7 @@
   "message_form_field": "Повідомлення",
   "sending_form_status": "Відправка...",
   "idle_form_status": "Відправити",
-  "show_more_button": "Показати більше"
+  "show_more_button": "Показати більше",
+  "text_not_found": "Вибачте, ми не можемо знайти сторінку, яку ви шукаєте! Можливо, це старе посилання або сторінку видалено.",
+  "label_not_found": "упс!"
 }
