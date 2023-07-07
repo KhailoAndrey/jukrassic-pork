@@ -35,7 +35,7 @@ function MusicComponent() {
         <div className={scss.headermenu}>
           <HeaderMenu page="Music" text="Back to Home" />
         </div>
-        {data && data.title[currentLanguage] && (
+        {data?.title && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />
         )}
         {data?.description && (
