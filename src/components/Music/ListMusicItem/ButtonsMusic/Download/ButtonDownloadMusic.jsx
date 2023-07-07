@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { ReactComponent as DownloadIcon } from '../../../../../images/Music/svg/Icon-download.svg';
 import scss from '../ButtonsMusic.module.scss';
 
-function ButtonDownloadMusic({ valueButton, audio }) {
+function ButtonDownloadMusic({ valueButton, songDownloadLink }) {
   const handleDownload = () => {
-    window.open(audio, '_blank');
+    window.open(songDownloadLink, '_blank');
   };
 
   return (
