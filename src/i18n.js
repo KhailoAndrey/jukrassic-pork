@@ -9,7 +9,7 @@ import I18NextHttpBackend from 'i18next-http-backend';
 
 i18n.use(I18NextHttpBackend).use(LanguageDetector).use(initReactI18next).init(
     {
-        debug: true,
+        // debug: true,
         fallbackLng: 'en',
         resources: {
             en: {
