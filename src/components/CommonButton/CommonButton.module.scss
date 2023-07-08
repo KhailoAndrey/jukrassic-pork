@@ -3,8 +3,7 @@
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
-  min-width: 343px;
-  max-height: 48px;
+
   font-size: 22px;
   font-family: 'Mulish';
   font-weight: 600;
@@ -17,15 +16,13 @@
   background-color: var(--light-text-clr);
   transition: border, color, background-color var(--default-animation);
 
-  @media screen and (min-width: 375px) {
-    max-height: 48px;
+  @media screen and (min-width: 375px) and (max-width: 1440px) {
+    width: 360px;
   }
 
   @media screen and (min-width: 768px) {
     margin-right: auto;
     padding: 16px 32px;
-    max-height: 60px;
-    min-width: 268px;
   }
 
   @media screen and (min-width: 1440px) {
