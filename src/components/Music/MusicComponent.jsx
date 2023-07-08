@@ -33,7 +33,7 @@ function MusicComponent() {
           <TextMusic textMusic={data.description[currentLanguage]} />
         )}
         {data?.musicList && <ListMusic musicList={data.musicList} />}
-        {data && (
+        {data && data.musicList.length >= 6 && (
           <ButtonShowMoreMusic valueShowMoreMusic={t('show_more_button')} />
         )}
       </div>
