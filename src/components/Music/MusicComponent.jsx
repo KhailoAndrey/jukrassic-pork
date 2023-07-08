@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useContext } from 'react';
-import { LanguageContext } from 'utils/LanguageContext';
-import { useTranslation } from 'react-i18next';
+import React from 'react';
 import useFetch from '../../hooks/useFetch';
+import { useContext } from 'react';
+
 import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
 import Menu from 'components/Menu/Menu';
-import MusicMenu from './MusicMenu';
+import MusicMenu from './MusicMenu/MusicMenu';
+
+import { useTranslation } from 'react-i18next';
+import { LanguageContext } from 'utils/LanguageContext';
 import scss from './MusicComponent.module.scss';
 
 function MusicComponent() {
@@ -16,19 +18,6 @@ function MusicComponent() {
 
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
-
-  const [songs, setSongs] = useState([]);
-  const [showMoreCount, setShowMoreCount] = useState(6);
-
-  useEffect(() => {
-    if (data?.musicList) {
-      setSongs(data.musicList);
-    }
-  }, [data]);
-
-  const handleShowMore = () => {
-    setShowMoreCount(prevCount => prevCount + 6);
-  };
 
   return (
     <section className={scss.musicComponent}>
@@ -43,20 +32,9 @@ function MusicComponent() {
         {data?.description?.[currentLanguage] && (
           <TextMusic textMusic={data.description[currentLanguage]} />
         )}
-        {/* {data?.musicList && <ListMusic musicList={data.musicList} />}
+        {data?.musicList && <ListMusic musicList={data.musicList} />}
         {data && (
           <ButtonShowMoreMusic valueShowMoreMusic={t('show_more_button')} />
-        )} */}
-        {songs.length > 0 && (
-          <ListMusic
-            musicList={songs.slice(0, Math.min(showMoreCount, songs.length))}
-          />
-        )}
-        {songs.length > showMoreCount && (
-          <ButtonShowMoreMusic
-            valueShowMoreMusic={t('show_more_button')}
-            onClick={handleShowMore}
-          />
         )}
       </div>
     </section>

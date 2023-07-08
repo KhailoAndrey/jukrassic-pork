@@ -1,12 +1,12 @@
-import { ReactComponent as Logo } from '../../images/Logo.svg';
-import { ReactComponent as Burger } from '../../images/burger_menu.svg';
-import { ReactComponent as CloseBtn } from '../../images/close_modal.svg';
-import ModalComponent from '../Modal/Modal';
+import { ReactComponent as Logo } from '../../../images/Logo.svg';
+import { ReactComponent as Burger } from '../../../images/burger_menu.svg';
+import { ReactComponent as CloseBtn } from '../../../images/close_modal.svg';
+import ModalComponent from '../../Modal/Modal';
 import useModal from 'hooks/useModal';
 import scss from './MusicMenu.module.scss';
 import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import BackButton from '../CommonButton/BackButton';
+import BackButton from '../../CommonButton/BackButton';
 
 const handleScrollToTop = () => {
   window.scrollTo({
