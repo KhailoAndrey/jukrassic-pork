@@ -18,6 +18,9 @@ function LatestReleaesItem({
   const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
 
   const handleVideoPlay = indexItem => {
+    if (currentVideoIndex !== null && currentVideoIndex !== indexItem) {
+      setCurrentVideoIndex(null);
+    }
     setCurrentVideoIndex(indexItem);
   };
 

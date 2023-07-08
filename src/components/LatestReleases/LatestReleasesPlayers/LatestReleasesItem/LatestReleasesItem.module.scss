@@ -100,7 +100,18 @@
   }
 }
 
-.reactPlayer:hover .iconPlay,
-.reactPlayer:focus .iconPlay {
+.reactPlayer:hover .iconPlay {
   fill: var(--main-accent-text-clr);
+}
+
+.iconContainer {
+  border: 2px solid transparent;
+  // transform: rotate(90deg);
+  clip-path: polygon(50% 1, 100% 100%, 0 100%);
+  transition: border var(--default-animation);
+}
+
+.reactPlayer:hover .iconContainer,
+.reactPlayer:focus .iconContainer {
+  border: 2px solid var(--main-accent-text-clr);
 }
