@@ -72,7 +72,7 @@ function ListMusicItem({ itemMusic }) {
             <>
               <ModalLabelMusic
                 modalName={
-                  itemMusic?.name ? name[currentLanguage] : t('default-label')
+                  itemMusic?.name ? name[currentLanguage] : t('default_label')
                 }
               />
               <ModalTextMusic
