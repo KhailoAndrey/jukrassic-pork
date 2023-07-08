@@ -54,7 +54,7 @@ const ModalForm = ({ onClose }) => {
   };
 
   return createPortal(
-    <div className={scss.overlay} onClick={handleBackdropClick}>
+    <div className={scss.overlay} onMouseDown={handleBackdropClick}>
       <div className={scss.modal}>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
