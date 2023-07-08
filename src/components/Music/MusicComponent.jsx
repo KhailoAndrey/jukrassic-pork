@@ -7,7 +7,7 @@ import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
 import Menu from 'components/Menu/Menu';
-import MusicMenu from './MusicMenu/MusicMenu';
+import MusicMenu from './MusicMenu';
 
 import { useTranslation } from 'react-i18next';
 import { LanguageContext } from 'utils/LanguageContext';
