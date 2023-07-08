@@ -26,6 +26,7 @@ function MusicMenu({ page, text, isMobile }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
+    document.activeElement.blur();
   };
 
   useEffect(() => {
