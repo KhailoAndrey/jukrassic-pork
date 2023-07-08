@@ -92,6 +92,7 @@
   width: 64px;
   height: 64px;
   fill: var(--main-text-clr);
+  transform: rotate(-90deg);
   transition: fill var(--default-animation);
 
   @media screen and (max-width: 768px) {
@@ -106,8 +107,8 @@
 
 .iconContainer {
   border: 2px solid transparent;
-  // transform: rotate(90deg);
-  clip-path: polygon(50% 1, 100% 100%, 0 100%);
+  transform: rotate(90deg);
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
   transition: border var(--default-animation);
 }
 
