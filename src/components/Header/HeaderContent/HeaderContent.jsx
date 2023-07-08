@@ -22,7 +22,7 @@ function HeaderContent() {
       <div className={`container ${scss.header_container}`}>
         <Menu />
         <div className={scss.header_title_container}>
-          <div>
+          <div className={scss.sticky_container}>
             <div className={scss.header_title}>
               <p className={scss.header_title_text}>
                 {data ? data.title[currentLanguage] : 'jukrassic pork'}
@@ -41,9 +41,11 @@ function HeaderContent() {
             <p className={scss.header_textbody}>
               {data
                 ? data.description[currentLanguage]
+
                 : `Jukrassic Pork is a pop-rock music band from Ukraine. The project
               was founded in 2000 by Vyacheslav /Zmeark/ Lozowy. Since then,
             several members have changed in the band.`}
+
             </p>
           </div>
           <HeaderMenu
