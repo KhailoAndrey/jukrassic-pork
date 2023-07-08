@@ -112,6 +112,8 @@ const Footer = () => {
               onClose={() => {
                 setIsModalOpen(!isModalOpen);
               }}
+              // TODO: do we need it?
+              isModalOpen={isModalOpen}
             />
           )}
         </footer>

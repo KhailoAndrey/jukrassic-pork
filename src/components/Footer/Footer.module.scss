@@ -337,14 +337,52 @@
 
   background-color: rgba(0, 0, 0, 0.497);
   z-index: 1200;
+
+  transform: scaleY(0.005) scaleX(0);
+  animation: unfoldIn var(--slow-animation) forwards;
+
+  // &.out {
+  //   transform: scale(1);
+  //   animation: unfoldOut var(--slow-animation) forwards;
+  // }
 }
 
+// overlay animation
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+// @keyframes unfoldOut {
+//   0% {
+//     transform: scaleY(1) scaleX(1);
+//   }
+//   50% {
+//     transform: scaleY(0.005) scaleX(1);
+//   }
+//   100% {
+//     transform: scaleY(0.005) scaleX(0);
+//   }
+// }
+
 .modal {
+  position: absolute;
+
   height: 688px;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-left: 16px;
   padding-right: 16px;
+
+  transform: scale(1);
+  transition: all var(--slow-animation);
+  animation: zoomIn 800ms ease-in-out;
 
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-2);
@@ -368,6 +406,15 @@
   @media screen and (min-width: 1440px) {
     padding: 32px;
     height: 660px;
+  }
+}
+// modal animation
+@keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
