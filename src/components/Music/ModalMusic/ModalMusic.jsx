@@ -64,7 +64,7 @@ function ModalMusic({ onCloseModal, modalContent }) {
     isOpen && (
       <div
         className={`${scss.modalBackdrop} ${isOpen ? scss.open : ''}`}
-        onClick={handleBackdropClick}
+        onMouseDown={handleBackdropClick}
       >
         <div className={`${scss.modalContent} ${isOpen ? scss.open : ''}`}>
           {modalContent}
