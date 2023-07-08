@@ -1,6 +1,5 @@
 .playerBox {
   position: relative;
-
   z-index: 1;
   width: 100%;
   height: 200px;
@@ -16,27 +15,32 @@
   }
 }
 
-.icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 3;
-}
-
 .reactPlayer {
   max-width: 100%;
-  z-index: 1;
-  // filter: brightness(100%);
-  opacity: 1;
+  position: relative;
+  z-index: 2;
 
-  transition: opacity 0.3s ease;
+  &::after {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: background-color var(--default-animation);
+    z-index: 50;
+    pointer-events: none;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
 }
 
-.reactPlayer:hover,
-.reactPlayer:focus {
-  // filter: brightness(50%);
-  opacity: 0.5;
+.reactPlayer:hover .iconPlayRelease {
+  fill: var(--main-accent-text-clr);
 }
 
 .videoSlider {
@@ -68,9 +72,35 @@
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background-color: var(--neutral-dark-bckg-clr-2);
+}
+
+// Styles for icon-play
+
+.iconContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.iconPlay {
+  display: block;
+  width: 64px;
+  height: 64px;
+  fill: var(--main-text-clr);
+  transition: fill var(--default-animation);
+
+  @media screen and (max-width: 768px) {
+    width: 52px;
+    height: 52px;
+  }
+}
+
+.reactPlayer:hover .iconPlay,
+.reactPlayer:focus .iconPlay {
+  fill: var(--main-accent-text-clr);
 }

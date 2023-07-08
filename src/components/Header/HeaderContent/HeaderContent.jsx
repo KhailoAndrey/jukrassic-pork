@@ -13,8 +13,8 @@ function HeaderContent() {
   // const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
-  const isMobile = window.innerWidth <= 1440;
-
+  const isMobile = false;
+  // console.log(isMobile);
   const { data } = useFetch('history');
 
   return (

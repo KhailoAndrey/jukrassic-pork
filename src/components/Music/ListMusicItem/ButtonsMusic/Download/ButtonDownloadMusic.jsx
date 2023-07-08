@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { ReactComponent as DownloadIcon } from '../../../../../images/Music/svg/Icon-download.svg';
 import scss from '../ButtonsMusic.module.scss';
 
-function ButtonDownloadMusic({ valueButton, audio }) {
+function ButtonDownloadMusic({ valueButton, songDownloadLink }) {
   const handleDownload = () => {
-    window.open(audio, '_blank');
+    window.open(songDownloadLink, '_blank');
   };
 
   return (
@@ -18,7 +18,7 @@ function ButtonDownloadMusic({ valueButton, audio }) {
 
 ButtonDownloadMusic.propTypes = {
   valueButton: PropTypes.string.isRequired,
-  audio: PropTypes.string.isRequired,
+  songDownloadLink: PropTypes.string.isRequired,
 };
 
 export default ButtonDownloadMusic;

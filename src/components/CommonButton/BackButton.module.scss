@@ -3,22 +3,26 @@
   justify-content: center;
   align-items: center;
   padding: 12px 24px;
+  width: 100%;
   min-width: 343px;
   max-height: 48px;
   font-size: 22px;
   font-family: 'Mulish';
   font-weight: 600;
   line-height: 1.27;
+
   border: 2px solid transparent;
   outline: none;
   cursor: pointer;
   text-decoration: none;
+
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
+
   transition: border, color, background-color var(--default-animation);
 
   @media screen and (min-width: 375px) {
-    max-height: 48px;
+    width: auto;
   }
 
   @media screen and (min-width: 768px) {
@@ -54,16 +58,18 @@
 }
 
 .textTransform {
-  transform: translateX(-10px);
+  transform: translateX(10px);
   transition: transform var(--default-animation);
 }
 
 .commonButton:hover .textTransform,
 .commonButton:focus .textTransform {
-  transform: translateX(10px);
+  transform: translateX(-10px);
 }
 
 .commonIconVisible {
+  rotate: 180deg;
+
   fill: transparent;
 }
 
@@ -82,11 +88,9 @@
 
 .commonIcon {
   display: block;
-
+  rotate: 180deg;
   width: 24px;
   height: 24px;
-
   fill: var(--neutral-dark-bckg-clr-1);
-
   transition: fill var(--default-animation);
 }

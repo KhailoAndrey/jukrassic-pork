@@ -3,14 +3,12 @@ import { useContext } from 'react';
 import { LanguageContext } from 'utils/LanguageContext';
 import { useTranslation } from 'react-i18next';
 import useFetch from '../../hooks/useFetch';
-
-import HeaderMenu from '../../components/Header/HeaderContent/HeaderMenu';
 import ChapterMusic from './ChapterMusic/ChapterMusic';
 import TextMusic from './TextMusic/TextMusic';
 import ListMusic from './ListMusic/ListMusic';
 import ButtonShowMoreMusic from './ButtonShowMoreMusic/ButtonShowMoreMusic';
 import Menu from 'components/Menu/Menu';
-
+import MusicMenu from './MusicMenu';
 import scss from './MusicComponent.module.scss';
 
 function MusicComponent() {
@@ -37,7 +35,7 @@ function MusicComponent() {
       <div className="container">
         <Menu />
         <div className={scss.headermenu}>
-          <HeaderMenu page="Music" text={t('back_to_home')} />
+          <MusicMenu page="Music" text={t('back_to_home')} />
         </div>
         {data?.title && (
           <ChapterMusic chapterMusic={data.title[currentLanguage]} />

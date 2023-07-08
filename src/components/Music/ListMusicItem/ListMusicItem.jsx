@@ -24,14 +24,15 @@ function ListMusicItem({ itemMusic }) {
     setShowModal(prevState => !prevState);
   };
 
-  const { audio, songImage, songLink, name, description, lyrics } = itemMusic;
+  const { songDownloadLink, songImage, songLink, name, description, lyrics } =
+    itemMusic;
 
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
 
   return (
     <>
-      {itemMusic.audio && (
+      {itemMusic && (
         <li className={scss.listMusicItem}>
           <ImageMusic
             songImage={itemMusic?.songImage && songImage}
@@ -45,12 +46,15 @@ function ListMusicItem({ itemMusic }) {
             dateReleaseText={
               itemMusic?.description
                 ? description[currentLanguage]
-                : 'Without release date'
+                : t('without_release_date')
             }
           />
           <ul className={scss.listButtonsMusic}>
             <li>
-              <ButtonDownloadMusic valueButton={t('download')} audio={audio} />
+              <ButtonDownloadMusic
+                valueButton={t('download')}
+                songDownloadLink={songDownloadLink}
+              />
             </li>
             <li>
               <ButtonLyricsMusic

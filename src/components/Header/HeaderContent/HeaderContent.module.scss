@@ -158,6 +158,7 @@
 
 .header_body {
   margin-top: 16px;
+  margin-bottom: 32px;
   @media screen and (min-width: 768px) {
     margin-top: 24px;
   }
@@ -189,7 +190,7 @@
   height: 312px;
   background-color: var(--neutral-dark-bckg-clr-1);
   text-align: center;
-  // margin-top: 32px;
+  margin-top: 32px;
 
   @media screen and (min-width: 768px) {
     height: 464px;

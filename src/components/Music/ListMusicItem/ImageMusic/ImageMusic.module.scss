@@ -1,27 +1,40 @@
 .imageMusic {
   margin-bottom: 12px;
-
   width: 100%;
   height: auto;
+  position: relative;
+  z-index: 1;
 
-  filter: brightness(100%);
+  &::after {
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba($color: #000000, $alpha: 0);
+    transition: background-color var(--default-animation);
+    z-index: 50;
+    pointer-events: none;
+  }
 
-  transition: filter var(--default-animation);
-}
-
-.imageMusic:hover,
-.imageMusic:focus {
-  filter: brightness(50%);
+  &:hover::after,
+  &:focus::after {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
 }
 
 .iconPlayMusic {
   display: block;
-
   width: 64px;
   height: 64px;
   fill: var(--main-text-clr);
-
   transition: fill var(--default-animation);
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
 
   @media screen and (max-width: 768px) {
     width: 52px;
