@@ -21,6 +21,7 @@ const MessageField = ({ id, type, name, setCounter }) => {
       as={type}
       name={name}
       maxLength={200}
+      value={values[name].replace(/\s+/g, ' ')}
     />
   );
 };

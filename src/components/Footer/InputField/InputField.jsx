@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import scss from '../Footer.module.scss';
 
 const InputField = ({ id, type, name }) => {
-  const { errors, touched } = useFormikContext();
+  const { errors, touched, values } = useFormikContext();
 
   return (
     <Field
@@ -15,6 +15,11 @@ const InputField = ({ id, type, name }) => {
       id={id}
       type={type}
       name={name}
+      value={
+        name === 'email'
+          ? values.email.trim().toLowerCase()
+          : values[name].replace(/\s+/g, ' ')
+      }
     />
   );
 };
