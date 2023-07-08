@@ -33,5 +33,8 @@
   "show_more_button": "Показати більше",
   "text_not_found": "Вибачте, ми не можемо знайти сторінку, яку ви шукаєте! Можливо, це старе посилання або сторінку видалено.",
   "label_not_found": "упс!",
-  "without_release_date": "Без дати виходу"
+  "without_release_date": "Без дати виходу",
+  "copy_button": "Копіювати",
+  "empty_lyrics": "До цієї музики немає тексту",
+  "default_label": "пісня"
 }

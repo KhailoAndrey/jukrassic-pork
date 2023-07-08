@@ -33,5 +33,8 @@
   "show_more_button": "Show more",
   "text_not_found": "Sorry, we can`t seem to find the page you`re looking for! It might be an old link or the page may have been removed.",
   "label_not_found": "oops!",
-  "without_release_date": "Without date"
+  "without_release_date": "Without date",
+  "copy_button": "Copy",
+  "empty_lyrics": "This lyrics hasn't text",
+  "default_label": "song"
 }

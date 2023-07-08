@@ -72,15 +72,15 @@ function ListMusicItem({ itemMusic }) {
             <>
               <ModalLabelMusic
                 modalName={
-                  itemMusic?.name ? name[currentLanguage] : t('default-label')
+                  itemMusic?.name ? name[currentLanguage] : t('default_label')
                 }
               />
               <ModalTextMusic
-                textModalMusic={itemMusic?.lyrics ? lyrics : t('empty-lyrics')}
+                textModalMusic={itemMusic?.lyrics ? lyrics : t('empty_lyrics')}
               />
               <ButtonModalCopy
-                valueButton="Copy"
-                textToCopy={itemMusic?.lyrics ? lyrics : t('copy-button')}
+                valueButton={t('copy_button')}
+                textToCopy={itemMusic?.lyrics ? lyrics : t('copy_button')}
               />
             </>
           }
