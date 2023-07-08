@@ -86,11 +86,13 @@ export const musicFormattedFn = ({ title, description, _id, musicList }) => {
         return {
           id: _key,
           name: { en: name.en, ua: name.ua },
-          description: { en: description.en, ua: description.ua },
+          description: !!description
+            ? { en: description.en, ua: description.ua }
+            : null,
           songImage: urlFor(songImage?.asset),
           songLink,
           songDownloadLink,
-          lyrics: lyrics[0]?.children[0]?.text,
+          lyrics: !!lyrics ? lyrics[0]?.children[0]?.text : null,
         };
       }
     ),
