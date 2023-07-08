@@ -5,7 +5,7 @@ import { ReactComponent as RightIcon } from '../../images/Common/svg/Right-Icon.
 import scss from './BackButton.module.scss';
 function BackButton({ valueButton }) {
   return (
-    <NavLink to="/" className={scss.commonButton}>
+    <NavLink to="/#header" className={scss.commonButton}>
       <RightIcon className={scss.commonIcon} />
       <p className={scss.textTransform}>{valueButton}</p>
       <RightIcon className={scss.commonIconVisible} />
