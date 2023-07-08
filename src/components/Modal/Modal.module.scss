@@ -11,6 +11,7 @@
   justify-content: flex-end;
   flex-direction: column;
   z-index: 9999;
+  cursor: pointer;
 
   &::before {
     content: '';
