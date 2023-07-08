@@ -10,7 +10,7 @@ import { LanguageContext } from 'utils/LanguageContext';
 
 import scss from './Footer.module.scss';
 
-function Footer() {
+const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
@@ -118,6 +118,6 @@ function Footer() {
       )}
     </>
   );
-}
+};
 
 export default Footer;
