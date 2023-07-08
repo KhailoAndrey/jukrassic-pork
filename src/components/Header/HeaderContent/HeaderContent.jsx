@@ -41,9 +41,9 @@ function HeaderContent() {
             <p className={scss.header_textbody}>
               {data
                 ? data.description[currentLanguage]
-                : `'Jukrassic Pork is a pop-rock music band from Ukraine. The project
+                : `Jukrassic Pork is a pop-rock music band from Ukraine. The project
               was founded in 2000 by Vyacheslav /Zmeark/ Lozowy. Since then,
-            several members have changed in the band.'`}
+            several members have changed in the band.`}
             </p>
           </div>
           <HeaderMenu

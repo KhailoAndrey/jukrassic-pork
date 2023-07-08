@@ -22,6 +22,7 @@ const ModalComponent = ({ customClass, onClose }) => {
 
   const handleLanguageChange = lang => {
     changeLanguage(lang);
+    onClose();
   };
 
   const musicBlockRedirect = link => {
