@@ -55,7 +55,6 @@ function HeaderContent() {
           />
           <div className={scss.swiper_box}>
             {data && <SwiperHeader data={data} />}
-            <div className={scss.swiper_overlay}></div>
           </div>
         </div>
       </div>
