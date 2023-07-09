@@ -12,6 +12,7 @@ import scss from './Footer.module.scss';
 
 const Footer = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
   const { isLoading, data } = useFetch('contacts');
@@ -23,6 +24,11 @@ const Footer = () => {
     }
     document.body.classList.remove('no_scroll');
   }, [isModalOpen]);
+
+  const handleModalOpen = () => {
+    setIsModalOpen(true);
+    setIsInitialLoad(false);
+  };
 
   const getCurrentYear = new Date().getFullYear();
 
@@ -76,9 +82,7 @@ const Footer = () => {
                     <button
                       className={scss.mail_btn}
                       type="button"
-                      onClick={() => {
-                        setIsModalOpen(true);
-                      }}
+                      onClick={handleModalOpen}
                     >
                       <Envelop className={scss.envelopIcon} />
 
@@ -107,15 +111,13 @@ const Footer = () => {
               className={scss.copyright}
             >{`Copyright © 2016-${getCurrentYear} Jukrassic Pork ®. All Rights Reserved.`}</p>
           </div>
-          {isModalOpen && (
-            <ModalForm
-              onClose={() => {
-                setIsModalOpen(!isModalOpen);
-              }}
-              // TODO: do we need it?
-              isModalOpen={isModalOpen}
-            />
-          )}
+          <ModalForm
+            onClose={() => {
+              setIsModalOpen(!isModalOpen);
+            }}
+            isInitialLoad={isInitialLoad}
+            isModalOpen={isModalOpen}
+          />
         </footer>
       )}
     </>
