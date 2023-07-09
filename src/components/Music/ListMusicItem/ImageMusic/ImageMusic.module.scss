@@ -10,14 +10,10 @@
     bottom: 0;
     left: 0;
     position: absolute;
-    background-color: rgba(19, 19, 19, 0.7);
+    background-color: transparent;
     transition: background-color var(--default-animation);
     z-index: 50;
     pointer-events: none;
-  }
-
-  &.noHover::after {
-    background-color: transparent;
   }
 
   &:hover::after,
@@ -30,17 +26,26 @@
   }
 }
 
+.imageMusicNoEffects {
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 1440px) {
+    height: 408px;
+  }
+}
+
 .iconPlayMusic {
   display: block;
   width: 64px;
   height: 64px;
-  fill: var(--main-text-clr);
-  transition: fill var(--default-animation);
+  fill: var(--main-accent-text-clr);
   position: absolute;
   z-index: 100;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
+  opacity: 0;
+  transition: opacity var(--default-animation);
 
   @media screen and (max-width: 768px) {
     width: 52px;
@@ -50,5 +55,5 @@
 
 .imageMusic:hover .iconPlayMusic,
 .imageMusic:focus .iconPlayMusic {
-  fill: var(--main-accent-text-clr);
+  opacity: 1;
 }
