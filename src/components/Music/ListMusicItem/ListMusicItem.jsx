@@ -38,10 +38,7 @@ function ListMusicItem({ itemMusic }) {
             songImage={itemMusic?.songImage && songImage}
             songLink={itemMusic?.songLink && songLink}
           />
-          <LabelMusic
-            labelMusicEn={itemMusic?.name ? name.en : 'Label'}
-            labelMusicUa={itemMusic?.name ? name.ua : 'Назва'}
-          />
+          <LabelMusic labelMusic={itemMusic?.name && name[currentLanguage]} />
           <DateReleaseText
             dateReleaseText={
               itemMusic?.description
