@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 import MessageField from '../MessageField/MessageField';
 import InputField from '../InputField/InputField';
@@ -35,7 +36,34 @@ const ModalForm = ({ onClose, isModalOpen, isInitialLoad }) => {
       // TODO: delete console.log after testing
       console.log('data:', data);
       await axios.post('/', data);
+
+      Notify.success(t('submit_success'), () => {}, {
+        width: '252px',
+        borderRadius: '0px',
+        position: 'center-top',
+        fontFamily: 'Mulish',
+        timeout: 1000,
+        fontSize: '14px',
+        success: {
+          background: '#363636',
+          textColor: '#00fe00',
+          notiflixIconColor: '#00fe00',
+        },
+      });
     } catch (error) {
+      Notify.failure(t('submit_error'), () => {}, {
+        width: '224px',
+        borderRadius: '0px',
+        position: 'center-top',
+        fontFamily: 'Mulish',
+        timeout: 1000,
+        fontSize: '14px',
+        failure: {
+          background: '#363636',
+          textColor: '#ff2929',
+          notiflixIconColor: '#ff2929',
+        },
+      });
       console.log('error:', error);
       console.log('error.message:', error.message);
     }
