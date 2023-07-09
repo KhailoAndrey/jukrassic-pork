@@ -5,6 +5,9 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
+import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Report } from 'notiflix/build/notiflix-report-aio';
 
 import MessageField from '../MessageField/MessageField';
 import InputField from '../InputField/InputField';
@@ -34,7 +37,19 @@ const ModalForm = ({ onClose }) => {
     try {
       // TODO: delete console.log after testing
       console.log('data:', data);
-      await axios.post('/', data);
+      // Notify.success('Форма успішно надіслана', () => {}, {
+      //   position: 'center-top',
+      // });
+
+      // Report.success('', 'Форма надіслана успішно', 'OK');
+
+      Report.failure(
+        '',
+        "Під час відправки трапилася помилка. Будь ласка, спробуйте ще раз, або зв'яжіться з нами в інший спосіб",
+        'OK'
+      );
+
+      // await axios.post('/', data);
     } catch (error) {
       console.log('error:', error);
       console.log('error.message:', error.message);
