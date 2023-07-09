@@ -86,7 +86,9 @@ const Footer = () => {
                     >
                       <Envelop className={scss.envelopIcon} />
 
-                      <span className={scss.mail_btn__text}>Mail us</span>
+                      <span className={scss.mail_btn__text}>
+                        {t('mail_us')}
+                      </span>
                     </button>
                   </li>
 
