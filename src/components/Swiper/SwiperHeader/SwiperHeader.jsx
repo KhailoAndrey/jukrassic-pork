@@ -42,6 +42,8 @@ const SwiperHeader = ({ data }) => {
       nextEl: `.swiper-next-btn`,
       prevEl: `.swiper-prev-btn`,
     },
+    slideNextClass: 'swiper-slide-next',
+    slidePrevClass: 'swiper-slide-prev',
     // modules: [Pagination, Scrollbar],    
     speed: 1000,    
   };
