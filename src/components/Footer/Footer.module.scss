@@ -337,9 +337,45 @@
 
   background-color: rgba(0, 0, 0, 0.497);
   z-index: 1200;
+
+  &.on {
+    transform: scaleY(0.005) scaleX(0);
+    animation: unfoldIn var(--slow-animation) forwards;
+  }
+
+  &.off {
+    transform: scaleY(1) scaleX(1);
+    animation: unfoldOut var(--slow-animation) forwards;
+  }
+}
+
+// overlay animation
+@keyframes unfoldIn {
+  0% {
+    transform: scaleY(0.005) scaleX(0);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes unfoldOut {
+  0% {
+    transform: scaleY(1) scaleX(1);
+  }
+  50% {
+    transform: scaleY(0.005) scaleX(1);
+  }
+  100% {
+    transform: scaleY(0.005) scaleX(0);
+  }
 }
 
 .modal {
+  position: absolute;
+
   height: 688px;
   padding-top: 24px;
   padding-bottom: 24px;
