@@ -45,19 +45,18 @@
 }
 
 .buttonIcon {
-  padding: 2px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   margin-right: 8px;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
 
   fill: var(--add-light-text-clr-2);
   transition: fill var(--default-animation);
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1440px) {
     margin-right: 12px;
   }
 }
