@@ -37,5 +37,7 @@
   "without_release_date": "Без дати виходу",
   "copy_button": "Копіювати",
   "empty_lyrics": "До цієї музики немає тексту",
-  "default_label": "пісня"
+  "default_label": "пісня",
+  "submit_error": "Помилка відправки. Спробуйте ще раз.",
+  "submit_success": "Форма успішно відправлена."
 }

@@ -5,9 +5,7 @@ import * as yup from 'yup';
 import PropTypes from 'prop-types';
 import { ErrorMessage, Form, Formik } from 'formik';
 import { useTranslation } from 'react-i18next';
-import Notiflix from 'notiflix';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Report } from 'notiflix/build/notiflix-report-aio';
 
 import MessageField from '../MessageField/MessageField';
 import InputField from '../InputField/InputField';
@@ -37,20 +35,35 @@ const ModalForm = ({ onClose, isModalOpen, isInitialLoad }) => {
     try {
       // TODO: delete console.log after testing
       console.log('data:', data);
-      // Notify.success('Форма успішно надіслана', () => {}, {
-      //   position: 'center-top',
-      // });
+      await axios.post('/', data);
 
-      // Report.success('', 'Форма надіслана успішно', 'OK');
-
-      Report.failure(
-        '',
-        "Під час відправки трапилася помилка. Будь ласка, спробуйте ще раз, або зв'яжіться з нами в інший спосіб",
-        'OK'
-      );
-
-      // await axios.post('/', data);
+      Notify.success(t('submit_success'), () => {}, {
+        width: '252px',
+        borderRadius: '0px',
+        position: 'center-top',
+        fontFamily: 'Mulish',
+        timeout: 1000,
+        fontSize: '14px',
+        success: {
+          background: '#363636',
+          textColor: '#00fe00',
+          notiflixIconColor: '#00fe00',
+        },
+      });
     } catch (error) {
+      Notify.failure(t('submit_error'), () => {}, {
+        width: '224px',
+        borderRadius: '0px',
+        position: 'center-top',
+        fontFamily: 'Mulish',
+        timeout: 1000,
+        fontSize: '14px',
+        failure: {
+          background: '#363636',
+          textColor: '#ff2929',
+          notiflixIconColor: '#ff2929',
+        },
+      });
       console.log('error:', error);
       console.log('error.message:', error.message);
     }
