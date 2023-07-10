@@ -6,9 +6,10 @@ import scss from './ButtonNotFound.module.scss';
 
 function ButtonNotFound({ valueButtonNotFound }) {
   return (
-    <NavLink to="/" className={scss.buttonNotFound}>
+    <NavLink to="/#header" className={scss.buttonNotFound}>
       <RightIcon className={scss.commonIcon} />
-      {valueButtonNotFound}
+      <p className={scss.textTransform}>{valueButtonNotFound}</p>
+      <RightIcon className={scss.commonIconVisible} />
     </NavLink>
   );
 }

@@ -2,20 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  margin-bottom: 52px;
   padding: 12px 24px;
   width: 100%;
-
+  max-height: 48px;
   font-size: 22px;
   font-family: 'Mulish';
   font-weight: 600;
   line-height: 1.27;
-  text-decoration: none;
 
   border: 2px solid transparent;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
 
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
@@ -29,8 +27,15 @@
   @media screen and (min-width: 768px) {
     margin-right: auto;
     padding: 16px 32px;
-    max-width: 360px;
+    max-height: 60px;
+    max-width: 268px;
+  }
 
+  @media screen and (min-width: 1440px) {
+    margin-right: 0;
+    margin-left: auto;
+    padding: 16px 32px;
+    max-width: 288px;
     font-size: 24px;
     line-height: 1.16;
   }
@@ -44,25 +49,47 @@
   background-color: var(--neutral-dark-bckg-clr-1);
 }
 
-.commonIcon {
-  display: block;
-  margin-left: 8px;
+.buttonNotFound:active {
+  border: 2px solid var(--main-accent-text-clr);
 
-  width: 24px;
-  height: 24px;
-
-  transform: rotate(180deg);
-  margin-right: 8px;
-  fill: var(--neutral-dark-bckg-clr-1);
-
-  transition: fill var(--default-animation);
-
-  @media screen and (min-width: 768px) {
-    margin-right: 12px;
-  }
+  color: var(--neutral-dark-bckg-clr-1);
+  background-color: var(--main-accent-text-clr);
 }
 
-.buttonNotFound:hover .commonIcon,
-.buttonNotFound:focus .commonIcon {
+.textTransform {
+  transform: translateX(10px);
+  transition: transform var(--default-animation);
+}
+
+.buttonNotFound:hover .textTransform,
+.buttonNotFound:focus .textTransform {
+  transform: translateX(-10px);
+}
+
+.commonIconVisible {
+  rotate: 180deg;
+
+  fill: transparent;
+}
+
+.buttonNotFound:hover .commonIconVisible,
+.buttonNotFound:focus .commonIconVisible {
   fill: var(--main-accent-text-clr);
+}
+
+.commonButton:active .commonIconVisible {
+  fill: var(--neutral-dark-bckg-clr-1);
+}
+
+.commonButton:active .commonIcon {
+  fill: var(--main-accent-text-clr);
+}
+
+.commonIcon {
+  display: block;
+  rotate: 180deg;
+  width: 24px;
+  height: 24px;
+  fill: var(--neutral-dark-bckg-clr-1);
+  transition: fill var(--default-animation);
 }
