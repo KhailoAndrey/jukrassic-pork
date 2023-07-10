@@ -39,5 +39,6 @@
   "empty_lyrics": "This lyrics hasn't text",
   "default_label": "song",
   "submit_error": "Submitting error. Try again.",
-  "submit_success": "Form submitted successfully."
+  "submit_success": "Form submitted successfully.",
+  "bannerstrip": "listen. watch. enjoy."
 }
