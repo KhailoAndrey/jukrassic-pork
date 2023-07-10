@@ -15,7 +15,7 @@
   }
 }
 
-.reactPlayer {
+.imageMusic {
   max-width: 100%;
   position: relative;
   z-index: 2;
@@ -39,7 +39,15 @@
   }
 }
 
-.reactPlayer:hover .iconPlayRelease {
+.imageMusicNoEffects {
+  margin-bottom: 12px;
+
+  @media screen and (min-width: 1440px) {
+    height: 408px;
+  }
+}
+
+.imageMusic:hover .iconPlayRelease {
   fill: var(--main-accent-text-clr);
 }
 
@@ -100,7 +108,7 @@
   }
 }
 
-.reactPlayer:hover .iconPlay {
+.imageMusic:hover .iconPlay {
   fill: var(--main-accent-text-clr);
 }
 
@@ -109,7 +117,7 @@
   transition: border var(--default-animation);
 }
 
-.reactPlayer:hover .iconContainer,
-.reactPlayer:focus .iconContainer {
+.imageMusic:hover .iconContainer,
+.imageMusic:focus .iconContainer {
   border: 2px solid var(--main-accent-text-clr);
 }
