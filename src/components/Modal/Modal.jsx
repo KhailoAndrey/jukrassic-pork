@@ -32,7 +32,7 @@ const ModalComponent = ({ customClass, onClose }) => {
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
-    }, 500); 
+    }, 1500); 
   };
 
   return (
