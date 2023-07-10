@@ -15,7 +15,7 @@ function NotFoundComponent() {
         <div className={scss.envelopeContent}>
           <ImagesNotFound />
           <TextNotFound textNotFound={t('text_not_found')} />
-          <ButtonNotFound valueButton={t('back_to_home')} />
+          <ButtonNotFound valueButtonNotFound={t('back_to_home')} />
         </div>
       </div>
     </section>
