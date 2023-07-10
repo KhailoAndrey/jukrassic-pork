@@ -1,13 +1,13 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
+import { useTranslation } from 'react-i18next';
 import scss from './BannerStrip.module.scss';
 import icon from '../../images/Vector.svg';
 
 const BannerStrip = () => {
-  const textItems = [
-    { text: 'jukrassic pork' },
-    { text: 'listen. watch. enjoy.' },
-  ];
+    const { t } = useTranslation();
+
+  const textItems = [{ text: 'jukrassic pork' }, { text: t('bannerstrip') }];
 
   return (
     <>
