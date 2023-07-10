@@ -417,6 +417,10 @@
   font-family: Mulish;
   font-size: 20px;
   line-height: 24px;
+
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .contact_form__input_wrap {
@@ -541,11 +545,7 @@
   display: flex;
   height: 48px;
   width: 100%;
-
-  // 12px because of Ukrainian ver.
   padding: 12px;
-  // it was like this:
-  // padding: 12px 24px;
 
   justify-content: center;
   align-items: center;
@@ -596,4 +596,26 @@
   height: 24px;
 
   fill: inherit;
+}
+
+.shine {
+  background: linear-gradient(
+    to left,
+    var(--main-accent-text-clr) 5%,
+    var(--add-light-text-clr-2) 10%,
+    var(--main-accent-text-clr) 95%
+  );
+  background-size: 200% auto;
+
+  fill: var(--main-accent-text-clr);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1800ms reverse infinite;
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
 }
