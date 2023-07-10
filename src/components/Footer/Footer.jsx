@@ -115,7 +115,7 @@ const Footer = () => {
           </div>
           <ModalForm
             onClose={() => {
-              setIsModalOpen(!isModalOpen);
+              setIsModalOpen(false);
             }}
             isInitialLoad={isInitialLoad}
             isModalOpen={isModalOpen}

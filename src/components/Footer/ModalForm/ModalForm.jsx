@@ -33,8 +33,6 @@ const ModalForm = ({ onClose, isModalOpen, isInitialLoad }) => {
 
   const submitContactForm = async data => {
     try {
-      // TODO: delete console.log after testing
-      console.log('data:', data);
       await axios.post('/', data);
 
       Notify.success(t('submit_success'), () => {}, {
@@ -178,9 +176,10 @@ const ModalForm = ({ onClose, isModalOpen, isInitialLoad }) => {
 
               {/* submit button */}
               <button
-                className={scss.contact_form__btn}
+                className={`${scss.contact_form__btn} ${
+                  isSubmitting && scss.shine
+                }`}
                 type="submit"
-                disabled={isSubmitting}
               >
                 <SendIcon className={scss.send_icon} />
 
