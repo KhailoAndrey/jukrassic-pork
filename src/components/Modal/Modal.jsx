@@ -27,6 +27,12 @@ const ModalComponent = ({ customClass, onClose }) => {
 
   const musicBlockRedirect = link => {
     navigate(`/#${link}`);
+    setTimeout(() => {
+      const element = document.getElementById(link);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500); 
   };
 
   return (
