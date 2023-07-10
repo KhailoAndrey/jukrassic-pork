@@ -23,7 +23,6 @@ function ImageMusic({ songImage, songLink }) {
         light={songImage.url()}
         url={songLink}
         width="100%"
-        height="340px"
         playIcon={<MusicIconPlay className={scss.iconPlayMusic} />}
         onClickPreview={handlePlay}
       />

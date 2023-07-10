@@ -2,6 +2,7 @@
   height: 100%;
   margin: 8px;
   padding-bottom: 150px;
+
   // Set up scrollbar for the Chrome browser
   ::-webkit-scrollbar {
     width: 4px;
@@ -19,7 +20,7 @@
   }
 
   ::-webkit-scrollbar-corner {
-    background: rgba(0,0,0,0);
+    background: rgba(0, 0, 0, 0);
   }
 
   // Set up scrollbar for the Mozila browser
