@@ -1,8 +1,8 @@
 .boxShowMore {
   width: 100%;
 
-  @media screen and (min-width: 735px) {
-    max-width: 300px;
+  @media screen and (min-width: 768px) {
+    max-width: 343px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -40,7 +40,7 @@
   transition: border, color, background-color var(--default-animation);
 
   @media screen and (min-width: 375px) {
-    width: 300px;
+    width: 343px;
   }
 }
 
@@ -50,4 +50,11 @@
 
   color: var(--light-text-clr);
   background-color: var(--neutral-dark-bckg-clr-1);
+}
+
+.showMore:active {
+  border: 2px solid var(--main-accent-text-clr);
+
+  color: var(--neutral-dark-bckg-clr-1);
+  background-color: var(--main-accent-text-clr);
 }
