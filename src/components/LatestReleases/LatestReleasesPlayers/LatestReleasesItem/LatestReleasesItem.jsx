@@ -16,12 +16,14 @@ function LatestReleaesItem({
   videoTextUA,
 }) {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handleVideoPlay = indexItem => {
     if (currentVideoIndex !== null && currentVideoIndex !== indexItem) {
       setCurrentVideoIndex(null);
     }
     setCurrentVideoIndex(indexItem);
+    setIsPlaying(true);
   };
 
   const handleVideoPause = () => {
@@ -30,23 +32,31 @@ function LatestReleaesItem({
 
   return (
     <li className={scss.playerBox}>
-      <ReactPlayer
-        className={scss.reactPlayer}
-        light={songImage.url()}
-        url={songLink}
-        width="100%"
-        height="100%"
-        playIcon={
-          <LatestReleaesIconPlay
-            currentVideoIndex={currentVideoIndex}
-            indexItem={indexItem && indexItem}
-            className={scss.iconPlayRelease}
-          />
-        }
-        playing={currentVideoIndex === indexItem}
-        onPlay={() => handleVideoPlay(indexItem)}
-        onPause={handleVideoPause}
-      />
+      <div
+        style={{
+          width: '100%',
+          height: '100%',
+        }}
+        className={isPlaying ? scss.imageMusicNoEffects : scss.imageMusic}
+      >
+        <ReactPlayer
+          className={isPlaying ? scss.imageMusicNoEffects : scss.reactPlayer}
+          light={songImage.url()}
+          url={songLink}
+          width="100%"
+          height="100%"
+          playIcon={
+            <LatestReleaesIconPlay
+              currentVideoIndex={currentVideoIndex}
+              indexItem={indexItem && indexItem}
+              className={scss.iconPlayRelease}
+            />
+          }
+          playing={currentVideoIndex === indexItem}
+          onPlay={() => handleVideoPlay(indexItem)}
+          onPause={handleVideoPause}
+        />
+      </div>
       <LatestReleaesText
         currentVideoIndex={currentVideoIndex}
         videoTextEN={videoTextEN}
