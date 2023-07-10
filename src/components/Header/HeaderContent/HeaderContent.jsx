@@ -10,11 +10,9 @@ import scss from './HeaderContent.module.scss';
 import Menu from 'components/Menu/Menu';
 
 function HeaderContent() {
-  // const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const { currentLanguage } = useContext(LanguageContext);
   const { t } = useTranslation();
   const isMobile = false;
-  // console.log(isMobile);
   const { data } = useFetch('history');
 
   return (
