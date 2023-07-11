@@ -17,6 +17,11 @@ const SwiperHeader = ({ data }) => {
 
   useEffect(() => {
     if (swiperRef.current && swiperRef.current.swiper) {
+      const nextSlide = swiperRef.current.swiper.slides[1];
+      if (nextSlide) {
+        nextSlide.style.opacity = '0.4';
+      }
+
       swiperRef.current.swiper.on('slideChange', () => {
         swiperRef.current.swiper.slides.forEach(slide => {
           slide.style.opacity = '';
