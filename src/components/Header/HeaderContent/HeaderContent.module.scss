@@ -94,23 +94,16 @@
 }
 
 .header_title {
-    // border: 1px solid red;
-
     min-height: 52px;
-  // margin-top: 24px;
   align-items: center;
   @media screen and (min-width: 768px) {
     margin-bottom: 4px;
-    // margin-top: 24px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 408px;
     height: 64px;
     margin-top: 24px;
-    // position: sticky;
-    // position: -webkit-sticky;
-    // top: 24px;
   }
 }
 
@@ -133,8 +126,6 @@
 }
 
 .header_subTitle {
-    // border: 1px solid red;
-
   min-height: 36px;
 
   @media screen and (min-width: 768px) {
@@ -205,7 +196,6 @@
 
   @media screen and (min-width: 768px) {
     height: 464px;
-    // margin-top: 24px;
   }
 
   @media screen and (min-width: 1440px) {

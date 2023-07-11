@@ -1,8 +1,8 @@
 import React from 'react';
 import Marquee from 'react-fast-marquee';
 import { useTranslation } from 'react-i18next';
-import scss from './BannerStrip.module.scss';
 import icon from '../../images/Vector.svg';
+import scss from './BannerStrip.module.scss';
 
 const BannerStrip = () => {
     const { t } = useTranslation();

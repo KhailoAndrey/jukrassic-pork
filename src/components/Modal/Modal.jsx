@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { ReactComponent as ModalCloseBtn } from '../../images/modal_close_green.svg';
 import { ReactComponent as ModalLogo } from '../../images/Logotype.svg';
 import { LanguageContext } from 'utils/LanguageContext';
 import styles from './Modal.module.scss';
-import { useTranslation } from 'react-i18next';
 
 const links = [
   { name: 'jukrassic_pork', link: 'header' },

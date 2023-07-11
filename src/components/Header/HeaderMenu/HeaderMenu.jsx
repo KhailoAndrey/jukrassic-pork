@@ -26,9 +26,6 @@ function HeaderMenu({ isMobile }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    const modal = document.getElementById('modal')
-    console.log(modal)
-    
   };
 
   useEffect(() => {
@@ -75,7 +72,6 @@ function HeaderMenu({ isMobile }) {
             customClass={scss.modalComponentDisplay}
             onClose={closeModal}
             isModalOpen={isModalOpen}
-            
           />
         </div>
       )}
