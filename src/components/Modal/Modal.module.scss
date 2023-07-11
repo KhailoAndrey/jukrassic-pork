@@ -30,11 +30,21 @@
     min-height: 456px;
     height: 456px;
     position: absolute;
-    top: -456px;
-
+    top: 0;
+    animation: modalOut var(--slow-animation) forwards;
+    z-index: -1;
     &::before {
       display: none;
     }
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    transform: translateY(456px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
 

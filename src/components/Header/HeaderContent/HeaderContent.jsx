@@ -39,16 +39,12 @@ function HeaderContent() {
             <p className={scss.header_textbody}>
               {data
                 ? data.description[currentLanguage]
-
-                : `Jukrassic Pork is a pop-rock music band from Ukraine. The project
-              was founded in 2000 by Vyacheslav /Zmeark/ Lozowy. Since then,
-            several members have changed in the band.`}
-
+                : `Jukrassic Pork — український поп-рок гурт. Музичний проєкт був заснований у 2000 році Вячеславом /Zmeark/ Лозовим. З того часу, склад гурту неодноразово зазнавав змін.`}
             </p>
           </div>
           <HeaderMenu
-            page="Home"
-            text={t('listen_music')}
+            // page="Home"
+            // text={t('listen_music')}
             isMobile={!isMobile}
           />
           <div className={scss.swiper_box}>

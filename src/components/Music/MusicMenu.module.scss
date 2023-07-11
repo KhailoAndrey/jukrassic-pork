@@ -18,6 +18,9 @@
     }
     &.desktop {
       display: flex;
+      width: 408px;
+      height: 516px;
+      overflow: hidden;
     }
   }
 }

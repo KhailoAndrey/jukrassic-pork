@@ -15,7 +15,7 @@ const handleScrollToTop = () => {
   });
 };
 
-function HeaderMenu({ page, text, isMobile }) {
+function HeaderMenu({ isMobile }) {
   const { isModalOpen, setIsModalOpen } = useModal({ styles: scss.modalOpen });
   const modalRef = useRef(null);
   const { t } = useTranslation();
@@ -26,7 +26,9 @@ function HeaderMenu({ page, text, isMobile }) {
 
   const closeModal = () => {
     setIsModalOpen(false);
-    document.activeElement.blur();
+    const modal = document.getElementById('modal')
+    console.log(modal)
+    
   };
 
   useEffect(() => {
@@ -57,14 +59,6 @@ function HeaderMenu({ page, text, isMobile }) {
         <Logo />
       </button>
       <CommonButton valueButton={t('listen_music')} />
-      {isModalOpen && (
-        <div ref={modalRef}>
-          <ModalComponent
-            customClass={scss.modalComponentDisplay}
-            onClose={closeModal}
-          />
-        </div>
-      )}
       <button
         className={scss.burger_btn}
         onClick={isModalOpen ? closeModal : openModal}
@@ -75,6 +69,16 @@ function HeaderMenu({ page, text, isMobile }) {
           <Burger className="icon fade-out" />
         )}
       </button>
+      {isModalOpen && (
+        <div ref={modalRef} id="modal">
+          <ModalComponent
+            customClass={scss.modalComponentDisplay}
+            onClose={closeModal}
+            isModalOpen={isModalOpen}
+            
+          />
+        </div>
+      )}
     </div>
   );
 }
