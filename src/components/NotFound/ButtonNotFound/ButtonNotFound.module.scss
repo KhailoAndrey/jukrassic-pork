@@ -77,12 +77,12 @@
   fill: var(--main-accent-text-clr);
 }
 
-.commonButton:active .commonIconVisible {
-  fill: var(--neutral-dark-bckg-clr-1);
+.buttonNotFound:active .commonIcon {
+  fill: transparent;
 }
 
-.commonButton:active .commonIcon {
-  fill: var(--main-accent-text-clr);
+.buttonNotFound:active .commonIconVisible {
+  fill: var(--neutral-dark-bckg-clr-1);
 }
 
 .commonIcon {
