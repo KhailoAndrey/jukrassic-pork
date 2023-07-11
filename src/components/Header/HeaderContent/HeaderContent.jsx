@@ -1,13 +1,11 @@
 import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import HeaderMenu from './HeaderMenu';
-// import ModalComponent from '../../Modal/Modal';
+import HeaderMenu from '../HeaderMenu/HeaderMenu';
 import SwiperHeader from 'components/Swiper/SwiperHeader/SwiperHeader';
 import { LanguageContext } from 'utils/LanguageContext';
 import useFetch from 'hooks/useFetch';
-// import useModal from 'hooks/useModal';
-import scss from './HeaderContent.module.scss';
 import Menu from 'components/Menu/Menu';
+import scss from './HeaderContent.module.scss';
 
 function HeaderContent() {
   const { currentLanguage } = useContext(LanguageContext);
@@ -42,11 +40,7 @@ function HeaderContent() {
                 : `Jukrassic Pork — український поп-рок гурт. Музичний проєкт був заснований у 2000 році Вячеславом /Zmeark/ Лозовим. З того часу, склад гурту неодноразово зазнавав змін.`}
             </p>
           </div>
-          <HeaderMenu
-            // page="Home"
-            // text={t('listen_music')}
-            isMobile={!isMobile}
-          />
+          <HeaderMenu isMobile={!isMobile} />
           <div className={scss.swiper_box}>
             {data && <SwiperHeader data={data} />}
           </div>

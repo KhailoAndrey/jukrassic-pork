@@ -1,29 +1,38 @@
-// import React, { useState } from 'react';
-import SwiperCore, {
-  Navigation,
-  Scrollbar,
-  Pagination,
-  EffectFade,
-  Autoplay,
-} from 'swiper';
+import React, { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation } from 'swiper';
 
 import { ReactComponent as ArrowPrev } from '../../../images/arrow_back.svg';
 import { ReactComponent as ArrowNext } from '../../../images/arrow_forward.svg';
 
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-import 'swiper/scss/scrollbar';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-import 'swiper/css/autoplay';
 
 import scss from './SwiperHeader.module.scss';
 
-SwiperCore.use([Navigation, Pagination, EffectFade, Autoplay, Scrollbar]);
+SwiperCore.use([Navigation]);
 
 const SwiperHeader = ({ data }) => {
-  
+  const swiperRef = useRef(null);
+
+  useEffect(() => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.on('slideChange', () => {
+        swiperRef.current.swiper.slides.forEach(slide => {
+          slide.style.opacity = '';
+        });
+
+        const nextSlide =
+          swiperRef.current.swiper.slides[
+            swiperRef.current.swiper.activeIndex + 1
+          ];
+        if (nextSlide) {
+          nextSlide.style.opacity = '0.4';
+        }
+      });
+    }
+  }, []);
+
   const carouselSettings = {
     spaceBetween: 16,
     slidesPerView: 1,
@@ -36,17 +45,15 @@ const SwiperHeader = ({ data }) => {
         slidesPerView: 1.25,
       },
     },
-    loop: 'true',    
+    loop: true,
     initialSlide: 0,
     navigation: {
-      nextEl: `.swiper-next-btn`,
-      prevEl: `.swiper-prev-btn`,
+      nextEl: '.swiper-next-btn',
+      prevEl: '.swiper-prev-btn',
     },
-    slideNextClass: 'swiper-slide-next',
-    slidePrevClass: 'swiper-slide-prev',
-    // modules: [Pagination, Scrollbar],    
-    speed: 1000,    
+    speed: 1000,
   };
+
   const swiperSlides = data.historyImgList.map(({ srcWebp, srcJpg }, index) => (
     <SwiperSlide key={index}>
       <div className={scss.member}>
@@ -78,7 +85,7 @@ const SwiperHeader = ({ data }) => {
         </div>
       </div>
 
-      <Swiper {...carouselSettings}>
+      <Swiper ref={swiperRef} {...carouselSettings}>
         {swiperSlides}
         {swiperSlides}
       </Swiper>

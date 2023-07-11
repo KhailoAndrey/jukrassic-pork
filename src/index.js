@@ -13,7 +13,6 @@ root.render(
       <I18nextProvider i18n={i18n}>
       <BrowserRouter basename="/jukrassic-pork">
                 <LanguageProvider>
-
           <App />
           </LanguageProvider>
     </BrowserRouter>
