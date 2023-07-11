@@ -91,3 +91,7 @@
   opacity: 1;
   fill: var(--light-text-clr);
 }
+
+.showMore:active .buttonIcon {
+  fill: var(--neutral-dark-bckg-clr-1);
+}
