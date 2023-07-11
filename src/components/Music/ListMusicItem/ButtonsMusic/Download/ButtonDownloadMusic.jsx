@@ -5,7 +5,7 @@ import scss from '../ButtonsMusic.module.scss';
 
 function ButtonDownloadMusic({ valueButton, songDownloadLink }) {
   const handleDownload = () => {
-    window.open(songDownloadLink, '_blank');
+    window.open(songDownloadLink);
   };
 
   return (

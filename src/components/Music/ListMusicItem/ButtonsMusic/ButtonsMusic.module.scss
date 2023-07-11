@@ -18,7 +18,7 @@
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-1);
 
-  transition: color, border var(--default-animation);
+  transition: color var(--default-animation), border var(--default-animation);
 
   @media screen and (min-width: 375px) {
     width: auto;
