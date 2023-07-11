@@ -37,7 +37,8 @@
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--light-text-clr);
 
-  transition: border, color, background-color var(--default-animation);
+  transition: border var(--default-animation), color var(--default-animation),
+    background-color var(--default-animation);
 
   @media screen and (min-width: 375px) {
     width: 343px;
@@ -57,4 +58,36 @@
 
   color: var(--neutral-dark-bckg-clr-1);
   background-color: var(--main-accent-text-clr);
+}
+
+.textTransform {
+  transform: translateX(-20px);
+  transition: transform var(--default-animation);
+}
+
+.showMore:hover .textTransform,
+.showMore:focus .textTransform {
+  transform: translateX(0px);
+}
+
+.buttonIcon {
+  opacity: 0;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+
+  fill: var(--neutral-dark-bckg-clr-1);
+  transition: fill var(--default-animation);
+
+  @media screen and (min-width: 1440px) {
+    margin-right: 12px;
+  }
+
+  transform: opacity var(--default-animation);
+}
+
+.showMore:hover .buttonIcon,
+.showMore:focus .buttonIcon {
+  opacity: 1;
+  fill: var(--light-text-clr);
 }

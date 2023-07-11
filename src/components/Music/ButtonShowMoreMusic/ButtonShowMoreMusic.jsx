@@ -1,11 +1,13 @@
 import PropTypes from 'prop-types';
+import { ReactComponent as DownloadIcon } from '../../../images/Music/svg/Icon-download.svg';
 import scss from './ButtonShowMoreMusic.module.scss';
 
 function ButtonShowMoreMusic({ valueShowMoreMusic, onClick }) {
   return (
     <div className={scss.boxShowMore}>
       <button className={scss.showMore} onClick={onClick}>
-        {valueShowMoreMusic}
+        <DownloadIcon className={scss.buttonIcon} />
+        <p className={scss.textTransform}>{valueShowMoreMusic}</p>
       </button>
     </div>
   );
