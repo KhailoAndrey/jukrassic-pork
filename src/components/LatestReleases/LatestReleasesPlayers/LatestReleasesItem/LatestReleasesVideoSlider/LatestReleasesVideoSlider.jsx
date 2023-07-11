@@ -6,8 +6,7 @@ function LatestReleasesVideoSlider({ isPlaying }) {
 }
 
 LatestReleasesVideoSlider.propTypes = {
-  currentVideoIndex: PropTypes.number,
-  indexItem: PropTypes.string.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
 };
 
 export default LatestReleasesVideoSlider;

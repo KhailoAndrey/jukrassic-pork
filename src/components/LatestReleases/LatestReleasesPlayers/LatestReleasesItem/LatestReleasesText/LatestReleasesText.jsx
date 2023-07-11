@@ -7,8 +7,7 @@ function LatestReleaesText({ isPlaying, videoText }) {
 
 LatestReleaesText.propTypes = {
   videoText: PropTypes.string.isRequired,
-  currentVideoIndex: PropTypes.number,
-  indexItem: PropTypes.string.isRequired,
+  isPlaying: PropTypes.bool.isRequired,
 };
 
 export default LatestReleaesText;
