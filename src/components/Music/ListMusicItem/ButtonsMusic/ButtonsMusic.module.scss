@@ -3,13 +3,14 @@
   justify-content: center;
   align-items: center;
 
-  padding: 8px 16px;
+  padding: 0px 16px;
   width: 100%;
+  height: 40px;
 
   font-size: 20px;
   font-family: 'Mulish';
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 24px;
 
   border: 1px solid var(--add-light-text-clr-2);
   outline: none;
@@ -26,6 +27,8 @@
 
   @media screen and (min-width: 1440px) {
     padding: 8px 24px;
+    font-size: 22px;
+    line-height: 28px;
   }
 }
 
