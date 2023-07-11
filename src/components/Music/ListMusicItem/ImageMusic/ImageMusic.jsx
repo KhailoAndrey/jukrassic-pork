@@ -13,11 +13,9 @@ function ImageMusic({ songImage, songLink }) {
 
   return (
     <div
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-      className={isPlaying ? scss.imageMusicNoEffects : scss.imageMusic}
+      className={`${scss.commonMusicWrapper} ${
+        isPlaying ? null : scss.imageMusic
+      }`}
     >
       <ReactPlayer
         light={songImage.url()}

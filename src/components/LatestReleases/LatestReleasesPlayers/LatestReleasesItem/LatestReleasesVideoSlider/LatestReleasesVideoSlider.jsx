@@ -1,14 +1,8 @@
 import PropTypes from 'prop-types';
 import scss from '../LatestReleasesItem.module.scss';
 
-function LatestReleasesVideoSlider({ currentVideoIndex, indexItem }) {
-  return (
-    <div
-      className={`${scss.videoSlider} ${
-        currentVideoIndex === indexItem ? scss.hidden : ''
-      }`}
-    ></div>
-  );
+function LatestReleasesVideoSlider({ isPlaying }) {
+  return !isPlaying ? <div className={scss.videoSlider} /> : null;
 }
 
 LatestReleasesVideoSlider.propTypes = {

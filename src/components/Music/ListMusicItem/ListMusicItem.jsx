@@ -53,12 +53,14 @@ function ListMusicItem({ itemMusic }) {
                 songDownloadLink={songDownloadLink}
               />
             </li>
-            <li>
-              <ButtonLyricsMusic
-                valueButton={t('lyrics')}
-                onClick={toggleModalMusic}
-              />
-            </li>
+            {lyrics ? (
+              <li>
+                <ButtonLyricsMusic
+                  valueButton={t('lyrics')}
+                  onClick={toggleModalMusic}
+                />
+              </li>
+            ) : null}
           </ul>
         </li>
       )}
