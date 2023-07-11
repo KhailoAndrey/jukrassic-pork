@@ -1,7 +1,12 @@
+import { useContext } from 'react';
+import { LanguageContext } from 'utils/LanguageContext';
+
 import LatestReleaesItem from './LatestReleasesItem/LatestReleasesItem';
 import scss from './LatestReleasesPlayers.module.scss';
 
 function LatestReleasesPlayers({ latestReleasesList }) {
+  const { currentLanguage } = useContext(LanguageContext);
+
   return (
     <ul className={scss.listPlayers}>
       {latestReleasesList &&
@@ -11,8 +16,7 @@ function LatestReleasesPlayers({ latestReleasesList }) {
             indexItem={release.id}
             songImage={release.songImage}
             songLink={release.songLink}
-            videoTextEN={release.name.en}
-            videoTextUA={release.name.ua}
+            videoText={release.name[currentLanguage]}
           />
         ))}
     </ul>

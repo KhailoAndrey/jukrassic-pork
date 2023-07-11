@@ -1,8 +1,8 @@
 .textPlayer {
   position: absolute;
   bottom: 26px;
-  right: 30%;
-  left: 30%;
+  left: 50%;
+  transform: translateX(-50%);
 
   font-size: 24px;
   font-family: 'Mulish';
