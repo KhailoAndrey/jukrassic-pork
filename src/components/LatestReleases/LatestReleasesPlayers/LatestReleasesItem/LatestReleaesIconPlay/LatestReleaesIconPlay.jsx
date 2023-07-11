@@ -4,13 +4,9 @@ import { ReactComponent as PlayIcon } from '../../../../../images/Common/svg/pla
 
 import scss from '../LatestReleasesItem.module.scss';
 
-function LatestReleaesIconPlay({ currentVideoIndex, indexItem }) {
+function LatestReleaesIconPlay() {
   return (
-    <div
-      className={`${scss.iconContainer} ${
-        currentVideoIndex === indexItem ? scss.hidden : ''
-      }`}
-    >
+    <div className={scss.iconContainer}>
       <PlayIcon className={scss.iconPlay} />
     </div>
   );

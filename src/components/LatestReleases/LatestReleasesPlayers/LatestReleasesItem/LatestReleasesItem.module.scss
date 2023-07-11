@@ -2,21 +2,30 @@
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 200px;
+  height: 100%;
 
   @media screen and (min-width: 375px) {
     width: 343px;
-    height: 252px;
   }
 
   @media screen and (min-width: 1440px) {
     width: 408px;
-    height: 300px;
+  }
+}
+
+.commonMusicWrapper {
+  height: 100%;
+  width: 100%;
+  & > div {
+    height: 252px !important;
+
+    @media screen and (min-width: 1440px) {
+      height: 300px !important;
+    }
   }
 }
 
 .imageMusic {
-  max-width: 100%;
   position: relative;
   z-index: 2;
 
@@ -36,14 +45,6 @@
   &:hover::after,
   &:focus::after {
     background-color: rgba($color: #000000, $alpha: 0.5);
-  }
-}
-
-.imageMusicNoEffects {
-  margin-bottom: 12px;
-
-  @media screen and (min-width: 1440px) {
-    height: 408px;
   }
 }
 
@@ -70,10 +71,6 @@
 .playerBox:hover .videoSlider,
 .playerBox:focus .videoSlider {
   transform: scaleX(1);
-}
-
-.hidden {
-  display: none;
 }
 
 .darknedBox {
@@ -110,14 +107,4 @@
 
 .imageMusic:hover .iconPlay {
   fill: var(--main-accent-text-clr);
-}
-
-.iconContainer {
-  border: 2px solid transparent;
-  transition: border var(--default-animation);
-}
-
-.imageMusic:hover .iconContainer,
-.imageMusic:focus .iconContainer {
-  border: 2px solid var(--main-accent-text-clr);
 }
