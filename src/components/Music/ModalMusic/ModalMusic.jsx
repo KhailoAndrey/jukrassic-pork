@@ -11,10 +11,8 @@ function ModalMusic({ onCloseModal, modalContent }) {
 
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
-    window.addEventListener('touchmove', handleTouchMove, { passive: false });
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
-      window.removeEventListener('touchmove', handleTouchMove);
     };
   });
 
@@ -29,12 +27,6 @@ function ModalMusic({ onCloseModal, modalContent }) {
   function handleKeyDown(event) {
     if (event.code === 'Escape') {
       onCloseModal();
-    }
-  }
-
-  function handleTouchMove(event) {
-    if (isOpen) {
-      event.preventDefault();
     }
   }
 
