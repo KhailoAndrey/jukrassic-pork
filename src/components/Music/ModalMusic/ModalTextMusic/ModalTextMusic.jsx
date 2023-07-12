@@ -2,11 +2,7 @@ import PropTypes from 'prop-types';
 import scss from './ModalTextMusic.module.scss';
 
 function ModalTextMusic({ textModalMusic }) {
-  return (
-    <div className={scss.boxTextModal}>
-      <p className={scss.textModal}>{textModalMusic}</p>
-    </div>
-  );
+  return <p className={scss.textModal}>{textModalMusic}</p>;
 }
 
 ModalTextMusic.propTypes = {

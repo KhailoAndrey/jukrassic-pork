@@ -1,20 +1,16 @@
-.boxTextModal {
-  height: 100%;
+.textModal {
   margin: 8px;
   padding-bottom: 150px;
-}
-
-.textModal {
-  height: 100%;
-  overflow: scroll;
   padding: 0px 80px;
   font-family: 'Mulish';
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
   white-space: pre-line;
-
   color: var(--add-light-text-clr-2);
+
+  overflow: auto;
+  max-height: 100%;
 
   @media screen and (min-width: 375px) {
     font-size: 16px;
