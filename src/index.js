@@ -10,12 +10,12 @@ import { LanguageProvider } from 'utils/LanguageContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <I18nextProvider i18n={i18n}>
+    <I18nextProvider i18n={i18n}>
       <BrowserRouter basename="/jukrassic-pork">
-                <LanguageProvider>
+        <LanguageProvider>
           <App />
-          </LanguageProvider>
-    </BrowserRouter>
-      </I18nextProvider>      
+        </LanguageProvider>
+      </BrowserRouter>
+    </I18nextProvider>
   </React.StrictMode>
 );
