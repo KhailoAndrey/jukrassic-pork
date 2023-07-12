@@ -16,6 +16,7 @@
   padding-bottom: 80px;
 
   @media screen and (min-width: 768px) {
+    gap: 20px;
     padding-top: 24px;
     padding-bottom: 108px;
   }
@@ -289,16 +290,18 @@
   }
 
   @media screen and (min-width: 768px) {
+    position: relative;
+    top: -32px;
+
     display: block;
     width: 116px;
     height: 158px;
-    margin-top: -32px;
   }
 
   @media screen and (min-width: 1440px) {
     position: absolute;
     right: 136px;
-    top: 372px;
+    top: 340px;
 
     width: 140px;
     height: 192px;
@@ -377,6 +380,7 @@
   position: absolute;
 
   height: 688px;
+  max-height: 100%;
   padding-top: 24px;
   padding-bottom: 24px;
   padding-left: 16px;
@@ -384,6 +388,8 @@
 
   color: var(--add-light-text-clr-2);
   background-color: var(--neutral-dark-bckg-clr-2);
+
+  overflow: auto;
 
   @media screen and (max-width: 374px) {
     width: 100%;
@@ -411,7 +417,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-
   width: 100%;
 
   font-family: Mulish;
