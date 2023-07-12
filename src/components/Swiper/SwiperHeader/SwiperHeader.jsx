@@ -20,6 +20,7 @@ const SwiperHeader = ({ data }) => {
       const nextSlide = swiperRef.current.swiper.slides[1];
       if (nextSlide) {
         nextSlide.style.opacity = '0.4';
+        nextSlide.style.transition = 'all 400ms ease-in-out';
       }
 
       swiperRef.current.swiper.on('slideChange', () => {
@@ -33,6 +34,7 @@ const SwiperHeader = ({ data }) => {
           ];
         if (nextSlide) {
           nextSlide.style.opacity = '0.4';
+          nextSlide.style.transition = 'all 400ms ease-in-out';
         }
       });
     }
