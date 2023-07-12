@@ -55,10 +55,10 @@ function ModalMusic({ onCloseModal, modalContent }) {
   return createPortal(
     isOpen && (
       <div
-        className={`${scss.modalBackdrop} ${isOpen ? scss.open : ''}`}
+        className={`${scss.modalBackdrop} ${isOpen && scss.openBackdrop}`}
         onMouseDown={handleBackdropClick}
       >
-        <div className={`${scss.modalContent} ${isOpen ? scss.open : ''}`}>
+        <div className={`${scss.modalContent} ${isOpen && scss.openContent}`}>
           {modalContent}
           <ButtonModalClose
             onCloseModal={handleCloseModal}

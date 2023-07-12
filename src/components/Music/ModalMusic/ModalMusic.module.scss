@@ -45,6 +45,23 @@
   ::-moz-scrollbar-thumb:hover {
     background-color: var(--neutral-dark-text-clr);
   }
+
+  &.openBackdrop {
+    transform: scaleY(0.005) scaleX(0);
+    animation: modalAnimation var(--slow-animation) forwards;
+  }
+}
+
+@keyframes modalAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .modalContent {
@@ -78,5 +95,19 @@
 
   @media screen and (min-width: 1440px) {
     width: 408px;
+  }
+
+  & .openContent {
+    opacity: 1;
+    animation: modalContent var(--slow-animation) forwards;
+  }
+}
+
+@keyframes modalContent {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
